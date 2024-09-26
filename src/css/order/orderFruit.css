@@ -1,0 +1,74 @@
+.order-fruit {
+    width: 100%;
+    padding: 1vw;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  
+  .order-fruit .order-fruit-con {
+    flex: 0 1 1300px;
+    height: calc(100vh - 80px - 60px - 2vw);
+    box-sizing: border-box;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .order-fruit .order-fruit-con ul {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+  
+    gap: 1vw;
+  
+  }
+  
+  .order-fruit .order-fruit-con ul li {
+  
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    cursor: pointer;
+  
+    transition: all 0.2s;
+  
+  
+    overflow: hidden;
+  
+  }
+  
+  .order-fruit .order-fruit-con ul li:hover {
+    opacity: 0.9;
+    filter: grayscale(50%);
+    transform: scale(1.02);
+  }
+  
+  .order-fruit .order-fruit-con ul li .top {
+    flex: 4;
+    overflow: hidden;
+  }
+  
+  .order-fruit .order-fruit-con ul li .top img {
+    width: 100%;
+    display: block;
+  }
+  
+  .order-fruit .order-fruit-con ul li .bottom {
+    flex: 1;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: white;
+  }
