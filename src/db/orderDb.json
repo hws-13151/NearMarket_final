@@ -3,66 +3,140 @@
     {
       "id": 1,
       "title": "딸기",
-      "price":9900,
+      "price": 9900,
       "img": "f0.jpg",
-      "des":"특유의 단맛과 상큼한 딸기"
+      "des": "특유의 단맛과 상큼한 딸기"
     },
     {
       "id": 2,
       "title": "사과",
-      "price":4900,
+      "price": 4900,
       "img": "f1.jpg",
-      "des":"새콤달콤 아삭아삭한 사과"
+      "des": "새콤달콤 아삭아삭한 사과"
     },
     {
       "id": 3,
       "title": "체리",
-      "price":10900,
+      "price": 10900,
       "img": "f2.jpg",
-      "des":"새콤달콤 청량한 체리"
+      "des": "새콤달콤 청량한 체리"
     },
     {
       "id": 4,
       "title": "바나나",
-      "price":5900,
+      "price": 5900,
       "img": "f3.jpg",
-      "des":"부드럽고 달콤한 바나나"
+      "des": "부드럽고 달콤한 바나나"
     },
     {
       "id": 5,
       "title": "포도",
-      "price":6900,
+      "price": 6900,
       "img": "f4.jpg",
-      "des":"약간의 신맛과 달콤한 포도"
+      "des": "약간의 신맛과 달콤한 포도"
     },
     {
       "id": 6,
       "title": "메론",
-      "price":13900,
+      "price": 13900,
       "img": "f5.jpg",
-      "des":"부드럽고 달콤한 메론"
+      "des": "부드럽고 달콤한 메론"
     },
     {
       "id": 7,
       "title": "오렌지",
-      "price":8900,
+      "price": 8900,
       "img": "f6.jpg",
-      "des":"상큼하면서 달콤한 오렌지"
+      "des": "상큼하면서 달콤한 오렌지"
     },
     {
       "id": 8,
       "title": "파인애플",
-      "price":7900,
+      "price": 7900,
       "img": "f7.jpg",
-      "des":"강한 신맛과 상큼한 파인애플"
+      "des": "강한 신맛과 상큼한 파인애플"
     }
   ],
-  "vegetableItems":[
-    {"id":1,"title":"피망","price":2000,"memo":"흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!","img": "carrot.jpg"},
-    {"id":2,"title":"옥수수","price":5000,"memo":"자연을 담은 건강한 옥수수밭에서 수확한 자연의 찰옥수수","img": "corn.jpg"},
-    {"id":3,"title":"양파","price":1000,"memo":"경남 밀양에서 자란 달큰한 양파는 풍부한 일조량과 비옥한 땅에서 정성스럽게 키웠습니다","img": "onion.jpg"},
-    {"id":4,"title":"파프리카","price":4000,"memo":"물 맑고 공기 좋은 청정 자연을 그대로 담은 파프리카","img": "paprica.jpg"},
-    {"id":5,"title":"호박","price":10000,"memo":"한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~","img": "pumkin.jpg"},
-    {"id":6,"title":"토마토","price":6000,"memo":"칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다","img": "tomato.jpg"}
+  "vegetableItems": [
+    {
+      "id": 1,
+      "title": "피망",
+      "price": 2000,
+      "memo": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
+      "img": "carrot.jpg"
+    },
+    {
+      "id": 2,
+      "title": "옥수수",
+      "price": 5000,
+      "memo": "자연을 담은 건강한 옥수수밭에서 수확한 자연의 찰옥수수",
+      "img": "corn.jpg"
+    },
+    {
+      "id": 3,
+      "title": "양파",
+      "price": 1000,
+      "memo": "경남 밀양에서 자란 달큰한 양파는 풍부한 일조량과 비옥한 땅에서 정성스럽게 키웠습니다",
+      "img": "onion.jpg"
+    },
+    {
+      "id": 4,
+      "title": "파프리카",
+      "price": 4000,
+      "memo": "물 맑고 공기 좋은 청정 자연을 그대로 담은 파프리카",
+      "img": "paprica.jpg"
+    },
+    {
+      "id": 5,
+      "title": "호박",
+      "price": 10000,
+      "memo": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
+      "img": "pumkin.jpg"
+    },
+    {
+      "id": 6,
+      "title": "토마토",
+      "price": 6000,
+      "memo": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
+      "img": "tomato.jpg"
+    }
+  ],
+
+  "snackItems": [
+    {
+      "id": 1,
+      "title": "오감자 오리지널",
+      "price": 1000,
+      "img": "s0.jpg",
+      "description": "오감자입니다 소스가 들어있어서 좋습니다"
+    },
+    {
+      "id": 2,
+      "title": "먹태깡 청양마요맛",
+      "price": 1000,
+      "img": "s1.jpeg",
+      "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다."
+    },
+    {
+      "id": 3,
+      "title": "초코송이",
+      "price": 900,
+      "img": "s2.jpg",
+      "description": "초코송이 먹기 좋게 딱 나왔습니다."
+    },
+    {
+      "id": 4,
+      "title": "홈런볼 초코맛",
+      "price": 1400,
+      "img": "s3.jpg",
+      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여"
+    },
+    {
+      "id": 5,
+      "title": "자갈치 문어맛",
+      "price": 1000,
+      "img": "s4.webp",
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능"
+    }
   ]
 }
