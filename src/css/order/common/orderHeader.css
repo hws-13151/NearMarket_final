@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+/* .jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.nm {
+  font-family: "Jua", sans-serif;
+  color: red;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.jum {
+  font-family: "Jua", sans-serif;
+  color: red;
+  font-size: 30px;
+  font-weight: 1000;
+  display: inline-block;
+  transform: translateY(-20%);
+}
+
+.k {
+  font-family: "Jua", sans-serif;
+  color: blue;
+  font-size: 30px;
+}
+
+.order-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 1600px;
+  height: 130px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.order-header-nav h1 > span {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gnb ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.gnb ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.gnb ul li:last-child {
+  margin-right: 0;
+}
+
+.gnb ul li img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.gnb ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.gnb ul li a:hover {
+  color: #ff6b00;
+}

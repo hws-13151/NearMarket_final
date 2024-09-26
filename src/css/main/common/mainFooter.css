@@ -1,0 +1,22 @@
+.footer{
+  width: 100%;
+  height: 200px;
+  
+  background-color: rgb(241, 242, 246);
+  display: flex;
+  justify-content: center;
+
+  box-shadow: inset 0 2px 0 rgb(221, 221, 221);;
+}
+
+.footer .footer-con{
+  width: 1600px;
+}
+
+.footer .footer-con #near{
+  font-size: 30px;
+}
+
+.footer .footer-con #call{
+  font-size: 40px;
+}

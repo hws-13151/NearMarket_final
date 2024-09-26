@@ -1,0 +1,10 @@
+{
+  "bestItems": [
+    {
+      "id": 1,
+      "title": "A상품",
+      "price": 10000,
+      "img": "k0.jpg"
+    }
+  ]
+}
