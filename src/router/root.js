@@ -2,18 +2,18 @@ import React, { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 const Loading = <div className="loading">Loading...</div>;
-//Main
+
+// Main
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
-const OrderVegetablePage = lazy(() =>
-  import("../pages/order/OrderVegetablePage")
-);
+
+// Order
+const OrderVegetablePage = lazy(() => import("../pages/order/OrderVegetablePage"));
+const OrderFruitPage = lazy(() => import('../pages/order/OrderFruitPage'));
 
 const root = createBrowserRouter([
   {
-    //main
-
     path: "/",
     element: (
       <Suspense fallback={Loading}>
@@ -46,6 +46,15 @@ const root = createBrowserRouter([
             <OrderVegetablePage />
           </Suspense>
         ),
+      },
+      {
+        path: "fruit",
+        element: (
+          <Suspense fallback={Loading}>
+            <OrderFruitPage />
+          </Suspense>
+        ),
+       
       },
     ],
   },
