@@ -1,5 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import OrderVegetable from "../components/order/OrderVegetable";
+import ordervegetablerouter from "./ordervegetablerouter";
+import orderfruitrouter from "./orderfruitrouter";
+import ordermeatrouter from "./ordermeatrouter";
+import ordersnackrouter from "./ordersnackrouter";
 
 const Loading = <div className="loading">Loading...</div>;
 
@@ -7,10 +12,6 @@ const Loading = <div className="loading">Loading...</div>;
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
-
-// Order
-const OrderVegetablePage = lazy(() => import("../pages/order/OrderVegetablePage"));
-const OrderFruitPage = lazy(() => import('../pages/order/OrderFruitPage'));
 
 const root = createBrowserRouter([
   {
@@ -40,22 +41,21 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "vegetable",
-        element: (
-          <Suspense fallback={Loading}>
-            <OrderVegetablePage />
-          </Suspense>
-        ),
+        path:'vegetable',
+        element: ordervegetablerouter()
       },
       {
-        path: "fruit",
-        element: (
-          <Suspense fallback={Loading}>
-            <OrderFruitPage />
-          </Suspense>
-        ),
-       
+        path:'fruit',
+        element: orderfruitrouter()
       },
+      {
+        path:'meat',
+        element: ordermeatrouter()
+      },
+      {
+        path:'snack',
+        element: ordersnackrouter()
+      }
     ],
   },
 ]);
