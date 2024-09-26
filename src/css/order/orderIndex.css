@@ -1,2 +1,6 @@
 @import url(common/orderHeader.css);
 @import url(common/orderFooter.css);
+@import url(../order/orderFruit.css);
+@import url(../order/ordermeat.css);
+@import url(../order/ordersnack.css);
+@import url(../order/ordervegetable.css);

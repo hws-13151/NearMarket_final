@@ -8,9 +8,11 @@ const MainHeader = () => {
     <>
       <div className="header">
         <div className="nav">
-          <div className="logo" onClick={navigate('/')}>
-            <img src="/" alt="logo"/>
-          </div>
+          <h1 className="logo" onClick={navigate('/')}>
+            <span className="nm">NM</span>
+            <span className="jum">.</span>
+            <span className="k">K</span>
+          </h1>
           <div className="gnb">
             <ul>
               <li>

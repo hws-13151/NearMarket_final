@@ -4,33 +4,39 @@
 
   display: flex;
   justify-content: center;
-
-  box-shadow: inset 0 -2px 0 black;
 }
 
 .header .nav{
   flex: 0 1 1600px;
   height: 130px;
 
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
 }
 
-.header .nav .logo{
-  border: 1px solid;
+.header .nav h1.logo{
+  /* border: 1px solid; */
   box-sizing: border-box;
   padding: 10px;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .header .nav .gnb{
-
+  width: auto;
 }
 
 .header .nav .gnb>ul{
   height: inherit;
   display: flex;
 
-  gap: 10vw;
+  gap: 5vw;
 
   font-size: 30px;
 

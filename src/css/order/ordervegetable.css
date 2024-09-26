@@ -1,0 +1,134 @@
+/* 컨테이너 스타일 */
+.order-vegetable {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.order-vegetable-con .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  color: black;
+}
+
+/* 총 갯수 표시 */
+.order-vegetable-con span {
+  display: block;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+/* Grid 설정: 가로 3칸, 세로 2칸 */
+.order-vegetable-con ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Grid 아이템 스타일 (li) */
+.order-vegetable-con ul li {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fafafa;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-vegetable-con ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 상단 이미지 스타일 */
+.order-vegetable-con ul li .top {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.order-vegetable-con ul li .top img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 하단 텍스트 부분 스타일 */
+.order-vegetable-con ul li .bottom {
+  padding: 15px;
+  text-align: center;
+  color: #555;
+}
+
+.order-vegetable-con ul li .bottom span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.order-vegetable-con ul li .bottom span:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-vegetable-con ul li .bottom span:nth-child(2) {
+  /* color: #ff6600; */
+  
+  font-size: 14px;
+}
+
+.order-vegetable-con ul li .bottom span:nth-child(3) {
+  font-size: 14px;
+  color: #777;
+}
+
+.order-vegetable-con ul li .bottom span:last-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #009578;
+}
+
+/* 반응형 처리 */
+@media (max-width: 1024px) {
+  .order-vegetable-con ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .order-vegetable-con ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bottom .delivery-order img {
+  width: 20px; 
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle; 
+}
+
+/* background-image를 사용할 경우의 스타일 */
+.bottom .delivery-order {
+  display: inline-block;
+  padding-left: 25px; /* 이미지 크기에 따라 여백 조정 */
+  background-image: url('../../../public/images/vegetable/deliveryicon.png');
+  background-size: 20px 20px; /* 이미지 크기를 조정 */
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 20px; /* 이미지 크기와 맞추기 위해 line-height 조정 */
+}
