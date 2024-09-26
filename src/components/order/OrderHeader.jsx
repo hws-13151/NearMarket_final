@@ -21,7 +21,7 @@ const OrderHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/"}>메인메뉴</Link>
+                <Link to={"/order"}>메인메뉴</Link>
               </li>
               <li>
                 <Link to={"/order/vegetable"}>
@@ -30,7 +30,7 @@ const OrderHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/order/meet"}>
+                <Link to={"/order/meat"}>
                   <img src="/images/orderheader/meat.png"></img>
                   고기
                 </Link>

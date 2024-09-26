@@ -1,8 +1,16 @@
-import React from 'react'
+import { lazy, Suspense } from "react";
+
+const Loading = <div className="loading">Loading...</div>;
+const OrderVegetablePage = lazy(()=> import('../pages/order/OrderVegetablePage'))
 
 const ordervegetablerouter = () => {
-  return (
-    <div>ordervegetablerouter</div>
+  return ([
+      {
+        path: '',
+        element: <Suspense fallback={Loading}><OrderVegetablePage /></Suspense>
+      }
+
+    ]
   )
 }
 

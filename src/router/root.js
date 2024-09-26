@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import OrderVegetable from "../components/order/OrderVegetable";
 import ordervegetablerouter from "./ordervegetablerouter";
 import orderfruitrouter from "./orderfruitrouter";
 import ordermeatrouter from "./ordermeatrouter";
-import ordersnackrouter from "./ordersnackrouter";
+import orderSnackRouter from "./orderSnackRouter";
+
 
 const Loading = <div className="loading">Loading...</div>;
 
@@ -34,30 +34,32 @@ const root = createBrowserRouter([
   },
   {
     path: "/order",
-    element: (
-      <Suspense fallback={Loading}>
-        <OrderLayout />
-      </Suspense>
-    ),
-    children: [
-      {
-        path:'vegetable',
-        element: ordervegetablerouter()
-      },
-      {
-        path:'fruit',
-        element: orderfruitrouter()
-      },
-      {
-        path:'meat',
-        element: ordermeatrouter()
-      },
-      {
-        path:'snack',
-        element: ordersnackrouter()
-      }
-    ],
+    element:  <Suspense fallback={Loading}> <OrderLayout /></Suspense>
   },
+  {
+    path: "/order/vegetable",
+    element:  <Suspense fallback={Loading}> <OrderLayout /></Suspense>,
+    children: ordervegetablerouter()
+  },
+  {
+    path: "/order/fruit",
+    element:  <Suspense fallback={Loading}> <OrderLayout /></Suspense>,
+    children: orderfruitrouter()
+  },
+  {
+    path: "/order/meat",
+    element:  <Suspense fallback={Loading}> <OrderLayout /></Suspense>,
+    children: ordermeatrouter()
+  },
+  {
+    path: "/order/snack",
+    element:  <Suspense fallback={Loading}> <OrderLayout /></Suspense>,
+    children: orderSnackRouter()
+  },
+
+
+
+
 ]);
 
 export default root;
