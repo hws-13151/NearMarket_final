@@ -32,6 +32,9 @@
 
 .header .nav .gnb{
   width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header .nav .gnb>ul{
@@ -41,6 +44,4 @@
   gap: 5vw;
 
   font-size: 30px;
-
-  padding: 2vw;
 }

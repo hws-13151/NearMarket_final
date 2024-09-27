@@ -97,10 +97,12 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.288);
   box-sizing: border-box;
+
+  background-color: red;
 }
 
 .autoGallery{
-  width: 100%;
+  width: 400%;
   height: inherit;
   box-sizing: border-box;
 
