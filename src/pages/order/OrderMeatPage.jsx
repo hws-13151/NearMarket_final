@@ -4,7 +4,7 @@ import OrderMeat from '../../components/order/OrderMeat'
 const OrderMeatPage = () => {
   return (
     <>
-        <OrderMeat />
+      <OrderMeat />
     </>
   )
 }
