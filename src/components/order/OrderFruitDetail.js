@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../slice/cartSlice3";
+import { addCart1 } from "../../slice/cartSlice1";
 
 const OrderFruitDetail = () => {
   const { id } = useParams();
@@ -44,7 +44,7 @@ const OrderFruitDetail = () => {
   const addCartFn = () => {
     if (fruitDetail) {
       dispatch(
-        addToCart({
+        addCart1({
           id: fruitDetail.id,
           title: fruitDetail.title,
           price: fruitDetail.price,
