@@ -23,15 +23,16 @@ const OrderVegetable = () => {
   },[])
 
 
+    
 
-    // const orderVegetableDetailFn=(e)=>{
+    const orderVegetableDetailFn=(e)=>{
 
 
-    // const eId=e.currentTarget.getAttribute('data-id')
+    const eId=e.currentTarget.getAttribute('data-id')
 
     
 
-    // navigate(`/order/vegetable/detail/${eId}`) };
+    navigate(`/order/vegetable/detail/${eId}`) };
 
 
   
@@ -48,8 +49,7 @@ const OrderVegetable = () => {
         <ul>
           {vegetable && vegetable.map((el,id)=>{
             return(
-              <li key={id}> 
-              {/* data-id={el.id} onClick={orderVegetableDetailFn} */}
+              <li key={id} data-id={el.id} onClick={orderVegetableDetailFn}>
 
                 <div className="top">
                   <img src={`/images/vegetable/${el.img}`} alt={el.img} />
@@ -57,7 +57,7 @@ const OrderVegetable = () => {
                 <div className="bottom">
                   <span>{el.title}</span>
                   <span className="delivery-order">
-                    <img src="/images/vegetable/deliveryicon" alt='배송주문' />
+                    <img src={`/images/vegetable/${el.rocket}`} alt= {el.rocket}/>로켓배송
                   </span>
                   <span>{el.memo}</span>
                   <span>{el.price}원</span>
