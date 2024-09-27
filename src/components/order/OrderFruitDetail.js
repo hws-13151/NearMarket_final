@@ -10,9 +10,7 @@ const OrderFruitDetail = () => {
   const [count, setCount] = useState(1);
   const [isPremium, setIsPremium] = useState(false); // 프리미엄 여부
   const [isOrganic, setIsOrganic] = useState(false); // 유기농 여부
-  const [showPopup, setShowPopup] = useState(false); // 팝업 모달 상태
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
@@ -41,21 +39,22 @@ const OrderFruitDetail = () => {
     return fruitDetail.price * count + additionalPrice; // 기본 가격 + 추가 가격
   };
 
-  const addCartFn = () => {
-    if (fruitDetail) {
-      dispatch(
-        addCart1({
-          id: fruitDetail.id,
-          title: fruitDetail.title,
-          price: fruitDetail.price,
-          count,
-          isPremium,
-          isOrganic,
-        })
-      );
-      setShowPopup(true); // 팝업창 띄우기
-    }
-  };
+  // const addCartFn = () => {
+  //   if (fruitDetail) {
+  //     dispatch(
+  //       addCart1({
+  //         id: fruitDetail.id,
+  //         img: fruitDetail.img,
+  //         title: fruitDetail.title,
+  //         price: fruitDetail.price,
+  //         count,
+  //         isPremium,
+  //         isOrganic,
+  //       })
+  //     );
+  //     setShowPopup(true); // 팝업창 띄우기
+  //   }
+  // };
 
   if (!fruitDetail) return <div>Loading...</div>;
 
@@ -103,22 +102,22 @@ const OrderFruitDetail = () => {
       </div>
       <div className="order-go">
         <button onClick={() => navigate(-1)}>이전페이지</button>
-        <button onClick={addCartFn}>장바구니</button>
+        <button >장바구니</button>
         <button>결제</button>
       </div>
 
       {/* 팝업 모달 */}
-      {showPopup && (
+      {/* {showPopup && (
         <div className="popup-modal">
           <div className="popup-content">
             <p>{fruitDetail.title}이(가) 장바구니에 추가되었습니다!</p>
             <button onClick={() => setShowPopup(false)}>쇼핑 계속하기</button>
-            <button onClick={() => navigate("/order/fruit/cart")}>
+            <button onClick={() => navigate("/order/cart")}>
               장바구니로 이동
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
