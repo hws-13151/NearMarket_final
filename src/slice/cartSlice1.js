@@ -9,7 +9,7 @@ const cartSlice1 = createSlice({
   initialState: initState,
   reducers: {
     addCart1: (state, action) => {
-      state.items[action.payload.id] = action.payload; // 상품 데이터를 상태에 저장
+      state.items.push(action.payload); // 상품 데이터를 상태에 저장
     },
   },
 });

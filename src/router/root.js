@@ -7,6 +7,8 @@ import orderSnackRouter from "./orderSnackRouter";
 
 const Loading = <div className="loading">Loading...</div>;
 
+const OrderCartPage1 = lazy(() => import("../pages/cart/CartListPage1"));
+
 // Main
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
@@ -39,6 +41,15 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
+  {
+    path: "/order/cart",
+    element: (
+      <Suspense fallback={Loading}>
+        <OrderCartPage1 />
+      </Suspense>
+    ),
+  },
+
   {
     path: "/order/vegetable",
     element: (
