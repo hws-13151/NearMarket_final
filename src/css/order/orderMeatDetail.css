@@ -1,6 +1,6 @@
 .order-meat-detail{
   width: 100%;
-  height: calc(100vh - 130px - 200px);
+  height: calc(100vh - 130px - 220px);
 
   display: flex;
   justify-content: center;
@@ -40,6 +40,8 @@
 
   display: flex;
   flex-direction: column;
+
+  padding: 10px;
 }
 
 .order-meat-detail .order-meat-detail-con .right .right-top{
@@ -87,6 +89,8 @@
   border: 1px solid #969696;
   background-color: white;
   color: black;
+
+  cursor: pointer;
   
 }
 
