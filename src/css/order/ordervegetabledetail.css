@@ -3,148 +3,240 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
-    background-color: #f5f5f5;
-    
-}
-
-
-.order-vegetable-detail-con {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-/* 좌측 이미지 섹션 */
-.order-vegetable-detail-con .left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items:center;
     padding: 20px;
-    border-right: 1px solid #e5e5e5;
-    
-}
-
-.order-vegetable-detail-con .left img {
-    width: 100%;
-    height: auto;
-    max-width: 350px;
-    border-radius: 10px;
-}
-
-
-
-.order-vegetable-detail-con .right {
-    flex: 2;
-    padding: 30px;
-}
-
-.vegetable-detail-item ul {
-    
-    padding: 0;
-}
-
-.vegetable-detail-item ul li {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
-}
-
-.vegetable-detail-item ul>li>h1 {
-    font-size: 25px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-.vegetable-detail-item span {
-    font-size: 14px;
-    color: #888;
-}
-
-
-
-.vegetable-detail-item ul>li:nth-child(4){
-    color: #888;
-}
-
-.vegetable-detail-item ul>li:nth-child(5){
-    font-size: 18px;
-    font-weight: bold;
-    color: #009578
-}
-
-
-.vegetable-detail-item ul>li:nth-child(6){
-    display: flex;
-    align-items: center;
-    justify-content:end;
-}
-
-.vegetable-detail-item ul>li:nth-child(6) button {
-    width: 40px;
-    height: 40px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.vegetable-detail-item ul>li:nth-child(6) button:hover {
-    background-color: #2980b9;
-}
-
-.vegetable-detail-item ul>li:nth-child(6) span {
-    font-size: 18px;
-    margin: 0 20px;
-    font-weight: bold;
-}
-
-
-.order-go {
+    background-color: #fff;
+  }
+  
+  .order-vegetable-detail .order-vegetable-detail-con {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-}
-
-.order-go button {
-    flex: 1;
-    padding: 15px;
-    background-color: #82c99d;
-    color: rgb(29, 29, 29);
-    border: none;
-    font-size: 18px;
-    border-radius: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition:all 0.3s ease;
-}
-
-.order-go button:hover {
-    background-color: #176836;
-}
-
-
-
-
-
-
-.detail-page {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #fff;
-    width: 100%;
+    width: 80%;
     max-width: 1200px;
-    border-radius: 10px;
+    background-color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    color: #555;
-    line-height: 10;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    gap: 30px;
+    box-sizing: border-box;
+  }
+  
+  .order-vegetable-detail-con .left img {
+    width: 500px; 
+    height: 500px; 
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .order-vegetable-detail-con .right {
+    flex: 1;
+    margin-left: 20px;
     
-}
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .top ul li {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .top ul> li:first-child span {
+    font-size: 15px;
+    color: #777;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .top ul> li:nth-child(2) h1 {
+    font-size: 30px;
+    color: #171616;
+    
+  }
+  .order-vegetable-detail-con .right .vegetable-detail-item .top ul> li:nth-child(3) h1 {
+    font-size: 40px;
+    color: #ef3f3f;
+  }
+  
+  .rocket, .sale, .coupon, .review {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #f8f8f8;
+  }
+  .sale{
+    background-color: rgb(114, 200, 147);
+  }
+  .coupon{
+    background-color: rgb(231, 75, 75);
+  }
+  .rocket{
+    background-color: rgb(255, 130, 150);
+  }
+  .review{
+    background-color: rgb(141, 114, 216);
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .top ul> li:nth-child(6){
+    color: #777;
+   
+  }
+  
+  
+  
+  
+  
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom {
+    margin-top: 50px;
+    box-sizing: border-box;
+    
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count {
+    display: flex;
+    align-items: center;
+    
+    border: 0.5px solid #d7d7d7a1;
+    box-sizing: border-box;
+    background-color: #fafbfbee;
+    border-radius: 5px;
+   
+    
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count ul {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count >ul>li:first-child span {
+    font-size: 15px;
+    color: #000000;
+    
+    
+  }
+  
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count >ul >li:nth-child(2) button {
+    padding: 10px 15px;
+    background-color: #f7f9fae9;
+    color: rgb(167, 161, 161);
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0.5px solid rgb(226, 223, 223);
+  }
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count >ul >li:nth-child(2) span {
+    padding: 10px 15px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0.5px solid rgb(226, 223, 223);
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .count ul li button:hover {
+    background-color: #d5d7d7;
+  }
+  
+  
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .counttotal {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .counttotal span:first-child {
+    font-size: 20px;
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  .order-vegetable-detail-con .right .vegetable-detail-item .bottom .counttotal span:last-child {
+    font-size: 22px;
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  
+  .order-vegetable-detail-con .right .order-go {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .order-vegetable-detail-con .right .order-go button:first-child {
+    padding: 12px 20px;
+    background-color: #ffffff;
+    color: #eb7a7a;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+    border: 0.5px solid #eb7a7a;
+  }
+  
+  .order-vegetable-detail-con .right .order-go button:nth-child(2) {
+    padding: 12px 20px;
+    background-color: #eb7a7a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  .order-vegetable-detail-con .right .order-go button:nth-child(3) {
+    padding: 12px 20px;
+    background-color: #eb7a7a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  .order-vegetable-detail-con .right .order-go button:nth-child(4) {
+    padding: 12px 20px;
+    background-color: #eb7a7a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  .order-vegetable-detail-con .right .order-go button:nth-child(2):hover {
+    background-color: #d68f8f;
+  }
+  .order-vegetable-detail-con .right .order-go button:nth-child(3):hover {
+    background-color: #d68f8f;
+  }
+  .order-vegetable-detail-con .right .order-go button:nth-child(4):hover {
+    background-color: #d68f8f;
+  }
+  
+  
+  
+  
+  .detail-page {
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 16px;
+  }

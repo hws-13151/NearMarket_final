@@ -64,7 +64,8 @@
       "price": 2000,
       "memo": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "img": "carrot.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["carrot.jpg","carrot2.jpg","carrot3.jpg","carrot4.jpg","carrot5.jpg"]
     },
     {
       "id": 2,
@@ -72,7 +73,8 @@
       "price": 5000,
       "memo": "자연을 담은 건강한 옥수수밭에서 수확한 자연의 찰옥수수",
       "img": "corn.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["corn.jpg","corn2.jpg","corn3.jpg","corn4.jpg","corn5.jpg"]
     },
     {
       "id": 3,
@@ -80,7 +82,8 @@
       "price": 1000,
       "memo": "경남 밀양에서 자란 달큰한 양파는 풍부한 일조량과 비옥한 땅에서 정성스럽게 키웠습니다",
       "img": "onion.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["onion.jpg","onion2.jpg","onion3.jpg","onion4.jpg","onion5.jpg"]
     },
     {
       "id": 4,
@@ -88,7 +91,9 @@
       "price": 4000,
       "memo": "물 맑고 공기 좋은 청정 자연을 그대로 담은 파프리카",
       "img": "paprica.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["paprica.jpg","paprica2.jpg","paprica3.jpg","paprica4.jpg"]
+
     },
     {
       "id": 5,
@@ -96,7 +101,8 @@
       "price": 10000,
       "memo": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["pumkin.jpg","pumkin2.jpg","pumkin3.jpg"]
     },
     {
       "id": 6,
@@ -104,7 +110,8 @@
       "price": 6000,
       "memo": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
       "img": "tomato.jpg",
-      "rocket":"rocket.png"
+      "rocket":"rocket.png",
+      "slideImage":["tomato.jpg","tomato2.jpg","tomato3.jpg"]
     }
   ],
 
