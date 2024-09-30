@@ -1,0 +1,142 @@
+.order-snack-detail {
+  width: 100%;
+  height: calc(100vh - 130px - 220px);
+  display: flex;
+  justify-content: center;
+}
+
+.order-snack-detail .order-snack-detail-con {
+  flex: 0 1 1600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-snack-detail .left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* 이미지를 왼쪽으로 정렬 */
+  align-items: center;
+  padding: 3vw;
+  box-sizing: border-box;
+}
+
+.order-snack-detail .left-img {
+  width: auto;
+}
+
+.order-snack-detail .left-img img {
+  width: 100%;
+  display: block;
+}
+
+.order-snack-detail .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.order-snack-detail .right-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-snack-detail .right-top ul {
+  width: 100%;
+}
+
+.order-snack-detail .right-top ul li {
+  padding: 10px 0;
+}
+
+.order-snack-detail .right-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-snack-detail .bottom-price {
+  box-sizing: border-box;
+}
+
+.order-snack-detail .bottom-price ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.order-snack-detail .bottom-price ul li {
+  padding: 10px 3vw;
+  background-color: #dadada5e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-snack-detail .bottom-price ul li button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #969696;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-snack-detail .bottom-price ul li button:hover {
+  background-color: #f0f0f0;
+}
+
+.order-snack-detail .bottom-price ul li span {
+  width: 40px;
+  height: 28px;
+  border: 1px solid #969696;
+  background-color: white;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.order-snack-detail .bottom-price ul li p {
+  width: 100%;
+  text-align: end;
+  font-weight: bold;
+}
+
+.order-snack-detail .bottom-payment ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.order-snack-detail .bottom-payment ul li {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-snack-detail .bottom-payment ul li h1 {
+  color: red;
+}
+
+.order-snack-detail .bottom-payment ul li button {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-snack-detail .bottom-payment ul li button:hover {
+  background-color: #f0f0f0;
+}
+
+.order-snack-detail .bottom-payment ul li button:nth-child(2) {
+  background-color: black;
+  color: white;
+}
+
+.order-snack-detail .bottom-payment ul li button:nth-child(3) {
+  background-color: red;
+  color: white;
+}
