@@ -14,7 +14,8 @@ const orderData = {
 
 const OrderSnackDetail = (param) => {
   // param을 그대로 받음
-  const [orderItem, setOrderItem] = useState(orderData);
+  const [snackItem, setSnackItem] = useState(orderData);
+  const [snackcount, setSnackCount] = useState(1);
 
   useEffect(() => {
     const orderDetailFn = async () => {
@@ -26,7 +27,7 @@ const OrderSnackDetail = (param) => {
           `http://localhost:3001/snackItems?id=${orderId}` // id로 데이터 요청
         );
         console.log(res.data, " data");
-        setOrderItem(res.data[0]);
+        setSnackItem(res.data[0]);
       } catch (err) {
         alert(err);
       }
@@ -41,24 +42,95 @@ const OrderSnackDetail = (param) => {
 
   const addCartFn2 = () => {
     const setItemCart = {
-      id: orderItem.id,
-      title: orderItem.title,
-      price: orderItem.price,
-      img: `/images/ordersnack/${orderItem.img}`,
+      id: snackItem.id,
+      title: snackItem.title,
+      price: snackItem.price,
+      description: snackItem.description,
+      img: `/images/ordersnack/${snackItem.img}`,
+      count: snackcount,
     };
     dispatch(addCart1(setItemCart));
     alert("장바구니로 이동합니다.");
     navigate("/order/cart");
   };
 
+  const IncrementFn = () => {
+    setSnackCount(snackcount + 1);
+  };
+
+  const DecrementFn = () => {
+    if (snackcount === 1) {
+      setSnackCount(1);
+    } else {
+      setSnackCount(snackcount - 1);
+    }
+  };
+
   return (
     <>
-      {console.log(orderItem)}
-      <img src={`/images/ordersnack/${orderItem.img}`} alt={orderItem.title} />
-      <h2>{orderItem.title}</h2>
-      <p>{orderItem.description}</p>
-      <span>{orderItem.price}원</span>
-      <button onClick={addCartFn2}>장바구니</button>
+      {console.log(snackItem)}
+      <div className="order-snack-detail">
+        <div className="order-snack-detail-con">
+          <div className="left">
+            <div className="left-img">
+              <img
+                src={`/images/ordersnack/${snackItem.img}`}
+                alt={snackItem.title}
+              />
+            </div>
+            <div className="right">
+              <div className="right-top">
+                <ul>
+                  <li>NM.K</li>
+                </ul>
+                <li>
+                  <h1>{snackItem.title}</h1>
+                </li>
+                <li>
+                  <h1>{snackItem.price}원</h1>
+                </li>
+                <li>
+                  <p>상품 설명: {snackItem.description}</p>
+                </li>
+              </div>
+              <div className="right-bottom">
+                <div className="bottom">
+                  <div className="bottom-price">
+                    <ul>
+                      <li>{snackItem.title}</li>
+                      <li>
+                        <button onClick={IncrementFn}> + </button>
+                        <span>{snackcount}</span>
+                        <button onClick={DecrementFn}> - </button>
+                        <p>{snackItem.price * snackcount}원</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bottom-payment">
+                    <ul>
+                      <li>
+                        <h1>{snackItem.price * snackcount}원</h1>
+                      </li>
+                      <hr />
+                      <li>
+                        <button
+                          onClick={() => {
+                            navigate(-1);
+                          }}
+                        >
+                          이전페이지
+                        </button>
+                        <button onClick={addCartFn2}>장바구니</button>
+                        <button>결제</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

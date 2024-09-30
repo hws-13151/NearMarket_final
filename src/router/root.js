@@ -40,14 +40,16 @@ const root = createBrowserRouter([
         <OrderLayout />
       </Suspense>
     ),
-  },
-  {
-    path: "/order/cart",
-    element: (
-      <Suspense fallback={Loading}>
-        <OrderCartPage1 />
-      </Suspense>
-    ),
+    children: [
+      {
+        path: "cart",
+        element: (
+          <Suspense fallback={Loading}>
+            <OrderCartPage1 />
+          </Suspense>
+        ),
+      },
+    ],
   },
 
   {
