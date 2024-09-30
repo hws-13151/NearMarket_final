@@ -9,7 +9,8 @@ const detailData={
     price:'',
     memo:'',
     img:'',
-    rocket:''
+    rocket:'',
+    slideImage:[]
 
 }
 
@@ -18,6 +19,8 @@ const OrderVegetableDetail = (param) => {
 
     const [vegetableDetail,setVegetableDetail]= useState(detailData)
     const [vegetableCount,setVegetableCount]=useState(1)
+    const [slide,setSlide]=useState(0)
+    
 
     const navigate=useNavigate()
 
@@ -49,62 +52,90 @@ const OrderVegetableDetail = (param) => {
     }
 
 
+    useEffect(() => {
+        const slideEffect = setInterval(() => {
+            setSlide((prevSlide) =>
+                prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1);
+        }, 3000);
+    
+        
+    return () => clearInterval(slideEffect);
+     }, [vegetableDetail.slideImage.length]);
 
 
 
 
 
 
-
-
-
-  return (
-   <>
-   <div className="order-vegetable-detail">
-    <div className="order-vegetable-detail-con">
-        <div className="left">
-            <img src={`/images/vegetable/${vegetableDetail.img}`} alt={vegetableDetail.img} />
-            
+     return (
+        <>
+        <div className="order-vegetable-detail">
+         <div className="order-vegetable-detail-con">
+             <div className="left">
+             {vegetableDetail.slideImage.length > 0 && (<img src={`/images/vegetable/${vegetableDetail.slideImage[slide]}`} alt={vegetableDetail.slideImage[slide]}/>)}  
+             </div>
+             <div className="right">
+                 <div className="vegetable-detail-item">
+                     <div className="top">
+                         <ul>
+                         <li>
+                             <span>NM.K </span>
+                         </li>
+                         <li>
+                             <h1>{vegetableDetail.title}</h1>
+                         </li>
+                         <li>
+                             <h1>{vegetableDetail.price}원</h1>
+                         </li>
+                         <li>
+                             <div className="rocket">로켓배송</div>
+                             <div className="sale">세일</div>
+                             <div className="coupon">쿠폰</div>
+                         </li>
+                         <li>
+                             <div className="review">고객리뷰</div>
+                         </li>
+                         <li>{vegetableDetail.memo}</li>
+                         </ul>
+                     </div>
+                     <div className="bottom">
+                         <div className="count">
+                             <ul>
+                             <li>
+                                 <span>구매수량</span>
+                             </li>
+                             <li>
+                             <button onClick={vegetableIncrementFn}>+</button>
+                             <span>{vegetableCount}</span>
+                             <button onClick={vegetableDecrementFn}>-</button>
+                             </li>
+                             </ul>
+                         </div>
+                         <div className="counttotal">
+                             <span>상품금액 합계</span>
+                             <span>{vegetableDetail.price*vegetableCount} 원</span>
+                         </div>
+                     </div>
+                     </div>
+                     <div className="order-go">
+                         <button onClick={()=>{
+                             navigate(-1)
+                         }}>이전페이지</button>
+                         <button>장바구니</button>
+                         <button>결제</button>
+                         <button>좋아요</button>
+                     </div>
+                     
+                
+             </div>
+         </div>
+         <div className="detail-page">
+             상세설명
+     
+         </div>
         </div>
-        <div className="right">
-            <div className="vegetable-detail-item">
-                <ul>
-                    <li>
-                        <span>NM.K </span>
-                    </li>
-                    <li>
-                        <h1>{vegetableDetail.title}</h1>
-                    </li>
-                    <li>
-                        로켓배송
-                    </li>
-                    <li>{vegetableDetail.memo}</li>
-                    <li>
-                        상품가격 : {vegetableDetail.price*vegetableCount}
-                    </li>
-                    <li>
-                        <button onClick={vegetableIncrementFn}>+</button>
-                        <span>{vegetableCount}</span>
-                        <button onClick={vegetableDecrementFn}>-</button>
-                    </li>
-                </ul>
-                <div className="order-go">
-                    <button onClick={()=>{
-                        navigate(-1)
-                    }}>이전페이지</button>
-                    <button>장바구니</button>
-                    <button>결제</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="detail-page">
-        상세설명
-
-    </div>
-   </div>
-   </>
-  )
+        </>
+       )
 }
 
 export default OrderVegetableDetail
