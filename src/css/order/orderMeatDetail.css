@@ -58,6 +58,10 @@
   padding: 10px 0;
 }
 
+.order-meat-detail .order-meat-detail-con .right .right-top>ul>li h3{
+  display: inline;
+}
+
 .order-meat-detail .order-meat-detail-con .right .right-bottom{
   width: 100%;
   display: flex;
@@ -128,6 +132,15 @@
   display: flex;
   justify-content: end;
 
+}
+
+.order-meat-detail .order-meat-detail-con .right .right-bottom .bottom-payment>ul>li p{
+  width: 60px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .order-meat-detail .order-meat-detail-con .right .right-bottom .bottom-payment>ul>li h1{
