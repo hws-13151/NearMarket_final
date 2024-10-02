@@ -29,16 +29,37 @@ const authSlice = createSlice({
             state.isLogin =false
 
         }
+    },
+    extraReducers:(builder)=>{
+        builder.addCase(asyncAuthMemberFn.pending,(state,action)=>{
+            state.status='Pending'
+        })
+        builder.addCase(asyncAuthMemberFn.fulfilled,(state,action)=>{
+            state.memberList=action.payload
+            state.status='Complete'
+        })
+        builder.addCase(asyncAuthMemberFn.rejected,(state,action)=>{
+            state.status= 'Fail'
+        })
     }
- 
-
 
 })
 
 
 
 
-
+export const asyncAuthMemberFn = createAsyncThunk(`auth/asyncAuthMemberFn`,
+    async()=>{
+        try{
+            const res = await axios.get('http://localhost:3001/members')
+            const data = res.data
+            return data
+        }catch(err){
+            alert(err)
+            return
+        }
+    }
+)
  
 
 export const {loginUserFn, logOutFn} =authSlice.actions
