@@ -21,18 +21,13 @@
     color: #333;
 }
 
-.join .join-con ul {
-    list-style: none;
-    padding: 0;
-}
-
 .join .join-con ul li {
     margin-bottom: 15px;
 }
 
 .join .join-con ul li input[type="text"],
-input[type="password"],
-select {
+input[type="password"],select
+ {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -43,8 +38,8 @@ select {
 }
 
 .join .join-con ul li input[type="text"]:focus,
-input[type="password"]:focus,
-select:focus {
+input[type="password"]:focus
+ {
     border-color: #b1b3b6;
     outline: none;
 }
@@ -65,15 +60,10 @@ select:focus {
     background-color: #7d92a8;
 }
 
-.join .join-con ul li button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
 .join .join-con ul li button:last-child {
     background-color: #6c757d;
 }
 
 .join .join-con ul li button:last-child:hover {
-    background-color: #5a6268;
+    background-color: #585f64;
 }
