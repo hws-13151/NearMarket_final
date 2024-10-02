@@ -49,10 +49,10 @@ const OrderHeader = () => {
               </li>
 
               <li>
-                <Link to={"/login"}>로그인</Link>
+                <Link to={"/auth/login"}>로그인</Link>
               </li>
               <li>
-                <Link to={"/join"}>회원가입</Link>
+                <Link to={"/auth/join"}>회원가입</Link>
               </li>
             </ul>
           </div>

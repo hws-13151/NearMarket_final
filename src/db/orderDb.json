@@ -188,5 +188,37 @@
       "img":"meat5.jpg",
       "explanation":"깊은 감칠맛의 엄선된 1++ 한우"
     }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "userEmail": "a1@email.com",
+      "userPw": "1111",
+      "age": "10",
+      "userName": "철수",
+      "address": "서울시 노원구",
+      "phoneNumber": "010123456789",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "2",
+      "userEmail": "a2@email.com",
+      "userPw": "1111",
+      "age": "10",
+      "userName": "영희",
+      "address": "서울시 노원구",
+      "phoneNumber": "010123456789",
+      "role": "ROLE_ADMIN"
+    },
+    {
+      "id": "3",
+      "userEmail": "a3@email.com",
+      "userPw": "1111",
+      "age": "10",
+      "userName": "수지",
+      "address": "서울시 노원구",
+      "phoneNumber": "010123456789",
+      "role": "ROLE_MEMBER"
+    }
   ]
 }

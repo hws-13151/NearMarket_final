@@ -22,10 +22,10 @@ const MainHeader = () => {
                 <Link  k to={"/api"}>매장찾기</Link>
               </li>
               <li>
-                <Link  k to={"/login"}>로그인</Link>
+                <Link  k to={"/auth/login"}>로그인</Link>
               </li>
               <li>
-                <Link  k to={"/join"}>회원가입</Link>
+                <Link  k to={"/auth/join"}>회원가입</Link>
               </li>
             </ul>
           </div>
