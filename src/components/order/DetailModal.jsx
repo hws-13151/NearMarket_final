@@ -15,8 +15,8 @@ const navigate = useNavigate()
             <span className="close" onClick={clostFn}>X</span>
           </div>
           <div className="modal-body">
+            <p>장바구니에 추가했습니다.</p>
             <ul>
-              <li>장바구니에 추가했습니다.</li>
               <li onClick={()=>{
                 navigate(-1)
               }}>계속 쇼핑하기</li>  
