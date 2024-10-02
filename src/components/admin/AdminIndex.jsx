@@ -1,17 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AdminIndex = () => {
+
+  const navigate = useNavigate()
+
   return (
     <>
       <div className="admin-index">
         <div className="admin-index-con">
           <ul>
-            <li>회원정보</li>
-            <li>채소코너 아이템</li>
-            <li>고기코너 아이템</li>
-            <li>과일코너 아이템</li>
-            <li>과자코너 아이템</li>
-            <li>상품등록 바로가기</li>
+            <li onClick={()=>{navigate('/admin/members')}}><p>회원정보</p></li>
+            <li onClick={()=>{navigate('/admin/vegetable')}}><p>채소코너 아이템</p></li>
+            <li onClick={()=>{navigate('/admin/meat')}}><p>고기코너 아이템</p></li>
+            <li onClick={()=>{navigate('/admin/fruit')}}><p>과일코너 아이템</p></li>
+            <li onClick={()=>{navigate('/admin/snack')}}><p>과자코너 아이템</p></li>
+            <li onClick={()=>{navigate('/admin/produtcsInsert')}}><p>상품등록 바로가기</p></li>
           </ul>
         </div>
       </div>
