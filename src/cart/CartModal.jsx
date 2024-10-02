@@ -1,45 +1,69 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addCart1, updateCartItem } from "../../src/slice/cartSlice1";
+import "../css/cart/cartModal.css"; // 외부 CSS 파일을 임포트
 
-const CartModal = ({ item, closeModal, updateItem }) => {
-  const [count, setCount] = useState(item.count);
+const CartModal = ({ modalItem, setIsModalOpen }) => {
+  const [itemCount, setItemCount] = useState(modalItem.count); // 모달에서 초기 수량 설정
 
-  // 수량 증가 함수
-  const increaseCount = () => {
-    setCount(count + 1);
+  const dispatch = useDispatch();
+
+  const closeFn = () => {
+    setIsModalOpen(false); // 모달 닫기
   };
 
-  // 수량 감소 함수
-  const decreaseCount = () => {
-    if (count > 1) {
-      setCount(count - 1);
+  const incrementFn = () => {
+    setItemCount(itemCount + 1); // 수량 증가
+  };
+
+  const decrementFn = () => {
+    if (itemCount > 1) {
+      setItemCount(itemCount - 1); // 수량 감소
     }
   };
 
-  // 업데이트 함수
-  const handleUpdate = () => {
-    updateItem({ ...item, count });
-    closeModal();
+  const addCartFn = () => {
+    const item = {
+      id: modalItem.id,
+      title: modalItem.title,
+      price: modalItem.price,
+      img: modalItem.img,
+      count: itemCount, // 업데이트한 수량
+    };
+    console.log("업데이트할 아이템:", item); // 로그 추가
+    dispatch(updateCartItem(item)); // 장바구니 아이템 수량 업데이트
+    closeFn(); // 모달 닫기
   };
-
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>상품 상세정보</h2>
-        <img src={item.img} alt={item.img} />
-        <p>상품명: {item.title}</p>
-        <p>설명: {item.description}</p>
-        <p>가격: {item.price}</p>
-        <p>총금액: {count * item.price}</p>
-
-        <div className="quantity-controls">
-          <button onClick={decreaseCount}>-</button>
-          <span>{count}</span>
-          <button onClick={increaseCount}>+</button>
+    <div className="cart-modal">
+      <div className="cart-modal-con">
+        <span className="close" onClick={closeFn}>
+          X
+        </span>
+        <div className="top">
+          <img src={modalItem.img} alt={modalItem.title} />
         </div>
-
-        <div className="modal-buttons">
-          <button onClick={handleUpdate}>수정하기</button>
-          <button onClick={closeModal}>닫기</button>
+        <div className="bottom">
+          <div className="b-title">
+            <span>상품명: {modalItem.title}</span>
+            <span>가격: {modalItem.price}원</span>
+          </div>
+          <div className="sum">
+            <p>
+              <button onClick={decrementFn}>-</button>
+              <span className="count">{itemCount}</span>
+              <button onClick={incrementFn}>+</button>
+            </p>
+            <p>
+              <span className="sum-price">
+                총합계: {modalItem.price * itemCount} 원
+              </span>
+              <button onClick={addCartFn} className="add-btn">
+                장바구니 업데이트
+              </button>
+              <button onClick={closeFn}>닫기</button>
+            </p>
+          </div>
         </div>
       </div>
     </div>

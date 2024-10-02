@@ -4,13 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
 
 const OrderHeader = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+  console.log(cartItems);
+  const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
 
-  const loginUser = useSelector(state=> state.auth.loginUser)
-  const isLogin = useSelector(state=> state.auth.isLogin)
+  const loginUser = useSelector((state) => state.auth.loginUser);
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
-  const dispatch=useDispatch()
-  const navigate=useNavigate()
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -28,6 +30,9 @@ const OrderHeader = () => {
               <li>
                 <Link to={"/order/cart"}>
                   <img src="/images/orderheader/Ordercart.png" alt="cart" />
+                  {cartItemCount > 0 && ( // 장바구니에 아이템이 있으면 알림 배지 표시
+                    <span className="cart-badge">{cartItemCount}</span>
+                  )}
                 </Link>
               </li>
               <li>
@@ -59,23 +64,33 @@ const OrderHeader = () => {
               </li>
 
               <li>
-                {!isLogin ? 
-                <Link to={"/auth/login"}>로그인</Link> :
-                <Link onClick={(e)=>{
-                  e.preventDefault()
-                  dispatch(logOutFn())
-                  alert("로그아웃 합니다")
-                  navigate(0)
-                }}>로그아웃</Link>
-                }
+                {!isLogin ? (
+                  <Link to={"/auth/login"}>로그인</Link>
+                ) : (
+                  <Link
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(logOutFn());
+                      alert("로그아웃 합니다");
+                      navigate(0);
+                    }}
+                  >
+                    로그아웃
+                  </Link>
+                )}
               </li>
               <li>
-                {!isLogin ?
-                <Link to={"/auth/join"}>회원가입</Link> :
-                <Link to={'/auth/detail'}>{loginUser[0].userName}님</Link>
-                }
+                {!isLogin ? (
+                  <Link to={"/auth/join"}>회원가입</Link>
+                ) : (
+                  <Link to={"/auth/detail"}>{loginUser[0].userName}님</Link>
+                )}
               </li>
-              {isLogin && <li><Link to={`/admin`}>ADMIN</Link></li>}
+              {isLogin && (
+                <li>
+                  <Link to={`/admin`}>ADMIN</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
