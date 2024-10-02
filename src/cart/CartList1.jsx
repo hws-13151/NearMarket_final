@@ -1,75 +1,86 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteCart, updateCartItem } from "../../src/slice/cartSlice1"; // 수량 업데이트 액션 추가
-import CartModal from "./CartModal"; // 모달 컴포넌트 이름 변경
+import { deleteCart } from "../../src/slice/cartSlice1";
+import CartModal from "./CartModal";
 
 const CartList1 = () => {
   const cartItems = useSelector((state) => state.cart.items);
-  const [selectedItem, setSelectedItem] = useState(null); // 선택한 아이템 상태
-  const [modalOpen, setModalOpen] = useState(false); // 모달 열림 상태
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   let totalPrice = 0;
 
   cartItems.forEach((item) => {
     totalPrice += item.price * item.count;
   });
 
-  // 모달 열기 함수
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태
+  const [modalItem, setModalItem] = useState(null); // 모달에 띄울 아이템 정보
+
+  // 모달을 여는 함수
   const openModal = (item) => {
-    setSelectedItem(item);
-    setModalOpen(true);
+    setModalItem(item);
+    setIsModalOpen(true);
   };
 
-  // 모달 닫기 함수
-  const closeModal = () => {
-    setModalOpen(false);
-    setSelectedItem(null);
+  // 결제 페이지로 이동하면서 장바구니 데이터를 전달하는 함수
+  const goToPayment = () => {
+    navigate("/order/payment", { state: { cartItems, totalPrice } });
+  };
+
+  // 삭제 확인 메시지
+  const confirmDelete = (id) => {
+    const isConfirmed = window.confirm("정말로 삭제하시겠습니까?");
+    if (isConfirmed) {
+      dispatch(deleteCart(id)); // 삭제 진행
+    }
   };
 
   return (
     <div className="cart-list">
       <div className="cart-list-con">
-        <h3 className="title">장바구니 목록</h3>
+        <h3 className="cart-title">장바구니 목록</h3>
+
         <div className="cart-item-con">
           {cartItems &&
-            cartItems.map((el, idx) => {
-              return (
-                <div className="cart-item" key={idx}>
-                  <div className="top">
-                    <img
-                      src={el.img}
-                      alt={el.img}
-                      onClick={() => openModal(el)} // 이미지 클릭 시 모달 열기
-                    />
-                  </div>
-                  <div className="bottom">
+            cartItems.map((el, idx) => (
+              <div className="cart-item" key={idx}>
+                <div className="cart-item-top">
+                  <img src={el.img} alt={el.img} />
+                  <button
+                    onClick={() => openModal(el)}
+                    className="cart-details-button"
+                  >
+                    상세정보
+                  </button>
+                </div>
+                <div className="cart-item-bottom">
+                  <div className="cart-details-container">
                     <span>상품명: {el.title}</span>
-                    <span>설명: {el.description}</span>
                     <span>가격: {el.price}</span>
                     <span>갯수: {el.count}</span>
                     <span>총금액: {el.count * el.price}</span>
+                  </div>
+                  <div className="cart-actions-container">
                     <span
-                      className="delete-cart"
-                      onClick={() => {
-                        dispatch(deleteCart(el.id));
-                      }}
+                      className="cart-delete"
+                      onClick={() => confirmDelete(el.id)} // 삭제 확인 후 삭제
                     >
                       X
                     </span>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
         </div>
 
         {cartItems.length > 0 ? (
-          <div className="payment">
-            <div className="payment-sub">
-              <div className="sum-price"> 총합계 : {totalPrice} 원</div>
-              <div className="order-result">
-                <button onClick={() => navigate("/order/payment")}>결제</button>
+          <div className="cart-payment">
+            <div className="cart-payment-sub">
+              <div className="cart-sum-price"> 총합계 : {totalPrice} 원</div>
+              <div className="cart-order-result">
+                <button onClick={goToPayment}>결제</button>
               </div>
             </div>
           </div>
@@ -80,18 +91,15 @@ const CartList1 = () => {
             </h1>
           </div>
         )}
-      </div>
 
-      {/* 모달 컴포넌트 렌더링 */}
-      {modalOpen && (
-        <CartModal
-          item={selectedItem}
-          closeModal={closeModal}
-          updateItem={
-            (updatedItem) => dispatch(updateCartItem(updatedItem)) // 수량 변경된 상품 업데이트
-          }
-        />
-      )}
+        {/* 모달 창 */}
+        {isModalOpen && (
+          <CartModal
+            modalItem={modalItem}
+            setIsModalOpen={setIsModalOpen} // 모달 닫기
+          />
+        )}
+      </div>
     </div>
   );
 };
