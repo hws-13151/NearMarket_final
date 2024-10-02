@@ -72,14 +72,9 @@ const OrderHeader = () => {
               <li>
                 {!isLogin ?
                 <Link to={"/auth/join"}>회원가입</Link> :
-                <></>
+                <Link to={'/auth/detail'}>{loginUser[0].userName}님</Link>
                 }
               </li>
-              {!isLogin ? <></> :
-              <li>
-                <Link to={'/auth/detail'}>{loginUser[0].userName}님</Link>
-              </li>
-              }
               {isLogin && <li><Link to={`/admin`}>ADMIN</Link></li>}
             </ul>
           </div>
