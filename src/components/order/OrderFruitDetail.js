@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
 
-const OrderFruitDetail = () => {
-  const { id } = useParams();
+const OrderFruitDetail = (param) => { 
+  const navigate = useNavigate();
   const [fruitDetail, setFruitDetail] = useState(null);
   const [count, setCount] = useState(1);
-  const [isPremium, setIsPremium] = useState(false); // 프리미엄 여부
-  const [isOrganic, setIsOrganic] = useState(false); // 유기농 여부
-  const navigate = useNavigate();
+  const [isPremium, setIsPremium] = useState(false);
+  const [isOrganic, setIsOrganic] = useState(false);
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
+      const fruitId = param.param.id; 
       try {
-        const res = await axios.get(`http://localhost:3001/fruitItems/${id}`);
+        const res = await axios.get(`http://localhost:3001/fruitItems/${fruitId}`);
         setFruitDetail(res.data);
       } catch (err) {
         alert(err);
       }
     };
     fetchFruitDetail();
-  }, [id]);
+  }, [param.param.id]); 
 
   const fruitIncrementFn = () => {
     setCount(count + 1);
@@ -34,28 +35,30 @@ const OrderFruitDetail = () => {
 
   const calculateTotalPrice = () => {
     let additionalPrice = 0;
-    if (isPremium) additionalPrice += 3000 * count; // 프리미엄 옵션이 선택되면 과일 개수에 따라 추가
-    if (isOrganic) additionalPrice += 2000 * count; // 유기농 옵션이 선택되면 과일 개수에 따라 추가
-    return fruitDetail.price * count + additionalPrice; // 기본 가격 + 추가 가격
+    if (isPremium) additionalPrice += 3000 * count; // 프리미엄 옵션 추가
+    if (isOrganic) additionalPrice += 2000 * count; // 유기농 옵션 추가
+    return fruitDetail.price * count + additionalPrice; 
   };
 
-  // const addCartFn = () => {
-  //   if (fruitDetail) {
-  //     dispatch(
-  //       addCart1({
-  //         id: fruitDetail.id,
-  //         img: fruitDetail.img,
-  //         title: fruitDetail.title,
-  //         price: fruitDetail.price,
-  //         count,
-  //         isPremium,
-  //         isOrganic,
-  //       })
-  //     );
-  //     setShowPopup(true); // 팝업창 띄우기
-  //   }
-  // };
-
+  const addCartFn3 = () => {
+    if (fruitDetail) {
+      const totalPrice = calculateTotalPrice(); // 총 가격 
+      dispatch(
+        addCart1({
+          id: fruitDetail.id,
+          img: `/images/fruit/${fruitDetail.img}`,
+          title: fruitDetail.title,
+          price: totalPrice, 
+          count,
+          isPremium,
+          isOrganic,
+        })
+      );
+      alert(`${fruitDetail.title}이(가) 장바구니에 추가되었습니다!`);
+      navigate("/order/cart");
+    }
+  };
+  
   if (!fruitDetail) return <div>Loading...</div>;
 
   return (
@@ -67,12 +70,12 @@ const OrderFruitDetail = () => {
           </li>
           <li>
             <img
-              src={`/images/fruit/${fruitDetail.img}`}
+              src={`/images/fruit/${fruitDetail.img}`} 
               alt={fruitDetail.title}
             />
           </li>
           <li>{fruitDetail.des}</li>
-          <li>{calculateTotalPrice().toLocaleString()}원</li>
+          <li>{calculateTotalPrice().toLocaleString()}원</li> 
           <li>
             <button onClick={fruitIncrementFn}>+</button>
             <span>{count}</span>
@@ -102,22 +105,9 @@ const OrderFruitDetail = () => {
       </div>
       <div className="order-go">
         <button onClick={() => navigate(-1)}>이전페이지</button>
-        <button >장바구니</button>
+        <button onClick={addCartFn3}>장바구니</button>
         <button>결제</button>
       </div>
-
-      {/* 팝업 모달 */}
-      {/* {showPopup && (
-        <div className="popup-modal">
-          <div className="popup-content">
-            <p>{fruitDetail.title}이(가) 장바구니에 추가되었습니다!</p>
-            <button onClick={() => setShowPopup(false)}>쇼핑 계속하기</button>
-            <button onClick={() => navigate("/order/cart")}>
-              장바구니로 이동
-            </button>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };
