@@ -64,8 +64,14 @@
       "price": 2000,
       "memo": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "img": "carrot.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["carrot.jpg","carrot2.jpg","carrot3.jpg","carrot4.jpg","carrot5.jpg"]
+      "rocket": "rocket.png",
+      "slideImage": [
+        "carrot.jpg",
+        "carrot2.jpg",
+        "carrot3.jpg",
+        "carrot4.jpg",
+        "carrot5.jpg"
+      ]
     },
     {
       "id": 2,
@@ -73,8 +79,14 @@
       "price": 5000,
       "memo": "자연을 담은 건강한 옥수수밭에서 수확한 자연의 찰옥수수",
       "img": "corn.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["corn.jpg","corn2.jpg","corn3.jpg","corn4.jpg","corn5.jpg"]
+      "rocket": "rocket.png",
+      "slideImage": [
+        "corn.jpg",
+        "corn2.jpg",
+        "corn3.jpg",
+        "corn4.jpg",
+        "corn5.jpg"
+      ]
     },
     {
       "id": 3,
@@ -82,8 +94,14 @@
       "price": 1000,
       "memo": "경남 밀양에서 자란 달큰한 양파는 풍부한 일조량과 비옥한 땅에서 정성스럽게 키웠습니다",
       "img": "onion.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["onion.jpg","onion2.jpg","onion3.jpg","onion4.jpg","onion5.jpg"]
+      "rocket": "rocket.png",
+      "slideImage": [
+        "onion.jpg",
+        "onion2.jpg",
+        "onion3.jpg",
+        "onion4.jpg",
+        "onion5.jpg"
+      ]
     },
     {
       "id": 4,
@@ -91,9 +109,13 @@
       "price": 4000,
       "memo": "물 맑고 공기 좋은 청정 자연을 그대로 담은 파프리카",
       "img": "paprica.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["paprica.jpg","paprica2.jpg","paprica3.jpg","paprica4.jpg"]
-
+      "rocket": "rocket.png",
+      "slideImage": [
+        "paprica.jpg",
+        "paprica2.jpg",
+        "paprica3.jpg",
+        "paprica4.jpg"
+      ]
     },
     {
       "id": 5,
@@ -101,8 +123,12 @@
       "price": 10000,
       "memo": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["pumkin.jpg","pumkin2.jpg","pumkin3.jpg"]
+      "rocket": "rocket.png",
+      "slideImage": [
+        "pumkin.jpg",
+        "pumkin2.jpg",
+        "pumkin3.jpg"
+      ]
     },
     {
       "id": 6,
@@ -110,11 +136,14 @@
       "price": 6000,
       "memo": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
       "img": "tomato.jpg",
-      "rocket":"rocket.png",
-      "slideImage":["tomato.jpg","tomato2.jpg","tomato3.jpg"]
+      "rocket": "rocket.png",
+      "slideImage": [
+        "tomato.jpg",
+        "tomato2.jpg",
+        "tomato3.jpg"
+      ]
     }
   ],
-
   "snackItems": [
     {
       "id": 1,
@@ -152,41 +181,41 @@
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능"
     }
   ],
-  "meatItems":[
+  "meatItems": [
     {
-      "id":1,
+      "id": 1,
       "title": "국내산 삼겹살 구이용",
       "price": 12400,
-      "img":"meat1.jpg",
-      "explanation":"언제 먹어도 맛있는 육즙 가득 삼겹살"
+      "img": "meat1.jpg",
+      "explanation": "언제 먹어도 맛있는 육즙 가득 삼겹살"
     },
     {
-      "id":2,
+      "id": 2,
       "title": "국내산 목살[냉장보관]",
       "price": 13000,
-      "img":"meat2.jpg",
-      "explanation":"주물럭과 구이에는 역시 목살!"
+      "img": "meat2.jpg",
+      "explanation": "주물럭과 구이에는 역시 목살!"
     },
     {
-      "id":3,
+      "id": 3,
       "title": "국내산 대패 삼겹살",
       "price": 13420,
-      "img":"meat3.jpg",
-      "explanation":"빠르게 구워먹는 대패삼겹살"
+      "img": "meat3.jpg",
+      "explanation": "빠르게 구워먹는 대패삼겹살"
     },
     {
-      "id":4,
+      "id": 4,
       "title": "한우 등심 구이용 1+등급 (100g)",
       "price": 13080,
-      "img":"meat4.jpg",
-      "explanation":"고소한 풍미의 부드러운 한우 등심"
+      "img": "meat4.jpg",
+      "explanation": "고소한 풍미의 부드러운 한우 등심"
     },
     {
-      "id":5,
+      "id": 5,
       "title": "한우 국거리 1++등급 (300g)",
       "price": 19500,
-      "img":"meat5.jpg",
-      "explanation":"깊은 감칠맛의 엄선된 1++ 한우"
+      "img": "meat5.jpg",
+      "explanation": "깊은 감칠맛의 엄선된 1++ 한우"
     }
   ],
   "members": [
@@ -219,6 +248,16 @@
       "address": "서울시 노원구",
       "phoneNumber": "010123456789",
       "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "5183",
+      "userEmail": "m11@email.com",
+      "userPw": "11",
+      "age": "22",
+      "userName": "한원세",
+      "address": "서울시 성북구",
+      "phoneNumber": "010-0000-0000",
+      "role": "ROLE_ADMIN"
     }
   ]
 }
