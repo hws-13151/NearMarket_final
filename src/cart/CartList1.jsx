@@ -15,25 +15,23 @@ const CartList1 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태
-  const [modalItem, setModalItem] = useState(null); // 모달에 띄울 아이템 정보
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalItem, setModalItem] = useState(null);
 
-  // 모달을 여는 함수
   const openModal = (item) => {
     setModalItem(item);
     setIsModalOpen(true);
   };
 
-  // 결제 페이지로 이동하면서 장바구니 데이터를 전달하는 함수
   const goToPayment = () => {
     navigate("/order/payment", { state: { cartItems, totalPrice } });
   };
 
-  // 삭제 확인 메시지
   const confirmDelete = (id) => {
+    // id만 받도록 수정
     const isConfirmed = window.confirm("정말로 삭제하시겠습니까?");
     if (isConfirmed) {
-      dispatch(deleteCart(id)); // 삭제 진행
+      dispatch(deleteCart({ id })); // id만 전달
     }
   };
 
@@ -43,36 +41,35 @@ const CartList1 = () => {
         <h3 className="cart-title">장바구니 목록</h3>
 
         <div className="cart-item-con">
-          {cartItems &&
-            cartItems.map((el, idx) => (
-              <div className="cart-item" key={idx}>
-                <div className="cart-item-top">
-                  <img src={el.img} alt={el.img} />
-                  <button
-                    onClick={() => openModal(el)}
-                    className="cart-details-button"
-                  >
-                    상세정보
-                  </button>
+          {cartItems.map((el, idx) => (
+            <div className="cart-item" key={idx}>
+              <div className="cart-item-top">
+                <img src={el.img} alt={el.title} />
+                <button
+                  onClick={() => openModal(el)}
+                  className="cart-details-button"
+                >
+                  상세정보
+                </button>
+              </div>
+              <div className="cart-item-bottom">
+                <div className="cart-details-container">
+                  <span>상품명: {el.title}</span>
+                  <span>가격: {el.price} 원</span>
+                  <span>갯수: {el.count}</span>
+                  <span>총금액: {el.count * el.price} 원</span>
                 </div>
-                <div className="cart-item-bottom">
-                  <div className="cart-details-container">
-                    <span>상품명: {el.title}</span>
-                    <span>가격: {el.price}</span>
-                    <span>갯수: {el.count}</span>
-                    <span>총금액: {el.count * el.price}</span>
-                  </div>
-                  <div className="cart-actions-container">
-                    <span
-                      className="cart-delete"
-                      onClick={() => confirmDelete(el.id)} // 삭제 확인 후 삭제
-                    >
-                      X
-                    </span>
-                  </div>
+                <div className="cart-actions-container">
+                  <span
+                    className="cart-delete"
+                    onClick={() => confirmDelete(el.id)} // id만 전달
+                  >
+                    X
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
 
         {cartItems.length > 0 ? (
@@ -94,10 +91,7 @@ const CartList1 = () => {
 
         {/* 모달 창 */}
         {isModalOpen && (
-          <CartModal
-            modalItem={modalItem}
-            setIsModalOpen={setIsModalOpen} // 모달 닫기
-          />
+          <CartModal modalItem={modalItem} setIsModalOpen={setIsModalOpen} />
         )}
       </div>
     </div>

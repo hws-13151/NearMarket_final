@@ -28,7 +28,7 @@ const CartModal = ({ modalItem, setIsModalOpen }) => {
       title: modalItem.title,
       price: modalItem.price,
       img: modalItem.img,
-      count: itemCount, // 업데이트한 수량
+      count: itemCount,
     };
     console.log("업데이트할 아이템:", item); // 로그 추가
     dispatch(updateCartItem(item)); // 장바구니 아이템 수량 업데이트
