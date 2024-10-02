@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { addCart1 } from '../../slice/cartSlice1'
 
 
 const detailData={
@@ -23,6 +25,7 @@ const OrderVegetableDetail = (param) => {
     
 
     const navigate=useNavigate()
+    const dispatch = useDispatch()
 
 
 
@@ -61,6 +64,34 @@ const OrderVegetableDetail = (param) => {
         
     return () => clearInterval(slideEffect);
      }, [vegetableDetail.slideImage.length]);
+
+
+
+     const addVegetableCartFn=()=>{
+        const vegetableCart={
+            id:vegetableDetail.id,
+            title:vegetableDetail.title,
+            price:vegetableDetail.price,
+            img:`/images/vegetable/${vegetableDetail.img}`,
+            count:vegetableCount
+        }
+        dispatch(addCart1(vegetableCart))
+        alert('장바구니로 이동합니다')
+        navigate('/order/cart')
+     }
+
+
+     const paymentFn = ()=>{
+        const vegetableCart={
+            id:vegetableDetail.id,
+            title:vegetableDetail.title,
+            price:vegetableDetail.price,
+            img:`/images/vegetable/${vegetableDetail.img}`,
+            count:vegetableCount
+        }
+        dispatch(addCart1(vegetableCart))
+        navigate('/order/payment')
+     }
 
 
 
@@ -121,8 +152,8 @@ const OrderVegetableDetail = (param) => {
                          <button onClick={()=>{
                              navigate(-1)
                          }}>이전페이지</button>
-                         <button>장바구니</button>
-                         <button>결제</button>
+                         <button onClick={addVegetableCartFn}>장바구니</button>
+                         <button onClick={paymentFn}>결제</button>
                          <button>좋아요</button>
                      </div>
                      

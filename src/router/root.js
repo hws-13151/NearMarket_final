@@ -4,6 +4,7 @@ import ordervegetablerouter from "./ordervegetablerouter";
 import orderfruitrouter from "./orderfruitrouter";
 import ordermeatrouter from "./ordermeatrouter";
 import orderSnackRouter from "./orderSnackRouter";
+import authrouter from "./authrouter";
 
 const Loading = <div className="loading">Loading...</div>;
 
@@ -13,6 +14,8 @@ const OrderCartPage1 = lazy(() => import("../pages/cart/CartListPage1"));
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
+
+const AuthLayout = lazy(()=> import("../layout/authLayout"))
 
 const root = createBrowserRouter([
   {
@@ -88,6 +91,12 @@ const root = createBrowserRouter([
     ),
     children: orderSnackRouter(),
   },
+  {
+    path: "/auth",
+    element:<Suspense fallback={Loading}><AuthLayout /></Suspense>,
+    children: authrouter()
+  }
+
 ]);
 
 export default root;
