@@ -1,0 +1,84 @@
+.admin-left {
+    flex: 0 0 250px;
+    height: 100vh;
+  
+    background-color: rgb(80, 80, 80);
+  
+    position: sticky;
+    top: 0;
+    padding: 1vw;
+    box-sizing: border-box;
+  }
+span.mark{
+    color: #ffffff;
+}
+.admin-left h1 {
+    width: 100%;
+    height: 50px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    position: sticky;
+    top: 0;
+  }
+  
+.admin-left .menu {
+    height: calc(100vh - 50px - 2vw);
+    background-color: rgb(80, 80, 80);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+.admin-left a {
+    color: white; 
+    text-decoration: none; 
+  }
+  
+.admin-left a:hover {
+    color: #ddd; 
+  }
+.admin-left .menu ul {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    background-color: rgb(80, 80, 80);
+    color: white;
+    gap: 0.5vw;
+    box-sizing: border-box;
+  
+  }
+  
+.admin-left .menu ul li {
+  
+    display: flex;
+  
+    padding: 0.5vw;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+.admin-left img {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 8px; 
+  }
+  
+.admin-left .menu .address {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(80, 80, 80);
+    color: #ffffff;
+  }
+  
