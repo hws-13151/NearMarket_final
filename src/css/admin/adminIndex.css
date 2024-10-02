@@ -24,3 +24,100 @@
   display: flex;
   justify-content: space-between;
 }
+
+.admin-index{
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: #eeeeee;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.admin-index .admin-index-con{
+  width: 95%;
+  height: 95%;
+
+  box-shadow: 0px 0px 5px #ccc;
+  box-sizing: border-box;
+
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-index .admin-index-con ul{
+  display: grid;
+  grid-template-columns: repeat(3, 24vw);
+  grid-template-rows: repeat(2, 18vw);
+  gap: 2vw;
+}
+
+.admin-index .admin-index-con ul li{
+
+  /* border: 1px solid; */
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.4s;
+
+  cursor: pointer;
+}
+
+.admin-index .admin-index-con ul li:nth-child(1){
+  background: url(../../../public/images/admin/member.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(2){
+  background: url(../../../public/images/admin/adminVegetable.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(3){
+  background: url(../../../public/images/admin/adminMeat.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(4){
+  background: url(../../../public/images/admin/adminFruit.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(5){
+  background: url(../../../public/images/admin/adminSnack.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(6){
+  background: url(../../../public/images/admin/adminProdutcsInsert.png) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:hover{
+  transform: scale(1.04);
+}
+
+.admin-index .admin-index-con ul li p{
+  width: 22vw;
+  height: 33vh;
+  background-color: rgba(255, 255, 255, 0.705);
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+
+  font-weight: bold;
+}
