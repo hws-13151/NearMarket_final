@@ -6,17 +6,16 @@ const initState ={
   vegetableItems: [],
   snackItems: [],
   meatItems: [],
-  members: [],
-  items: []
+  members: []
 }
 
 const adminSlice = createSlice({
   name: 'admin',
   initialState: initState,
-  reducers:{
-  },
+  reducers:{},
   extraReducers: (builder) => {
-    builder.addCase(asyncAdminMemberFn.pending, (state, action) => { //대기 상태 -> 
+    //members reducers
+    builder.addCase(asyncAdminMemberFn.pending, (state, action) => { 
       state.status = 'Pending' // 대기상태
     })
     builder.addCase(asyncAdminMemberFn.fulfilled, (state, action) => {
@@ -26,9 +25,8 @@ const adminSlice = createSlice({
     builder.addCase(asyncAdminMemberFn.rejected, (state, action) => {
       state.status = 'Fail!!' // rejected!
     })
-  },
-  extraReducers: (builder) => {
-    builder.addCase(asyncAdminFruitFn.pending, (state, action) => { //대기 상태 -> 
+    //fruitItems reducers
+    builder.addCase(asyncAdminFruitFn.pending, (state, action) => { 
       state.status = 'Pending' // 대기상태
     })
     builder.addCase(asyncAdminFruitFn.fulfilled, (state, action) => {
@@ -38,8 +36,40 @@ const adminSlice = createSlice({
     builder.addCase(asyncAdminFruitFn.rejected, (state, action) => {
       state.status = 'Fail!!' // rejected!
     })
+    //vegetableItems reducers
+    builder.addCase(asyncAdminVegetableItemsFn.pending, (state, action) => { 
+      state.status = 'Pending' // 대기상태
+    })
+    builder.addCase(asyncAdminVegetableItemsFn.fulfilled, (state, action) => {
+      state.vegetableItems = action.payload
+      state.status = 'Complete' // Success!
+    })
+    builder.addCase(asyncAdminVegetableItemsFn.rejected, (state, action) => {
+      state.status = 'Fail!!' // rejected!
+    })
+    //snackItems reducers
+    builder.addCase(asyncAdminSnackItemsFn.pending, (state, action) => { 
+      state.status = 'Pending' // 대기상태
+    })
+    builder.addCase(asyncAdminSnackItemsFn.fulfilled, (state, action) => {
+      state.snackItems = action.payload
+      state.status = 'Complete' // Success!
+    })
+    builder.addCase(asyncAdminSnackItemsFn.rejected, (state, action) => {
+      state.status = 'Fail!!' // rejected!
+    })
+    //meatItems reducers
+    builder.addCase(asyncAdminMeatItemsFn.pending, (state, action) => { 
+      state.status = 'Pending' // 대기상태
+    })
+    builder.addCase(asyncAdminMeatItemsFn.fulfilled, (state, action) => {
+      state.snackItems = action.payload
+      state.status = 'Complete' // Success!
+    })
+    builder.addCase(asyncAdminMeatItemsFn.rejected, (state, action) => {
+      state.status = 'Fail!!' // rejected!
+    })
   }
-  
 })
 
 export const asyncAdminMemberFn = createAsyncThunk(`admin/asyncAdminMemberFn`,
@@ -68,10 +98,36 @@ export const asyncAdminFruitFn = createAsyncThunk(`admin/asyncAdminFruitFn`,
   }
 )
 
-export const asyncAdminvegetableItemsFn = createAsyncThunk(`admin/asyncAdminvegetableItemsFn`,
+export const asyncAdminVegetableItemsFn = createAsyncThunk(`admin/asyncAdminvegetableItemsFn`,
   async () => {
     try {
       const res = await axios.get('http://localhost:3001/vegetableItems')
+      const data = res.data
+      return data
+    } catch (err) {
+      alert(err)
+      return
+    }
+  }
+)
+
+export const asyncAdminSnackItemsFn = createAsyncThunk(`admin/asyncAdminsnackItemsFn`,
+  async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/snackItems')
+      const data = res.data
+      return data
+    } catch (err) {
+      alert(err)
+      return
+    }
+  }
+)
+
+export const asyncAdminMeatItemsFn = createAsyncThunk(`admin/asyncAdminmeatItemsFn`,
+  async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/meatItems')
       const data = res.data
       return data
     } catch (err) {

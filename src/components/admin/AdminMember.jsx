@@ -9,7 +9,7 @@ import { asyncAdminMemberFn } from '../../slice/adminSlice';
 const AdminMember = () => {
   const members = useSelector(state => state.admin.members)
   const dispatch = useDispatch()
-  
+  console.log(members)
   useEffect(()=>{
     dispatch(asyncAdminMemberFn())
   },[])
