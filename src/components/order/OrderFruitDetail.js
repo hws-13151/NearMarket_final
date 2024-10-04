@@ -74,7 +74,7 @@ const OrderFruitDetail = (param) => {
               alt={fruitDetail.title}
             />
           </li>
-          <li>{fruitDetail.des}</li>
+          <li>{fruitDetail.description}</li>
           <li>{calculateTotalPrice().toLocaleString()}원</li>
           <li>
             <button onClick={fruitIncrementFn}>+</button>

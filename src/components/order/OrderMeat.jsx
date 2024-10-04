@@ -51,7 +51,7 @@ const OrderMeat = () => {
                     </div>
                     <div className="bottom">
                       <span style={{fontSize:'20px'}}>{el.title}</span>
-                      <span style={{fontSize:'14px'}}>{el.explanation}</span>
+                      <span style={{fontSize:'14px'}}>{el.description}</span>
                       <span style={{fontWeight:'bold'}}>{el.price.toLocaleString()}원</span>
                     </div>
                   </li>

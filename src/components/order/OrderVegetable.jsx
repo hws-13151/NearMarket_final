@@ -59,7 +59,7 @@ const OrderVegetable = () => {
                   <span className="delivery-order">
                     <img src={`/images/vegetable/${el.rocket}`} alt= {el.rocket}/>로켓배송
                   </span>
-                  <span>{el.memo}</span>
+                  <span>{el.description}</span>
                   <span>{el.price}원</span>
                 </div>
               </li>

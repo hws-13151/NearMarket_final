@@ -53,7 +53,8 @@
 .admin-index .admin-index-con ul{
   display: grid;
   grid-template-columns: repeat(3, 24vw);
-  grid-template-rows: repeat(2, 18vw);
+  grid-template-rows: repeat(2, 13vw);
+  grid-auto-rows: 13vw;
   gap: 2vw;
 }
 
@@ -99,6 +100,21 @@
 
 .admin-index .admin-index-con ul li:nth-child(6){
   background: url(../../../public/images/admin/adminProdutcsInsert.png) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(7){
+  background: url(../../../public/images/admin/adminCart.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(8){
+  background: url(../../../public/images/admin/adminShop.jpg) no-repeat 50%/cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(9){
+  background: url(../../../public/images/admin/adminPayment.jpg) no-repeat 50%/cover;
   filter: grayscale(50%);
 }
 

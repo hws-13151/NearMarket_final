@@ -32,7 +32,7 @@ const AdminLeft = () => {
               <Link to={'/admin/snack'}>과자</Link>
             </li>
             <li>
-            <img src="/images/admin/adminCart.png" alt="cart" />
+            <img src="/images/admin/Cart.png" alt="cart" />
               <Link to={'/admin/cart'}>장바구니</Link>
             </li>
             <li>
