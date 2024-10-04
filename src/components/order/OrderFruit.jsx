@@ -38,7 +38,7 @@ const OrderFruit = () => {
               </div>
               <div className="bottom">
                 <h3>{el.title}</h3>
-                <p>{el.des}</p> 
+                <p>{el.description}</p> 
                 <span>{el.price.toLocaleString()}원</span> 
               </div>
             </li>

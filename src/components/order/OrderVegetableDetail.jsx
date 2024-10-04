@@ -8,7 +8,7 @@ const detailData = {
   id: 0,
   title: "",
   price: "",
-  memo: "",
+  description: "",
   img: "",
   rocket: "",
   slideImage: [],
@@ -117,7 +117,7 @@ const OrderVegetableDetail = (param) => {
                   <li>
                     <div className="review">고객리뷰</div>
                   </li>
-                  <li>{vegetableDetail.memo}</li>
+                  <li>{vegetableDetail.description}</li>
                 </ul>
               </div>
               <div className="bottom">

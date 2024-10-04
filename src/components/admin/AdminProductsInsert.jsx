@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+
+const itemData ={
+  title: "",
+  price: 0,
+  discription: "",
+  img: ""
+}
 
 const AdminProductsInsert = () => {
+
+  const [formData,setFormData] = useState(itemData)
+
+  const [imgFile, setImgFile] = useState("");
+  const imgRef = useRef();
+
+  // 이미지 업로드 input의 onChange
+  const saveImgFile = () => {
+	const file = imgRef.current.files[0];
+	const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onloadend = () => {
+    setImgFile(reader.result);
+  };
+};
+
   return (
     <>
       <div className="insert">
         <div className="insert-con">
           <div className="insert-left">
-            <img src="/" alt="첨부할 이미지" />
+            <div className="insert-left-con">
+              <img src={imgFile ? imgFile : "none"} alt="이미지를 첨부해 주세요" />
+            </div>
           </div>
           <div className="insert-right">
             <div className="insert-right-con">
@@ -15,19 +40,19 @@ const AdminProductsInsert = () => {
                 <ul>
                   <li>
                     <p>상품 이름</p>
-                    <input type="text" name="" id="" placeholder='상품 이름을 입력하세요.'/>
+                    <input type="text" name="title" id="title" placeholder='상품 이름을 입력하세요.'/>
                   </li>
                   <hr />
                   <li>
                     <p>상품 가격</p>
-                    <input type="number" name="number" id="number" placeholder='상품 가격을 입력하세요. (숫자만)' />
+                    <input type="number" name="price" id="price" placeholder='상품 가격을 입력하세요. (숫자만)' />
                   </li>
                   <hr />
                   <li>
                     <p>상품 설명</p>
                   </li>
                   <li>
-                    <textarea name="" id="" placeholder='상품 설명을 입력하세요.'></textarea>
+                    <textarea name="description" id="description" placeholder='상품 설명을 입력하세요.'></textarea>
                   </li>
                   <hr />
                   <li>
@@ -43,7 +68,11 @@ const AdminProductsInsert = () => {
               </div>
               <hr />
               <div className="right-bottom">
-                <input type="file" name="" id="" />
+                <label htmlFor="img">상품 이미지 선택</label>
+                <input type="file" accept='image/*' name="img" id="img"
+                onChange={saveImgFile}
+                ref={imgRef}
+                />
                 <button>상품등록</button>
               </div>
             </div>

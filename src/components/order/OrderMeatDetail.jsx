@@ -10,7 +10,7 @@ const meatData = {
   title: "",
   price: 0,
   img: "",
-  explanation: "",
+  description: "",
 };
 
 const OrderMeatDetail = (param) => {
@@ -82,7 +82,7 @@ const OrderMeatDetail = (param) => {
                 <li>
                   <h1>{meatItem.title}</h1>
                 </li>
-                <li>{meatItem.explanation}</li>
+                <li>{meatItem.description}</li>
                 <li>
                   <h1>{meatItem.price.toLocaleString()}원</h1>
                 </li>
