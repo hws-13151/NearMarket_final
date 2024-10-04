@@ -20,6 +20,8 @@ const AuthLayout = lazy(()=> import("../layout/authLayout"))
 
 const AdminLayout = lazy(()=> import("../layout/admin/AdminLayout"))
 
+const PaymentPage = lazy(()=> import("../pages/payment/PaymentPage"))
+
 const root = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +58,24 @@ const root = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path:"/order",
+    element:(
+      <Suspense fallback={Loading}>
+        <OrderLayout />
+      </Suspense>
+    ),
+    children:[
+      {
+        path:"payment",
+        element:(
+          <Suspense fallback={Loading}>
+            <PaymentPage />
+          </Suspense>
+        )
+      }
+    ]
   },
 
   {
