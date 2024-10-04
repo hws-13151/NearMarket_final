@@ -10,6 +10,9 @@ const AuthDetail = () => {
     
     const loginUser =useSelector((state)=>state.auth.loginUser)
     const isLogin =useSelector((state)=>state.auth.isLogin)
+
+     
+
     const navigate=useNavigate()
 
     useEffect(()=>{
@@ -20,6 +23,7 @@ const AuthDetail = () => {
         return <div>로그인 되지 않았습니다. 로그인 후 다시 시도하세요.</div>
     }
 
+  
 
 
 
