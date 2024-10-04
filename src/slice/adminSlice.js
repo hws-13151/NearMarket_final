@@ -68,4 +68,17 @@ export const asyncAdminFruitFn = createAsyncThunk(`admin/asyncAdminFruitFn`,
   }
 )
 
+export const asyncAdminvegetableItemsFn = createAsyncThunk(`admin/asyncAdminvegetableItemsFn`,
+  async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/vegetableItems')
+      const data = res.data
+      return data
+    } catch (err) {
+      alert(err)
+      return
+    }
+  }
+)
+
 export default adminSlice
