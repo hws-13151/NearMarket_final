@@ -25,7 +25,7 @@ const OrderFruitDetail = (param) => {
       }
     };
     fetchFruitDetail();
-  }, [param.param.id]);
+  }, []);
 
   const fruitIncrementFn = () => {
     setCount(count + 1);
@@ -44,16 +44,13 @@ const OrderFruitDetail = (param) => {
 
   const addCartFn3 = () => {
     if (fruitDetail) {
-      const totalPrice = calculateTotalPrice(); // 총 가격
       dispatch(
         addCart1({
           id: fruitDetail.id,
           img: `/images/fruit/${fruitDetail.img}`,
           title: fruitDetail.title,
-          price: totalPrice,
+          price: fruitDetail.price + (isPremium ? 3000 : 0) + (isOrganic ? 2000 : 0),
           count,
-          isPremium,
-          isOrganic,
           category: "fruitItems",
         })
       );

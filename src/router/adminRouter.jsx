@@ -28,10 +28,6 @@ const adminRouter = () => {
       element: <Suspense fallback={Loading}><AdminMemberPage /></Suspense>
     },
     {
-      path: 'carts',
-      element: <Suspense fallback={Loading}><AdminMemberPage /></Suspense>
-    },
-    {
       path: 'vegetable',
       element: <Suspense fallback={Loading}><AdminVegetablePage /></Suspense>
     },
