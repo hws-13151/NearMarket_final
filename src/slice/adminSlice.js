@@ -63,7 +63,7 @@ const adminSlice = createSlice({
       state.status = 'Pending' // 대기상태
     })
     builder.addCase(asyncAdminMeatItemsFn.fulfilled, (state, action) => {
-      state.snackItems = action.payload
+      state.meatItems = action.payload // 수정
       state.status = 'Complete' // Success!
     })
     builder.addCase(asyncAdminMeatItemsFn.rejected, (state, action) => {
@@ -128,6 +128,7 @@ export const asyncAdminMeatItemsFn = createAsyncThunk(`admin/asyncAdminmeatItems
   async () => {
     try {
       const res = await axios.get('http://localhost:3001/meatItems')
+      console.log(res.data);
       const data = res.data
       return data
     } catch (err) {
