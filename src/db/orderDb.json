@@ -248,6 +248,16 @@
       "address": "서울시 노원구",
       "phoneNumber": "010123456789",
       "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "e79d",
+      "userEmail": "admin1234@naver.com",
+      "userPw": "1234",
+      "age": "21",
+      "userName": "권오철",
+      "address": "서울시 노원구 ",
+      "phoneNumber": "010-1234-1234",
+      "role": "ROLE_ADMIN"
     }
   ]
 }
