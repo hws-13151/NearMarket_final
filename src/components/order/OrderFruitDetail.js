@@ -105,7 +105,7 @@ const OrderFruitDetail = (param) => {
       </div>
       <div className="order-go">
         <button onClick={() => navigate(-1)}>이전페이지</button>
-        <button onClick={addCartFn3}>장바구니</button>
+        <button onClick={addCartFn3} >장바구니</button>
         <button>결제</button>
       </div>
     </div>
