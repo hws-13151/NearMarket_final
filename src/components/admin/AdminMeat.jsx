@@ -27,21 +27,34 @@ const AdminMeat = () => {
   return (
     <div className="admin-meat">
       <div className="admin-meat-con">
-        {meatItems && meatItems.length > 0 ? (
-          meatItems.map((el, idx) => (
-            <ul key={idx} onClick={() => openModal(el)}> 
-              <li>{el.id}</li>
-              <li>{el.title}</li>
-              <li><img src={`/images/meat/${el.img}`} alt={el.img} /></li>
-              <li>{el.price}원</li>
-              <li>{el.description}</li>
-            </ul>
-          ))
-        ) : (
-          <p>상품 정보가 없습니다.</p>
-        )}
+        <div className="admin-meat-title">
+          <h1>육류코너</h1>
+          <div className="title-right">
+            <span style={{color:'#ff0000'}}>{meatItems.length}</span>
+            <span> 개의 상품이 있습니다.</span>
+          </div>
+        </div>
+        <div className="admin-meat-item">
+          <ul>
+            {meatItems && meatItems.length > 0 ? (
+              meatItems.map((el, idx) => (
+                <li key={idx} onClick={() => openModal(el)}> 
+                  <div className="top">
+                    <img src={`/images/meat/${el.img}`} alt={el.img} />
+                  </div>
+                  <div className="bottom">
+                    <span style={{fontSize:'20px'}}>{el.title}</span>
+                    <span style={{fontSize:'14px'}}>{el.description}</span>
+                    <span style={{fontWeight:'bold'}}>{el.price.toLocaleString()}원</span>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <p>상품 정보가 없습니다.</p>
+            )}
+          </ul>
+        </div>
       </div>
-
       {isModalOpen && selectedProduct && (
         <AdminProductModal 
           product={selectedProduct} 
