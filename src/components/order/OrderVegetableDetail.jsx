@@ -107,7 +107,7 @@ const OrderVegetableDetail = (param) => {
                     <h1>{vegetableDetail.title}</h1>
                   </li>
                   <li>
-                    <h1>{vegetableDetail.price.toLocaleString()}원</h1>
+                    <h1>{vegetableDetail.price}원</h1>
                   </li>
                   <li>
                     <div className="rocket">로켓배송</div>
@@ -135,7 +135,7 @@ const OrderVegetableDetail = (param) => {
                 </div>
                 <div className="counttotal">
                   <span>상품금액 합계</span>
-                  <span>{(vegetableDetail.price * vegetableCount).toLocaleString()} 원</span>
+                  <span>{vegetableDetail.price * vegetableCount} 원</span>
                 </div>
               </div>
             </div>

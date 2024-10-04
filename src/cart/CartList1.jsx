@@ -32,8 +32,8 @@ const CartList1 = () => {
     const isConfirmed = window.confirm("정말로 삭제하시겠습니까?");
     if (isConfirmed) {
       dispatch(deleteCart({ id, category })); // id와 category 전달
-
-  };
+    }
+  }; // <-- 여기서 중괄호를 닫아줍니다!
 
   return (
     <div className="cart-list">
@@ -55,7 +55,6 @@ const CartList1 = () => {
               <div className="cart-item-bottom">
                 <div className="cart-details-container">
                   <span>카테고리: {el.category}</span> {/* 카테고리 표시 */}
-
                   <span>상품명: {el.title}</span>
                   <span>가격: {el.price} 원</span>
                   <span>갯수: {el.count}</span>
@@ -65,7 +64,6 @@ const CartList1 = () => {
                   <span
                     className="cart-delete"
                     onClick={() => confirmDelete(el.id, el.category)}
-                    
                   >
                     X
                   </span>
