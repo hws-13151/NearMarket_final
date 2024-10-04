@@ -8,6 +8,8 @@ const MainHeader = () => {
   const loginUser = useSelector(state => state.auth.loginUser)
   const isLogin = useSelector(state => state.auth.isLogin)
 
+  const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
+
   const navigate = useNavigate()
   const dispatch =useDispatch()
 
@@ -45,7 +47,11 @@ const MainHeader = () => {
                 <Link to={'/auth/detail'}>{loginUser[0].userName}님</Link>
                 }
               </li>
-              {isLogin && <li><Link to={`/admin`}>ADMIN</Link></li>}
+              {isLogin && userRole === "ROLE_ADMIN" && (
+                <li>
+                  <Link to={`/admin`}>ADMIN</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
