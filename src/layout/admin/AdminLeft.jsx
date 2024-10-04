@@ -31,23 +31,26 @@ const AdminLeft = () => {
             <img src="/images/orderheader/snack.png" alt="snack" />
               <Link to={'/admin/snack'}>과자</Link>
             </li>
-
+            <li>
+            <img src="/images/admin/adminCart.png" alt="cart" />
+              <Link to={'/admin/cart'}>장바구니</Link>
+            </li>
             <li>
             <img src="/images/admin/produtcsInsert1.png" alt="productsInsert" />
               <Link to={'/admin/produtcsInsert'}>상품등록</Link>
             </li>
-            
+            <li>
+            <img src="/images/admin/shop.png" alt="shop" />
+              <Link to={'/admin/shop'}>주문처</Link>
+            </li>
+            <li>
+            <img src="/images/admin/payment.png" alt="payment" />
+              <Link to={'/admin/payment'}>결제</Link>
+            </li>
             <li>
               <Link to={'/admin'}>ADMIN-HOME</Link>
             </li>
-            {/* <li>
-            <img src="/images/admin/ordercart.png" alt="cart" />
-              <Link to={'/admin/carts'}>장바구니</Link>
-            </li> */}
-            {/* <li>
-            <img src="/images/admin/faq.png" alt="productsInsert" />
-              <Link to={'/admin/faq'}>고객지원</Link>
-            </li> */}
+            
           </ul>
           <div className="address">
             
