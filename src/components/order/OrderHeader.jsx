@@ -11,6 +11,8 @@ const OrderHeader = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
 
+  const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -86,7 +88,7 @@ const OrderHeader = () => {
                   <Link to={"/auth/detail"}>{loginUser[0].userName}님</Link>
                 )}
               </li>
-              {isLogin && (
+              {isLogin && userRole === "ROLE_ADMIN" && (
                 <li>
                   <Link to={`/admin`}>ADMIN</Link>
                 </li>

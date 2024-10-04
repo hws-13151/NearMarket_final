@@ -36,6 +36,25 @@ input[type="password"]
     font-size: 16px;
     box-sizing: border-box;
 }
+.login .login-con ul li:first-child input
+ {
+   background-image: url(/public/images/auth/member.png);
+   background-repeat: no-repeat;
+   background-position: 10px center;
+   background-size: 20px;
+   padding-left: 40px;
+    
+}
+
+.login .login-con ul li:nth-child(2) input
+ {
+   background-image: url(/public/images/auth/password.png);
+   background-repeat: no-repeat;
+   background-position: 10px center;
+   background-size: 20px;
+   padding-left: 40px;
+    
+}
 
 .login .login-con ul li input[type="text"]:focus,
 input[type="password"]:focus
@@ -62,6 +81,11 @@ input[type="password"]:focus
 
 .login .login-con ul li button:last-child {
     background-color: #6c757d;
+    background-image: url(/public/images/auth/home.png);
+   background-repeat: no-repeat;
+   background-position: 150px center;
+   background-size: 20px;
+   /* padding-left: 10px; */
 }
 
 .login .login-con ul li button:last-child:hover {
