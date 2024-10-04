@@ -8,7 +8,9 @@ const AdminVegetablePage = lazy(()=> import('../pages/admin/AdminVegetablePage')
 const AdminMeatPage = lazy(()=> import('../pages/admin/AdminMeatPage'))
 const AdminFruitPage = lazy(()=> import('../pages/admin/AdminFruitPage'))
 const AdminSnackPage = lazy(()=> import('../pages/admin/AdminSnackPage'))
-
+const AdminCartPage = lazy(()=> import('../pages/admin/AdminCartPage'))
+const AdminShopPage = lazy(()=> import('../pages/admin/AdminShopPage'))
+const AdminPaymentPage = lazy(()=> import('../pages/admin/AdminPaymentPage'))
 
 const adminRouter = () => {
   return (
@@ -48,6 +50,18 @@ const adminRouter = () => {
     {
       path: 'produtcsInsert',
       element: <Suspense fallback={Loading}><AdminProductsInsertPage /></Suspense>
+    },
+    {
+      path: 'cart',
+      element: <Suspense fallback={Loading}><AdminCartPage /></Suspense>
+    },
+    {
+      path: 'shop',
+      element: <Suspense fallback={Loading}><AdminShopPage /></Suspense>
+    },
+    {
+      path: 'payment',
+      element: <Suspense fallback={Loading}><AdminPaymentPage /></Suspense>
     }
 
   ]

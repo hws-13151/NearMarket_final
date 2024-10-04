@@ -30,42 +30,45 @@ const AdminMember = () => {
         <div className="admin-member-con">
           <h1>ADMIN-MEMBERS</h1>
           <div className="members">
-            <div className="title">
-              <span>아이디</span>
-              <span>이메일</span>
-              <span>비밀번호</span>
-              <span>나이</span>
-              <span>이름</span>
-              <span>주소</span>
-              <span>전화번호</span>
-              <span>권한</span>
-              <span>보기</span>
-            </div>
-            <ul>
-              {members && members.map((el, idx) => (
-                <li key={idx}>
-                  <span>{el.id}</span>
-                  <span>{el.userEmail}</span>
-                  <span>{el.userPw}</span>
-                  <span>{el.age}</span>
-                  <span>{el.userName}</span>
-                  <span>{el.address}</span>
-                  <span>{el.phoneNumber}</span>
-                  <span>{el.role}</span>
-                  <span>
-                    <button onClick={() => handleOpenModal(el)}>보기</button>
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <table>
+              <thead>
+                <tr>
+                  <th>아이디</th>
+                  <th>이메일</th>
+                  <th>비밀번호</th>
+                  <th>나이</th>
+                  <th>이름</th>
+                  <th>주소</th>
+                  <th>전화번호</th>
+                  <th>권한</th>
+                  <th>보기</th>
+                </tr>
+              </thead>
+              <tbody>
+                {members && members.map((el, idx) => (
+                  <tr key={idx} className={el.role === 'ROLE_ADMIN' ? 'role-admin' : ''}>
+                    <td>{el.id}</td>
+                    <td>{el.userEmail}</td>
+                    <td>{el.userPw}</td>
+                    <td>{el.age}</td>
+                    <td>{el.userName}</td>
+                    <td>{el.address}</td>
+                    <td>{el.phoneNumber}</td>
+                    <td>{el.role}</td>
+                    <td>
+                      <button onClick={() => handleOpenModal(el)}>보기</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      {isModalOpen &&<MemberModal 
+      {isModalOpen && <MemberModal 
           member={selectedMember} 
           onClose={handleCloseModal} 
-        />
-      }
+        />}
     </>
   );
 }
