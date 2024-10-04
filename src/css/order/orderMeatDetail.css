@@ -93,17 +93,19 @@
   width: 30px;
   height: 30px;
   border: 1px solid #969696;
+  box-sizing: border-box;
   background-color: white;
   color: black;
-
+  margin: 0;
   cursor: pointer;
   
 }
 
 .order-meat-detail .order-meat-detail-con .right .right-bottom .bottom-price>ul>li span{
   width: 40px;
-  height: 28px;
+  height: 30px;
   border: 1px solid #969696;
+  box-sizing: border-box;
   background-color: white;
   font-size: 14px;
   text-align: center;
@@ -111,7 +113,7 @@
 }
 
 .order-meat-detail .order-meat-detail-con .right .right-bottom .bottom-price>ul>li p{
-  width: 100%;
+  width: 85%;
   text-align: end;
   font-weight: bold;
 }

@@ -17,7 +17,7 @@ const AdminRight = () => {
             <p>{loginUser[0].userName} 님</p>
             <ul>
               <li onClick={()=>{
-                navigate('/auth/ditail')
+                navigate('/auth/detail')
               }}>내정보</li>
               <li onClick={(e)=>{
                 e.preventDefault()
