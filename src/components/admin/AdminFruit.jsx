@@ -34,7 +34,7 @@ const AdminFruit = () => {
               <li>{el.id}</li>
               <li>{el.title}</li>
               <li><img src={`/images/fruit/${el.img}`} alt={el.img} /></li>
-              <li>{el.price}원</li>
+              <li>{el.price.toLocaleString()}원</li>
               <li>{el.description}</li>
             </ul>
           ))

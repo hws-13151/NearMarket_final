@@ -15,10 +15,9 @@ const AdminProductModal = ({ product, type, onClose }) => {
     try {
       await axios.put(`http://localhost:3001/${type}/${product.id}`, {
         title,
-        description,
         price,
-
-
+        img,
+        description
       });
       alert('상품 정보가 수정되었습니다.');
       onClose(); 

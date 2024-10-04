@@ -1,18 +1,18 @@
 {
   "fruitItems": [
     {
-      "id": "1",
       "title": "딸기",
-      "price": 9900,
       "img": "f0.jpg",
-      "description": "특유의 단맛과 상큼한 딸기"
+      "price": 9900,
+      "description": "특유의 단맛과 상큼한 딸기",
+      "id": "1"
     },
     {
       "id": "2",
       "title": "사과",
       "price": 4900,
       "img": "f1.jpg",
-      "description": "새콤달콤 아삭아삭한 사과"
+      "description": "새콤달콤 아삭아삭 사과"
     },
     {
       "id": "3",

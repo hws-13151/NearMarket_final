@@ -1,74 +1,93 @@
+body {
+  margin: 0; /* 기본 여백 제거 */
+  height: 100vh; /* 전체 높이를 뷰포트 높이로 설정 */
+  overflow-y: auto; /* 세로 스크롤바 추가 */
+}
+
 .order-fruit {
-    width: 100%;
-    padding: 1vw;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  
-  .order-fruit .order-fruit-con {
-    flex: 0 1 1300px;
-    height: calc(100vh - 80px - 60px - 2vw);
-    box-sizing: border-box;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-  .order-fruit .order-fruit-con ul {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 250px);
-  
-    gap: 1vw;
-  
-  }
-  
-  .order-fruit .order-fruit-con ul li {
-  
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-    cursor: pointer;
-  
-    transition: all 0.2s;
-  
-  
-    overflow: hidden;
-  
-  }
-  
-  .order-fruit .order-fruit-con ul li:hover {
-    opacity: 0.9;
-    filter: grayscale(50%);
-    transform: scale(1.02);
-  }
-  
-  .order-fruit .order-fruit-con ul li .top {
-    flex: 4;
-    overflow: hidden;
-  }
-  
-  .order-fruit .order-fruit-con ul li .top img {
-    width: 100%;
-    display: block;
-  }
-  
-  .order-fruit .order-fruit-con ul li .bottom {
-    flex: 1;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    background-color: white;
-  }
+  width: 100%;
+  padding: 20px; /* padding을 조정하여 여백 추가 */
+  box-sizing: border-box;
+  background-color: #f8f8f8; /* 배경색 변경 */
+  display: flex;
+  justify-content: center;
+}
+
+.order-fruit .order-fruit-con {
+  flex: 0 1 1300px;
+  max-height: calc(100vh - 80px - 60px - 2vw); /* footer를 고려한 최대 높이 설정 */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 상단 정렬로 수정 */
+  overflow-y: auto; /* 세로 오버플로우 스크롤 추가 */
+}
+
+.order-fruit .order-fruit-con ul {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개 */
+  grid-template-rows: auto; /* 자동으로 높이 조정 */
+  gap: 20px; /* 간격을 넓혀서 여유 있게 배치 */
+  padding: 0; /* ul의 기본 패딩 제거 */
+  list-style: none; /* 기본 리스트 스타일 제거 */
+}
+
+.order-fruit .order-fruit-con ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+  border: 1px solid #ddd; /* 테두리 추가 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  background-color: white; /* 배경색 변경 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+.order-fruit .order-fruit-con ul li:hover {
+  opacity: 0.9;
+  filter: grayscale(20%); /* 필터 효과 감소 */
+  transform: scale(1.02);
+}
+
+.order-fruit .order-fruit-con ul li .top {
+  flex: 4;
+  overflow: hidden;
+}
+
+.order-fruit .order-fruit-con ul li .top img {
+  width: 100%;
+  display: block;
+  height: 150px; /* 이미지 높이 고정 */
+  object-fit: cover; /* 비율 유지하며 잘림 방지 */
+}
+
+.order-fruit .order-fruit-con ul li .bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* 여백 추가 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.order-fruit .order-fruit-con ul li .bottom h3 {
+  margin: 0; /* 기본 여백 제거 */
+  font-size: 1.2em; /* 제목 크기 조정 */
+  color: #333; /* 글자 색상 변경 */
+}
+
+.order-fruit .order-fruit-con ul li .bottom p {
+  margin: 5px 0; /* 설명 여백 조정 */
+  font-size: 0.9em; /* 설명 크기 조정 */
+  color: #666; /* 설명 색상 변경 */
+}
+
+.order-fruit .order-fruit-con ul li .bottom span {
+  font-size: 1.2em; /* 가격 크기 조정 */
+  color: #e74c3c; /* 가격 색상 변경 */
+  font-weight: bold; /* 가격 두께 변경 */
+}
