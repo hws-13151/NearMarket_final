@@ -4,26 +4,28 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
 
-const OrderFruitDetail = (param) => { 
+const OrderFruitDetail = (param) => {
   const navigate = useNavigate();
   const [fruitDetail, setFruitDetail] = useState(null);
   const [count, setCount] = useState(1);
   const [isPremium, setIsPremium] = useState(false);
   const [isOrganic, setIsOrganic] = useState(false);
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
-      const fruitId = param.param.id; 
+      const fruitId = param.param.id;
       try {
-        const res = await axios.get(`http://localhost:3001/fruitItems/${fruitId}`);
+        const res = await axios.get(
+          `http://localhost:3001/fruitItems/${fruitId}`
+        );
         setFruitDetail(res.data);
       } catch (err) {
         alert(err);
       }
     };
     fetchFruitDetail();
-  }, [param.param.id]); 
+  }, [param.param.id]);
 
   const fruitIncrementFn = () => {
     setCount(count + 1);
@@ -37,28 +39,29 @@ const OrderFruitDetail = (param) => {
     let additionalPrice = 0;
     if (isPremium) additionalPrice += 3000 * count; // 프리미엄 옵션 추가
     if (isOrganic) additionalPrice += 2000 * count; // 유기농 옵션 추가
-    return fruitDetail.price * count + additionalPrice; 
+    return fruitDetail.price * count + additionalPrice;
   };
 
   const addCartFn3 = () => {
     if (fruitDetail) {
-      const totalPrice = calculateTotalPrice(); // 총 가격 
+      const totalPrice = calculateTotalPrice(); // 총 가격
       dispatch(
         addCart1({
           id: fruitDetail.id,
           img: `/images/fruit/${fruitDetail.img}`,
           title: fruitDetail.title,
-          price: totalPrice, 
+          price: totalPrice,
           count,
           isPremium,
           isOrganic,
+          category: "fruitItems",
         })
       );
       alert(`${fruitDetail.title}이(가) 장바구니에 추가되었습니다!`);
       navigate("/order/cart");
     }
   };
-  
+
   if (!fruitDetail) return <div>Loading...</div>;
 
   return (
@@ -70,12 +73,12 @@ const OrderFruitDetail = (param) => {
           </li>
           <li>
             <img
-              src={`/images/fruit/${fruitDetail.img}`} 
+              src={`/images/fruit/${fruitDetail.img}`}
               alt={fruitDetail.title}
             />
           </li>
           <li>{fruitDetail.des}</li>
-          <li>{calculateTotalPrice().toLocaleString()}원</li> 
+          <li>{calculateTotalPrice().toLocaleString()}원</li>
           <li>
             <button onClick={fruitIncrementFn}>+</button>
             <span>{count}</span>
