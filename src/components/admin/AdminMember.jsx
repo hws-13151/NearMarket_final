@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { asyncAuthMemberFn } from '../../slice/authSlice';
 import MemberModal from './MemberModal'; 
+import { asyncAdminMemberFn } from '../../slice/adminSlice';
+
+
+
 
 const AdminMember = () => {
-  const dispatch = useDispatch();
+  const members = useSelector(state => state.admin.members)
+  const dispatch = useDispatch()
   
-  const members = useSelector((state) => state.auth.memberList); 
+  useEffect(()=>{
+    dispatch(asyncAdminMemberFn())
+  },[])
+//   const dispatch = useDispatch();
+  
+//   const members = useSelector((state) => state.auth.memberList); 
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState(); 
 
-  useEffect(() => {
-    dispatch(asyncAuthMemberFn());
-  },[]); 
+//   useEffect(() => {
+//     dispatch(asyncAuthMemberFn());
+//   },[]); 
 
   const handleOpenModal = (member) => {
     setSelectedMember(member); 

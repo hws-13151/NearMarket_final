@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { asyncAdminFruitFn } from '../../slice/adminSlice';
 
-const AdminFruit = (param) => {
-  const [adminFruit,setAdminFruit] = useState(null)
+const AdminFruit = () => {
+  const fruitItems = useSelector(state => state.admin.fruitItems)
   const dispatch = useDispatch(); 
   useEffect(() => {
-    const fetchAdminFruit = async () => {
-      const fruitId = param.param.id;
-      try {
-        const res = await axios.get(`http://localhost:3001/fruitItems/${fruitId}`);
-        setAdminFruit(res.data);
-      } catch (err) {
-        alert(err);
-      }
-    };
-    fetchAdminFruit();
+    dispatch(asyncAdminFruitFn())
   }, []);
 
  
@@ -23,7 +14,15 @@ const AdminFruit = (param) => {
     <>
     <div className="admin-fruit">
       <div className="admin-fruit-con">
-
+        {fruitItems && fruitItems.map((el,idx)=>{
+          return(
+            <ul key={idx}>
+              <li>{el.id}</li>
+              <li>{el.title}</li>
+              <li>{el.id}</li>
+            </ul>
+          )
+        })}
       </div>
     </div>
     </>
