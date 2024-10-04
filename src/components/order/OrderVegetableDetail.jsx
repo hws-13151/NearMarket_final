@@ -65,6 +65,7 @@ const OrderVegetableDetail = (param) => {
       price: vegetableDetail.price,
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
+      category: "vegetableItems",
     };
     dispatch(addCart1(vegetableCart));
     alert("장바구니로 이동합니다");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCart1, updateCartItem } from "../../src/slice/cartSlice1";
+import { updateCartItem } from "../../src/slice/cartSlice1";
 import "../css/cart/cartModal.css"; // 외부 CSS 파일을 임포트
 
 const CartModal = ({ modalItem, setIsModalOpen }) => {
@@ -28,12 +28,14 @@ const CartModal = ({ modalItem, setIsModalOpen }) => {
       title: modalItem.title,
       price: modalItem.price,
       img: modalItem.img,
-      count: itemCount, // 업데이트한 수량
+      count: itemCount,
+
+      category: modalItem.category, // 카테고리 추가
     };
-    console.log("업데이트할 아이템:", item); // 로그 추가
     dispatch(updateCartItem(item)); // 장바구니 아이템 수량 업데이트
     closeFn(); // 모달 닫기
   };
+
   return (
     <div className="cart-modal">
       <div className="cart-modal-con">

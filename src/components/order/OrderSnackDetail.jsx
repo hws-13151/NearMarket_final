@@ -32,8 +32,8 @@ const OrderSnackDetail = (param) => {
         alert(err);
       }
     };
-    orderDetailFn(); // Calling the function to fetch data
-  }, []); // No dependency on param.param.id here
+    orderDetailFn();
+  }, []);
 
   const IncrementFn = () => {
     setSnackCount(snackcount + 1);
@@ -58,9 +58,10 @@ const OrderSnackDetail = (param) => {
       price: snackItem.price,
       img: `/images/ordersnack/${snackItem.img}`,
       count: snackcount,
+      category: "snackItems",
     };
     dispatch(addCart1(setItemCart));
-    onModalFn(); // Trigger the modal
+    onModalFn();
   };
 
   return (

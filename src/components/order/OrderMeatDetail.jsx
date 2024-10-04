@@ -60,6 +60,7 @@ const OrderMeatDetail = (param) => {
       price: meatItem.price,
       img: `/images/meat/${meatItem.img}`,
       count: count,
+      category: "meatItems",
     };
     dispatch(addCart1(setItemCart));
   };
