@@ -5,7 +5,7 @@ import { asyncAdminFruitFn, asyncAdminVegetableItemsFn, asyncAdminSnackItemsFn, 
 
 const AdminProductModal = ({ product, type, onClose }) => {
   const [title, setTitle] = useState(product.title);
-  const [des, setDes] = useState(product.des);
+  const [description, setDescription] = useState(product.description);
   const [price, setPrice] = useState(product.price)
   const [img, setImg] = useState(product.img);
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const AdminProductModal = ({ product, type, onClose }) => {
     try {
       await axios.put(`http://localhost:3001/${type}/${product.id}`, {
         title,
-        des,
+        description,
         price,
 
 
@@ -98,8 +98,8 @@ const AdminProductModal = ({ product, type, onClose }) => {
         <label>설명:</label>
         <input 
           type="text" 
-          value={des} 
-          onChange={(e) => setDes(e.target.value)} 
+          value={description} 
+          onChange={(e) => setDescription(e.target.value)} 
         />
         <button onClick={productUpdate}>수정</button>
         <button onClick={productDelete}>삭제</button>

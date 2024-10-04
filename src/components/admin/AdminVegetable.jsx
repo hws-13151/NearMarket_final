@@ -35,7 +35,7 @@ const AdminVegetable = () => {
               <li>{el.title}</li>
               <li><img src={`/images/vegetable/${el.img}`} alt={el.img} /></li>
               <li>{el.price}원</li>
-              <li>{el.des}</li>
+              <li>{el.description}</li>
             </ul>
           ))
         ) : (
