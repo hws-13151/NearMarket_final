@@ -49,7 +49,8 @@ const OrderFruitDetail = (param) => {
           id: fruitDetail.id,
           img: `/images/fruit/${fruitDetail.img}`,
           title: fruitDetail.title,
-          price: fruitDetail.price + (isPremium ? 3000 : 0) + (isOrganic ? 2000 : 0),
+          price:
+            fruitDetail.price + (isPremium ? 3000 : 0) + (isOrganic ? 2000 : 0),
           count,
           category: "fruitItems",
         })

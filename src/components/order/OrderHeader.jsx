@@ -85,7 +85,7 @@ const OrderHeader = () => {
                 {!isLogin ? (
                   <Link to={"/auth/join"}>회원가입</Link>
                 ) : (
-                  <Link to={"/auth/detail"}>{loginUser[0].userName}님</Link>
+                  <Link to={"/order/detail"}>{loginUser[0].userName}님</Link>
                 )}
               </li>
               {isLogin && userRole === "ROLE_ADMIN" && (
