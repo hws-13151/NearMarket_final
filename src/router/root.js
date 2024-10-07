@@ -16,11 +16,15 @@ const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
 
-const AuthLayout = lazy(()=> import("../layout/authLayout"))
+const AuthLayout = lazy(() => import("../layout/authLayout"));
 
-const AdminLayout = lazy(()=> import("../layout/admin/AdminLayout"))
+const AdminLayout = lazy(() => import("../layout/admin/AdminLayout"));
 
-const PaymentPage = lazy(()=> import("../pages/payment/PaymentPage"))
+const PaymentPage = lazy(() => import("../pages/payment/PaymentPage"));
+
+const PaymentDetailPage = lazy(() =>
+  import("../pages/payment/PaymentDetailPage")
+);
 
 const root = createBrowserRouter([
   {
@@ -60,22 +64,22 @@ const root = createBrowserRouter([
     ],
   },
   {
-    path:"/order",
-    element:(
+    path: "/order",
+    element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
       </Suspense>
     ),
-    children:[
+    children: [
       {
-        path:"payment",
-        element:(
+        path: "payment",
+        element: (
           <Suspense fallback={Loading}>
             <PaymentPage />
           </Suspense>
-        )
-      }
-    ]
+        ),
+      },
+    ],
   },
 
   {
@@ -116,15 +120,40 @@ const root = createBrowserRouter([
   },
   {
     path: "/auth",
-    element:<Suspense fallback={Loading}><AuthLayout /></Suspense>,
-    children: authrouter()
+    element: (
+      <Suspense fallback={Loading}>
+        <AuthLayout />
+      </Suspense>
+    ),
+    children: authrouter(),
   },
   {
     path: "/admin",
-    element:<Suspense fallback={Loading}><AdminLayout /></Suspense>,
-    children: adminRouter()
-  }
-
+    element: (
+      <Suspense fallback={Loading}>
+        <AdminLayout />
+      </Suspense>
+    ),
+    children: adminRouter(),
+  },
+  {
+    path: "/order",
+    element: (
+      <Suspense fallback={Loading}>
+        <OrderLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "detail",
+        element: (
+          <Suspense fallback={Loading}>
+            <PaymentDetailPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
 ]);
 
 export default root;

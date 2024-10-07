@@ -4,20 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
 
 const MainHeader = () => {
-
-  const loginUser = useSelector(state => state.auth.loginUser)
-  const isLogin = useSelector(state => state.auth.isLogin)
+  const loginUser = useSelector((state) => state.auth.loginUser);
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
-  const navigate = useNavigate()
-  const dispatch =useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <>
       <div className="header">
         <div className="nav">
-          <h1 className="logo" onClick={navigate('/')}>
+          <h1 className="logo" onClick={navigate("/")}>
             <span className="nm">NM</span>
             <span className="jum">.</span>
             <span className="k">K</span>
@@ -25,27 +24,37 @@ const MainHeader = () => {
           <div className="gnb">
             <ul>
               <li>
-                <Link  k to={"/order"}>메뉴</Link>
+                <Link k to={"/order"}>
+                  메뉴
+                </Link>
               </li>
               <li>
-                <Link  k to={"/api"}>매장찾기</Link>
+                <Link k to={"/api"}>
+                  매장찾기
+                </Link>
               </li>
               <li>
-              {!isLogin ?
-                  <Link to={'/auth/login'}>로그인</Link> :
-                  <Link onClick={(e) => {
-                    e.preventDefault()
-                    dispatch(logOutFn())
-                    alert('로그아웃!!')
-                    navigate(0)
-                  }}>로그아웃</Link>
-                }
+                {!isLogin ? (
+                  <Link to={"/auth/login"}>로그인</Link>
+                ) : (
+                  <Link
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(logOutFn());
+                      alert("로그아웃!!");
+                      navigate(0);
+                    }}
+                  >
+                    로그아웃
+                  </Link>
+                )}
               </li>
               <li>
-              {!isLogin ?
-                <Link to={"/auth/join"}>회원가입</Link> :
-                <Link to={'/auth/detail'}>{loginUser[0].userName}님</Link>
-                }
+                {!isLogin ? (
+                  <Link to={"/auth/join"}>회원가입</Link>
+                ) : (
+                  <Link to={"/order/detail"}>{loginUser[0].userName}님</Link>
+                )}
               </li>
               {isLogin && userRole === "ROLE_ADMIN" && (
                 <li>
