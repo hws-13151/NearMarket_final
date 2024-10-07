@@ -1,0 +1,105 @@
+.paymentDetail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.paymentDetail .paymentDetail-con {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.paymentDetail .paymentDetail-con .myinfo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.paymentDetail .paymentDetail-con .myinfo .myinfo-con h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.paymentDetail .paymentDetail-con .myinfo .myinfo-con ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.paymentDetail .paymentDetail-con .myinfo .myinfo-con button {
+  padding: 10px 15px;
+  background-color: #a6aeb4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.paymentDetail .paymentDetail-con .myinfo .myinfo-con button:hover {
+  background-color: #9299a1;
+}
+
+.paymentDetail .paymentDetail-con .paymentlist-con {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.paymentDetail .paymentDetail-con .paymentlist-con h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.paymentDetail .paymentDetail-con .paymentlist-con table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.paymentlist-con table thead {
+  background-color: #f1f1f1;
+}
+
+.paymentlist-con table th,
+.paymentlist-con table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 16px;
+}
+
+.paymentlist-con table th {
+  background-color: #2b2d2e;
+  color: white;
+}
+
+.paymentlist-con table td img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.paymentlist-con table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.paymentlist-con table tr:nth-child(odd) {
+  background-color: #fff;
+}
+/* 
+.paymentlist-con table tr:hover {
+  background-color: #f1f1f1;
+} */
+
+.paymentlist-con table td div {
+  margin-bottom: 5px;
+}

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React from 'react'
 
 const initState ={  
-    paymentItems:[]
+    paymentInformation:[]
 };
 
 
@@ -12,6 +12,19 @@ const paymentSlice = createSlice({
     initialState: initState,
     reducers:{
         
+        },
+        extraReducers: (builder)=>{     
+            builder.addCase(asyncPaymentFn.pending, (state,action)=>{
+                state.status = "Pending"
+            })
+            builder.addCase(asyncPaymentFn.fulfilled,(state,action)=>{
+                state.paymentInformation = action.payload
+                state.status = "Complete"
+            })
+            builder.addCase(asyncPaymentFn.rejected, (state,action)=>{
+                state.status = "Fail"
+            })
+
         }
     }
     
@@ -20,6 +33,20 @@ const paymentSlice = createSlice({
 
 
 
-
+export const asyncPaymentFn = createAsyncThunk(
+    `payment/asyncPaymentFn`,
+    async()=>{
+        try{
+            const res = await axios.get("http://localhost:3001/payment")
+            const data = res.data
+            // console.log(data)
+            // console.log(data.data)
+            return data
+        }catch(err){
+            alert(err)
+            return;
+        }
+    }
+);
 
 export default paymentSlice
