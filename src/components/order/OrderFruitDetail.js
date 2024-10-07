@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
+import DetailModal from "./DetailModal"; // 모달 컴포넌트 임포트
 
 const OrderFruitDetail = (param) => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const OrderFruitDetail = (param) => {
   const [count, setCount] = useState(1);
   const [isPremium, setIsPremium] = useState(false);
   const [isOrganic, setIsOrganic] = useState(false);
+  const [isModal, setIsModal] = useState(false); // 모달 상태 추가
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -54,8 +56,7 @@ const OrderFruitDetail = (param) => {
           category: "fruitItems",
         })
       );
-      alert(`${fruitDetail.title}이(가) 장바구니에 추가되었습니다!`);
-      navigate("/order/cart");
+      setIsModal(true); 
     }
   };
 
@@ -105,9 +106,10 @@ const OrderFruitDetail = (param) => {
       </div>
       <div className="order-go">
         <button onClick={() => navigate(-1)}>이전페이지</button>
-        <button onClick={addCartFn3} >장바구니</button>
+        <button onClick={addCartFn3}>장바구니</button>
         <button>결제</button>
       </div>
+      {isModal && <DetailModal setIsModal={setIsModal} />}
     </div>
   );
 };

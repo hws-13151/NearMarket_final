@@ -2,8 +2,8 @@
   "fruitItems": [
     {
       "title": "딸기",
-      "img": "f0.jpg",
       "price": 9900,
+      "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1"
     },
@@ -50,11 +50,11 @@
       "description": "상큼하면서 달콤한 오렌지"
     },
     {
-      "id": "8",
       "title": "파인애플",
       "price": 7900,
       "img": "f7.jpg",
-      "description": "강한 신맛과 상큼한 파인애플"
+      "description": "강한 신맛과 상큼한 파인애플",
+      "id": "8"
     }
   ],
   "vegetableItems": [
@@ -183,11 +183,11 @@
   ],
   "meatItems": [
     {
-      "id": "1",
       "title": "국내산 삼겹살 구이용",
       "price": 12400,
-      "img": "meat1.jpg",
-      "description": "언제 먹어도 맛있는 육즙 가득 삼겹살"
+      "img": "meat4.jpg",
+      "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
+      "id": "1"
     },
     {
       "id": "2",
