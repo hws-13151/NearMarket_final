@@ -15,6 +15,7 @@ const payData = {
 const Payment = () => {
   const paymentItems = useSelector((state) => state.cart.items);
   const loginUser = useSelector((state) => state.auth.loginUser);
+  const isLogin = useSelector((state) => state.auth.isLogin)
 
   const [onPayment, setOnPayment] = useState(payData);
 
@@ -26,6 +27,17 @@ const Payment = () => {
   paymentItems.forEach((item) => {
     totalPrice += item.price * item.count;
   });
+
+  useEffect(() => {
+    if (!isLogin) {
+      navigate("/auth/login");
+    }
+  }, []);
+  // loginUser가 비어 있거나 존재하지 않을 때 처리
+  if (!loginUser || loginUser.length === 0) {
+    return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
+  }
+
 
   const today = new Date();
   const formattedDate = `${today.getFullYear()}/${String(
@@ -87,6 +99,8 @@ const Payment = () => {
     dispatch(deleteCartAll())
     navigate("/order/detail");
   };
+
+
 
   return (
     <div className="payment">
