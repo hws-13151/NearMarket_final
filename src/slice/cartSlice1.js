@@ -37,7 +37,7 @@ const cartSlice = createSlice({
       }
     },
 
-    deleteCartAll:(state)=>{
+    deleteCartAll: (state) => {
       state.items = [];
     },
 
@@ -55,5 +55,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addCart1, deleteCart, deleteCartAll, updateCartItem } = cartSlice.actions;
+export const { addCart1, deleteCart, deleteCartAll, updateCartItem } =
+  cartSlice.actions;
 export default cartSlice;
