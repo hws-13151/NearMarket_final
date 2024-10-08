@@ -16,10 +16,10 @@ const AdminRight = () => {
           <div className="admin-right-header">
             <p>{loginUser[0].userName} 님</p>
             <ul>
-              <li onClick={()=>{
-                navigate('/auth/detail')
+              <li onClick={() => {
+                navigate('/order/detail')
               }}>내정보</li>
-              <li onClick={(e)=>{
+              <li onClick={(e) => {
                 e.preventDefault()
                 dispatch(logOutFn())
                 alert('로그아웃 성공! 메인화면으로 이동합니다.')

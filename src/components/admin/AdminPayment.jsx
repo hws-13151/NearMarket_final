@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPaymentFn } from "../../slice/paymentSlice";
-import { asyncAuthMemberFn } from "../../slice/authSlice";
+
 
 const AdminPayment = () => {
 
@@ -29,7 +29,7 @@ const AdminPayment = () => {
           <table>
             <thead>
               <tr>
-                <th>회원아이디/이름</th>
+                <th>회원아이디</th>
                 <th>주문일자</th>
                 <th>상품상세내역</th>
                 <th>주문금액</th>
@@ -50,7 +50,7 @@ const AdminPayment = () => {
                       el.paymentResult.map((item, index) => (
                         <div key={index}>
                           {/* item 객체의 개별 속성 렌더링 */}
-                          {item.title} - {item.count}개
+                          {item.title} : {item.count}개
                         </div>
                       ))
                     ) : (
