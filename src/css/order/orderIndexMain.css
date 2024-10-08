@@ -1,0 +1,57 @@
+.order-index{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 1vw 0;
+}
+
+.order-index .order-index-con{
+  flex: 0 1 1600px;
+  height: calc(100vh - 130px - 220px - 2vw);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 3vw;
+  box-sizing: border-box;
+
+  box-shadow: 0 0 2px;
+
+  gap: 2vw;
+}
+
+.order-index .order-index-con .order-index-top{
+  width: 100%;
+  height: 250px;
+  display: flex;
+
+  gap: 4vw;
+}
+
+.order-index .order-index-con .order-index-top h1{
+  flex: 1;
+}
+
+.order-index .order-index-con .order-index-top ul{
+  flex: 4;
+  display: flex;
+}
+
+.order-index .order-index-con .order-index-top ul li{
+  flex: 1;
+  width: 300px;
+  display: flex;
+
+  gap: 10px;
+}
+
+.order-index .order-index-con .order-index-top ul li .top{
+  
+}
+
+.order-index .order-index-con .order-index-top ul li .top img{
+  width: 100%;
+  display: block;
+}
