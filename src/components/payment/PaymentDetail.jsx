@@ -6,9 +6,7 @@ import { asyncPaymentFn } from "../../slice/paymentSlice";
 const PaymentDetail = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
-  const paymentInformation = useSelector(
-    (state) => state.payment.paymentInformation
-  );
+  const paymentInformation = useSelector((state) => state.payment.paymentInformation);
   //   console.log(paymentInformation, "s");
 
   const navigate = useNavigate();

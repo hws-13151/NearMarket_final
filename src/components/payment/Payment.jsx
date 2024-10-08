@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUserFn } from "../../slice/authSlice";
 import axios from "axios";
-import { deleteCart } from "../../slice/cartSlice1";
+import { deleteCartAll } from "../../slice/cartSlice1";
 
 const payData = {
   paymentMethod: "",
@@ -41,7 +41,7 @@ const Payment = () => {
     shopVal: onPayment.shopVal,
     orderMethod: onPayment.orderMethod,
     addressMessage: onPayment.addressMessage,
-    memberEmail: loginUser[0].user,
+    memberEmail: loginUser[0].userEmail,
     orderAddress: loginUser[0].address,
     paymentResult: paymentItems,
     paymentAmount: totalPrice,
@@ -84,6 +84,7 @@ const Payment = () => {
   const paymentSubmitFn = async (e) => {
     e.preventDefault();
     await paymentAxiosFn();
+    dispatch(deleteCartAll())
     navigate("/order/detail");
   };
 
