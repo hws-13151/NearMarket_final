@@ -25,14 +25,9 @@
   box-sizing: border-box;
 }
 
-.order-index-detail .order-index-detail-con .left .img{
-  width: 100vw;
-
-}
-
-
-.order-index-detail .order-index-detail-con .left .img img{
-  width: 100%;
+.order-index-detail .order-index-detail-con .left .left-img img{
+  width: 500px;
+  height: 500px;
   display: block;
 }
 

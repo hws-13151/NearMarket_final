@@ -90,7 +90,7 @@ const OrderIndexDetail = (param) => {
                   <h3>상품설명 :</h3>
                   <br />
                   <p>
-                    
+                    좋은 제품입니다. ♡⸜(˶˃ ᵕ ˂˶)⸝♡
                   </p>
                 </li>
               </ul>
