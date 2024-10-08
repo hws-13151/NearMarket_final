@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addCart1 } from "../../slice/cartSlice1";
+import DetailModal from "./DetailModal";
 
 const detailData = {
   id: 0,
@@ -18,6 +19,7 @@ const OrderVegetableDetail = (param) => {
   const [vegetableDetail, setVegetableDetail] = useState(detailData);
   const [vegetableCount, setVegetableCount] = useState(1);
   const [slide, setSlide] = useState(0);
+  const [isModal, setIsModal] = useState(false)
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -68,8 +70,6 @@ const OrderVegetableDetail = (param) => {
       category: "vegetableItems",
     };
     dispatch(addCart1(vegetableCart));
-    alert("장바구니로 이동합니다");
-    navigate("/order/cart");
   };
 
   const paymentFn = () => {
@@ -84,8 +84,14 @@ const OrderVegetableDetail = (param) => {
     navigate("/order/payment");
   };
 
+  const onModalFn = (e) => {
+    setIsModal(true);
+  };
+
+
   return (
     <>
+      {isModal && <DetailModal setIsModal={setIsModal} />}
       <div className="order-vegetable-detail">
         <div className="order-vegetable-detail-con">
           <div className="left">
@@ -107,7 +113,7 @@ const OrderVegetableDetail = (param) => {
                     <h1>{vegetableDetail.title}</h1>
                   </li>
                   <li>
-                    <h1>{vegetableDetail.price}원</h1>
+                    <h1>{vegetableDetail.price.toLocaleString()}원</h1>
                   </li>
                   <li>
                     <div className="rocket">로켓배송</div>
@@ -135,7 +141,7 @@ const OrderVegetableDetail = (param) => {
                 </div>
                 <div className="counttotal">
                   <span>상품금액 합계</span>
-                  <span>{vegetableDetail.price * vegetableCount} 원</span>
+                  <span>{(vegetableDetail.price * vegetableCount).toLocaleString()} 원</span>
                 </div>
               </div>
             </div>
@@ -147,7 +153,7 @@ const OrderVegetableDetail = (param) => {
               >
                 이전페이지
               </button>
-              <button onClick={addVegetableCartFn}>장바구니</button>
+              <button onClick={addVegetableCartFn} onClickCapture={onModalFn}>장바구니</button>
               <button onClick={paymentFn}>결제</button>
               <button>좋아요</button>
             </div>

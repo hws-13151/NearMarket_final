@@ -1,0 +1,70 @@
+.admin-payment {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.admin-payment .admin-payment-con {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-payment .admin-payment-con h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+
+.admin-payment .admin-payment-con table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.admin-payment table th,
+.admin-payment table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.admin-payment .admin-payment-con table th {
+  background-color: #4CAF50;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+}
+
+.admin-payment .admin-payment-con table td {
+  font-size: 14px;
+  color: #555;
+}
+
+.admin-payment .admin-payment-con tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* .admin-payment table tbody tr:hover {
+    background-color: #ddd;
+  } */
+
+.admin-payment .admin-payment-con td div {
+  font-size: 12px;
+  color: #333;
+}
+
+.admin-payment .admin-payment-con table td {
+  vertical-align: middle;
+}
+
+.admin-payment .admin-payment-con td:last-child {
+  font-weight: bold;
+  color: #333;
+}
