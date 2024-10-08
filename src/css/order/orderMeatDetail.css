@@ -25,13 +25,7 @@
   box-sizing: border-box;
 }
 
-.order-meat-detail .order-meat-detail-con .left .img{
-  width: 100vw;
-
-}
-
-
-.order-meat-detail .order-meat-detail-con .left .img img{
+.order-meat-detail .order-meat-detail-con .left .left-img img{
   width: 100%;
   display: block;
 }
