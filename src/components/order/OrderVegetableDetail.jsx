@@ -89,18 +89,38 @@ const OrderVegetableDetail = (param) => {
   };
 
 
+  const previousSlideFn = () => {
+    setSlide((prevSlide) =>
+      prevSlide === 0 ? vegetableDetail.slideImage.length - 1 : prevSlide - 1
+    );
+  };
+
+  const nextSlideFn = () => {
+    setSlide((prevSlide) =>
+      prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
+    );
+  };
+
+
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} />}
       <div className="order-vegetable-detail">
         <div className="order-vegetable-detail-con">
           <div className="left">
+
             {vegetableDetail.slideImage.length > 0 && (
-              <img
+              <img className="slide"
                 src={`/images/vegetable/${vegetableDetail.slideImage[slide]}`}
                 alt={vegetableDetail.slideImage[slide]}
+
               />
             )}
+            <div className="imagebutton">
+              <button onClick={previousSlideFn}>&lsaquo;</button>
+              <button onClick={nextSlideFn}>&rsaquo;</button>
+            </div>
+
           </div>
           <div className="right">
             <div className="vegetable-detail-item">
