@@ -126,7 +126,7 @@ const AdminProductModal = ({ product, type, onClose }) => {
         <input 
           type="number" 
           value={price} 
-          onChange={(e) => setPrice(e.target.value)} 
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
         <label>설명:</label>
         <input 

@@ -15,6 +15,8 @@ const OrderCartPage1 = lazy(() => import("../pages/cart/CartListPage1"));
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
+const OrderIndexPage = lazy(() => import("../pages/order/OrderIndexPage"));
+
 
 const AuthLayout = lazy(() => import("../layout/authLayout"));
 
@@ -58,6 +60,24 @@ const root = createBrowserRouter([
         element: (
           <Suspense fallback={Loading}>
             <OrderCartPage1 />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/order",
+    element: (
+      <Suspense fallback={Loading}>
+        <OrderLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "index",
+        element: (
+          <Suspense fallback={Loading}>
+            <OrderIndexPage />
           </Suspense>
         ),
       },

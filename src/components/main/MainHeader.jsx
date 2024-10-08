@@ -24,7 +24,7 @@ const MainHeader = () => {
           <div className="gnb">
             <ul>
               <li>
-                <Link k to={"/order"}>
+                <Link k to={"/order/index"}>
                   메뉴
                 </Link>
               </li>
