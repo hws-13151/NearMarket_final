@@ -1,7 +1,39 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  
   const navigate = useNavigate()
+  const [autoImg, setAutoImg] = useState(0)
+  
+  const FirstIndex = 0;
+  const LastIndex = 3;
+  const MoveIndex = 1;
+  const intervalTime = 3000;
+
+  const moveToSlide = (value) =>{
+    if(value === 'prev'){
+      setAutoImg((prevState)=>
+        prevState > FirstIndex ? prevState - MoveIndex : LastIndex
+      )
+    }
+    if(value === 'next'){
+      setAutoImg((prevState)=>
+        prevState < LastIndex ? prevState + MoveIndex : FirstIndex
+      )
+    }
+  }
+
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setAutoImg((prevState) =>
+        prevState < LastIndex ? prevState + MoveIndex : FirstIndex
+      );
+    }, intervalTime);
+
+    // 컴포넌트 언마운트 시 인터벌 제거
+    return () => clearInterval(autoSlide);
+  }, []);
 
   return (
     <>
@@ -10,25 +42,32 @@ const Main = () => {
           <div className="section1">
             {/* 이미지 양 옆 넘기기 버튼 */}
             <div className="bCon">
-              <button className="leftBtn">&lsaquo;</button>
-              <button className="rightBtn">&rsaquo;</button>
+              <button className="leftBtn" onClick={()=>moveToSlide('prev')}>&lsaquo;</button>
+              <button className="rightBtn" onClick={()=>moveToSlide('next')}>&rsaquo;</button>
             </div>
             {/* 자동 넘기기 이미지 */}
             <div className="autoGallery">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li style={{
+                  transform: `translateX(${-100 * autoImg}%)`
+                 }}></li>
+                <li style={{
+                  transform: `translateX(${-100 * autoImg}%)`
+                 }}></li>
+                <li style={{
+                  transform: `translateX(${-100 * autoImg}%)`
+                 }}></li>
+                <li style={{
+                  transform: `translateX(${-100 * autoImg}%)`
+                 }}></li>
               </ul>
             </div>
             {/* 이미지 넘어가면 한 칸씩 넘어가는 하단 바 */}
             <div className="bottomBar">
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                 {Array.from({ length: 4 }).map((_, index) => (
+                  <li key={index} style={{ backgroundColor: autoImg === index ? 'red' : 'gray' }}></li>
+                ))}
               </ul>
             </div>
           </div>

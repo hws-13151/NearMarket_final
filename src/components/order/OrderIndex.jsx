@@ -107,7 +107,7 @@ const OrderIndex = () => {
             {indexList && indexList.map((el, idx) => (
               <li key={idx} data-id={el.id} onClick={indexDetailFn}>
                 <div className="top">
-                  <img src={`/images/orderIndex/${el.img}`} alt={el.img} />
+                  <img src={`/images/index/${el.img}`} alt={el.img} />
                 </div>
                 <div className="bottom">
                   <h4>{el.title}</h4>

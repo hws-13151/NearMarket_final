@@ -72,7 +72,7 @@ const OrderIndexDetail = (param) => {
         <div className="order-index-detail-con">
           <div className="left">
             <div className="left-img">
-              <img src={`/images/orderindex/${indexItem.img}`} alt={indexItem.img} />
+              <img src={`/images/index/${indexItem.img}`} alt={indexItem.img} />
             </div>
           </div>
           <div className="right">

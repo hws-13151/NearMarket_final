@@ -26,31 +26,50 @@ const AdminSnack = () => {
   };
 
   return (
-    <div className="admin-meat">
-      <div className="admin-meat-con">
-        {snackItems && snackItems.length > 0 ? ( // snackItems로 수정
-          snackItems.map((el, idx) => (
-            <ul key={idx} onClick={() => openModal(el)}> 
-              <li>{el.id}</li>
-              <li>{el.title}</li>
-              <li><img src={`/images/ordersnack/${el.img}`} alt={el.img} /></li>
-              <li>{el.price}원</li>
-              <li>{el.description}</li>
+    <>
+      <div className="admin-snack-all">
+        <div className="admin-snack-header">
+            <h2>
+              신메뉴 <span>Total {snackItems.length}</span>
+            </h2>
+          </div>
+        <div className="admin-snack">
+          <div className="admin-snack-con">
+            <ul>
+              {snackItems && snackItems.length > 0 ? ( // snackItems로 수정
+                snackItems.map((el, idx) => {
+                  return(
+                    <li key={idx} onClick={() => openModal(el)}>
+                        <div className="top">
+                          <img
+                            src={`/images/ordersnack/${el.img}`}
+                            alt={`${el.title} 이미지`} // alt 속성 추가
+                          />
+                        </div>
+                        <div className="bottom">
+                          <span className="title">{el.title}</span>
+                          <p className="description">{el.description}</p>
+                          <span className="price">{el.price}원</span>
+                        </div>
+                      </li>
+                  )
+                })
+              ) : (
+                <p>상품 정보가 없습니다.</p>
+              )}
             </ul>
-          ))
-        ) : (
-          <p>상품 정보가 없습니다.</p>
-        )}
-      </div>
+          </div>
 
-      {isModalOpen && selectedProduct && (
-        <AdminProductModal 
-          product={selectedProduct} 
-          type="snackItems" // snackItems로 수정
-          onClose={closeModal} 
-        />
-      )}
-    </div>
+          {isModalOpen && selectedProduct && (
+            <AdminProductModal 
+              product={selectedProduct} 
+              type="snackItems" // snackItems로 수정
+              onClose={closeModal} 
+            />
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 
