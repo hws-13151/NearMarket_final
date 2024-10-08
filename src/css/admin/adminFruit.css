@@ -9,12 +9,12 @@
   
   .admin-fruit-con {
     flex: 0 1 1300px; 
-    max-height: calc(100vh - 80px - 60px); 
+    max-height: calc(100vh - 80px - 30px); 
     overflow-y: auto; 
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
-    padding: 0; 
+    padding: 10px; 
     list-style: none;
   }
   

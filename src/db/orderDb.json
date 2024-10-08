@@ -288,7 +288,83 @@
       "phoneNumber": "11",
       "role": "ROLE_ADMIN",
       "id": "9111"
+    },
+    {
+      "id": "792c",
+      "userEmail": "a2@email.com",
+      "userPw": "1111",
+      "age": "24",
+      "userName": "a2",
+      "address": "노원구",
+      "phoneNumber": "01012345678",
+      "role": "ROLE_ADMIN"
     }
   ],
-  "payment": []
+  "payment": [
+    {
+      "id": "d85b",
+      "paymentMethod": "신용카드",
+      "shopVal": "노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "양파",
+          "price": 1000,
+          "img": "/images/vegetable/onion.jpg",
+          "count": 1
+        },
+        {
+          "id": "2",
+          "title": "국내산 목살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 1,
+          "category": "meatItems"
+        }
+      ],
+      "paymentAmount": 14000,
+      "time": "2024/10/08 14:07:43"
+    },
+    {
+      "id": "7763",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "5",
+          "title": "호박",
+          "price": 10000,
+          "img": "/images/vegetable/pumkin.jpg",
+          "count": 2,
+          "category": "vegetableItems"
+        },
+        {
+          "id": "3",
+          "title": "칫솔",
+          "price": 2000,
+          "img": "/images/index/toothBrushes.jpg",
+          "count": 1,
+          "category": "indexItems"
+        },
+        {
+          "id": "4",
+          "img": "/images/fruit/f3.jpg",
+          "title": "바나나",
+          "price": 5900,
+          "count": 1,
+          "category": "fruitItems"
+        }
+      ],
+      "paymentAmount": 27900,
+      "time": "2024/10/08 16:05:28"
+    }
+  ]
 }

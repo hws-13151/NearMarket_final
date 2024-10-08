@@ -28,19 +28,29 @@ const AdminVegetable = () => {
   return (
     <div className="admin-vegetable">
       <div className="admin-vegetable-con">
+        <ul>
         {vegetableItems && vegetableItems.length > 0 ? (
           vegetableItems.map((el, idx) => (
-            <ul key={idx} onClick={() => openModal(el)}> 
+            <li key={idx} onClick={() => openModal(el)}> 
               <li>{el.id}</li>
-              <li>{el.title}</li>
-              <li><img src={`/images/vegetable/${el.img}`} alt={el.img} /></li>
-              <li>{el.price}원</li>
-              <li>{el.description}</li>
-            </ul>
+              <div className="top">
+                  <img src={`/images/vegetable/${el.img}`} alt={el.img} />
+                </div>
+
+              <div className="bottom">
+                  <span>{el.title}</span>
+                  <span className="delivery-order">
+                    <img src={`/images/vegetable/${el.rocket}`} alt= {el.rocket}/>로켓배송
+                  </span>
+                  <span>{el.description}</span>
+                  <span>{el.price}원</span>
+                </div>
+            </li>
           ))
         ) : (
           <p>상품 정보가 없습니다.</p>
         )}
+        </ul>
       </div>
 
       {isModalOpen && selectedProduct && (
