@@ -11,6 +11,8 @@ const AdminSnackPage = lazy(()=> import('../pages/admin/AdminSnackPage'))
 const AdminCartPage = lazy(()=> import('../pages/admin/AdminCartPage'))
 const AdminShopPage = lazy(()=> import('../pages/admin/AdminShopPage'))
 const AdminPaymentPage = lazy(()=> import('../pages/admin/AdminPaymentPage'))
+const AdminBestPage = lazy(()=> import('../pages/admin/AdminBestPage'))
+
 
 const adminRouter = () => {
   return (
@@ -22,6 +24,10 @@ const adminRouter = () => {
     {
       path: 'index',
       element: <Suspense fallback={Loading}><AdminIndexPage /></Suspense>
+    },
+    {
+      path:'best',
+      element: <Suspense fallback={Loading}><AdminBestPage /></Suspense>
     },
     {
       path: 'members',

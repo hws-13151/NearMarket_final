@@ -76,6 +76,9 @@ const AdminProductsInsert = () => {
         case 'snack':
           itemUrl = 'snackItems'
           break
+        case 'best':
+          itemUrl = 'indexItems'
+          break
         default:
           alert('상품 코너를 선택하세요.');
           return
@@ -140,6 +143,7 @@ const AdminProductsInsert = () => {
                   <li>
                     <select name="order-corner" id="order-corner" onChange={itemAddFn}>
                       <option value="">상품코너 선택</option>
+                      <option value="best">베스트코너</option>
                       <option value="vegetable">채소코너</option>
                       <option value="meat">고기코너</option>
                       <option value="fruit">과일코너</option>

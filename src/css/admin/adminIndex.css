@@ -31,26 +31,25 @@
 
 .admin-index {
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 100vh; /* 화면 전체 높이 */
   background-color: #eeeeee;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* 스크롤 활성화 */
 }
 
 .admin-index .admin-index-con {
+  
   width: 95%;
-  height: 95%;
-
+  max-height: 100%; /* 내부 콘텐츠에 스크롤이 생기도록 설정 */
   box-shadow: 0px 0px 5px #ccc;
   box-sizing: border-box;
-
   background-color: white;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* 이곳에도 스크롤 적용 */
 }
 
 .admin-index .admin-index-con ul {
@@ -59,7 +58,9 @@
   grid-template-rows: repeat(2, 13vw);
   grid-auto-rows: 13vw;
   gap: 2vw;
+  overflow-y: auto; /* ul 내부에도 스크롤 적용 */
 }
+
 
 .admin-index .admin-index-con ul li {
   /* border: 1px solid; */
@@ -79,50 +80,54 @@
   background: url(../../../public/images/admin/member.jpg) no-repeat 50% / cover;
   filter: grayscale(50%);
 }
-
 .admin-index .admin-index-con ul li:nth-child(2) {
+  background: url(../../../public/images/admin/adminBest.png) no-repeat 50% / cover;
+  filter: grayscale(50%);
+}
+
+.admin-index .admin-index-con ul li:nth-child(3) {
   background: url(../../../public/images/admin/adminVegetable.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(3) {
+.admin-index .admin-index-con ul li:nth-child(4) {
   background: url(../../../public/images/admin/adminMeat.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(4) {
+.admin-index .admin-index-con ul li:nth-child(5) {
   background: url(../../../public/images/admin/adminFruit.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(5) {
+.admin-index .admin-index-con ul li:nth-child(6) {
   background: url(../../../public/images/admin/adminSnack.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(6) {
+.admin-index .admin-index-con ul li:nth-child(7) {
   background: url(../../../public/images/admin/adminProdutcsInsert.png)
     no-repeat 50% / cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(7) {
+.admin-index .admin-index-con ul li:nth-child(8) {
   background: url(../../../public/images/admin/adminCart.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(8) {
+.admin-index .admin-index-con ul li:nth-child(9) {
   background: url(../../../public/images/admin/adminShop.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);
 }
 
-.admin-index .admin-index-con ul li:nth-child(9) {
+.admin-index .admin-index-con ul li:nth-child(10) {
   background: url(../../../public/images/admin/adminPayment.jpg) no-repeat 50% /
     cover;
   filter: grayscale(50%);

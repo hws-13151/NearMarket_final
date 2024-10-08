@@ -14,7 +14,10 @@ const AdminLeft = () => {
             <img src="/images/admin/user1.png" alt="user" />
               <Link to={'/admin/members'}>회원</Link>             
             </li>
-            
+            <li>
+            <img src="/images/admin/best.png" alt="best" />
+              <Link to={'/admin/best'}>베스트 상품</Link>             
+            </li>
             <li>
             <img src="/images/orderheader/vegetable.png" alt="vegetable" />
               <Link to={'/admin/vegetable'}>채소</Link>

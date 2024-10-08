@@ -5,7 +5,8 @@ import {
   asyncAdminFruitFn,
   asyncAdminVegetableItemsFn,
   asyncAdminSnackItemsFn,
-  asyncAdminMeatItemsFn
+  asyncAdminMeatItemsFn,
+  asyncAdminindexItemsFn
 } from '../../slice/adminSlice';
 
 const AdminProductModal = ({ product, type, onClose }) => {
@@ -34,7 +35,6 @@ const AdminProductModal = ({ product, type, onClose }) => {
     }
   }
 
-
   // 상품 업데이트 함수
   const productUpdate = async () => {
     try {
@@ -60,6 +60,9 @@ const AdminProductModal = ({ product, type, onClose }) => {
           break;
         case 'meatItems':
           dispatch(asyncAdminMeatItemsFn());
+          break;
+        case 'indexItems':
+          dispatch(asyncAdminindexItemsFn());
           break;
         default:
           break;
@@ -93,6 +96,9 @@ const AdminProductModal = ({ product, type, onClose }) => {
           case 'meatItems':
             dispatch(asyncAdminMeatItemsFn());
             break;
+          case 'indexItems':
+            dispatch(asyncAdminindexItemsFn());
+            break;
           default:
             break;
         }
@@ -104,15 +110,16 @@ const AdminProductModal = ({ product, type, onClose }) => {
 
   return (
     <div className="modal">
-      <div className="modal-content">
+      <div className="modal-con">
+        <button className="close" onClick={onClose}>X</button>
         <h2>{`상품 정보 수정 (${type})`}</h2>
-        <label>상품명:</label>
+        <label>상품명</label>
         <input 
           type="text" 
           value={title} 
           onChange={(e) => setTitle(e.target.value)} 
         />
-        <label>이미지 수정:</label>
+        <label>이미지 수정</label>
         <input 
           type="file" 
           accept="image/jpg, image/png, image/jpeg" 
@@ -122,21 +129,22 @@ const AdminProductModal = ({ product, type, onClose }) => {
           onChangeCapture={preview}
         />
         {img && <img src={previewImg ? previewImg : "/default-image-path.jpg"} alt="미리보기" style={{ width: '100px', height: '100px' }} />}
-        <label>가격:</label>
+        <label>가격</label>
         <input 
           type="number" 
           value={price} 
           onChange={(e) => setPrice(Number(e.target.value))}
         />
-        <label>설명:</label>
+        <label>설명</label>
         <input 
           type="text" 
           value={description} 
           onChange={(e) => setDescription(e.target.value)} 
         />
-        <button onClick={productUpdate}>수정</button>
-        <button onClick={productDelete}>삭제</button>
-        <button onClick={onClose}>닫기</button>
+        <div className="btn1-con">
+          <button className="update-btn" onClick={productUpdate}>수정</button>
+          <button className="delete-btn" onClick={productDelete}>삭제</button>
+        </div>
       </div>
     </div>
   );
