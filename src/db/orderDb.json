@@ -288,9 +288,17 @@
       "address": "서울시 노원구 ",
       "phoneNumber": "010-1234-1234",
       "role": "ROLE_ADMIN"
+    },
+    {
+      "id": "9111",
+      "userEmail": "yyk6591@email.com",
+      "userPw": "1111",
+      "age": "11",
+      "userName": "김영연",
+      "address": "11",
+      "phoneNumber": "11",
+      "role": "ROLE_ADMIN"
     }
   ],
-  "payment": [
-    
-  ]
+  "payment": []
 }
