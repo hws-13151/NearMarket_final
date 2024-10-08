@@ -291,53 +291,6 @@
     }
   ],
   "payment": [
-    {
-      "id": "f5de",
-      "paymentMethod": "신용카드",
-      "shopVal": "노원점",
-      "orderMethod": "직접방문",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "orderAddress": "서울시 노원구",
-      "paymentResult": [
-        {
-          "id": "2",
-          "title": "옥수수",
-          "price": 5000,
-          "img": "/images/vegetable/corn.jpg",
-          "count": 1,
-          "category": "vegetableItems"
-        },
-        {
-          "id": "1",
-          "title": "국내산 삼겹살 구이용",
-          "price": 12400,
-          "img": "/images/meat/meat4.jpg",
-          "count": 1,
-          "category": "meatItems"
-        }
-      ],
-      "paymentAmount": 17400,
-      "time": "2024/10/07 16:26:12"
-    },
-    {
-      "id": "8655",
-      "paymentMethod": "신용카드",
-      "shopVal": "노원점",
-      "orderMethod": "직접방문",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "orderAddress": "서울시 노원구",
-      "paymentResult": [
-        {
-          "id": "2",
-          "title": "국내산 목살[냉장보관]",
-          "price": 13000,
-          "img": "/images/meat/meat2.jpg",
-          "count": 1,
-          "category": "meatItems"
-        }
-      ],
-      "paymentAmount": 13000,
-      "time": "2024/10/07 17:02:35"
-    }
+    
   ]
 }

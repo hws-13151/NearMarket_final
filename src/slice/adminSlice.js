@@ -6,7 +6,8 @@ const initState ={
   vegetableItems: [],
   snackItems: [],
   meatItems: [],
-  members: []
+  members: [],
+  indexItems: []
 }
 
 const adminSlice = createSlice({
@@ -69,6 +70,17 @@ const adminSlice = createSlice({
     builder.addCase(asyncAdminMeatItemsFn.rejected, (state, action) => {
       state.status = 'Fail!!' // rejected!
     })
+    //indexItems reducers
+    builder.addCase(asyncAdminindexItemsFn.pending, (state, action) => { 
+      state.status = 'Pending' // 대기상태
+    })
+    builder.addCase(asyncAdminindexItemsFn.fulfilled, (state, action) => {
+      state.indexItems = action.payload // 수정
+      state.status = 'Complete' // Success!
+    })
+    builder.addCase(asyncAdminindexItemsFn.rejected, (state, action) => {
+      state.status = 'Fail!!' // rejected!
+    })
   }
 })
 
@@ -128,6 +140,20 @@ export const asyncAdminMeatItemsFn = createAsyncThunk(`admin/asyncAdminmeatItems
   async () => {
     try {
       const res = await axios.get('http://localhost:3001/meatItems')
+      console.log(res.data);
+      const data = res.data
+      return data
+    } catch (err) {
+      alert(err)
+      return
+    }
+  }
+)
+
+export const asyncAdminindexItemsFn = createAsyncThunk(`admin/asyncAdminindexItemsFn`,
+  async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/indexItems')
       console.log(res.data);
       const data = res.data
       return data
