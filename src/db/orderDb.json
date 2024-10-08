@@ -184,8 +184,8 @@
   "meatItems": [
     {
       "title": "국내산 삼겹살 구이용",
-      "price": 12000,
-      "img": "meat1.jpg",
+      "price": 12400,
+      "img": "meat4.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1"
     },
@@ -216,6 +216,36 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우"
+    }
+  ],
+  "indexItems": [
+    {
+      "title": "공기 청정기",
+      "price": 70000,
+      "img": "airCleaner.jpg",
+      "description": "언제 어디서나 맑고 상쾌하게",
+      "id": "1"
+    },
+    {
+      "title": "휴지",
+      "price": 1000,
+      "img": "toiletPaper.jpg",
+      "description": "부드러운 휴지",
+      "id": "2"
+    },
+    {
+      "title": "칫솔",
+      "price": 2000,
+      "img": "toothBrushes.jpg",
+      "description": "미세모 칫솔 ",
+      "id": "3"
+    },
+    {
+      "title": "멀티탭",
+      "price": 5000,
+      "img": "multitab.jpg",
+      "description": "편하고 안전하게 사용하세요",
+      "id": "4"
     }
   ],
   "members": [
@@ -260,5 +290,54 @@
       "role": "ROLE_ADMIN"
     }
   ],
-  "payment": []
+  "payment": [
+    {
+      "id": "f5de",
+      "paymentMethod": "신용카드",
+      "shopVal": "노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "orderAddress": "서울시 노원구",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "category": "vegetableItems"
+        },
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat4.jpg",
+          "count": 1,
+          "category": "meatItems"
+        }
+      ],
+      "paymentAmount": 17400,
+      "time": "2024/10/07 16:26:12"
+    },
+    {
+      "id": "8655",
+      "paymentMethod": "신용카드",
+      "shopVal": "노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "orderAddress": "서울시 노원구",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "국내산 목살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 1,
+          "category": "meatItems"
+        }
+      ],
+      "paymentAmount": 13000,
+      "time": "2024/10/07 17:02:35"
+    }
+  ]
 }

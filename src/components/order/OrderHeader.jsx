@@ -38,7 +38,7 @@ const OrderHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/order"}>메인메뉴</Link>
+                <Link to={"/order/index"}>메인메뉴</Link>
               </li>
               <li>
                 <Link to={"/order/vegetable"}>
