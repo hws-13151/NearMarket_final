@@ -1,13 +1,13 @@
 @import url(orderMeatDetail.css);
 
-.order-meat{
+.order-meat {
   width: 100%;
   display: flex;
   justify-content: center;
-  
+
 }
 
-.order-meat .order-meat-con{
+.order-meat .order-meat-con {
   flex: 0 1 1300px;
 
   display: flex;
@@ -20,7 +20,7 @@
   padding: 10px;
 }
 
-.order-meat .order-meat-con .order-meat-title{
+.order-meat .order-meat-con .order-meat-title {
   width: 100%;
   height: auto;
   display: flex;
@@ -30,14 +30,14 @@
   /* border: 1px solid; */
 
   box-shadow: inset 0 -2px 0 black;
-  
+
 }
 
-.order-meat .order-meat-con .order-meat-title h1{
+.order-meat .order-meat-con .order-meat-title h1 {
   padding: 15px 0;
 }
 
-.order-meat .order-meat-con .order-meat-item{
+.order-meat .order-meat-con .order-meat-item {
   width: 1200px;
   height: auto;
   border: 0.2px solid #ccc;
@@ -45,19 +45,19 @@
   box-shadow: 2px 2px 3px #ccc;
 }
 
-.order-meat .order-meat-con .order-meat-item>ul{
+.order-meat .order-meat-con .order-meat-item>ul {
 
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(2,2fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 2fr);
   grid-auto-rows: 2fr;
 
   padding: 3vw;
-  
+
   gap: 3vw;
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li{
+.order-meat .order-meat-con .order-meat-item>ul>li {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,33 +67,33 @@
   cursor: pointer;
 
   transition: all 0.3s;
-  
+
   /* border: 1px solid; */
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li:hover{
+.order-meat .order-meat-con .order-meat-item>ul>li:hover {
   transform: scale(1.03);
 
   box-shadow: 2px 2px 2px #ccc;
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li .top{
+.order-meat .order-meat-con .order-meat-item>ul>li .top {
   width: 100%;
   flex: 3;
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li .top img{
+.order-meat .order-meat-con .order-meat-item>ul>li .top img {
   width: 100%;
   display: block;
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li .bottom{
+.order-meat .order-meat-con .order-meat-item>ul>li .bottom {
   flex: 1;
   display: flex;
   flex-direction: column;
 
 }
 
-.order-meat .order-meat-con .order-meat-item>ul>li .bottom span{
+.order-meat .order-meat-con .order-meat-item>ul>li .bottom span {
   padding: 3px 0;
 }
