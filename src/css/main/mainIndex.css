@@ -103,31 +103,28 @@
 
 .autoGallery{
   width: 400%;
-  height: inherit;
-  box-sizing: border-box;
-
+  height: 100%;
+  display: flex;
   position: absolute;
-  
-  transition: all 0.4s;
 }
 
 .autoGallery ul{
   width: 100%;
-  height: inherit;
-  
+  height: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .autoGallery ul li{
   flex: 1;
-
+  height: 100%;
+  background-size: cover;
+  background-position: center;
   /* border: 2px solid #ff00ff; */
-  box-sizing: border-box;
+  transition: all 1s;
 }
 
 .autoGallery ul li:nth-child(1){
-  background: url(../../../public/images/main-img/mart1.jpg) no-repeat 50%/cover;
+  background: url(/public/images/main-img/mart1.jpg) no-repeat 50%/cover;
 }
 .autoGallery ul li:nth-child(2){
   background: url(../../../public/images/main-img/mart2.jpg) no-repeat 50%/cover;
