@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const itemData ={
   title: "",
@@ -15,7 +16,7 @@ const AdminProductsInsert = () => {
   const [isTitle, setIsTitle] = useState(false)
   const imgRef = useRef();
   const selectedCategory = formData["order-corner"];
-
+  const navigate = useNavigate()
 
   const itemAddFn = (e) =>{
     const { name , value } = e.target;
@@ -93,6 +94,7 @@ const AdminProductsInsert = () => {
       }
       await axios.post(`http://localhost:3001/${itemUrl}`, formData)
       alert("상품등록 성공!~ (˶ᵔ ᵕ ᵔ˶)")
+      navigate(`/admin/${selectedCategory}`)
     } catch (error) {
       alert('상품 등록 중 오류가 발생했습니다.')
     } 
