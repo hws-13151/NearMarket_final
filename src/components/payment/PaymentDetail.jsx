@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { asyncPaymentFn } from "../../slice/paymentSlice";
+import PaymentDetailModal from "./PaymentDetailModal";
 
 const PaymentDetail = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
   const paymentInformation = useSelector((state) => state.payment.paymentInformation);
   //   console.log(paymentInformation, "s");
+  const [paymentModal, setPaymentModal] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,7 +22,17 @@ const PaymentDetail = () => {
     return <div>로그인 되지 않았습니다. 로그인 후 다시 시도하세요.</div>;
   }
 
+  const paymentModalFn = (e) => {
+    setPaymentModal(true)
+  }
+
+  const closePaymentModalFn = (e) => {
+    setPaymentModal(false)
+  }
+
+
   return (
+
     <div className="paymentDetail">
       <div className="paymentDetail-con">
         <div className="myinfo">
@@ -38,7 +50,7 @@ const PaymentDetail = () => {
                 </li>
               ))}
             </ul>
-            <button>내 정보 수정</button>
+            <button onClick={paymentModalFn}>내 정보 수정</button>
           </div>
         </div>
         <div className="paymentlist"></div>
@@ -83,14 +95,14 @@ const PaymentDetail = () => {
                     </tr>
                   ))
               ) : (
-                <tr>
-                  <td colSpan="no">주문 내역이 없습니다.</td>
-                </tr>
+
+                <div className="nopayment">주문내역이 없습니다</div>
               )}
             </tbody>
           </table>
         </div>
       </div>
+      {paymentModal && <PaymentDetailModal onClose={closePaymentModalFn} />}
     </div>
   );
 };

@@ -260,16 +260,6 @@
       "role": "ROLE_MEMBER"
     },
     {
-      "id": "2",
-      "userEmail": "a2@email.com",
-      "userPw": "1111",
-      "age": "10",
-      "userName": "영희",
-      "address": "서울시 노원구",
-      "phoneNumber": "010123456789",
-      "role": "ROLE_ADMIN"
-    },
-    {
       "id": "3",
       "userEmail": "a3@email.com",
       "userPw": "1111",
@@ -290,14 +280,14 @@
       "role": "ROLE_ADMIN"
     },
     {
-      "id": "9111",
       "userEmail": "yyk6591@email.com",
       "userPw": "1111",
-      "age": "11",
+      "age": "11111111",
       "userName": "김영연",
       "address": "11",
       "phoneNumber": "11",
-      "role": "ROLE_ADMIN"
+      "role": "ROLE_ADMIN",
+      "id": "9111"
     }
   ],
   "payment": []
