@@ -405,5 +405,24 @@
       "lng": 127.052683
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "1",
+      "title": "오감자 오리지널",
+      "price": 1000,
+      "img": "/images/ordersnack/s0.jpg",
+      "count": 1,
+      "category": "snack",
+      "userEmail": "guest"
+    },
+    {
+      "id": "4",
+      "title": "홈런볼 초코맛",
+      "price": 1400,
+      "img": "/images/ordersnack/s3.jpg",
+      "count": 3,
+      "category": "snack",
+      "userEmail": "guest"
+    }
+  ]
 }
