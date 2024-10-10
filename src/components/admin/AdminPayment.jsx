@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPaymentFn } from "../../slice/paymentSlice";
+import SearchBox from "../order/SearchBox";
 
 
 const AdminPayment = () => {
@@ -9,6 +10,7 @@ const AdminPayment = () => {
   // const memberList =useSelector((state)=> state.auth.memberList)
 
   const dispatch = useDispatch()
+  const [userInput, setUserInput] = useState("")
 
 
 
@@ -20,12 +22,20 @@ const AdminPayment = () => {
   //   dispatch(asyncAuthMemberFn())
   // },[])
 
+  const handleChange = (e) => {
+    setUserInput(e.target.value)
+  }
+  const filteredPaymentMember = paymentInformation.filter((paymentList) => {
+    return paymentList.memberEmail.toLowerCase().includes(userInput.toLowerCase())
+  })
+
 
   return (
     <>
       <div className="admin-payment">
         <div className="admin-payment-con">
           <h1>회원 결제내역</h1>
+          <span><SearchBox handleChange={handleChange} /></span>
           <table>
             <thead>
               <tr>
@@ -40,7 +50,7 @@ const AdminPayment = () => {
               </tr>
             </thead>
             <tbody>
-              {paymentInformation && paymentInformation.map((el, idx) => (
+              {filteredPaymentMember && filteredPaymentMember.map((el, idx) => (
                 <tr key={idx}>
                   <td>{el.memberEmail}</td>
                   <td>{el.time}</td>
