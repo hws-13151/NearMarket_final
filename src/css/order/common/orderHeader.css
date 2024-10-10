@@ -62,6 +62,7 @@
   display: flex;
   align-items: center;
   margin-right: 30px;
+  gap: 1vw;
 }
 
 .order-header .order-header-nav .gnb ul li:last-child {

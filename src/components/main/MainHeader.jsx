@@ -25,7 +25,7 @@ const MainHeader = () => {
           <div className="gnb">
             <ul>
               <li>
-                <Link to={"/order/index"}>
+                <Link k to={"/order/index"}>
                   쇼핑하기
                 </Link>
               </li>
