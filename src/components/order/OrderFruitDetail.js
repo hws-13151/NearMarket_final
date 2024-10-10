@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal"; // 모달 컴포넌트 임포트
 
@@ -13,6 +13,12 @@ const OrderFruitDetail = (param) => {
   const [isOrganic, setIsOrganic] = useState(false);
   const [isModal, setIsModal] = useState(false); // 모달 상태 추가
   const dispatch = useDispatch();
+
+  // 사용자 이메일을 가져옵니다.
+  const userEmail = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+  );
+  console.log(userEmail);
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
@@ -27,7 +33,7 @@ const OrderFruitDetail = (param) => {
       }
     };
     fetchFruitDetail();
-  }, []);
+  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
 
   const fruitIncrementFn = () => {
     setCount(count + 1);
@@ -54,10 +60,11 @@ const OrderFruitDetail = (param) => {
           price:
             fruitDetail.price + (isPremium ? 3000 : 0) + (isOrganic ? 2000 : 0),
           count,
-          category: "fruitItems",
+          category: "fruit",
+          userEmail, // 이메일을 추가하여 사용자가 누군지 구별
         })
       );
-      setIsModal(true); 
+      setIsModal(true);
     }
   };
 

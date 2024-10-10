@@ -12,6 +12,7 @@ const MainHeader = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+
   return (
     <>
       <div className="header">
@@ -29,7 +30,7 @@ const MainHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/order/api"}>
+                <Link k to={"/api"}>
                   매장찾기
                 </Link>
               </li>

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
 
 const meatData = {
@@ -18,6 +18,13 @@ const OrderMeatDetail = (param) => {
   const [meatItem, setMeatItem] = useState(meatData);
   const [count, setCount] = useState(1);
 
+  const dispatch = useDispatch();
+
+  // 사용자 이메일을 가져옵니다.
+  const userEmail = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+  );
+
   useEffect(() => {
     const ordermeatDetailFn = async () => {
       const meatId = param.param.id;
@@ -31,7 +38,7 @@ const OrderMeatDetail = (param) => {
       }
     };
     ordermeatDetailFn();
-  }, []);
+  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
 
   const IncrementFn = () => {
     setCount(count + 1);
@@ -47,11 +54,9 @@ const OrderMeatDetail = (param) => {
 
   const [isModal, setIsModal] = useState(false);
 
-  const onModalFn = (e) => {
+  const onModalFn = () => {
     setIsModal(true);
   };
-
-  const dispatch = useDispatch();
 
   const addCartFn2 = () => {
     const setItemCart = {
@@ -60,7 +65,8 @@ const OrderMeatDetail = (param) => {
       price: meatItem.price,
       img: `/images/meat/${meatItem.img}`,
       count: count,
-      category: "meatItems",
+      category: "meat",
+      userEmail, // 이메일 정보를 추가
     };
     dispatch(addCart1(setItemCart));
   };

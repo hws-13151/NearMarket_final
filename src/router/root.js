@@ -29,6 +29,7 @@ const PaymentDetailPage = lazy(() =>
   import("../pages/payment/PaymentDetailPage")
 );
 
+
 const root = createBrowserRouter([
   {
     path: "/",
@@ -211,7 +212,7 @@ const root = createBrowserRouter([
         ),
       },
     ],
-  },
+  }
 ]);
 
 export default root;
