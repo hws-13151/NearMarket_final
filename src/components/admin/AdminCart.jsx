@@ -1,92 +1,175 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteCart, updateCartItem } from "../../slice/cartSlice1";
+import { useSelector, useDispatch } from "react-redux";
+import { updateCartItem, deleteCart } from "../../slice/cartSlice1"; // deleteCart 추가
 import AdminCartModal from "./AdminCartModal";
+import AdminCartModalDelete from "./AdminCartModalDelete";
 
 const AdminCart = () => {
   const dispatch = useDispatch();
+  const [modalItem, setModalItem] = useState(null);
+  const [deleteItemModal, setDeleteItemModal] = useState(null);
+
+  // 전체 장바구니 아이템
   const cartItems = useSelector((state) => state.cart.items);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDeleteConfirmation, setIsDeleteConfirmation] = useState(false); // 삭제 확인 상태
 
-  const categories = [
-    { key: "snackItems", name: "과자 코너" },
-    { key: "fruitItems", name: "과일 코너" },
-    { key: "meatItems", name: "고기 코너" },
-    { key: "vegetableItems", name: "야채 코너" },
-  ];
+  // 각 사용자의 장바구니 필터링
+  const usersCart = cartItems.filter((item) => item.userEmail !== "guest");
+  const guestsCart = cartItems.filter((item) => item.userEmail === "guest");
 
-  const handleOpenModal = (item) => {
-    setSelectedItem(item);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedItem(null);
-  };
-
-  const handleDelete = () => {
+  // 수량 업데이트 함수
+  const updateCount = (item, newCount) => {
+    if (newCount < 1) return;
     dispatch(
-      deleteCart({ id: selectedItem.id, category: selectedItem.category })
+      updateCartItem({
+        id: item.id,
+        category: item.category,
+        userEmail: item.userEmail,
+        count: newCount,
+      })
     );
-    setIsDeleteConfirmation(false); // 삭제 확인 모달 닫기
-    handleCloseModal(); // 모달 닫기
   };
 
-  const openDeleteConfirmation = () => {
-    setIsDeleteConfirmation(true); // 삭제 확인 모달 열기
+  // 삭제 모달 열기
+  const openDeleteModal = (item) => {
+    setDeleteItemModal(item);
   };
 
-  const handleUpdate = (id, count) => {
-    dispatch(updateCartItem({ id, count, category: selectedItem.category }));
+  // 삭제 함수
+  const handleDelete = (item) => {
+    dispatch(deleteCart(item)); // 삭제 액션 호출
+    setDeleteItemModal(null); // 모달 닫기
   };
 
   return (
-    <div className="admin-cart">
+    <div className="admin-cart-list">
       <h2>관리자 장바구니 조회</h2>
-      {categories.map((category) => {
-        const filteredItems = cartItems.filter(
-          (item) => item.category === category.key
-        );
-        return (
-          <div className="category-section" key={category.key}>
-            <h3>{category.name}</h3>
-            <div className="category-items">
-              {filteredItems.length > 0 ? (
-                filteredItems.map((item) => (
-                  <div
-                    className="admin-cart-item"
-                    key={item.id}
-                    onClick={() => handleOpenModal(item)}
-                  >
-                    <img src={item.img} alt={item.title} width="100" />
-                    <div className="admin-cart-info">
-                      <p>상품명: {item.title}</p>
-                      <p>가격: {item.price} 원</p>
-                      <p>갯수: {item.count}</p>
-                      <p>총금액: {item.count * item.price} 원</p>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p>장바구니에 {category.name}이 없습니다.</p>
-              )}
-            </div>
-          </div>
-        );
-      })}
 
-      {isModalOpen && (
-        <AdminCartModal
-          item={selectedItem}
-          onClose={handleCloseModal}
-          onDeleteConfirm={openDeleteConfirmation} // 삭제 확인 모달 여는 함수 전달
-          onUpdate={handleUpdate}
-          isDeleteConfirmation={isDeleteConfirmation}
-          handleDeleteConfirmationClose={() => setIsDeleteConfirmation(false)}
-          handleDelete={handleDelete} // 실제 삭제 함수 전달
+      <div className="cart-section">
+        <h3>회원 장바구니</h3>
+        {usersCart.length > 0 ? (
+          <table className="cart-table">
+            <thead>
+              <tr>
+                <th>이미지</th>
+                <th>사용자 이메일</th>
+                <th>카테고리</th>
+                <th>상품명</th>
+                <th>수량</th>
+                <th>가격</th>
+                <th>총 금액</th>
+                <th>추가 시간</th> {/* 추가 시간 컬럼 */}
+                <th>수정</th>
+                <th>삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usersCart.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <img src={item.img} alt={item.title} className="cart-img" />
+                  </td>
+                  <td>{item.userEmail}</td>
+                  <td>{item.category}</td>
+                  <td>{item.title}</td>
+                  {/* 수량을 데이터로 표시 */}
+                  <td>
+                    <span>{item.count}</span> {/* 수량 표시로 변경 */}
+                  </td>
+                  <td>{item.price} 원</td>
+                  <td>{item.price * item.count} 원</td>
+                  <td>{new Date(item.createdAt).toLocaleString()} </td>{" "}
+                  {/* 추가 시간 출력 */}
+                  <td>
+                    <button
+                      onClick={() => setModalItem(item)}
+                      className="update-btn"
+                    >
+                      수정
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => openDeleteModal(item)}
+                      className="delete-btn"
+                    >
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>회원 장바구니가 비어 있습니다.</p>
+        )}
+      </div>
+
+      <div className="cart-section">
+        <h3>비회원 장바구니</h3>
+        {guestsCart.length > 0 ? (
+          <table className="cart-table">
+            <thead>
+              <tr>
+                <th>이미지</th>
+                <th>카테고리</th>
+                <th>상품명</th>
+                <th>수량</th>
+                <th>가격</th>
+                <th>총 금액</th>
+                <th>추가 시간</th> {/* 추가 시간 컬럼 */}
+                <th>수정</th>
+                <th>삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              {guestsCart.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <img src={item.img} alt={item.title} className="cart-img" />
+                  </td>
+                  <td>{item.category}</td>
+                  <td>{item.title}</td>
+                  {/* 수량을 데이터로 표시 */}
+                  <td>
+                    <span>{item.count}</span> {/* 수량 표시로 변경 */}
+                  </td>
+                  <td>{item.price} 원</td>
+                  <td>{item.price * item.count} 원</td>
+                  <td>{new Date(item.createdAt).toLocaleString()} </td>{" "}
+                  {/* 추가 시간 출력 */}
+                  <td>
+                    <button
+                      onClick={() => setModalItem(item)}
+                      className="update-btn"
+                    >
+                      수정
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => openDeleteModal(item)}
+                      className="delete-btn"
+                    >
+                      삭제
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>비회원 장바구니가 비어 있습니다.</p>
+        )}
+      </div>
+
+      {modalItem && (
+        <AdminCartModal item={modalItem} onClose={() => setModalItem(null)} />
+      )}
+      {deleteItemModal && (
+        <AdminCartModalDelete
+          item={deleteItemModal}
+          onClose={() => setDeleteItemModal(null)}
+          onDelete={handleDelete} // 삭제 함수 전달
         />
       )}
     </div>

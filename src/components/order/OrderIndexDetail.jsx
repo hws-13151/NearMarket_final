@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
 
 const indexData = {
@@ -18,6 +18,12 @@ const OrderIndexDetail = (param) => {
   const [indexItem, setIndexItem] = useState(indexData);
   const [count, setCount] = useState(1);
 
+  const dispatch = useDispatch();
+
+  const userEmail = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+  );
+
   useEffect(() => {
     const orderindexDetailFn = async () => {
       const indexId = param.param.id;
@@ -31,7 +37,7 @@ const OrderIndexDetail = (param) => {
       }
     };
     orderindexDetailFn();
-  }, []);
+  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
 
   const IncrementFn = () => {
     setCount(count + 1);
@@ -47,11 +53,9 @@ const OrderIndexDetail = (param) => {
 
   const [isModal, setIsModal] = useState(false);
 
-  const onModalFn = (e) => {
+  const onModalFn = () => {
     setIsModal(true);
   };
-
-  const dispatch = useDispatch();
 
   const addCartFn2 = () => {
     const setItemCart = {
@@ -60,7 +64,8 @@ const OrderIndexDetail = (param) => {
       price: indexItem.price,
       img: `/images/index/${indexItem.img}`,
       count: count,
-      category: "indexItems",
+      category: "index",
+      userEmail, // 이메일 정보를 추가
     };
     dispatch(addCart1(setItemCart));
   };
@@ -89,9 +94,7 @@ const OrderIndexDetail = (param) => {
                 <li>
                   <h3>상품설명 :</h3>
                   <br />
-                  <p>
-                    좋은 제품입니다. ♡⸜(˶˃ ᵕ ˂˶)⸝♡
-                  </p>
+                  <p>좋은 제품입니다. ♡⸜(˶˃ ᵕ ˂˶)⸝♡</p>
                 </li>
               </ul>
             </div>
