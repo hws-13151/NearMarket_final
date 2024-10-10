@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
@@ -11,14 +11,18 @@ const OrderHeader = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
 
+
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
+
+
   return (
     <>
-      <div className="order-header">
+      <div className="order-header" >
         <div className="order-header-nav">
           <h1 className="logo">
             <Link to={"/"}>
@@ -58,7 +62,7 @@ const OrderHeader = () => {
                   과일
                 </Link>
               </li>
-              <li>
+              <li >
                 <Link to={"/order/snack"}>
                   <img src="/images/orderheader/snack.png"></img>
                   과자
