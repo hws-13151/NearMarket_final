@@ -71,7 +71,8 @@
         "carrot3.jpg",
         "carrot4.jpg",
         "carrot5.jpg"
-      ]
+      ],
+      "viewcount": 5
     },
     {
       "id": "2",
@@ -86,7 +87,8 @@
         "corn3.jpg",
         "corn4.jpg",
         "corn5.jpg"
-      ]
+      ],
+      "viewcount": 1
     },
     {
       "id": "3",
@@ -101,7 +103,8 @@
         "onion3.jpg",
         "onion4.jpg",
         "onion5.jpg"
-      ]
+      ],
+      "viewcount": 2
     },
     {
       "id": "4",
@@ -115,7 +118,8 @@
         "paprica2.jpg",
         "paprica3.jpg",
         "paprica4.jpg"
-      ]
+      ],
+      "viewcount": 2
     },
     {
       "id": "5",
@@ -128,7 +132,8 @@
         "pumkin.jpg",
         "pumkin2.jpg",
         "pumkin3.jpg"
-      ]
+      ],
+      "viewcount": 2
     },
     {
       "id": "6",
@@ -141,7 +146,8 @@
         "tomato.jpg",
         "tomato2.jpg",
         "tomato3.jpg"
-      ]
+      ],
+      "viewcount": 1
     }
   ],
   "snackItems": [
