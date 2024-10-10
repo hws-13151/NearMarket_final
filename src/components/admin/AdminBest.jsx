@@ -33,7 +33,7 @@ const AdminBest = () => {
             <ul key={idx} onClick={() => openModal(el)}> 
               <li>{el.id}</li>
               <li>{el.title}</li>
-              <li><img src={`/images/orderindex/${el.img}`} alt={el.img} /></li>
+              <li><img src={`/images/index/${el.img}`} alt={el.img} /></li>
               <li>{el.price.toLocaleString()}원</li>
               <li>{el.description}</li>
             </ul>

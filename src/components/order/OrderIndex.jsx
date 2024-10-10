@@ -24,7 +24,7 @@ const OrderIndex = () => {
         setFruitItem(fruitRes.data[0])
         setVegetableItem(vegetableRes.data[3])
         setSnackItem(snackRes.data[3])
-        setMeatItem(meatRes.data[0])
+        setMeatItem(meatRes.data[4])
       }catch(error){
         alert(error)
       }

@@ -9,7 +9,7 @@ const Main = () => {
   const FirstIndex = 0;
   const LastIndex = 3;
   const MoveIndex = 1;
-  const intervalTime = 3000;
+  const intervalTime = 5000;
 
   const moveToSlide = (value) =>{
     if(value === 'prev'){
@@ -21,6 +21,9 @@ const Main = () => {
       setAutoImg((prevState)=>
         prevState < LastIndex ? prevState + MoveIndex : FirstIndex
       )
+    }
+    if(typeof value === 'number'){
+      setAutoImg(value)
     }
   }
 
@@ -65,8 +68,10 @@ const Main = () => {
             {/* 이미지 넘어가면 한 칸씩 넘어가는 하단 바 */}
             <div className="bottomBar">
               <ul>
-                 {Array.from({ length: 4 }).map((_, index) => (
-                  <li key={index} style={{ backgroundColor: autoImg === index ? 'red' : 'gray' }}></li>
+                 {Array.from({ length: 4 }).map((_, idx) => (
+                  <li key={idx} 
+                  onClick={()=>moveToSlide(idx)}
+                  style={{ backgroundColor: autoImg === idx ? 'white' : 'rgba(255, 255, 255, 0.3)'}}></li>
                 ))}
               </ul>
             </div>

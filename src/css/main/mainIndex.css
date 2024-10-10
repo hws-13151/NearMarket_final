@@ -62,9 +62,15 @@
   border: 0;
 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.315);
 
   font-size: 50px;
+  transition: all 0.3s;
+}
+
+.main .main-sec .section1 .bCon button:hover{
+  background-color: rgba(0, 0, 0, 0.37);
+  color: white;
 }
 
 .main .main-sec .section1 .bottomBar{
@@ -97,8 +103,10 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.288);
   box-sizing: border-box;
+}
 
-  background-color: red;
+.main .main-sec .section1 .bottomBar ul li:hover{
+  background-color: rgba(0, 0, 0, 0.432) !important;
 }
 
 .autoGallery{
@@ -204,4 +212,26 @@
 .main .main-sec .section2 .sec2-con>ul>li .bottom{
   font-weight: bold;
   font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .main .main-sec {
+    flex: 0 1 100%;
+  }
+  .main .main-sec .section1 {
+    width: 100vw;
+    height: 300px;
+  }
+  .main .main-sec .section1 .bCon button {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+  .main .main-sec .section2 .sec2-con > ul {
+    grid-template-columns: repeat(2, 200px);
+    gap: 6vw;
+  }
+  .main .main-sec .section2 .sec2-con > ul li{
+    gap: 1vw;
+  }
 }
