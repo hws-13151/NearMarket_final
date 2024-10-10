@@ -7,6 +7,7 @@ const OrderHeader = () => {
   const cartItems = useSelector((state) => state.cart.items);
   console.log(cartItems);
   const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
+  const [selectedItem, setSelectedItem] = useState(null)
 
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
@@ -16,6 +17,8 @@ const OrderHeader = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+
 
 
 

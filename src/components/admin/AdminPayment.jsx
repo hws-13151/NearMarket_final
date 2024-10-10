@@ -35,7 +35,7 @@ const AdminPayment = () => {
       <div className="admin-payment">
         <div className="admin-payment-con">
           <h1>회원 결제내역</h1>
-          <span><SearchBox handleChange={handleChange} /></span>
+          <span style={{ display: 'block', margin: '20px 0' }}><SearchBox handleChange={handleChange} /></span>
           <table>
             <thead>
               <tr>
