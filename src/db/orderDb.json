@@ -124,7 +124,11 @@
       "description": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["pumkin.jpg", "pumkin2.jpg", "pumkin3.jpg"]
+      "slideImage": [
+        "pumkin.jpg",
+        "pumkin2.jpg",
+        "pumkin3.jpg"
+      ]
     },
     {
       "id": "6",
@@ -133,7 +137,11 @@
       "description": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
       "img": "tomato.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["tomato.jpg", "tomato2.jpg", "tomato3.jpg"]
+      "slideImage": [
+        "tomato.jpg",
+        "tomato2.jpg",
+        "tomato3.jpg"
+      ]
     }
   ],
   "snackItems": [
@@ -359,6 +367,43 @@
       "time": "2024/10/08 16:05:28"
     }
   ],
-
+  "api": [
+    {
+      "id": "1",
+      "title": "오아시스 마트",
+      "address": "노원구 동일로 1396",
+      "postNum": "01751",
+      "phoneNum": "02-123-5678",
+      "lat": 37.65323,
+      "lng": 127.061308
+    },
+    {
+      "id": "2",
+      "title": "세계로 마트",
+      "address": "노원구 한글비석로 383",
+      "postNum": "01699",
+      "phoneNum": "02-000-1234",
+      "lat": 37.659223,
+      "lng": 127.073014
+    },
+    {
+      "id": "3",
+      "title": "하나로 마트",
+      "address": "노원구 동일로 1538",
+      "postNum": "01674",
+      "phoneNum": "02-987-6543",
+      "lat": 37.665806,
+      "lng": 127.057909
+    },
+    {
+      "id": "4",
+      "title": "롯데슈퍼 상계11 마트",
+      "address": "노원구 동일로 1541",
+      "postNum": "01756",
+      "phoneNum": "02-456-4567",
+      "lat": 37.677278,
+      "lng": 127.052683
+    }
+  ],
   "cart": []
 }

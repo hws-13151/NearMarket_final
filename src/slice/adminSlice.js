@@ -81,6 +81,17 @@ const adminSlice = createSlice({
     builder.addCase(asyncAdminindexItemsFn.rejected, (state, action) => {
       state.status = 'Fail!!' // rejected!
     })
+    //api
+    builder.addCase(asyncAdminShopFn.pending, (state, action) => { 
+      state.status = 'Pending' // 대기상태
+    })
+    builder.addCase(asyncAdminShopFn.fulfilled, (state, action) => {
+      state.indexItems = action.payload // 수정
+      state.status = 'Complete' // Success!
+    })
+    builder.addCase(asyncAdminShopFn.rejected, (state, action) => {
+      state.status = 'Fail!!' // rejected!
+    })
   }
 })
 
@@ -163,5 +174,17 @@ export const asyncAdminindexItemsFn = createAsyncThunk(`admin/asyncAdminindexIte
     }
   }
 )
-
+export const asyncAdminShopFn = createAsyncThunk(`admin/asyncAdminShopFn`,
+  async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/api')
+      console.log(res.data);
+      const data = res.data
+      return data
+    } catch (err) {
+      alert(err)
+      return
+    }
+  }
+)
 export default adminSlice
