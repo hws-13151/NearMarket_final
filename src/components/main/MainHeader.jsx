@@ -15,7 +15,7 @@ const MainHeader = () => {
 
   return (
     <>
-      <div className="header">
+      <div className="main-header">
         <div className="nav">
           <h1 className="logo" onClick={navigate("/")}>
             <span className="nm">NM</span>
@@ -30,7 +30,7 @@ const MainHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link k to={"/order/api"}>
+                <Link to={"/order/api"}>
                   매장찾기
                 </Link>
               </li>

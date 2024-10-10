@@ -17,11 +17,12 @@
   padding: 1vw;
 
   gap: 3vw;
+  transition: all 0.3s;
 }
 
 .main .main-sec .section1{
   /* 1280px */
-  width: 80%; 
+  width: 80vw; 
   height: 500px;
 
   position: relative;
@@ -32,6 +33,7 @@
   overflow: hidden;
 
   /* box-shadow: inset 0 -2px 0px #ccc; */
+  transition: all 0.3s;
 }
 
 .main .main-sec .section1 .bCon{
@@ -123,6 +125,7 @@
 }
 
 .autoGallery ul li{
+  width: 80vw;
   flex: 1;
   height: 100%;
   background-size: cover;
@@ -145,7 +148,7 @@
 }
 
 .main .main-sec .horizontal{
-  width: 1600px;
+  width: 80vw;
   height: 1px;
   background-color: rgb(221, 221, 221);
 }
@@ -162,14 +165,14 @@
 
 .main .main-sec .section2 .sec2-con>ul{
   display: grid;
-  grid-template-columns: repeat(4,200px);
-  grid-template-rows: repeat(1,200px);
+  grid-template-columns: repeat(4,12vw);
+  grid-template-rows: repeat(1,12vw);
   grid-auto-rows: 200px;
 
-  gap: 200px;
+  gap: 10vw;
 
   /* border: 1px solid; */
-
+  transition: all 0.3s;
 }
 
 .main .main-sec .section2 .sec2-con>ul>li{
@@ -185,11 +188,11 @@
   justify-content: center;
   align-items: center;
 
-  gap: 20px;
+  gap: 10px;
 
   cursor: pointer;
 
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .main .main-sec .section2 .sec2-con>ul>li:hover{
@@ -201,7 +204,7 @@
 
 
 .main .main-sec .section2 .sec2-con>ul>li .top{
-  width: 120px;
+  width: 6vw;
 }
 
 .main .main-sec .section2 .sec2-con>ul>li .top img{
@@ -211,7 +214,8 @@
 
 .main .main-sec .section2 .sec2-con>ul>li .bottom{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+  transition: all 0.3s;
 }
 
 @media (max-width: 600px) {
@@ -219,7 +223,7 @@
     flex: 0 1 100%;
   }
   .main .main-sec .section1 {
-    width: 100vw;
+    width: 90vw;
     height: 300px;
   }
   .main .main-sec .section1 .bCon button {
@@ -228,10 +232,18 @@
     height: 50px;
   }
   .main .main-sec .section2 .sec2-con > ul {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 30vw);
+    grid-template-rows: repeat(2, 30vw);
+    grid-auto-rows: 200px;
     gap: 6vw;
   }
   .main .main-sec .section2 .sec2-con > ul li{
     gap: 1vw;
+  }
+  .main .main-sec .section2 .sec2-con>ul>li .top{
+    width: 20vw;
+  }
+  .main .main-sec .section2 .sec2-con>ul>li .bottom{
+    font-size: 16px;
   }
 }
