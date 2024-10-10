@@ -31,7 +31,7 @@
 }
 
 .main-header .nav .gnb{
-  flex: 0 1 700px;
+  flex: 0 1 600px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -40,15 +40,11 @@
 .main-header .nav .gnb>ul{
   display: flex;
   gap: 4vw;
-  font-size: 20px;
+  font-size: 18px;
   
   
   align-items: center;
   justify-content: center;
-}
-
-.main-header .nav .gnb>ul li{
-  width: auto;
 }
 
 .main-header .nav .gnb>ul li a{
@@ -64,12 +60,11 @@
   color: #ff6b00;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .main-header .nav .gnb{
     flex: 0 1 300px;
   }
   .main-header .nav .gnb>ul li a{
-    font-size: 15px;
-    
+    font-size: 15px; 
   }
 }
