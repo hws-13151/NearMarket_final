@@ -48,14 +48,25 @@ const root = createBrowserRouter([
       },
     ],
   },
- {
-  path: "/api",
-  element: (
-    <Suspense fallback={Loading}>
-      <ApiPage />
-    </Suspense>
-  ),
-},
+  {
+    path: "/order",
+    element: (
+      <Suspense fallback={Loading}>
+        <OrderLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "api",
+        element: (
+          <Suspense fallback={Loading}>
+            <ApiPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+ 
   {
     path: "/order",
     element: (
