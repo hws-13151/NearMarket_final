@@ -1,4 +1,4 @@
-.header{
+.main-header{
   width: 100%;
   height: auto;
 
@@ -8,7 +8,7 @@
   box-shadow: inset 0 -2px 0px #ccc;
 }
 
-.header .nav{
+.main-header .nav{
   flex: 0 1 1600px;
   height: 130px;
 
@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.header .nav h1.logo{
+.main-header .nav h1.logo{
   /* border: 1px solid; */
   box-sizing: border-box;
   padding: 10px;
@@ -30,18 +30,42 @@
 
 }
 
-.header .nav .gnb{
-  width: auto;
+.main-header .nav .gnb{
+  flex: 0 1 700px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+.main-header .nav .gnb>ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4vw;
 }
 
-.header .nav .gnb>ul{
-  height: inherit;
+.main-header .nav .gnb>ul li a{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: 20px;
+  transition: all 0.3s;
+  font-weight: bold;
+  color: #333;
+}
 
-  gap: 5vw;
+.main-header .nav .gnb ul li a:hover {
+  color: #ff6b00;
+}
 
-  font-size: 30px;
+@media (max-width: 800px) {
+  .main-header .nav .gnb{
+    flex: 0 1 300px;
+  }
+  .main-header .nav .gnb>ul li a{
+    font-size: 13px;
+  }
 }

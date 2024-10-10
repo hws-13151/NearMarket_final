@@ -15,7 +15,7 @@ const MainHeader = () => {
 
   return (
     <>
-      <div className="header">
+      <div className="main-header">
         <div className="nav">
           <h1 className="logo" onClick={navigate("/")}>
             <span className="nm">NM</span>
@@ -25,7 +25,7 @@ const MainHeader = () => {
           <div className="gnb">
             <ul>
               <li>
-                <Link to={"/order/index"}>
+                <Link k to={"/order/index"}>
                   쇼핑하기
                 </Link>
               </li>
