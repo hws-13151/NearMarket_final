@@ -17,7 +17,6 @@
   padding: 1vw;
 
   gap: 3vw;
-
   transition: all 0.3s;
 }
 
@@ -34,7 +33,8 @@
   overflow: hidden;
 
   /* box-shadow: inset 0 -2px 0px #ccc; */
-  transition: all 0.1s;
+
+  transition: all 0.3s;
 }
 
 .main .main-sec .section1 .bCon{
@@ -126,6 +126,7 @@
 }
 
 .autoGallery ul li{
+  width: 80vw;
   flex: 1;
   height: 100%;
   background-size: cover;
@@ -189,11 +190,11 @@
   justify-content: center;
   align-items: center;
 
-  gap: 1vw;
+  gap: 10px;
 
   cursor: pointer;
 
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .main .main-sec .section2 .sec2-con>ul>li:hover{
@@ -215,7 +216,8 @@
 
 .main .main-sec .section2 .sec2-con>ul>li .bottom{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+  transition: all 0.3s;
 }
 
 @media (max-width: 800px) {
@@ -232,9 +234,11 @@
     height: 50px;
   }
   .main .main-sec .section2 .sec2-con > ul {
+
     grid-template-columns: repeat(2, 150px);
     grid-template-rows: repeat(2,150px);
     grid-auto-rows: 150px;
+
     gap: 6vw;
   }
   .main .main-sec .section2 .sec2-con > ul li{
