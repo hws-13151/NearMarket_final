@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { useNavigate } from "react-router-dom";
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal";
@@ -19,10 +19,15 @@ const OrderVegetableDetail = (param) => {
   const [vegetableDetail, setVegetableDetail] = useState(detailData);
   const [vegetableCount, setVegetableCount] = useState(1);
   const [slide, setSlide] = useState(0);
-  const [isModal, setIsModal] = useState(false)
+  const [isModal, setIsModal] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // 사용자 이메일을 가져옵니다.
+  const userEmail = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+  );
 
   useEffect(() => {
     const axiosFn = async () => {
@@ -38,7 +43,7 @@ const OrderVegetableDetail = (param) => {
       }
     };
     axiosFn();
-  }, []);
+  }, [param.param.id]);
 
   const vegetableIncrementFn = () => {
     setVegetableCount(vegetableCount + 1);
@@ -67,7 +72,8 @@ const OrderVegetableDetail = (param) => {
       price: vegetableDetail.price,
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
-      category: "vegetableItems",
+      category: "vegetable",
+      userEmail, // 이메일 추가
     };
     dispatch(addCart1(vegetableCart));
   };
@@ -79,15 +85,15 @@ const OrderVegetableDetail = (param) => {
       price: vegetableDetail.price,
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
+      userEmail, // 이메일 추가
     };
     dispatch(addCart1(vegetableCart));
     navigate("/order/payment");
   };
 
-  const onModalFn = (e) => {
+  const onModalFn = () => {
     setIsModal(true);
   };
-
 
   const previousSlideFn = () => {
     setSlide((prevSlide) =>
@@ -101,26 +107,23 @@ const OrderVegetableDetail = (param) => {
     );
   };
 
-
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} />}
       <div className="order-vegetable-detail">
         <div className="order-vegetable-detail-con">
           <div className="left">
-
             {vegetableDetail.slideImage.length > 0 && (
-              <img className="slide"
+              <img
+                className="slide"
                 src={`/images/vegetable/${vegetableDetail.slideImage[slide]}`}
                 alt={vegetableDetail.slideImage[slide]}
-
               />
             )}
             <div className="imagebutton">
               <button onClick={previousSlideFn}>&lsaquo;</button>
               <button onClick={nextSlideFn}>&rsaquo;</button>
             </div>
-
           </div>
           <div className="right">
             <div className="vegetable-detail-item">
@@ -161,7 +164,10 @@ const OrderVegetableDetail = (param) => {
                 </div>
                 <div className="counttotal">
                   <span>상품금액 합계</span>
-                  <span>{(vegetableDetail.price * vegetableCount).toLocaleString()} 원</span>
+                  <span>
+                    {(vegetableDetail.price * vegetableCount).toLocaleString()}{" "}
+                    원
+                  </span>
                 </div>
               </div>
             </div>
@@ -173,7 +179,9 @@ const OrderVegetableDetail = (param) => {
               >
                 이전페이지
               </button>
-              <button onClick={addVegetableCartFn} onClickCapture={onModalFn}>장바구니</button>
+              <button onClick={addVegetableCartFn} onClickCapture={onModalFn}>
+                장바구니
+              </button>
               <button onClick={paymentFn}>결제</button>
               <button>좋아요</button>
             </div>

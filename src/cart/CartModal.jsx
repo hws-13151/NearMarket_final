@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateCartItem } from "../../src/slice/cartSlice1";
+import { updateCartItem } from "../slice/cartSlice1";
 import "../css/cart/cartModal.css"; // 외부 CSS 파일을 임포트
 
-const CartModal = ({ modalItem, setIsModalOpen }) => {
-  const [itemCount, setItemCount] = useState(modalItem.count); // 모달에서 초기 수량 설정
+const CartModal = ({ item, setIsModalOpen }) => {
+  const [itemCount, setItemCount] = useState(item.count || 1); // 모달에서 초기 수량 설정
 
   const dispatch = useDispatch();
+
+  // 모달이 열릴 때 itemCount가 modalItem.count로 초기화되도록 effect 추가
+  useEffect(() => {
+    if (item) {
+      setItemCount(item.count);
+    }
+  }, [item]);
 
   const closeFn = () => {
     setIsModalOpen(false); // 모달 닫기
@@ -23,16 +30,16 @@ const CartModal = ({ modalItem, setIsModalOpen }) => {
   };
 
   const addCartFn = () => {
-    const item = {
-      id: modalItem.id,
-      title: modalItem.title,
-      price: modalItem.price,
-      img: modalItem.img,
+    const updatedItem = {
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      img: item.img,
       count: itemCount,
-
-      category: modalItem.category, // 카테고리 추가
+      category: item.category, // 카테고리 추가
+      userEmail: item.userEmail, // 사용자 이메일 추가
     };
-    dispatch(updateCartItem(item)); // 장바구니 아이템 수량 업데이트
+    dispatch(updateCartItem(updatedItem)); // 장바구니 아이템 수량 업데이트
     closeFn(); // 모달 닫기
   };
 
@@ -43,12 +50,12 @@ const CartModal = ({ modalItem, setIsModalOpen }) => {
           X
         </span>
         <div className="top">
-          <img src={modalItem.img} alt={modalItem.title} />
+          <img src={item.img} alt={item.title} />
         </div>
         <div className="bottom">
           <div className="b-title">
-            <span>상품명: {modalItem.title}</span>
-            <span>가격: {modalItem.price}원</span>
+            <span>상품명: {item.title}</span>
+            <span>가격: {item.price}원</span>
           </div>
           <div className="sum">
             <p>
@@ -58,7 +65,7 @@ const CartModal = ({ modalItem, setIsModalOpen }) => {
             </p>
             <p>
               <span className="sum-price">
-                총합계: {modalItem.price * itemCount} 원
+                총합계: {item.price * itemCount} 원
               </span>
               <button onClick={addCartFn} className="add-btn">
                 장바구니 업데이트

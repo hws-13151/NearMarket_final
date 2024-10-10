@@ -1,12 +1,12 @@
+// OrderSnackDetail.jsx
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
 
 const orderData = {
-  id: 0,
   title: "",
   price: 0,
   img: "",
@@ -15,10 +15,14 @@ const orderData = {
 
 const OrderSnackDetail = (param) => {
   const [snackItem, setSnackItem] = useState(orderData);
-  const [snackcount, setSnackCount] = useState(1);
+  const [snackCount, setSnackCount] = useState(1);
   const [isModal, setIsModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const userEmail = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+  );
 
   useEffect(() => {
     const orderDetailFn = async () => {
@@ -33,35 +37,30 @@ const OrderSnackDetail = (param) => {
       }
     };
     orderDetailFn();
-  }, []);
+  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
 
-  const IncrementFn = () => {
-    setSnackCount(snackcount + 1);
+  const incrementCount = () => {
+    setSnackCount(snackCount + 1);
   };
 
-  const DecrementFn = () => {
-    if (snackcount === 1) {
-      setSnackCount(1);
-    } else {
-      setSnackCount(snackcount - 1);
+  const decrementCount = () => {
+    if (snackCount > 1) {
+      setSnackCount(snackCount - 1);
     }
-  };
-
-  const onModalFn = () => {
-    setIsModal(true);
   };
 
   const addCartFn2 = () => {
     const setItemCart = {
-      id: snackItem.id,
       title: snackItem.title,
       price: snackItem.price,
       img: `/images/ordersnack/${snackItem.img}`,
-      count: snackcount,
-      category: "snackItems",
+      count: snackCount,
+      category: "snack",
+      userEmail,
     };
-    dispatch(addCart1(setItemCart));
-    onModalFn();
+    dispatch(addCart1(setItemCart)); // 장바구니에 추가
+    setSnackCount(1); // 수량 초기화
+    setIsModal(true); // 모달 열기
   };
 
   return (
@@ -99,10 +98,10 @@ const OrderSnackDetail = (param) => {
                   <ul>
                     <li>{snackItem.title}</li>
                     <li>
-                      <button onClick={IncrementFn}> + </button>
-                      <span>{snackcount}</span>
-                      <button onClick={DecrementFn}> - </button>
-                      <p>{snackItem.price * snackcount}원</p>
+                      <button onClick={incrementCount}> + </button>
+                      <span>{snackCount}</span>
+                      <button onClick={decrementCount}> - </button>
+                      <p>{snackItem.price * snackCount}원</p>
                     </li>
                   </ul>
                 </div>
@@ -110,7 +109,7 @@ const OrderSnackDetail = (param) => {
                   <ul>
                     <li>
                       <p>합계</p>
-                      <h1>{snackItem.price * snackcount}원</h1>
+                      <h1>{snackItem.price * snackCount}원</h1>
                     </li>
                     <hr />
                     <li>
