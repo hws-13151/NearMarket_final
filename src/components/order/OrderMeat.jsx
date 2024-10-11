@@ -48,8 +48,10 @@ const OrderMeat = () => {
             <div className="title-right">
               <span style={{ color: '#ff0000' }}>{meatList.length}</span>
               <span> 개의 상품이 있습니다.</span>
-              <span style={{ display: 'block', margin: '10px' }}><SearchBox handleChange={handleChange} /></span>
             </div>
+          </div>
+          <div className="search">
+            <span style={{ display: 'block', margin: '10px' }}><SearchBox handleChange={handleChange} /></span>
           </div>
           <div className="order-meat-item">
             <ul>

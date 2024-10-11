@@ -29,7 +29,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 20px;
-  padding: 0;
+  padding: 10px;
   list-style: none;
 }
 
@@ -90,4 +90,20 @@ body {
   font-size: 1.2em;
   color: #e74c3c;
   font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .order-fruit{
+    flex-direction: column;
+  }
+  .order-fruit .order-fruit-header .search{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .order-fruit .order-fruit-con ul {
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
 }

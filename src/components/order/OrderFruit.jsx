@@ -39,8 +39,9 @@ const OrderFruit = () => {
     <div className='order-fruit'>
       <div className='order-fruit-header'>
         <h2>과일 Total {fruitList.length}</h2>
-        <span ><SearchBox handleChange={handleChange} />
-        </span>
+        <div className="search">
+          <span ><SearchBox handleChange={handleChange} /></span>
+        </div>
       </div>
       <div className='order-fruit-con'>
         <ul>

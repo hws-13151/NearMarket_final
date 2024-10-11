@@ -100,7 +100,6 @@
   justify-content: center;
   align-items: center;
   transition: color 0.3s ease;
-  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -135,7 +134,7 @@
     border: 1px solid #b4b4b4;
     position: absolute;
     right: 40px;
-    top: 43px;
+    top: 50px;
     cursor: pointer;
     z-index: 999;
   }
@@ -152,7 +151,6 @@
     border: 0;
     width: 200px;
     height: auto;
-    border: 1px solid;
     position: absolute;
     top: 0;
     right: 0px;
@@ -166,5 +164,8 @@
   }
   .order-header .order-header-nav .gnb ul li{
     width: 60%;
+  }
+  .order-header .order-header-nav .gnb ul li a{
+    padding: 10px;
   }
 }

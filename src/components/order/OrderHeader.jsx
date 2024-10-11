@@ -60,12 +60,10 @@ const OrderHeader = () => {
     <>
       <div className="order-header">
         <div className="order-header-nav">
-          <h1 className="logo">
-            <Link to={"/"}>
-              <span className="nm">NM</span>
-              <span className="jum">.</span>
-              <span className="k">K</span>
-            </Link>
+          <h1 className="logo" onClick={()=> navigate('../')}>
+            <span className="nm">NM</span>
+            <span className="jum">.</span>
+            <span className="k">K</span>
           </h1>
           <div className="gnb" style={{ display: isGnbVisible ? "block" : "none" }}> {/* gnb 표시 여부 */}
             <ul>
