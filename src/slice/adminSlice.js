@@ -7,7 +7,8 @@ const initState ={
   snackItems: [],
   meatItems: [],
   members: [],
-  indexItems: []
+  indexItems: [],
+  api:[]
 }
 
 const adminSlice = createSlice({
@@ -86,7 +87,7 @@ const adminSlice = createSlice({
       state.status = 'Pending' // 대기상태
     })
     builder.addCase(asyncAdminShopFn.fulfilled, (state, action) => {
-      state.indexItems = action.payload // 수정
+      state.api = action.payload // 수정
       state.status = 'Complete' // Success!
     })
     builder.addCase(asyncAdminShopFn.rejected, (state, action) => {

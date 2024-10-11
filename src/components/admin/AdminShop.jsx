@@ -1,33 +1,79 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
+import ShopModal from './ShopModal';
+import AddShopModal from './AddShopModal';
 
 const AdminShop = () => {
-  const dispatch = useDispatch();
-  const shops = useSelector(state => state.admin.shops); // Redux에서 샵 정보를 가져옴
-  const [isLoading, setLoading] = useState(true); // 로딩 상태 관리
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [isAddModalOpen, setAddModalOpen] = useState(false);
+    const [selectedShop, setSelectedShop] = useState(); 
 
-  useEffect(() => {
-    const fetchShops = async () => {
-      await dispatch(asyncAdminShopFn()); // 데이터를 가져옴
-      setLoading(false); // 데이터 가져오기가 끝나면 로딩 상태를 false로 설정
+    const dispatch = useDispatch();
+    const api = useSelector(state => state.admin.api); 
+
+    useEffect(() => {
+        dispatch(asyncAdminShopFn());
+    }, [dispatch]);
+
+    const handleOpenModal = (shop) => {
+        setSelectedShop(shop); 
+        setModalOpen(true); 
     };
 
-    fetchShops();
-  }, [dispatch]);
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setSelectedShop(null); 
+    };
 
-  if (isLoading) {
-    return <div>로딩 중...</div>; // 로딩 중 표시
-  }
+    const handleOpenAddModal = () => {
+        setAddModalOpen(true);
+    };
 
-  return (
-    <div className="admin-shop">
-      <div className="admin-shop-con">
-        <h1>주문처</h1>
-       
-      </div>
-    </div>
-  );
+    const handleCloseAddModal = () => {
+        setAddModalOpen(false);
+    };
+
+    return (
+        <>
+        <div className="admin-shop">
+            <div className="admin-shop-con">
+                <h1>주문처 관리</h1>
+                <button onClick={handleOpenAddModal}>주문처 추가</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>상점이름</th>
+                            <th>주소</th>
+                            <th>우편번호</th>
+                            <th>전화번호</th>
+                            <th>위도</th>
+                            <th>경도</th>
+                            <th>보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {api && api.map((el, idx) => (
+                            <tr key={idx}>
+                                <td>{el.title}</td>
+                                <td>{el.address}</td>
+                                <td>{el.postNum}</td>
+                                <td>{el.phoneNum}</td>
+                                <td>{el.lat}</td>
+                                <td>{el.lng}</td>
+                                <td>
+                                    <button onClick={() => handleOpenModal(el)}>보기</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {isModalOpen && <ShopModal shop={selectedShop} onClose={handleCloseModal} />}
+        {isAddModalOpen && <AddShopModal onClose={handleCloseAddModal} />}
+        </>
+    );
 }
 
 export default AdminShop;

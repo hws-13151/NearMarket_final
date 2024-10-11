@@ -30,7 +30,7 @@ const MainHeader = () => {
                 </Link>
               </li>
               <li>
-                <Link k to={"/order/api"}>
+                <Link to={"/order/api"}>
                   매장찾기
                 </Link>
               </li>

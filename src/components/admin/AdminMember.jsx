@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MemberModal from './MemberModal';
+import MemberModal from './MemberModal'; 
 import { asyncAdminMemberFn } from '../../slice/adminSlice';
-import SearchBox from '../order/SearchBox';
 
 
 
@@ -11,46 +10,29 @@ const AdminMember = () => {
   const members = useSelector(state => state.admin.members)
   const dispatch = useDispatch()
   console.log(members)
-  useEffect(() => {
+  useEffect(()=>{
     dispatch(asyncAdminMemberFn())
-  }, [])
-  //   const dispatch = useDispatch();
-
-  //   const members = useSelector((state) => state.auth.memberList); 
+  },[])
   const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedMember, setSelectedMember] = useState();
-  const [userInput, setUserInput] = useState("")
-
-  //   useEffect(() => {
-  //     dispatch(asyncAuthMemberFn());
-  //   },[]); 
+  const [selectedMember, setSelectedMember] = useState(); 
 
   const handleOpenModal = (member) => {
-    setSelectedMember(member);
-    setModalOpen(true);
+    setSelectedMember(member); 
+    setModalOpen(true); 
   };
 
   const handleCloseModal = () => {
     setModalOpen(false);
-    setSelectedMember(null);
+    setSelectedMember(null); 
   };
-
-
-  const handleChange = (e) => {
-    setUserInput(e.target.value)
-  }
-  const filteredMembers = members.filter((mem) => {
-    return mem.userEmail.toLowerCase().includes(userInput.toLowerCase())
-  })
+ 
 
   return (
     <>
       <div className="admin-member">
         <div className="admin-member-con">
           <h1>ADMIN-MEMBERS</h1>
-          <span>
-            <SearchBox handleChange={handleChange} />
-          </span>
+
           <div className="members">
             <table>
               <thead>
@@ -67,7 +49,7 @@ const AdminMember = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredMembers && filteredMembers.map((el, idx) => (
+                {members && members.map((el, idx) => (
                   <tr key={idx} className={el.role === 'ROLE_ADMIN' ? 'role-admin' : ''}>
                     <td>{el.id}</td>
                     <td>{el.userEmail}</td>
@@ -87,10 +69,10 @@ const AdminMember = () => {
           </div>
         </div>
       </div>
-      {isModalOpen && <MemberModal
-        member={selectedMember}
-        onClose={handleCloseModal}
-      />}
+      {isModalOpen && <MemberModal 
+          member={selectedMember} 
+          onClose={handleCloseModal} 
+        />}
     </>
   );
 }
