@@ -19,6 +19,12 @@
   padding: 10px;
 }
 
+.order-meat .order-meat-con .search{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .order-meat .order-meat-con .order-meat-title {
   width: 100%;
   height: auto;
