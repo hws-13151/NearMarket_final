@@ -13,8 +13,8 @@ const detailData = {
   description: "",
   img: "",
   rocket: "",
-  slideImage: [],
-  viewcount: 1
+  slideImage: []
+
 };
 
 const OrderVegetableDetail = (param) => {
@@ -33,12 +33,12 @@ const OrderVegetableDetail = (param) => {
   useEffect(() => {
     const axiosFn = async () => {
       const vegetableId = param.param.id;
-      dispatch(updateViewCountInServer(vegetableId));
+      dispatch(updateViewCountInServer({ productId: vegetableId, category: 'vegetable' }));
       try {
         const res = await axios.get(
           `http://localhost:3001/vegetableItems?id=${vegetableId}`
         );
-        setVegetableDetail(res.data[0] || detailData); // 데이터가 없으면 기본값 설정
+        setVegetableDetail(res.data[0] || detailData); // 데이터가 없으면 기본값 설정(꼭 안해두 됨)
       } catch (error) {
         alert(error);
       }

@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
 import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
+import { updateViewCountInServer } from "../../slice/viewcountSlice";
 
 const meatData = {
   id: 0,
   title: "",
   price: 0,
   img: "",
-  description: "",
+  description: ""
+
 };
 
 const OrderMeatDetail = (param) => {
@@ -28,6 +30,7 @@ const OrderMeatDetail = (param) => {
   useEffect(() => {
     const ordermeatDetailFn = async () => {
       const meatId = param.param.id;
+      dispatch(updateViewCountInServer({ productId: meatId, category: 'meat' }))
       try {
         const res = await axios.get(
           `http://localhost:3001/meatItems?id=${meatId}`
@@ -85,6 +88,7 @@ const OrderMeatDetail = (param) => {
             <div className="right-top">
               <ul>
                 <li>NM.K</li>
+                <li><span>조회수 {meatItem.viewcount}</span></li>
                 <li>
                   <h1>{meatItem.title}</h1>
                 </li>
