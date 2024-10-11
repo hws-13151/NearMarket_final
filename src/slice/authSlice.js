@@ -21,8 +21,8 @@ const authSlice = createSlice({
       }
     },
     logOutFn: (state, action) => {
-      state.loginUser.splice(0, 1);
       state.isLogin = false;
+      state.loginUser.splice(0, 1);
     },
   },
   extraReducers: (builder) => {

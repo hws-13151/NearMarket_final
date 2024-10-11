@@ -44,6 +44,7 @@ const Login = () => {
         if (num != -1) {
 
           dispatch(loginUserFn(res.data[num]))
+          loginModalFn()
 
         } else {
           alert("로그인 실패! 다시 정보를 입력해주세요")
@@ -92,7 +93,7 @@ const Login = () => {
                 onChange={loginChangeFn} />
             </li>
             <li>
-              <button onClick={loginFn} onClickCapture={loginModalFn}>로그인</button>
+              <button onClick={loginFn}>로그인</button>
               <button onClick={() => {
                 navigate('/auth/join')
               }}>회원가입</button>
