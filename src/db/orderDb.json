@@ -13,7 +13,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 6
+      "viewcount": 7
     },
     {
       "id": "3",
@@ -59,6 +59,13 @@
       "description": "강한 신맛과 상큼한 파인애플",
       "id": "8",
       "viewcount": 1
+    },
+    {
+      "title": "123",
+      "price": 123213,
+      "img": "f0.jpg",
+      "description": "123123",
+      "id": "0a27"
     }
   ],
   "vegetableItems": [
@@ -184,7 +191,8 @@
       "title": "자갈치 문어맛",
       "price": 1000,
       "img": "s4.webp",
-      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능"
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "viewcount": 1
     }
   ],
   "meatItems": [
