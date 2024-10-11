@@ -69,7 +69,7 @@ const Api = () => {
     }
   }, [api]); // api 데이터가 변경될 때마다 실행
 
-  return <div id="map" style={{ width: "100%", height: "400px" }}></div>;
+  return <div id="map" style={{ width: "100%", height: "70vh" }}></div>;
 };
 
 export default Api;
