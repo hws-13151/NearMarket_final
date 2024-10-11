@@ -55,7 +55,7 @@ const OrderVegetable = () => {
         <div className="order-vegetable-con">
           <div className="title">신선한 채소</div>
           <span>Total {vegetable.length}</span>
-          <span>
+          <span style={{ display: 'block', margin: '20px 0' }}>
 
             <SearchBox handleChange={handleChange} />
           </span>

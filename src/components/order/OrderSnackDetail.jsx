@@ -2,15 +2,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart1 } from "../../slice/cartSlice1";
+import { addCart1Async } from "../../slice/cartSlice1";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
+import { updateViewCountInServer } from "../../slice/viewcountSlice";
 
 const orderData = {
+  id: "",
   title: "",
   price: 0,
   img: "",
-  description: "",
+  description: ""
 };
 
 const OrderSnackDetail = (param) => {
@@ -27,6 +29,7 @@ const OrderSnackDetail = (param) => {
   useEffect(() => {
     const orderDetailFn = async () => {
       const orderId = param.param.id; // Accessing param.param.id directly
+      dispatch(updateViewCountInServer({ productId: orderId, category: 'snack' }))
       try {
         const res = await axios.get(
           `http://localhost:3001/snackItems?id=${orderId}`
@@ -49,8 +52,9 @@ const OrderSnackDetail = (param) => {
     }
   };
 
-  const addCartFn2 = () => {
+  const addCartFn2 = async () => {
     const setItemCart = {
+      id: snackItem.id,
       title: snackItem.title,
       price: snackItem.price,
       img: `/images/ordersnack/${snackItem.img}`,
@@ -58,9 +62,33 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
-    dispatch(addCart1(setItemCart)); // 장바구니에 추가
+
+    // 기존에 장바구니에 있는지 확인하기 위한 GET 요청
+    const existingCartItem = await axios.get(
+      `http://localhost:3001/cart?userEmail=${userEmail}&id=${snackItem.id}&category=snack`
+    );
+
+    if (existingCartItem.data.length > 0) {
+      // 아이템이 이미 존재할 경우 수량 업데이트
+      const existingItem = existingCartItem.data[0];
+      const updatedItem = {
+        ...existingItem,
+        count: existingItem.count + snackCount,
+      };
+
+      // PUT 요청으로 수량 업데이트
+      await axios.put(
+        `http://localhost:3001/cart/${existingItem.id}`,
+        updatedItem
+      );
+    } else {
+      // 아이템이 없으면 새로 추가
+      await dispatch(addCart1Async(setItemCart));
+    }
+
     setSnackCount(1); // 수량 초기화
     setIsModal(true); // 모달 열기
+    console.log(setItemCart);
   };
 
   return (
@@ -80,6 +108,7 @@ const OrderSnackDetail = (param) => {
             <div className="right-top">
               <ul>
                 <li>NM.K</li>
+                <li><span>조회수 {snackItem.viewcount}</span></li>
                 <li>
                   <h1>{snackItem.title}</h1>
                 </li>

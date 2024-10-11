@@ -1,4 +1,4 @@
-.header{
+.main-header{
   width: 100%;
   height: auto;
 
@@ -8,17 +8,15 @@
   box-shadow: inset 0 -2px 0px #ccc;
 }
 
-.header .nav{
+.main-header .nav{
   flex: 0 1 1600px;
   height: 130px;
-
-  margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
 }
 
-.header .nav h1.logo{
+.main-header .nav h1.logo{
   /* border: 1px solid; */
   box-sizing: border-box;
   padding: 10px;
@@ -27,21 +25,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.header .nav .gnb{
-  width: auto;
+.main-header .nav .gnb{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+
+  transition: all 0.3s;
 }
 
-.header .nav .gnb>ul{
-  height: inherit;
+.main-header .nav .gnb>ul{
+  flex: 0 1 800px;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4vw;
+}
 
-  gap: 5vw;
+.main-header .nav .gnb>ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  font-size: 20px;
+  transition: all 0.3s;
+  font-weight: bold;
+  color: #333;
+}
 
-  font-size: 30px;
+.main-header .nav .gnb ul li a:hover {
+  color: #ff6b00;
+}
+
+@media (max-width: 800px) {
+  .main-header .nav .gnb>ul{
+    display: flex;
+    gap: 4vw;
+    font-size: 15px;
+    
+    
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-header .nav .gnb>ul li a{
+    font-weight: bold;
+    font-size: inherit;
+    color: #333;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+  } 
+
+  .main-header .nav .gnb ul li a:hover {
+    color: #ff6b00;
+  }
 }

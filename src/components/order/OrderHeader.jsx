@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
 
 const OrderHeader = () => {
+  const [isGnbVisible, setGnbVisible] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
   console.log(cartItems);
   const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
+  const [selectedItem, setSelectedItem] = useState(null)
 
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
@@ -16,13 +18,47 @@ const OrderHeader = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
 
+  const toggleGnb = () => {
+    setGnbVisible((prev) => !prev); // gnb의 표시 상태 토글
+  };
+
+  const handleClickOutside = (e) => {
+    // gnb 외부 클릭 시 gnb 숨기기
+    const gnbElement = document.querySelector('.gnb');
+    const buttonElement = document.querySelector('.buttom');
+    // gnb 외부 클릭 시 gnb 숨기기
+    if (window.innerWidth <= 1400){
+      if (gnbElement && !gnbElement.contains(e.target) && !buttonElement.contains(e.target)) {
+        setGnbVisible(false);
+      }
+    }
+  };
+
+  // 화면 크기 변화 감지
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1400) {
+        setGnbVisible(true); // 너비가 1400px 이상일 때 gnb 보이기
+      }
+    };
+
+    handleResize(); // 초기 렌더링 시 호출
+    window.addEventListener("resize", handleResize); // 이벤트 리스너 추가
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // 이벤트 리스너 정리
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
 
   return (
     <>
-      <div className="order-header" >
+      <div className="order-header">
         <div className="order-header-nav">
           <h1 className="logo">
             <Link to={"/"}>
@@ -31,7 +67,7 @@ const OrderHeader = () => {
               <span className="k">K</span>
             </Link>
           </h1>
-          <div className="gnb">
+          <div className="gnb" style={{ display: isGnbVisible ? "block" : "none" }}> {/* gnb 표시 여부 */}
             <ul>
               <li>
                 <Link to={"/order/cart"}>
@@ -41,28 +77,28 @@ const OrderHeader = () => {
                   )}
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/index" ? "lightgray" : "", borderRadius: "8px", padding: "10px", boxSizing: "border-box" }}>
                 <Link to={"/order/index"}>추천상품</Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/vegetable" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/vegetable"}>
                   <img src="/images/orderheader/vegetable.png"></img>
                   채소
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/meat" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/meat"}>
                   <img src="/images/orderheader/meat.png"></img>
                   고기
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/fruit" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/fruit"}>
                   <img src="/images/orderheader/fruit.png"></img>
                   과일
                 </Link>
               </li>
-              <li >
+              <li style={{ backgroundColor: location.pathname === "/order/snack" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/snack"}>
                   <img src="/images/orderheader/snack.png"></img>
                   과자
@@ -98,6 +134,9 @@ const OrderHeader = () => {
                 </li>
               )}
             </ul>
+          </div>
+          <div className="buttom" onClick={toggleGnb}>
+            〓
           </div>
         </div>
       </div>

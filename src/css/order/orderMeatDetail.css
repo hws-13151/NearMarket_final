@@ -11,7 +11,6 @@
   height: auto;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .order-meat-detail .order-meat-detail-con .left{
@@ -162,4 +161,10 @@
 .order-meat-detail .order-meat-detail-con .right .right-bottom .bottom-payment>ul>li button:nth-child(3){
   background-color: red;
   color: white;
+}
+
+@media (max-width: 800px){
+  .order-meat-detail .order-meat-detail-con{
+    flex-direction: column;
+  }
 }

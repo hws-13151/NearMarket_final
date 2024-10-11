@@ -25,9 +25,15 @@
   box-sizing: border-box;
 }
 
+.order-index-detail .order-index-detail-con .left .left-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .order-index-detail .order-index-detail-con .left .left-img img{
-  width: 500px;
-  height: 500px;
+  width: 80%;
+  height: 80%;
   display: block;
 }
 
@@ -163,4 +169,10 @@
 .order-index-detail .order-index-detail-con .right .right-bottom .bottom-payment>ul>li button:nth-child(3){
   background-color: red;
   color: white;
+}
+
+@media (max-width: 800px){
+  .order-index-detail .order-index-detail-con{
+    flex-direction: column;
+  }
 }

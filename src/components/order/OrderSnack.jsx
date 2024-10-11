@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 const OrderSnack = () => {
   const [snackList, setSnackList] = useState([]);
+  const [userInput, setUserInput] = useState("")
 
   useEffect(() => {
     const axiosSetFn = async () => {
@@ -24,19 +26,28 @@ const OrderSnack = () => {
     navigate(`/order/snack/detail/${eId}`);
   };
 
+  const handleChange = (e) => {
+    setUserInput(e.target.value)
+  }
+  const filteredSnack = snackList.filter((snack) => {
+    return snack.title.toLowerCase().includes(userInput.toLocaleLowerCase())
+  })
+
+
   return (
     <>
       <div className="order-snack-header">
         <h2>
           신메뉴 <span>Total {snackList.length}</span>
         </h2>
+        <span style={{ display: 'block', marginLeft: '20px ' }}><SearchBox handleChange={handleChange} /></span>
       </div>
 
       <div className="order-snack">
         <div className="order-snack-con">
           <ul>
-            {snackList &&
-              snackList.map((el, idx) => {
+            {filteredSnack &&
+              filteredSnack.map((el, idx) => {
                 return (
                   <li key={idx} data-id={el.id} onClick={snackDetailFn}>
                     <div className="top">
