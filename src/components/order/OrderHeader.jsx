@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
 
 const OrderHeader = () => {
@@ -17,6 +17,8 @@ const OrderHeader = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
 
 
 
@@ -44,28 +46,28 @@ const OrderHeader = () => {
                   )}
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/index" ? "lightgray" : "", borderRadius: "8px", padding: "10px", boxSizing: "border-box" }}>
                 <Link to={"/order/index"}>추천상품</Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/vegetable" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/vegetable"}>
                   <img src="/images/orderheader/vegetable.png"></img>
                   채소
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/meat" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/meat"}>
                   <img src="/images/orderheader/meat.png"></img>
                   고기
                 </Link>
               </li>
-              <li>
+              <li style={{ backgroundColor: location.pathname === "/order/fruit" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/fruit"}>
                   <img src="/images/orderheader/fruit.png"></img>
                   과일
                 </Link>
               </li>
-              <li >
+              <li style={{ backgroundColor: location.pathname === "/order/snack" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
                 <Link to={"/order/snack"}>
                   <img src="/images/orderheader/snack.png"></img>
                   과자

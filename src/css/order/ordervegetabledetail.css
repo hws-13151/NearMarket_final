@@ -109,6 +109,13 @@
   box-sizing: border-box;
 }
 
+.order-vegetable-detail-con .right .vegetable-detail-item .top ul>li:nth-child(2) span {
+  font-size: 15px;
+  color: #777;
+
+
+}
+
 .order-vegetable-detail-con .right .vegetable-detail-item .top ul>li:nth-child(2) h1 {
   font-size: 30px;
   color: #171616;
@@ -148,7 +155,7 @@
   background-color: rgb(141, 114, 216);
 }
 
-.order-vegetable-detail-con .right .vegetable-detail-item .top ul>li:nth-child(6) {
+.order-vegetable-detail-con .right .vegetable-detail-item .top ul>li:nth-child(7) {
   color: #777;
 
 }
