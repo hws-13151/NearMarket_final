@@ -207,7 +207,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 1
+      "viewcount": 3
     },
     {
       "id": "2",
@@ -231,7 +231,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 1
+      "viewcount": 3
     },
     {
       "id": "5",

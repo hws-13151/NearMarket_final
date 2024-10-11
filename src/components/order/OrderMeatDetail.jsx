@@ -74,6 +74,19 @@ const OrderMeatDetail = (param) => {
     dispatch(addCart1(setItemCart));
   };
 
+  const paymentFn = () => {
+    const setItemCart = {
+      id: meatItem.id,
+      title: meatItem.title,
+      price: meatItem.price,
+      img: `/images/meat/${meatItem.img}`,
+      count: count,
+      userEmail,
+    };
+    dispatch(addCart1(setItemCart));
+    navigate("/order/payment");
+  };
+
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} />}
@@ -138,7 +151,7 @@ const OrderMeatDetail = (param) => {
                       <button onClick={addCartFn2} onClickCapture={onModalFn}>
                         장바구니
                       </button>
-                      <button>결제</button>
+                      <button onClick={paymentFn}>결제</button>
                     </li>
                   </ul>
                 </div>
