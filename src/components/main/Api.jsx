@@ -48,7 +48,8 @@ const Api = () => {
               // 인포윈도우 내용 생성
               const content = `
                 <div style="padding:5px; width:150px;">
-                  <strong>${shop.title}</strong><br>
+                  <b>${shop.title}</b><br>
+                  주소:${shop.address}<br>
                   전화번호: ${shop.phoneNum}<br>
                   우편번호: ${shop.postNum}
                 </div>
