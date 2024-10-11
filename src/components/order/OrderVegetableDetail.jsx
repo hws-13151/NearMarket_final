@@ -66,7 +66,7 @@ const OrderVegetableDetail = (param) => {
 
       return () => clearInterval(slideEffect);
     }
-  }, []);
+  }, [vegetableDetail.slideImage]);
 
   const addVegetableCartFn = () => {
     const vegetableCart = {
@@ -129,7 +129,7 @@ const OrderVegetableDetail = (param) => {
                 </div>
               </>
             ) : (
-              <img src={`/images/vegetable/${vegetableDetail.img}`} alt="default" />
+              <img src={`/images/vegetable/${vegetableDetail.img}`} alt={vegetableDetail.img} />
             )}
           </div>
           <div className="right">
