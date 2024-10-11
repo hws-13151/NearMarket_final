@@ -2,28 +2,29 @@ import axios from 'axios';
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const itemData ={
+const itemData = {
   title: "",
   price: 0,
   description: "",
   img: ""
+
 }
 
 const AdminProductsInsert = () => {
 
-  const [formData,setFormData] = useState(itemData)
+  const [formData, setFormData] = useState(itemData)
   const [imgFile, setImgFile] = useState([]);
   const [isTitle, setIsTitle] = useState(false)
   const imgRef = useRef();
   const selectedCategory = formData["order-corner"];
   const navigate = useNavigate()
 
-  const itemAddFn = (e) =>{
-    const { name , value } = e.target;
+  const itemAddFn = (e) => {
+    const { name, value } = e.target;
     const newValue = name === "price" ? Number(value) : value; // 가격을 숫자로 변환
     setFormData({
       ...formData,
-      [name]:newValue
+      [name]: newValue
     })
   }
 
@@ -34,7 +35,7 @@ const AdminProductsInsert = () => {
     reader.onloadend = () => {
       setImgFile(reader.result);
     };
-    if(file && file.type.match('image.*')){
+    if (file && file.type.match('image.*')) {
       reader.readAsDataURL(file);
       setFormData({
         ...formData,
@@ -43,21 +44,21 @@ const AdminProductsInsert = () => {
     }
   };
 
-  const updateItemFn = async () =>{
+  const updateItemFn = async () => {
     try {
-      if(formData.title === ""){
+      if (formData.title === "") {
         alert("상품 이름을 입력해 주세요")
         return
       }
-      if(formData.price === 0){
+      if (formData.price === 0) {
         alert("상품 가격을 입력해 주세요")
         return
       }
-      if(formData.description === ""){
+      if (formData.description === "") {
         alert("상품 설명을 입력해 주세요")
         return
       }
-      if(formData.img === ""){
+      if (formData.img === "") {
         alert("상품 이미지를 등록해 주세요")
         return
       }
@@ -84,15 +85,15 @@ const AdminProductsInsert = () => {
           return
       }
       const res = await axios.get(`http://localhost:3001/${itemUrl}`)
-      const num = res.data.findIndex(el=>{
+      const num = res.data.findIndex(el => {
         return el.title === formData.title
       })
-      if(num !== -1){
+      if (num !== -1) {
         alert("이미 등록된 상품입니다.")
         setIsTitle(false)
         console.log(isTitle)
         return
-      }else{
+      } else {
         setIsTitle(true)
       }
       await axios.post(`http://localhost:3001/${itemUrl}`, formData)
@@ -100,7 +101,7 @@ const AdminProductsInsert = () => {
       navigate(`/admin/${selectedCategory}`)
     } catch (error) {
       alert('상품 등록 중 오류가 발생했습니다.')
-    } 
+    }
   }
 
   return (
@@ -120,15 +121,15 @@ const AdminProductsInsert = () => {
                   <li>
                     <p>상품 이름</p>
                     <input type="text" name="title" id="title"
-                    onChange={itemAddFn}
-                    placeholder='상품 이름을 입력하세요.'/>
+                      onChange={itemAddFn}
+                      placeholder='상품 이름을 입력하세요.' />
                   </li>
                   <hr />
                   <li>
                     <p>상품 가격</p>
                     <input type="number" name="price" id="price"
-                    onChange={itemAddFn}
-                    placeholder='상품 가격을 입력하세요. (숫자만)' />
+                      onChange={itemAddFn}
+                      placeholder='상품 가격을 입력하세요. (숫자만)' />
                   </li>
                   <hr />
                   <li>
@@ -136,8 +137,8 @@ const AdminProductsInsert = () => {
                   </li>
                   <li>
                     <textarea name="description" id="description"
-                    onChange={itemAddFn}
-                    placeholder='상품 설명을 입력하세요.'></textarea>
+                      onChange={itemAddFn}
+                      placeholder='상품 설명을 입력하세요.'></textarea>
                   </li>
                   <hr />
                   <li>
@@ -156,9 +157,9 @@ const AdminProductsInsert = () => {
               <div className="right-bottom">
                 <label htmlFor="img">상품 이미지 선택</label>
                 <input multiple type="file" accept='image/jpg, image/png, image/jpeg' name="img" id="img"
-                onChange={saveImgFile}
-                onChangeCapture={itemAddFn}
-                ref={imgRef}
+                  onChange={saveImgFile}
+                  onChangeCapture={itemAddFn}
+                  ref={imgRef}
                 />
                 <button onClick={updateItemFn}>상품등록</button>
               </div>

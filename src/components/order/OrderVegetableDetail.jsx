@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal";
@@ -9,12 +9,12 @@ import { updateViewCountInServer } from "../../slice/viewcountSlice";
 const detailData = {
   id: 0,
   title: "",
-  price: "",
+  price: 0,
   description: "",
   img: "",
   rocket: "",
   slideImage: [],
-  viewcount: ""
+  viewcount: 1
 };
 
 const OrderVegetableDetail = (param) => {
@@ -26,46 +26,47 @@ const OrderVegetableDetail = (param) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // 사용자 이메일을 가져옵니다.
   const userEmail = useSelector((state) =>
-    state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
+    state.auth.isLogin ? state.auth.loginUser[0]?.userEmail : "guest"
   );
 
   useEffect(() => {
     const axiosFn = async () => {
       const vegetableId = param.param.id;
-      dispatch(updateViewCountInServer(vegetableId))
+      dispatch(updateViewCountInServer(vegetableId));
       try {
         const res = await axios.get(
           `http://localhost:3001/vegetableItems?id=${vegetableId}`
         );
-        setVegetableDetail(res.data[0]);
+        setVegetableDetail(res.data[0] || detailData); // 데이터가 없으면 기본값 설정
       } catch (error) {
         alert(error);
       }
     };
     axiosFn();
-  }, [param.param.id]);
+  }, []);
 
   const vegetableIncrementFn = () => {
-    setVegetableCount(vegetableCount + 1);
+    setVegetableCount((prevCount) => prevCount + 1);
   };
 
   const vegetableDecrementFn = () => {
-    vegetableCount <= 1
-      ? setVegetableCount(1)
-      : setVegetableCount(vegetableCount - 1);
+    setVegetableCount((prevCount) =>
+      prevCount <= 1 ? 1 : prevCount - 1
+    );
   };
 
   useEffect(() => {
-    const slideEffect = setInterval(() => {
-      setSlide((prevSlide) =>
-        prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
-      );
-    }, 3000);
+    if (Array.isArray(vegetableDetail.slideImage) && vegetableDetail.slideImage.length > 0) {
+      const slideEffect = setInterval(() => {
+        setSlide((prevSlide) =>
+          prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
+        );
+      }, 3000);
 
-    return () => clearInterval(slideEffect);
-  }, [vegetableDetail.slideImage.length]);
+      return () => clearInterval(slideEffect);
+    }
+  }, []);
 
   const addVegetableCartFn = () => {
     const vegetableCart = {
@@ -75,7 +76,7 @@ const OrderVegetableDetail = (param) => {
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
       category: "vegetable",
-      userEmail, // 이메일 추가
+      userEmail,
     };
     dispatch(addCart1(vegetableCart));
   };
@@ -87,7 +88,7 @@ const OrderVegetableDetail = (param) => {
       price: vegetableDetail.price,
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
-      userEmail, // 이메일 추가
+      userEmail,
     };
     dispatch(addCart1(vegetableCart));
     navigate("/order/payment");
@@ -115,17 +116,21 @@ const OrderVegetableDetail = (param) => {
       <div className="order-vegetable-detail">
         <div className="order-vegetable-detail-con">
           <div className="left">
-            {vegetableDetail.slideImage.length > 0 && (
-              <img
-                className="slide"
-                src={`/images/vegetable/${vegetableDetail.slideImage[slide]}`}
-                alt={vegetableDetail.slideImage[slide]}
-              />
+            {Array.isArray(vegetableDetail.slideImage) && vegetableDetail.slideImage.length > 0 ? (
+              <>
+                <img
+                  className="slide"
+                  src={`/images/vegetable/${vegetableDetail.slideImage[slide]}`}
+                  alt={vegetableDetail.slideImage[slide]}
+                />
+                <div className="imagebutton">
+                  <button onClick={previousSlideFn}>&lsaquo;</button>
+                  <button onClick={nextSlideFn}>&rsaquo;</button>
+                </div>
+              </>
+            ) : (
+              <img src={`/images/vegetable/${vegetableDetail.img}`} alt="default" />
             )}
-            <div className="imagebutton">
-              <button onClick={previousSlideFn}>&lsaquo;</button>
-              <button onClick={nextSlideFn}>&rsaquo;</button>
-            </div>
           </div>
           <div className="right">
             <div className="vegetable-detail-item">
@@ -134,7 +139,7 @@ const OrderVegetableDetail = (param) => {
                   <li>
                     <span>NM.K </span>
                   </li>
-                  <li><span>조회수{vegetableDetail.viewcount}</span></li>
+                  <li><span>조회수 {vegetableDetail.viewcount}</span></li>
                   <li>
                     <h1>{vegetableDetail.title}</h1>
                   </li>
@@ -168,8 +173,7 @@ const OrderVegetableDetail = (param) => {
                 <div className="counttotal">
                   <span>상품금액 합계</span>
                   <span>
-                    {(vegetableDetail.price * vegetableCount).toLocaleString()}{" "}
-                    원
+                    {(vegetableDetail.price * vegetableCount).toLocaleString()} 원
                   </span>
                 </div>
               </div>
