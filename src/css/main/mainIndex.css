@@ -106,6 +106,7 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.288);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .main .main-sec .section1 .bottomBar ul li:hover{
@@ -243,7 +244,7 @@
     gap: 6vw;
   }
   .main .main-sec .section2 .sec2-con > ul li{
-    gap: 1vw;
+    gap: 0px;
   }
   .main .main-sec .section2 .sec2-con>ul>li .top{
     width: 100px;
