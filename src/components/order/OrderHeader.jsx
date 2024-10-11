@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
 
+
 const OrderHeader = () => {
   const [isGnbVisible, setGnbVisible] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
   console.log(cartItems);
   const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
-  const [selectedItem, setSelectedItem] = useState(null)
+
 
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
@@ -30,7 +31,7 @@ const OrderHeader = () => {
     const gnbElement = document.querySelector('.gnb');
     const buttonElement = document.querySelector('.buttom');
     // gnb 외부 클릭 시 gnb 숨기기
-    if (window.innerWidth <= 1400){
+    if (window.innerWidth <= 1400) {
       if (gnbElement && !gnbElement.contains(e.target) && !buttonElement.contains(e.target)) {
         setGnbVisible(false);
       }
@@ -60,7 +61,7 @@ const OrderHeader = () => {
     <>
       <div className="order-header">
         <div className="order-header-nav">
-          <h1 className="logo" onClick={()=> navigate('../')}>
+          <h1 className="logo" onClick={() => navigate('../')}>
             <span className="nm">NM</span>
             <span className="jum">.</span>
             <span className="k">K</span>
@@ -111,7 +112,6 @@ const OrderHeader = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       dispatch(logOutFn());
-                      alert("로그아웃 합니다");
                       navigate(0);
                     }}
                   >

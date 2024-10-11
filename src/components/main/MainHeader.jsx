@@ -7,6 +7,7 @@ const MainHeader = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
 
+
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
   const navigate = useNavigate();
@@ -17,7 +18,10 @@ const MainHeader = () => {
     <>
       <div className="main-header">
         <div className="nav">
-          <h1 className="logo" onClick={navigate("/")}>
+          <h1 className="logo" onClick={() => {
+            navigate("/")
+          }
+          }>
             <span className="nm">NM</span>
             <span className="jum">.</span>
             <span className="k">K</span>
@@ -43,7 +47,7 @@ const MainHeader = () => {
                       e.preventDefault();
                       dispatch(logOutFn());
                       alert("로그아웃!!");
-                      navigate(0);
+                      navigate('/');
                     }}
                   >
                     로그아웃
