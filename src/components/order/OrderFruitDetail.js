@@ -51,7 +51,18 @@ const OrderFruitDetail = (param) => {
     if (isOrganic) additionalPrice += 2000 * count; // 유기농 옵션 추가
     return fruitDetail.price * count + additionalPrice;
   };
-
+  const paymentFn = () => {
+    const fruitCart = {
+      id: fruitDetail.id,
+      title: fruitDetail.title,
+      price:  fruitDetail.price + (isPremium ? 3000 : 0) + (isOrganic ? 2000 : 0),
+      img: `/images/fruit/${fruitDetail.img}`,
+      count,
+      userEmail,
+    };
+    dispatch(addCart1(fruitCart));
+    navigate("/order/payment");
+  };
   const addCartFn3 = () => {
     if (fruitDetail) {
       dispatch(
