@@ -1,6 +1,7 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import JoinModal from './JoinModal'
 
 const joinData = {
     userEmail: "",
@@ -18,6 +19,7 @@ const Join = () => {
     const [isEmailCheck, setIsEmailCheck] = useState(false)
     const [isEmail, setIsEmail] = useState(false)
     const [joinModal, setJoinModal] = useState(false)
+    const [isFormValid, setIsFormValid] = useState(false)
     const navigate = useNavigate()
 
 
@@ -54,6 +56,11 @@ const Join = () => {
     }
 
 
+    useEffect(() => {
+        const isValid = join.userEmail && join.userPw && join.age && join.userName && join.address && join.phoneNumber;
+        setIsFormValid(isValid);
+    }, [join]);
+
 
 
     // const joinFn =async()=>{
@@ -84,8 +91,8 @@ const Join = () => {
         }
         try {
             const joinOk = await axios.post(`http://localhost:3001/members`, join)
-            alert("회원가입 성공! 로그인 페이지로 이동합니다")
-            navigate(`/auth/login`)
+
+
         } catch (err) {
             alert(err)
         }
@@ -93,10 +100,16 @@ const Join = () => {
     }
 
 
+    const joinModalFn = () => {
+        setJoinModal(true)
+    }
+
+
 
 
     return (
         <>
+            {joinModal && <JoinModal setJoinModal={setJoinModal} />}
             <div className="join">
                 <div className="join-con">
                     <h1>회원가입</h1>
@@ -140,7 +153,7 @@ const Join = () => {
                             </select>
                         </li>
                         <li>
-                            <button onClick={joinFn} disabled={!isEmailCheck || !isEmail}>회원가입</button>
+                            <button onClick={joinFn} onClickCapture={joinModalFn} disabled={!isEmailCheck || !isEmail || !isFormValid}>회원가입</button>
                             <button onClick={() => {
                                 navigate('/auth/login')
                             }}>로그인</button>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal"; // 모달 컴포넌트 임포트
+import { updateViewCountInServer } from "../../slice/viewcountSlice";
 
 const OrderFruitDetail = (param) => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const OrderFruitDetail = (param) => {
   useEffect(() => {
     const fetchFruitDetail = async () => {
       const fruitId = param.param.id;
+      dispatch(updateViewCountInServer({ productId: fruitId, category: 'fruit' }))
       try {
         const res = await axios.get(
           `http://localhost:3001/fruitItems/${fruitId}`
@@ -77,6 +79,7 @@ const OrderFruitDetail = (param) => {
           <li>
             <h2>{fruitDetail.title}</h2>
           </li>
+          <li><span>조회수 {fruitDetail.viewcount}</span></li>
           <li>
             <img
               src={`/images/fruit/${fruitDetail.img}`}

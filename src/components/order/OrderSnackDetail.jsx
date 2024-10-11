@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart1Async } from "../../slice/cartSlice1";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
+import { updateViewCountInServer } from "../../slice/viewcountSlice";
 
 const orderData = {
   id: "",
   title: "",
   price: 0,
   img: "",
-  description: "",
+  description: ""
 };
 
 const OrderSnackDetail = (param) => {
@@ -28,6 +29,7 @@ const OrderSnackDetail = (param) => {
   useEffect(() => {
     const orderDetailFn = async () => {
       const orderId = param.param.id; // Accessing param.param.id directly
+      dispatch(updateViewCountInServer({ productId: orderId, category: 'snack' }))
       try {
         const res = await axios.get(
           `http://localhost:3001/snackItems?id=${orderId}`
@@ -106,6 +108,7 @@ const OrderSnackDetail = (param) => {
             <div className="right-top">
               <ul>
                 <li>NM.K</li>
+                <li><span>조회수 {snackItem.viewcount}</span></li>
                 <li>
                   <h1>{snackItem.title}</h1>
                 </li>

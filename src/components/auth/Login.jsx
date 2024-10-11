@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { loginUserFn } from '../../slice/authSlice'
+import LoginModal from './LoginModal'
 
 const loginData = {
   userEmail: "",
@@ -14,6 +15,7 @@ const loginData = {
 const Login = () => {
 
   const [login, setLogin] = useState(loginData)
+  const [loginModal, setLoginModal] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const isLogin = useSelector(state => state.auth.isLogin)
@@ -40,9 +42,9 @@ const Login = () => {
         })
 
         if (num != -1) {
-          alert("로그인 성공! 메인화면으로 이동합니다")
+
           dispatch(loginUserFn(res.data[num]))
-          navigate('/')
+
         } else {
           alert("로그인 실패! 다시 정보를 입력해주세요")
           return
@@ -63,6 +65,10 @@ const Login = () => {
     }
   }, [])
 
+  const loginModalFn = () => {
+    setLoginModal(true)
+  }
+
 
 
 
@@ -70,6 +76,7 @@ const Login = () => {
 
   return (
     <>
+      {loginModal && <LoginModal setLoginModal={setLoginModal} />}
       <div className="login">
         <div className="login-con">
           <h1>로그인</h1>
@@ -85,7 +92,7 @@ const Login = () => {
                 onChange={loginChangeFn} />
             </li>
             <li>
-              <button onClick={loginFn}>로그인</button>
+              <button onClick={loginFn} onClickCapture={loginModalFn}>로그인</button>
               <button onClick={() => {
                 navigate('/auth/join')
               }}>회원가입</button>
