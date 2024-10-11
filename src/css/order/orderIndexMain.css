@@ -1,15 +1,16 @@
 .order-index{
-  width: 100%;
+  width: 97%;
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  padding: 0.5vw 0;
+  padding: 1vw 0;
 }
 
 .order-index .order-index-con{
-  flex: 0 1 1600px;
-  height: calc(100vh - 130px - 220px - 1vw);
+  flex: 0 1 80%;
+  height: auto;
 
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@
   height: 250px;
   display: flex;
 
-  gap: 3vw;
+  gap: 2vw;
 
   box-shadow: 0 0 5px #ccc;
 
@@ -95,4 +96,23 @@
 
 .order-index .order-index-con .order-index-top ul li .bottom span{
   font-weight: bold;
+}
+
+@media (max-width: 1400px){
+  .order-index .order-index-con .order-index-top{
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px){
+  .order-index .order-index-con .order-index-top ul{
+    display: grid;
+    grid-template-columns: repeat(2, 30vw);
+    gap: 10vw;
+  }
+  .order-index .order-index-con .order-index-top ul li{
+    justify-content: space-between;
+    
+  }
 }
