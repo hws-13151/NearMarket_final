@@ -29,7 +29,7 @@ export default viewcountSlice
 
 export const updateViewCountInServer = createAsyncThunk(
     "viewcount/updateViewCountInServer",
-    async ({ productId, category }, thunkAPI) => {
+    async ({ productId, category }) => {
         try {
             let itemCategory;
             if (category === 'meat') {

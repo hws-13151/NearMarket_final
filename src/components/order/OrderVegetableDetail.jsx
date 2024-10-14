@@ -190,7 +190,6 @@ const OrderVegetableDetail = (param) => {
                 장바구니
               </button>
               <button onClick={paymentFn}>결제</button>
-              <button>좋아요</button>
             </div>
           </div>
         </div>

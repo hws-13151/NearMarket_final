@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { logOutFn } from "../../slice/authSlice";
+import LogoutModal from "../auth/LogoutModal";
+
 
 const MainHeader = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
+  const [logout, setLogout] = useState(false)
 
 
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+
+  const logoutModalFn = () => {
+    setLogout(true)
+  }
 
 
   return (
     <>
+      {logout && <LogoutModal setLogout={setLogout} />}
       <div className="main-header">
         <div className="nav">
           <h1 className="logo" onClick={() => {
@@ -43,11 +50,10 @@ const MainHeader = () => {
                   <Link to={"/auth/login"}>로그인</Link>
                 ) : (
                   <Link
-                    onClick={(e) => {
-                      e.preventDefault();
-                      dispatch(logOutFn());
-                      alert("로그아웃!!");
-                      navigate('/');
+                    onClick={() => {
+                      // e.preventDefault();
+                      // dispatch(logOutFn());
+                      logoutModalFn()
                     }}
                   >
                     로그아웃

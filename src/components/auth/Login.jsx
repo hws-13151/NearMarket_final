@@ -32,9 +32,9 @@ const Login = () => {
   }
 
 
-  const loginFn = (e) => {
+  const loginFn = () => {
 
-    const loginAxiosFn = async (e) => {
+    const loginAxiosFn = async () => {
       try {
         const res = await axios.get(`http://localhost:3001/members`)
         const num = res.data.findIndex(el => {

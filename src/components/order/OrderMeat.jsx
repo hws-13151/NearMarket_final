@@ -6,6 +6,9 @@ import SearchBox from './SearchBox'
 const OrderMeat = () => {
   const [meatList, setMeatList] = useState([])
   const [userInput, setUserInput] = useState("")
+  const [limit, setLimit] = useState(6)
+  const [page, setPage] = useState(1)
+  const offset = (page - 1) * limit
 
   //가상 db에서 데이터 불러오기(get)
   useEffect(() => {
@@ -37,6 +40,9 @@ const OrderMeat = () => {
     return meat.title.toLowerCase().includes(userInput.toLocaleLowerCase())
   })
 
+  const paginatedMeats = filteredMeat.slice(offset, offset + limit)
+
+  const totalPages = Math.ceil(filteredMeat.length / limit)
 
 
   return (
@@ -46,7 +52,7 @@ const OrderMeat = () => {
           <div className="order-meat-title">
             <h1>육류코너</h1>
             <div className="title-right">
-              <span style={{ color: '#ff0000' }}>{meatList.length}</span>
+              <span style={{ color: '#ff0000' }}>{filteredMeat.length}</span>
               <span> 개의 상품이 있습니다.</span>
             </div>
           </div>
@@ -55,7 +61,7 @@ const OrderMeat = () => {
           </div>
           <div className="order-meat-item">
             <ul>
-              {filteredMeat && filteredMeat.map((el, idx) => {
+              {paginatedMeats.map((el, idx) => {
                 return (
                   <li key={idx} data-id={el.id} onClick={setDetailFn}>
                     <div className="top">
@@ -70,6 +76,29 @@ const OrderMeat = () => {
                 )
               })}
             </ul>
+            <div className="pagination">
+              <button
+                onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                disabled={page === 1}
+              >
+                이전
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i + 1}
+                  onClick={() => setPage(i + 1)}
+                  className={page === i + 1 ? 'active' : ''}
+                >
+                  {i + 1}
+                </button>
+              ))}
+              <button
+                onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                disabled={page === totalPages}
+              >
+                다음
+              </button>
+            </div>
           </div>
         </div>
       </div>
