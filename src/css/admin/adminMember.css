@@ -1,7 +1,6 @@
 .admin-member {
     width: 100%;
     height: calc(100vh - 50px);
-
 }
 
 .admin-member .admin-member-con {
@@ -27,9 +26,6 @@
     height: 50px;
     display: flex;
     justify-content: center;
-
-
-
 }
 
 .admin-member .admin-member-con .members {
@@ -40,14 +36,12 @@
 }
 
 .admin-member .admin-member-con .members tr.role-admin {
-    background-color: #abb2dd;
-    /*관리자 배경색*/
+    background-color: #abb2dd; /* 관리자 배경색 */
 }
 
 .admin-member .admin-member-con .members table {
     width: 100%;
     border-collapse: collapse;
-
 }
 
 .admin-member .admin-member-con .members th {
@@ -63,14 +57,12 @@
 }
 
 .admin-member .admin-member-con .members th {
-    background-color: #ccc;
-    /*헤더*/
+    background-color: #ccc; /* 헤더 */
     color: #4a4141;
 }
 
 .admin-member .admin-member-con .members td {
-    color: #4a4141;
-    /*일반*/
+    color: #4a4141; /* 일반 */
 }
 
 .modal {
@@ -93,3 +85,4 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
+
