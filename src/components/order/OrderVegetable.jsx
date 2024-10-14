@@ -8,7 +8,7 @@ const OrderVegetable = () => {
   const [userInput, setUserInput] = useState("");
   const [limit, setLimit] = useState(6);
   const [page, setPage] = useState(1);
-  const [sortOption, setSortOption] = useState('default')
+  const [sortOption, setSortOption] = useState("default");
   const offset = (page - 1) * limit;
 
   const navigate = useNavigate();
@@ -30,20 +30,19 @@ const OrderVegetable = () => {
   };
 
   const handleSortChange = (e) => {
-    setSortOption(e.target.value)
+    setSortOption(e.target.value);
   };
 
-
-  const filteredVegetable = [...vegetable]    //배열을 복사하는 이유: 원본 배열을 수정하지 않고 정렬된 배열을 만들기 위해서
+  const filteredVegetable = [...vegetable] //배열을 복사하는 이유: 원본 배열을 수정하지 않고 정렬된 배열을 만들기 위해서
     .filter((vege) =>
       vege.title.toLowerCase().includes(userInput.toLowerCase())
     )
-    .sort((a, b) => {                                 //.sort() : 배열 정렬시 사용하는 method임(정렬기준에 맞게 분류함)
-      if (sortOption === 'low') return a.price - b.price;
-      if (sortOption === 'high') return b.price - a.price;
+    .sort((a, b) => {
+      //.sort() : 배열 정렬시 사용하는 method임(정렬기준에 맞게 분류함)
+      if (sortOption === "low") return a.price - b.price;
+      if (sortOption === "high") return b.price - a.price;
       return 0; // 기본순 (원래 순서 유지)
     });
-
 
   const paginatedVegetables = filteredVegetable.slice(offset, offset + limit); // slice()는 전체정보에서 내가 원하는 정보만 잘라서 가져오는 코드임!
 

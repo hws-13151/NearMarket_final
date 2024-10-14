@@ -4,7 +4,6 @@ import OrderSnackDetail from "../../components/order/OrderSnackDetail";
 
 const OrderSnackDetailPage = () => {
   const param = useParams();
-  console.log(param);
   return <OrderSnackDetail param={param} />;
 };
 

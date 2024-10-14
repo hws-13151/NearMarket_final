@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { logOutFn } from "../../slice/authSlice";
 import LogoutModal from "../auth/LogoutModal";
-
 
 const OrderHeader = () => {
   const [isGnbVisible, setGnbVisible] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
-  const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
-  const [logout, setLogout] = useState(false)
-
-
+  const cartItemCount = cartItems.length;
+  const [logout, setLogout] = useState(false);
 
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
-
 
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
@@ -24,18 +18,21 @@ const OrderHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const toggleGnb = () => {
     setGnbVisible((prev) => !prev); // gnb의 표시 상태 토글
   };
 
   const handleClickOutside = (e) => {
     // gnb 외부 클릭 시 gnb 숨기기
-    const gnbElement = document.querySelector('.gnb');
-    const buttonElement = document.querySelector('.buttom');
+    const gnbElement = document.querySelector(".gnb");
+    const buttonElement = document.querySelector(".buttom");
     // gnb 외부 클릭 시 gnb 숨기기
     if (window.innerWidth <= 1400) {
-      if (gnbElement && !gnbElement.contains(e.target) && !buttonElement.contains(e.target)) {
+      if (
+        gnbElement &&
+        !gnbElement.contains(e.target) &&
+        !buttonElement.contains(e.target)
+      ) {
         setGnbVisible(false);
       }
     }
@@ -60,21 +57,25 @@ const OrderHeader = () => {
   }, []);
 
   const logoutModalFn = () => {
-    setLogout(true)
-  }
-
+    setLogout(true);
+  };
 
   return (
     <>
       {logout && <LogoutModal setLogout={setLogout} />}
       <div className="order-header">
         <div className="order-header-nav">
-          <h1 className="logo" onClick={() => navigate('../')}>
+          <h1 className="logo" onClick={() => navigate("../")}>
             <span className="nm">NM</span>
             <span className="jum">.</span>
             <span className="k">K</span>
           </h1>
-          <div className="gnb" style={{ display: isGnbVisible ? "block" : "none" }}> {/* gnb 표시 여부 */}
+          <div
+            className="gnb"
+            style={{ display: isGnbVisible ? "block" : "none" }}
+          >
+            {" "}
+            {/* gnb 표시 여부 */}
             <ul>
               <li>
                 <Link to={"/order/cart"}>
@@ -84,28 +85,68 @@ const OrderHeader = () => {
                   )}
                 </Link>
               </li>
-              <li style={{ backgroundColor: location.pathname === "/order/index" ? "lightgray" : "", borderRadius: "8px", padding: "10px", boxSizing: "border-box" }}>
+              <li
+                style={{
+                  backgroundColor:
+                    location.pathname === "/order/index" ? "lightgray" : "",
+                  borderRadius: "8px",
+                  padding: "10px",
+                  boxSizing: "border-box",
+                }}
+              >
                 <Link to={"/order/index"}>추천상품</Link>
               </li>
-              <li style={{ backgroundColor: location.pathname === "/order/vegetable" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
+              <li
+                style={{
+                  backgroundColor:
+                    location.pathname === "/order/vegetable" ? "lightgray" : "",
+                  borderRadius: "8px",
+                  padding: "5px",
+                  boxSizing: "border-box",
+                }}
+              >
                 <Link to={"/order/vegetable"}>
                   <img src="/images/orderheader/vegetable.png"></img>
                   채소
                 </Link>
               </li>
-              <li style={{ backgroundColor: location.pathname === "/order/meat" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
+              <li
+                style={{
+                  backgroundColor:
+                    location.pathname === "/order/meat" ? "lightgray" : "",
+                  borderRadius: "8px",
+                  padding: "5px",
+                  boxSizing: "border-box",
+                }}
+              >
                 <Link to={"/order/meat"}>
                   <img src="/images/orderheader/meat.png"></img>
                   고기
                 </Link>
               </li>
-              <li style={{ backgroundColor: location.pathname === "/order/fruit" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
+              <li
+                style={{
+                  backgroundColor:
+                    location.pathname === "/order/fruit" ? "lightgray" : "",
+                  borderRadius: "8px",
+                  padding: "5px",
+                  boxSizing: "border-box",
+                }}
+              >
                 <Link to={"/order/fruit"}>
                   <img src="/images/orderheader/fruit.png"></img>
                   과일
                 </Link>
               </li>
-              <li style={{ backgroundColor: location.pathname === "/order/snack" ? "lightgray" : "", borderRadius: "8px", padding: "5px", boxSizing: "border-box" }}>
+              <li
+                style={{
+                  backgroundColor:
+                    location.pathname === "/order/snack" ? "lightgray" : "",
+                  borderRadius: "8px",
+                  padding: "5px",
+                  boxSizing: "border-box",
+                }}
+              >
                 <Link to={"/order/snack"}>
                   <img src="/images/orderheader/snack.png"></img>
                   과자
@@ -120,7 +161,7 @@ const OrderHeader = () => {
                     onClick={() => {
                       // e.preventDefault();
                       // dispatch(logOutFn());
-                      logoutModalFn()
+                      logoutModalFn();
                     }}
                   >
                     로그아웃

@@ -17,11 +17,13 @@ const CartList1 = () => {
 
   // 사용자 인증 상태
   const { isLogin, loginUser } = useSelector((state) => state.auth);
+
   const userEmail = isLogin ? loginUser[0].userEmail : "guest";
 
   // 장바구니 아이템
   const cartItems = useSelector((state) => state.cart.items);
 
+  console.log(cartItems);
   // userEmail에 해당하는 cartItems 필터링
   const filteredCartItems = cartItems.filter(
     (item) => item.userEmail === userEmail
