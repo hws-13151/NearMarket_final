@@ -24,6 +24,18 @@
   font-size: 22px;
 }
 
+.order-snack-header select {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+
+}
+
 .order-snack {
   width: 100%;
   /* 헤더와 푸터를 제외한 고정 높이 설정 */
@@ -37,7 +49,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   overflow-y: auto;
   padding: 10px;
 }
@@ -131,17 +143,18 @@
   color: white;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .order-snack-con ul {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .order-snack-con ul li {
     width: 40vw;
   }
 }
 
-@media (max-width: 700px){
-  .order-snack-header{
+@media (max-width: 700px) {
+  .order-snack-header {
     flex-direction: column;
   }
 }
