@@ -8,6 +8,7 @@ const OrderSnack = () => {
   const [userInput, setUserInput] = useState("")
   const [limit, setLimit] = useState(6)
   const [page, setPage] = useState(1)
+  const [sortOption, setSortOption] = useState('default')
   const offset = (page - 1) * limit
 
   useEffect(() => {
@@ -32,9 +33,22 @@ const OrderSnack = () => {
   const handleChange = (e) => {
     setUserInput(e.target.value)
   }
-  const filteredSnack = snackList.filter((snack) => {
-    return snack.title.toLowerCase().includes(userInput.toLocaleLowerCase())
-  })
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value)
+  };
+
+
+  const filteredSnack = [...snackList]
+    .filter((snack) =>
+      snack.title.toLowerCase().includes(userInput.toLocaleLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortOption === 'low') return a.price - b.price;
+      if (sortOption === 'high') return b.price - a.price;
+      return 0;
+    })
+
 
   const paginatedSnacks = filteredSnack.slice(offset, offset + limit)
 
@@ -47,6 +61,11 @@ const OrderSnack = () => {
         <h2>
           신메뉴 <span>Total {filteredSnack.length}</span>
         </h2>
+        <select value={sortOption} onChange={handleSortChange}>
+          <option value="default">기본순</option>
+          <option value="low">낮은 가격순</option>
+          <option value="high">높은 가격순</option>
+        </select>
         <span style={{ display: 'block', marginLeft: '20px ' }}><SearchBox handleChange={handleChange} /></span>
       </div>
 
@@ -73,29 +92,29 @@ const OrderSnack = () => {
           </ul>
         </div>
       </div>
-          <div className="pagination">
-            <button
-              onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-              disabled={page === 1}
-            >
-              이전
-            </button>
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i + 1}
-                onClick={() => setPage(i + 1)}
-                className={page === i + 1 ? 'active' : ''}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button
-              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-              disabled={page === totalPages}
-            >
-              다음
-            </button>
-          </div>
+      <div className="pagination">
+        <button
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          disabled={page === 1}
+        >
+          이전
+        </button>
+        {Array.from({ length: totalPages }, (_, i) => (
+          <button
+            key={i + 1}
+            onClick={() => setPage(i + 1)}
+            className={page === i + 1 ? 'active' : ''}
+          >
+            {i + 1}
+          </button>
+        ))}
+        <button
+          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={page === totalPages}
+        >
+          다음
+        </button>
+      </div>
     </>
   );
 };

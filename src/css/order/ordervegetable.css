@@ -8,13 +8,30 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.order-vegetable .order-vegetable-header {
+  display: flex;
+  justify-content: space-between;
 
-.order-vegetable .order-vegetable-con .title {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-vegetable .order-vegetable-header .title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
-  text-align: left;
   color: black;
+}
+
+.order-vegetable .order-vegetable-header select {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+
 }
 
 
@@ -24,14 +41,6 @@
   margin-bottom: 20px;
   color: #777;
 }
-
-/* .order-vegetable-con span:nth-child(2) {
-  display: block;
-  text-align: right;
-  margin-bottom: 20px;
-  color: #777;
-} */
-
 
 .order-vegetable-con ul {
   display: grid;
