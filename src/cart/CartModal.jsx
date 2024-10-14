@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateCartItem } from "../slice/cartSlice1";
-import "../css/cart/cartModal.css"; // 외부 CSS 파일을 임포트
+import "../css/cart/cartModal.css";
 
 const CartModal = ({ item, setIsModalOpen }) => {
-  const [itemCount, setItemCount] = useState(item.count || 1); // 모달에서 초기 수량 설정
-
+  const [itemCount, setItemCount] = useState(item.count || 1);
   const dispatch = useDispatch();
 
-  // 모달이 열릴 때 itemCount가 modalItem.count로 초기화되도록 effect 추가
   useEffect(() => {
     if (item) {
       setItemCount(item.count);
@@ -16,16 +14,16 @@ const CartModal = ({ item, setIsModalOpen }) => {
   }, [item]);
 
   const closeFn = () => {
-    setIsModalOpen(false); // 모달 닫기
+    setIsModalOpen(false);
   };
 
   const incrementFn = () => {
-    setItemCount(itemCount + 1); // 수량 증가
+    setItemCount(itemCount + 1);
   };
 
   const decrementFn = () => {
     if (itemCount > 1) {
-      setItemCount(itemCount - 1); // 수량 감소
+      setItemCount(itemCount - 1);
     }
   };
 
@@ -36,11 +34,11 @@ const CartModal = ({ item, setIsModalOpen }) => {
       price: item.price,
       img: item.img,
       count: itemCount,
-      category: item.category, // 카테고리 추가
-      userEmail: item.userEmail, // 사용자 이메일 추가
+      category: item.category,
+      userEmail: item.userEmail,
     };
-    dispatch(updateCartItem(updatedItem)); // 장바구니 아이템 수량 업데이트
-    closeFn(); // 모달 닫기
+    dispatch(updateCartItem(updatedItem));
+    closeFn();
   };
 
   return (

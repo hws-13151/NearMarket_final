@@ -13,8 +13,7 @@ const detailData = {
   description: "",
   img: "",
   rocket: "",
-  slideImage: []
-
+  slideImage: [],
 };
 
 const OrderVegetableDetail = (param) => {
@@ -22,6 +21,7 @@ const OrderVegetableDetail = (param) => {
   const [vegetableCount, setVegetableCount] = useState(1);
   const [slide, setSlide] = useState(0);
   const [isModal, setIsModal] = useState(false);
+  const [cartItem, setCartItem] = useState(null);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,43 +33,49 @@ const OrderVegetableDetail = (param) => {
   useEffect(() => {
     const axiosFn = async () => {
       const vegetableId = param.param.id;
-      dispatch(updateViewCountInServer({ productId: vegetableId, category: 'vegetable' }));
+      dispatch(
+        updateViewCountInServer({
+          productId: vegetableId,
+          category: "vegetable",
+        })
+      );
       try {
         const res = await axios.get(
           `http://localhost:3001/vegetableItems?id=${vegetableId}`
         );
-        setVegetableDetail(res.data[0] || detailData); // 데이터가 없으면 기본값 설정(꼭 안해두 됨)
+        setVegetableDetail(res.data[0] || detailData);
       } catch (error) {
         alert(error);
       }
     };
     axiosFn();
-  }, []);
+  }, [param.param.id, dispatch]);
 
-  const vegetableIncrementFn = () => {
+  const vegetableIncrementFn = () =>
     setVegetableCount((prevCount) => prevCount + 1);
-  };
 
-  const vegetableDecrementFn = () => {
-    setVegetableCount((prevCount) =>
-      prevCount <= 1 ? 1 : prevCount - 1
-    );
-  };
+  const vegetableDecrementFn = () =>
+    setVegetableCount((prevCount) => (prevCount <= 1 ? 1 : prevCount - 1));
 
   useEffect(() => {
-    if (Array.isArray(vegetableDetail.slideImage) && vegetableDetail.slideImage.length > 0) {
+    if (
+      Array.isArray(vegetableDetail.slideImage) &&
+      vegetableDetail.slideImage.length > 0
+    ) {
       const slideEffect = setInterval(() => {
         setSlide((prevSlide) =>
-          prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
+          prevSlide === vegetableDetail.slideImage.length - 1
+            ? 0
+            : prevSlide + 1
         );
       }, 3000);
-
       return () => clearInterval(slideEffect);
     }
   }, [vegetableDetail.slideImage]);
 
-  const addVegetableCartFn = () => {
-    const vegetableCart = {
+  // 모달 열기, 장바구니 데이터 준비 (dispatch하지 않음)
+  const openCartModal = () => {
+    const itemToCart = {
       id: vegetableDetail.id,
       title: vegetableDetail.title,
       price: vegetableDetail.price,
@@ -78,7 +84,8 @@ const OrderVegetableDetail = (param) => {
       category: "vegetable",
       userEmail,
     };
-    dispatch(addCart1(vegetableCart));
+    setCartItem(itemToCart);
+    setIsModal(true);
   };
 
   const paymentFn = () => {
@@ -94,29 +101,25 @@ const OrderVegetableDetail = (param) => {
     navigate("/order/payment");
   };
 
-  const onModalFn = () => {
-    setIsModal(true);
-  };
-
-  const previousSlideFn = () => {
+  const previousSlideFn = () =>
     setSlide((prevSlide) =>
       prevSlide === 0 ? vegetableDetail.slideImage.length - 1 : prevSlide - 1
     );
-  };
 
-  const nextSlideFn = () => {
+  const nextSlideFn = () =>
     setSlide((prevSlide) =>
       prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
     );
-  };
 
   return (
     <>
-      {isModal && <DetailModal setIsModal={setIsModal} />}
+      {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
+
       <div className="order-vegetable-detail">
         <div className="order-vegetable-detail-con">
           <div className="left">
-            {Array.isArray(vegetableDetail.slideImage) && vegetableDetail.slideImage.length > 0 ? (
+            {Array.isArray(vegetableDetail.slideImage) &&
+            vegetableDetail.slideImage.length > 0 ? (
               <>
                 <img
                   className="slide"
@@ -129,7 +132,10 @@ const OrderVegetableDetail = (param) => {
                 </div>
               </>
             ) : (
-              <img src={`/images/vegetable/${vegetableDetail.img}`} alt={vegetableDetail.img} />
+              <img
+                src={`/images/vegetable/${vegetableDetail.img}`}
+                alt={vegetableDetail.img}
+              />
             )}
           </div>
           <div className="right">
@@ -139,7 +145,9 @@ const OrderVegetableDetail = (param) => {
                   <li>
                     <span>NM.K </span>
                   </li>
-                  <li><span>조회수 {vegetableDetail.viewcount}</span></li>
+                  <li>
+                    <span>조회수 {vegetableDetail.viewcount}</span>
+                  </li>
                   <li>
                     <h1>{vegetableDetail.title}</h1>
                   </li>
@@ -173,22 +181,16 @@ const OrderVegetableDetail = (param) => {
                 <div className="counttotal">
                   <span>상품금액 합계</span>
                   <span>
-                    {(vegetableDetail.price * vegetableCount).toLocaleString()} 원
+                    {(vegetableDetail.price * vegetableCount).toLocaleString()}{" "}
+                    원
                   </span>
                 </div>
               </div>
             </div>
             <div className="order-go">
-              <button
-                onClick={() => {
-                  navigate(-1);
-                }}
-              >
-                이전페이지
-              </button>
-              <button onClick={addVegetableCartFn} onClickCapture={onModalFn}>
-                장바구니
-              </button>
+              <button onClick={() => navigate(-1)}>이전페이지</button>
+              <button onClick={openCartModal}>장바구니</button>
+
               <button onClick={paymentFn}>결제</button>
             </div>
           </div>

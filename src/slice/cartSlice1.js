@@ -1,14 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-// 비동기 thunk 생성: 장바구니에 아이템 추가 후 서버에 저장
-export const addCart1Async = createAsyncThunk(
-  "cart/addCart1Async",
-  async (item) => {
-    const response = await axios.post("http://localhost:3001/cart", item);
-    return response.data; // 서버로부터 반환된 데이터를 반환
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
 
 const initState = {
   items: [],
@@ -85,19 +75,6 @@ const cartSlice = createSlice({
       });
       state.items = state.items.filter((item) => item.userEmail !== "guest");
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase(addCart1Async.fulfilled, (state, action) => {
-      const existingItemIndex = state.items.findIndex(
-        (item) =>
-          item.id === action.payload.id &&
-          item.userEmail === action.payload.userEmail &&
-          item.category === action.payload.category
-      );
-      if (existingItemIndex === -1) {
-        state.items.push(action.payload);
-      }
-    });
   },
 });
 

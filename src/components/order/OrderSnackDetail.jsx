@@ -1,8 +1,7 @@
-// OrderSnackDetail.jsx
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart1Async } from "../../slice/cartSlice1";
+import { addCart1 } from "../../slice/cartSlice1";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
@@ -12,24 +11,30 @@ const orderData = {
   title: "",
   price: 0,
   img: "",
-  description: ""
+  description: "",
 };
 
 const OrderSnackDetail = (param) => {
-  const [snackItem, setSnackItem] = useState(orderData);
-  const [snackCount, setSnackCount] = useState(1);
-  const [isModal, setIsModal] = useState(false);
+  const [snackItem, setSnackItem] = useState(orderData); // 상품 데이터
+  const [snackCount, setSnackCount] = useState(1); // 수량
+  const [isModal, setIsModal] = useState(false); // 모달 상태
+  const [cartItem, setCartItem] = useState(null); // 모달로 전달할 장바구니 아이템
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // 로그인한 유저 이메일 가져오기
   const userEmail = useSelector((state) =>
     state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
   );
 
+  // 상품 정보 가져오기
   useEffect(() => {
     const orderDetailFn = async () => {
-      const orderId = param.param.id; // Accessing param.param.id directly
-      dispatch(updateViewCountInServer({ productId: orderId, category: 'snack' }))
+      const orderId = param.param.id;
+      dispatch(
+        updateViewCountInServer({ productId: orderId, category: "snack" })
+      ); // 조회수 업데이트
       try {
         const res = await axios.get(
           `http://localhost:3001/snackItems?id=${orderId}`
@@ -40,20 +45,22 @@ const OrderSnackDetail = (param) => {
       }
     };
     orderDetailFn();
-  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
+  }, [param.param.id, dispatch]);
 
+  // 수량 증가 함수
   const incrementCount = () => {
     setSnackCount(snackCount + 1);
   };
 
+  // 수량 감소 함수
   const decrementCount = () => {
     if (snackCount > 1) {
       setSnackCount(snackCount - 1);
     }
   };
 
-  const addCartFn2 = async () => {
-    const setItemCart = {
+  const openCartModal = () => {
+    const itemToCart = {
       id: snackItem.id,
       title: snackItem.title,
       price: snackItem.price,
@@ -62,38 +69,27 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
-
-    // 기존에 장바구니에 있는지 확인하기 위한 GET 요청
-    const existingCartItem = await axios.get(
-      `http://localhost:3001/cart?userEmail=${userEmail}&id=${snackItem.id}&category=snack`
-    );
-
-    if (existingCartItem.data.length > 0) {
-      // 아이템이 이미 존재할 경우 수량 업데이트
-      const existingItem = existingCartItem.data[0];
-      const updatedItem = {
-        ...existingItem,
-        count: existingItem.count + snackCount,
-      };
-
-      // PUT 요청으로 수량 업데이트
-      await axios.put(
-        `http://localhost:3001/cart/${existingItem.id}`,
-        updatedItem
-      );
-    } else {
-      // 아이템이 없으면 새로 추가
-      await dispatch(addCart1Async(setItemCart));
-    }
-
-    setSnackCount(1); // 수량 초기화
-    setIsModal(true); // 모달 열기
-    console.log(setItemCart);
+    setCartItem(itemToCart);
+    setIsModal(true);
   };
 
+  const paymentFn = () => {
+    const snackCart = {
+      id: snackItem.id,
+      title: snackItem.title,
+      price: snackItem.price,
+      img: `/images/ordersnack/${snackItem.img}`,
+      count: snackCount,
+      category: "snack",
+      userEmail,
+    };
+    dispatch(addCart1(snackCart));
+    navigate("/order/payment");
+  };
   return (
     <>
-      {isModal && <DetailModal setIsModal={setIsModal} />}
+      {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
+
       <div className="order-snack-detail">
         <div className="order-snack-detail-con">
           <div className="left">
@@ -108,7 +104,9 @@ const OrderSnackDetail = (param) => {
             <div className="right-top">
               <ul>
                 <li>NM.K</li>
-                <li><span>조회수 {snackItem.viewcount}</span></li>
+                <li>
+                  <span>조회수 {snackItem.viewcount}</span>
+                </li>
                 <li>
                   <h1>{snackItem.title}</h1>
                 </li>
@@ -143,8 +141,9 @@ const OrderSnackDetail = (param) => {
                     <hr />
                     <li>
                       <button onClick={() => navigate(-1)}>이전페이지</button>
-                      <button onClick={addCartFn2}>장바구니</button>
-                      <button>결제</button>
+                      <button onClick={openCartModal}>장바구니</button>
+
+                      <button onClick={paymentFn}>결제</button>
                     </li>
                   </ul>
                 </div>

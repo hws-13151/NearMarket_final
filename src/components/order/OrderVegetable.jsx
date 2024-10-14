@@ -1,62 +1,45 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import SearchBox from './SearchBox';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 const OrderVegetable = () => {
+  const [vegetable, setVgetable] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [limit, setLimit] = useState(6);
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
 
-  const [vegetable, setVgetable] = useState([])
-  const [userInput, setUserInput] = useState("")
-  const [limit, setLimit] = useState(6)
-  const [page, setPage] = useState(1)
-  const offset = (page - 1) * limit
-
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     const axiosFn = async () => {
-
       try {
-        const res = await axios.get(`http://localhost:3001/vegetableItems`)
-        setVgetable(res.data)
+        const res = await axios.get(`http://localhost:3001/vegetableItems`);
+        setVgetable(res.data);
       } catch (error) {
-        alert(error)
+        alert(error);
       }
     };
-    axiosFn()
-  }, [])
+    axiosFn();
+  }, []);
 
   const handleChange = (e) => {
-    setUserInput(e.target.value)
-  }
+    setUserInput(e.target.value);
+  };
   const filteredVegetable = vegetable.filter((vege) => {
-    return vege.title.toLowerCase().includes(userInput.toLowerCase())
-  })
+    return vege.title.toLowerCase().includes(userInput.toLowerCase());
+  });
 
+  const paginatedVegetables = filteredVegetable.slice(offset, offset + limit); // slice()는 전체정보에서 내가 원하는 정보만 잘라서 가져오는 코드임!
 
-
-  const paginatedVegetables = filteredVegetable.slice(offset, offset + limit);  // slice()는 전체정보에서 내가 원하는 정보만 잘라서 가져오는 코드임!
-
-  const totalPages = Math.ceil(filteredVegetable.length / limit);    ///math.ceil 은 소수점을 올림해서 전체페이지 갯수 계산한 것임!!
-
-
-
+  const totalPages = Math.ceil(filteredVegetable.length / limit); ///math.ceil 은 소수점을 올림해서 전체페이지 갯수 계산한 것임!!
 
   const orderVegetableDetailFn = (e) => {
+    const eId = e.currentTarget.getAttribute("data-id");
 
-
-    const eId = e.currentTarget.getAttribute('data-id')
-
-
-
-    navigate(`/order/vegetable/detail/${eId}`)
+    navigate(`/order/vegetable/detail/${eId}`);
   };
-
-
-
-
-
 
   return (
     <>
@@ -64,22 +47,29 @@ const OrderVegetable = () => {
         <div className="order-vegetable-con">
           <div className="title">신선한 채소</div>
           <span>Total {filteredVegetable.length}</span>
-          <span style={{ display: 'block', margin: '20px 0' }}>
-
+          <span style={{ display: "block", margin: "20px 0" }}>
             <SearchBox handleChange={handleChange} />
           </span>
 
           <ul>
             {paginatedVegetables.map((el) => {
               return (
-                <li key={el.id} data-id={el.id} onClick={orderVegetableDetailFn}>
+                <li
+                  key={el.id}
+                  data-id={el.id}
+                  onClick={orderVegetableDetailFn}
+                >
                   <div className="top">
                     <img src={`/images/vegetable/${el.img}`} alt={el.img} />
                   </div>
                   <div className="bottom">
                     <span>{el.title}</span>
                     <span className="delivery-order">
-                      <img src={`/images/vegetable/${el.rocket}`} alt={el.rocket} />로켓배송
+                      <img
+                        src={`/images/vegetable/${el.rocket}`}
+                        alt={el.rocket}
+                      />
+                      로켓배송
                     </span>
                     <span>{el.description}</span>
                     <span>{el.price}원</span>
@@ -99,7 +89,7 @@ const OrderVegetable = () => {
               <button
                 key={i + 1}
                 onClick={() => setPage(i + 1)}
-                className={page === i + 1 ? 'active' : ''}
+                className={page === i + 1 ? "active" : ""}
               >
                 {i + 1}
               </button>
@@ -118,7 +108,7 @@ const OrderVegetable = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default OrderVegetable
+export default OrderVegetable;

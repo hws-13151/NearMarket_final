@@ -80,9 +80,6 @@ const CartList1 = () => {
   return (
     <div className="cart-list">
       <div className="cart-list-con">
-        <h4 className="user-status">
-          {isLogin ? "회원입니다" : "비회원입니다"}
-        </h4>
         <h3 className="cart-title">장바구니 목록</h3>
 
         <div className="cart-item-con">

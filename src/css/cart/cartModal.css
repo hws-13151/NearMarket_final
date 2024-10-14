@@ -14,8 +14,8 @@
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: 500px; /* 모달 크기를 키움 */
-  max-width: 90%; /* 작은 화면에서 대응 */
+  width: 500px;
+  max-width: 90%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -32,9 +32,10 @@
 
 .top img {
   max-width: 100%;
+  max-height: 300px;
   height: auto;
   margin-bottom: 20px;
-  object-fit: cover; /* 이미지가 모달을 넘지 않도록 */
+  object-fit: contain;
 }
 
 .b-title {

@@ -13,14 +13,15 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 8
+      "viewcount": 19
     },
     {
       "id": "3",
       "title": "체리",
       "price": 10900,
       "img": "f2.jpg",
-      "description": "새콤달콤 청량한 체리"
+      "description": "새콤달콤 청량한 체리",
+      "viewcount": 2
     },
     {
       "id": "4",
@@ -28,7 +29,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 2
+      "viewcount": 3
     },
     {
       "id": "5",
@@ -36,7 +37,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 3
+      "viewcount": 5
     },
     {
       "id": "6",
@@ -84,7 +85,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 27
+      "viewcount": 28
     },
     {
       "id": "2",
@@ -100,7 +101,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 8
+      "viewcount": 11
     },
     {
       "id": "3",
@@ -233,7 +234,8 @@
       "title": "먹태깡 청양마요맛",
       "price": 1000,
       "img": "s1.jpeg",
-      "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다."
+      "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
+      "viewcount": 7
     },
     {
       "id": "3",
@@ -256,7 +258,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 1
+      "viewcount": 2
     }
   ],
   "meatItems": [
@@ -266,7 +268,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 3
+      "viewcount": 6
     },
     {
       "id": "2",
@@ -274,7 +276,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 2
+      "viewcount": 8
     },
     {
       "id": "3",
@@ -470,6 +472,152 @@
       ],
       "paymentAmount": 10000,
       "time": "2024/10/14 15:00:36"
+    },
+    {
+      "id": "e6bf",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트",
+      "orderMethod": "배달",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "서울시 노원구 ",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "국내산 목살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 3,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:25.488Z"
+        },
+        {
+          "id": "2",
+          "title": "먹태깡 청양마요맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s1.jpeg",
+          "count": 3,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:28.760Z"
+        },
+        {
+          "id": "2",
+          "img": "/images/fruit/f1.jpg",
+          "title": "사과",
+          "price": 4900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:34.920Z"
+        },
+        {
+          "id": "3",
+          "img": "/images/fruit/f2.jpg",
+          "title": "체리",
+          "price": 10900,
+          "count": 3,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:39.360Z"
+        },
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 3,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:43.792Z"
+        },
+        {
+          "id": "5",
+          "img": "/images/fruit/f4.jpg",
+          "title": "포도",
+          "price": 6900,
+          "count": 3,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:46.944Z"
+        },
+        {
+          "id": "4",
+          "img": "/images/fruit/f3.jpg",
+          "title": "바나나",
+          "price": 5900,
+          "count": 3,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:25:50.584Z"
+        }
+      ],
+      "paymentAmount": 155200,
+      "time": "2024/10/14 15:26:53"
+    },
+    {
+      "id": "a88b",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "서울시 노원구 ",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:31:44.241Z"
+        },
+        {
+          "id": "5",
+          "img": "/images/fruit/f4.jpg",
+          "title": "포도",
+          "price": 6900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:31:50.720Z"
+        },
+        {
+          "id": "5",
+          "title": "자갈치 문어맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s4.webp",
+          "count": 2,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:31:56.433Z"
+        },
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 3,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:32:00.841Z"
+        },
+        {
+          "id": "2",
+          "img": "/images/fruit/f1.jpg",
+          "title": "사과",
+          "price": 4900,
+          "count": 3,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-14T06:32:04.688Z"
+        }
+      ],
+      "paymentAmount": 65800,
+      "time": "2024/10/14 15:32:19"
     }
   ],
   "api": [
