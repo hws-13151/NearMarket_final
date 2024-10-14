@@ -71,6 +71,8 @@ const OrderSnack = () => {
               );
             })}
           </ul>
+        </div>
+      </div>
           <div className="pagination">
             <button
               onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
@@ -94,8 +96,6 @@ const OrderSnack = () => {
               다음
             </button>
           </div>
-        </div>
-      </div>
     </>
   );
 };

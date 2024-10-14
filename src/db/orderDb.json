@@ -5,7 +5,8 @@
       "price": 9900,
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
-      "id": "1"
+      "id": "1",
+      "viewcount": 1
     },
     {
       "id": "2",
@@ -29,7 +30,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 3
+      "viewcount": 4
     },
     {
       "id": "5",
@@ -132,7 +133,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 1
+      "viewcount": 3
     },
     {
       "id": "5",
@@ -250,7 +251,8 @@
       "title": "홈런볼 초코맛",
       "price": 1400,
       "img": "s3.jpg",
-      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여"
+      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
+      "viewcount": 1
     },
     {
       "id": "5",
@@ -268,7 +270,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 6
+      "viewcount": 8
     },
     {
       "id": "2",

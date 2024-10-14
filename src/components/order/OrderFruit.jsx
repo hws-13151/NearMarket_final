@@ -51,23 +51,24 @@ const OrderFruit = () => {
           <span ><SearchBox handleChange={handleChange} /></span>
         </div>
       </div>
-      <div className='order-fruit-con'>
-        <ul>
-          {paginatedFruits.map((el, idx) => (
-            <li key={idx} data-id={el.id} onClick={fruitDetailFn}>
-              <div className="top">
-                <img src={`/images/fruit/${el.img}`} alt={el.img} />
-              </div>
-              <div className="bottom">
-                <h3>{el.title}</h3>
-                <p>{el.description}</p>
-                <span>{el.price.toLocaleString()}원</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="pagination">
+      <div className="order-fruit-mid">
+        <div className='order-fruit-con'>
+          <ul>
+            {paginatedFruits.map((el, idx) => (
+              <li key={idx} data-id={el.id} onClick={fruitDetailFn}>
+                <div className="top">
+                  <img src={`/images/fruit/${el.img}`} alt={el.img} />
+                </div>
+                <div className="bottom">
+                  <h3>{el.title}</h3>
+                  <p>{el.description}</p>
+                  <span>{el.price.toLocaleString()}원</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="pagination">
           <button
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={page === 1}
@@ -90,6 +91,7 @@ const OrderFruit = () => {
             다음
           </button>
         </div>
+      </div>
     </div>
   );
 };
