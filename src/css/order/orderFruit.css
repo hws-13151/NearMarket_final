@@ -13,9 +13,14 @@ body {
   justify-content: center;
 }
 
+.order-fruit .order-fruit-mid{
+  display: flex;
+  flex-direction: column;
+}
+
 .order-fruit .order-fruit-con {
   flex: 0 1 1300px;
-  max-height: calc(100vh - 80px - 60px - 2vw);
+  max-height: calc(100vh - 80px - 60px - 2vw - 200px);
   box-sizing: border-box;
   display: flex;
   justify-content: center;

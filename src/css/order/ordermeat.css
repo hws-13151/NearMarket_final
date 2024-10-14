@@ -107,6 +107,7 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  padding: 10px;
 }
 
 .order-meat .order-meat-con .order-meat-item .pagination button {

@@ -94,10 +94,10 @@ const OrderMeatDetail = (param) => {
           <div className="right">
             <div className="right-top">
               <ul>
-                <li>NM.K</li>
-                <li>
-                  <span>조회수 {meatItem.viewcount}</span>
-                </li>
+                <div className="toptop">
+                  <span>NM.K</span>
+                  <span>조회수 {meatItem.viewcount} 회</span>
+                </div>
                 <li>
                   <h1>{meatItem.title}</h1>
                 </li>
