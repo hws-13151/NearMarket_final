@@ -1,9 +1,12 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const {kakao} =window
+
+const { kakao } = window;
+
 const Api = () => {
-  const [api, setApi] = useState([]); 
+  const [api, setApi] = useState([]);
+  const [selectedShop, setSelectedShop] = useState(null); // 선택된 상점 정보 상태
+  const [map, setMap] = useState(null); // 지도 상태 추가
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -31,10 +34,11 @@ const Api = () => {
             const container = document.getElementById('map');
             const options = {
               center: new window.kakao.maps.LatLng(37.65323, 127.061308), // 초기 중심 위치
-              level: 5, // 초기 확대 수준
+              level: 7, // 초기 확대 수준
             };
 
-            const map = new window.kakao.maps.Map(container, options);
+            const newMap = new window.kakao.maps.Map(container, options);
+            setMap(newMap); // 지도 상태 업데이트
 
             // 상점 목록을 기반으로 마커 및 인포윈도우 생성
             api.forEach((shop) => {
@@ -43,7 +47,7 @@ const Api = () => {
                 position: markerPosition,
               });
 
-              marker.setMap(map); // 마커를 지도에 추가
+              marker.setMap(newMap); // 마커를 지도에 추가
 
               // 인포윈도우 내용 생성
               const content = `
@@ -61,7 +65,7 @@ const Api = () => {
               });
 
               window.kakao.maps.event.addListener(marker, 'click', () => {
-                infowindow.open(map, marker);
+                infowindow.open(newMap, marker);
               });
             });
           });
@@ -70,7 +74,44 @@ const Api = () => {
     }
   }, [api]); // api 데이터가 변경될 때마다 실행
 
-  return <div id="map" style={{ width: "100%", height: "70vh" }}></div>;
+  const shopInfoFn = (shop) => {
+    setSelectedShop(shop); // 클릭된 상점 정보 업데이트
+
+    if (map) {
+      const position = new kakao.maps.LatLng(shop.lat, shop.lng);
+      map.setCenter(position); // 지도 중심을 해당 상점으로 설정
+      map.setLevel(5); // 확대 수준 조정 
+    }
+  };
+
+  return (
+    <>
+      <div id="map" style={{ width: "50%", height: "70vh" }}></div>
+      <div className="api-right">
+        <div className="api-btn">
+          {api.map((el) => (
+            <button key={el.id} onClick={() => shopInfoFn(el)}> {/* 클릭된 상점 정보 전달 */}
+              {el.title}
+            </button>
+          ))}
+        </div>
+        {selectedShop && ( // 선택된 상점 정보 표시
+            <div className="shop-info">
+            <h3>선택된 상점 정보</h3>
+            <p><b>상점명:</b> {selectedShop.title}</p>
+            <p><b>주소:</b> {selectedShop.address}</p>
+            <p><b>전화번호:</b> {selectedShop.phoneNum}</p>
+            <p><b>우편번호:</b> {selectedShop.postNum}</p>
+            {selectedShop.img && (
+                  <img src={`/images/mart/${selectedShop.img}`} alt={selectedShop.img} 
+                    
+                />
+            )}
+        </div>
+        )}
+      </div>
+    </>
+  );
 };
 
 export default Api;

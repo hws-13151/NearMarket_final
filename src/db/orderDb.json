@@ -13,7 +13,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 8
+      "viewcount": 10
     },
     {
       "id": "3",
@@ -98,7 +98,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "3",
@@ -386,36 +386,40 @@
   "api": [
     {
       "id": "1",
-      "title": "오아시스 마트",
+      "title": "오아시스 마트 노원점",
       "address": "노원구 동일로 1396",
       "postNum": "01751",
       "phoneNum": "02-123-5678",
+      "img": "oasisMart.jpg",
       "lat": 37.65323,
       "lng": 127.061308
     },
     {
-      "title": "세계로 마트",
+      "title": "세계로 마트 상계점",
       "address": "노원구 한글비석로 383",
       "postNum": "01699",
       "phoneNum": "02-000-1234",
+      "img": "worldMart.jpg",
       "lat": 37.659223,
       "lng": 127.073014,
       "id": "2"
     },
     {
       "id": "3",
-      "title": "하나로 마트",
+      "title": "하나로 마트 마들점",
       "address": "노원구 동일로 1538",
       "postNum": "01674",
       "phoneNum": "02-987-6543",
+      "img": "oneMart.jpg",
       "lat": 37.665806,
       "lng": 127.057909
     },
     {
-      "title": "롯데슈퍼 상계11 마트",
+      "title": "롯데슈퍼 상계11 마트 수락산점",
       "address": "노원구 동일로 1541",
       "postNum": "01756",
       "phoneNum": "02-456-4567",
+      "img": "lotteMart.jpg",
       "lat": 37.677278,
       "lng": 127.052683,
       "id": "4"

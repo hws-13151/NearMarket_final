@@ -45,8 +45,8 @@ const OrderFruit = () => {
       </div>
       <div className='order-fruit-con'>
         <ul>
-          {filteredFruit && filteredFruit.map((el, idx) => (
-            <li key={idx} data-id={el.id} onClick={fruitDetailFn}>
+          {filteredFruit && filteredFruit.map((el) => (
+            <li key={el.id} data-id={el.id} onClick={fruitDetailFn}>
               <div className="top">
                 <img src={`/images/fruit/${el.img}`} alt={el.img} />
               </div>
