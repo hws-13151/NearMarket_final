@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initState = {
   loginUser: [],
-  isLogin: false, //로그인상태를 나타냄
+  isLogin: false,
   memberList: [],
 };
 
@@ -15,6 +15,7 @@ const authSlice = createSlice({
       const num = state.loginUser.findIndex((el) => {
         return el.userEmail === action.payload.userEmail;
       });
+
       if (num === -1) {
         state.loginUser.push(action.payload);
         state.isLogin = true;
