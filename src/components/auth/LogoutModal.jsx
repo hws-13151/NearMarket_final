@@ -1,18 +1,33 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { logOutFn } from '../../slice/authSlice'
 
-const LogoutModal = () => {
+const LogoutModal = ({ setLogout }) => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const closeFn = () => {
+        setLogout(false)
+    }
+
+    const handleLogout = (e) => {
+        e.preventDefault()
+        dispatch(logOutFn())
+        closeFn()
+        navigate('/')
+    }
 
     return (
         <>
-            <div className="logoutmodal">
-                <div className="logoutmodal-con">
-                    <p>로그아웃 합니다 <br /> 메인페이지로 이동합니다</p>
-                    <button onClick={() => {
-                        navigate('/')
-                    }}>확인</button>
+            <div className="logoutmodal" onClick={closeFn} >
+                <div className="logoutmodal-con" onClick={(e) => e.stopPropagation()}>
+                    <p>로그아웃 합니다.<br />메인 페이지로 이동합니다.</p>
+                    <div className="button-con">
+                        <button onClick={handleLogout}>확인</button>
+                        <button onClick={closeFn}>취소</button>
+                    </div>
                 </div>
             </div>
         </>

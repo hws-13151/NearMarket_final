@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logOutFn } from "../../slice/authSlice";
+import LogoutModal from "../auth/LogoutModal";
 
 
 const OrderHeader = () => {
@@ -9,6 +10,8 @@ const OrderHeader = () => {
   const cartItems = useSelector((state) => state.cart.items);
   console.log(cartItems);
   const cartItemCount = cartItems.length; // 장바구니 아이템 수cartItems
+  const [logout, setLogout] = useState(false)
+
 
 
   const loginUser = useSelector((state) => state.auth.loginUser);
@@ -17,7 +20,7 @@ const OrderHeader = () => {
 
   const userRole = isLogin && loginUser.length > 0 ? loginUser[0].role : null;
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -56,9 +59,14 @@ const OrderHeader = () => {
     };
   }, []);
 
+  const logoutModalFn = () => {
+    setLogout(true)
+  }
+
 
   return (
     <>
+      {logout && <LogoutModal setLogout={setLogout} />}
       <div className="order-header">
         <div className="order-header-nav">
           <h1 className="logo" onClick={() => navigate('../')}>
@@ -109,10 +117,10 @@ const OrderHeader = () => {
                   <Link to={"/auth/login"}>로그인</Link>
                 ) : (
                   <Link
-                    onClick={(e) => {
-                      e.preventDefault();
-                      dispatch(logOutFn());
-                      navigate(0);
+                    onClick={() => {
+                      // e.preventDefault();
+                      // dispatch(logOutFn());
+                      logoutModalFn()
                     }}
                   >
                     로그아웃

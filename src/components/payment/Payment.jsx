@@ -185,10 +185,10 @@ const Payment = () => {
                 <td>
                   <select name="shopVal" id="shopVal" onChange={shopValFn}>
                     <option value="">주문처</option>
-                    <option value="n1">노원점</option>
-                    <option value="g1">강남점</option>
-                    <option value="h1">홍대점</option>
-                    <option value="j1">종로점</option>
+                    <option value="oasis">오아시스 마트</option>
+                    <option value="globla">세계로 마트</option>
+                    <option value="hana">하나로 마트</option>
+                    <option value="lottesuper">롯데슈퍼 상계11 마트</option>
                   </select>
                 </td>
                 <td>

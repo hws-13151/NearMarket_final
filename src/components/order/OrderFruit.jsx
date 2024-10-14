@@ -6,6 +6,9 @@ import SearchBox from './SearchBox';
 const OrderFruit = () => {
   const [fruitList, setFruitList] = useState([]);
   const [userInput, setUserInput] = useState("")
+  const [limit, setLimit] = useState(6)
+  const [page, setPage] = useState(1)
+  const offset = (page - 1) * limit
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,18 +37,23 @@ const OrderFruit = () => {
   })
 
 
+  const paginatedFruits = filteredFruit.slice(offset, offset + limit)
+
+  const totalPages = Math.ceil(filteredFruit.length / limit)
+
+
 
   return (
     <div className='order-fruit'>
       <div className='order-fruit-header'>
-        <h2>과일 Total {fruitList.length}</h2>
+        <h2>과일 Total {filteredFruit.length}</h2>
         <div className="search">
           <span ><SearchBox handleChange={handleChange} /></span>
         </div>
       </div>
       <div className='order-fruit-con'>
         <ul>
-          {filteredFruit && filteredFruit.map((el, idx) => (
+          {paginatedFruits.map((el, idx) => (
             <li key={idx} data-id={el.id} onClick={fruitDetailFn}>
               <div className="top">
                 <img src={`/images/fruit/${el.img}`} alt={el.img} />
@@ -58,6 +66,29 @@ const OrderFruit = () => {
             </li>
           ))}
         </ul>
+        <div className="pagination">
+          <button
+            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+            disabled={page === 1}
+          >
+            이전
+          </button>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => setPage(i + 1)}
+              className={page === i + 1 ? 'active' : ''}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button
+            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={page === totalPages}
+          >
+            다음
+          </button>
+        </div>
       </div>
     </div>
   );
