@@ -29,7 +29,6 @@ const OrderFruitDetail = (param) => {
   const userEmail = useSelector((state) =>
     state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
   );
-  console.log(userEmail);
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
