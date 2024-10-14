@@ -1,84 +1,95 @@
-.admin-left {
+.admin-left{
+  flex: 0 0 250px;
+  height: 100vh;
+
+  position: relative;
+  top: 0;
+}
+
+.admin-left .admin-left-con{
+  width: 100%;
+  position: absolute;
+  background-color:rgb(80, 80, 80);
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.admin-left .admin-left-con h1{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(80, 80, 80);
+  padding: 10px;
+}
+
+.admin-left .admin-left-con h1 a{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-left .admin-left-con .menu{
+  height: calc(100vh - 50px - 40px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.admin-left .admin-left-con .menu ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(80, 80, 80);
+
+  padding: 20px;
+  gap: 30px;
+}
+
+.admin-left .admin-left-con .menu ul li a{
+  color: inherit;
+  transition: all 0.3s;
+}
+
+.admin-left .admin-left-con .menu ul li a:hover {
+  color: #ddd; 
+}
+
+.admin-left .admin-left-con .menu ul li img {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 8px; 
+}
+
+.admin-left .admin-left-con .menu .address {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(80, 80, 80);
+  color: #ffffff;
+}
+
+@media (max-width: 1030px){
+  .admin-left{
     flex: 0 0 250px;
     height: 100vh;
   
-    background-color: rgb(80, 80, 80);
-  
-    position: sticky;
+    position: relative;
     top: 0;
-    padding: 1vw;
-    box-sizing: border-box;
+    transition: all 0.3s;
   }
-span.mark{
-    color: #ffffff;
+  .admin-left .admin-left-con{
+    background-color:rgba(80, 80, 80, 0.925);
+  }
+  .admin-left .admin-left-con .menu ul{
+    background-color: inherit;
+  }
+  .admin-left .admin-left-con .menu .address{
+    background-color: inherit;
+  }
 }
-.admin-left h1 {
-    width: 100%;
-    height: 50px;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(80, 80, 80);
-    color: white;
-    position: sticky;
-    top: 0;
-  }
-  
-.admin-left .menu {
-    height: calc(100vh - 50px - 2vw);
-    background-color: rgb(80, 80, 80);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-  }
-.admin-left a {
-    color: white; 
-    text-decoration: none; 
-  }
-  
-.admin-left a:hover {
-    color: #ddd; 
-  }
-.admin-left .menu ul {
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-    background-color: rgb(80, 80, 80);
-    color: white;
-    gap: 0.5vw;
-    box-sizing: border-box;
-  
-  }
-  
-.admin-left .menu ul li {
-  
-    display: flex;
-  
-    padding: 0.5vw;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  
-.admin-left img {
-    width: 20px; 
-    height: 20px; 
-    margin-right: 8px; 
-  }
-  
-.admin-left .menu .address {
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:rgb(80, 80, 80);
-    color: #ffffff;
-  }
-  

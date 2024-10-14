@@ -66,7 +66,8 @@ const OrderFruit = () => {
             </li>
           ))}
         </ul>
-        <div className="pagination">
+      </div>
+      <div className="pagination">
           <button
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={page === 1}
@@ -89,7 +90,6 @@ const OrderFruit = () => {
             다음
           </button>
         </div>
-      </div>
     </div>
   );
 };

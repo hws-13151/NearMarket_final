@@ -29,10 +29,10 @@ const AdminSnack = () => {
     <>
       <div className="admin-snack-all">
         <div className="admin-snack-header">
-            <h2>
-              신메뉴 <span>Total {snackItems.length}</span>
-            </h2>
-          </div>
+          <h2>
+            신메뉴 <span>Total {snackItems.length}</span>
+          </h2>
+        </div>
         <div className="admin-snack">
           <div className="admin-snack-con">
             <ul>

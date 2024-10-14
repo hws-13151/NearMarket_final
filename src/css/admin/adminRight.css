@@ -3,6 +3,7 @@
   height: 100vh;
 
   background-color: white;
+  transition: all 0.3s;
 }
 
 .admin-right .admin-right-con{
@@ -24,6 +25,7 @@
   justify-content: space-between;
 
   box-shadow: 0 2px 1px #ccc;
+  transition: all 0.3s;
 }
 
 .admin-right .admin-right-con .admin-right-header p{
@@ -86,4 +88,17 @@
 .admin-right .admin-right-con .admin-right-header ul li a{
   background-color: inherit;
   color: inherit;
+}
+
+@media (max-width: 1030px){
+  .admin-right{
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .admin-right .admin-right-con .admin-right-header{
+    display: flex;
+    justify-content: flex-end;
+  }
 }

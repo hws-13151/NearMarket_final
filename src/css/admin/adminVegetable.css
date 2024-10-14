@@ -1,7 +1,7 @@
 /* 컨테이너 스타일 */
 .admin-vegetable {
-    width: 100%;
     max-width: 1200px;
+    display: flex;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
