@@ -94,13 +94,13 @@ body {
 
 
 
-.order-fruit .order-fruit-con .pagination {
+.order-fruit .pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.order-fruit .order-fruit-con .pagination button {
+.order-fruit .pagination button {
   margin: 0 5px;
   padding: 10px 15px;
   border: none;
@@ -109,7 +109,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.order-fruit .order-fruit-con .pagination button.active {
+.order-fruit .pagination button.active {
   background-color: #71787c;
   color: white;
 }

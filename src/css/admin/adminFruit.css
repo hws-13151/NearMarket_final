@@ -45,3 +45,15 @@
     height: 250px; 
     object-fit: cover; 
   }
+
+  @media (max-width: 1030px){
+    .admin-fruit-con {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px){
+    .admin-fruit-con {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

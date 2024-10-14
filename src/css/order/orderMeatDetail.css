@@ -49,6 +49,19 @@
   width: 100%;
 }
 
+.order-meat-detail .order-meat-detail-con .right .right-top>ul .toptop{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.order-meat-detail .order-meat-detail-con .right .right-top>ul .toptop span:last-child{
+  padding: 2px;
+  background-color: #e2e2e2;
+  border: 1px solid #9e9e9e;
+  border-radius: 10px;
+}
+
 .order-meat-detail .order-meat-detail-con .right .right-top>ul>li{
   padding: 10px 0;
 }

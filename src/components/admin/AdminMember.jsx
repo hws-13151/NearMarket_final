@@ -49,7 +49,7 @@ const AdminMember = () => {
       <div className="admin-member">
         <div className="admin-member-con">
           <h1>ADMIN-MEMBERS</h1>
-          <span style={{ display: 'block', margin: '10px 0', marginLeft: '10px' }}>
+          <span style={{ display: 'flex'}}>
             <SearchBox handleChange={handleChange} />
           </span>
           <div className="members">

@@ -134,8 +134,6 @@ const AdminProductsInsert = () => {
                   <hr />
                   <li>
                     <p>상품 설명</p>
-                  </li>
-                  <li>
                     <textarea name="description" id="description"
                       onChange={itemAddFn}
                       placeholder='상품 설명을 입력하세요.'></textarea>
