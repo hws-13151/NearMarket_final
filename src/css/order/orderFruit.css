@@ -92,15 +92,43 @@ body {
   font-weight: bold;
 }
 
+
+
+.order-fruit .order-fruit-con .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-fruit .order-fruit-con .pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-fruit .order-fruit-con .pagination button.active {
+  background-color: #71787c;
+  color: white;
+}
+
+
+
+
+
 @media (max-width: 800px) {
-  .order-fruit{
+  .order-fruit {
     flex-direction: column;
   }
-  .order-fruit .order-fruit-header .search{
+
+  .order-fruit .order-fruit-header .search {
     padding: 10px;
     display: flex;
     justify-content: flex-end;
   }
+
   .order-fruit .order-fruit-con ul {
     padding: 10px;
     grid-template-columns: repeat(2, 1fr);

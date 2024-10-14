@@ -119,7 +119,7 @@
   vertical-align: middle;
 }
 
-/* background-image를 사용할 경우의 스타일 */
+
 .bottom .delivery-order {
   display: inline-block;
   padding-left: 25px;
@@ -130,5 +130,26 @@
   background-repeat: no-repeat;
   background-position: left center;
   line-height: 20px;
-  /* 이미지 크기와 맞추기 위해 line-height 조정 */
+
+
+}
+
+.order-vegetable .order-vegetable-con .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-vegetable .order-vegetable-con .pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-vegetable .order-vegetable-con .pagination button.active {
+  background-color: #71787c;
+  color: white;
 }

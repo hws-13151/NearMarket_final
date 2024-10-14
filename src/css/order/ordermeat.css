@@ -19,7 +19,7 @@
   padding: 10px;
 }
 
-.order-meat .order-meat-con .search{
+.order-meat .order-meat-con .search {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -103,15 +103,40 @@
   padding: 3px 0;
 }
 
-@media (max-width: 800px){
+.order-meat .order-meat-con .order-meat-item .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.order-meat .order-meat-con .order-meat-item .pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-meat .order-meat-con .order-meat-item .pagination button.active {
+  background-color: #71787c;
+  color: white;
+}
+
+
+
+
+@media (max-width: 800px) {
   .order-meat .order-meat-con .order-meat-item {
     width: 90vw;
   }
-  .order-meat .order-meat-con .order-meat-item>ul{
+
+  .order-meat .order-meat-con .order-meat-item>ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-auto-rows: 1fr;
   }
+
   .order-meat .order-meat-con .order-meat-item>ul>li {
 
     gap: 0;
