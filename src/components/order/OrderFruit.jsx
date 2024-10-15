@@ -62,12 +62,12 @@ const OrderFruit = () => {
         <h2>과일 Total {filteredFruit.length}</h2>
         <div className="search">
           <span ><SearchBox handleChange={handleChange} /></span>
+          <select value={sortOption} onChange={handleSortChange}>
+            <option value="default">기본순</option>
+            <option value="low">낮은 가격순</option>
+            <option value="high">높은 가격순</option>
+          </select>
         </div>
-        <select value={sortOption} onChange={handleSortChange}>
-          <option value="default">기본순</option>
-          <option value="low">낮은 가격순</option>
-          <option value="high">높은 가격순</option>
-        </select>
       </div>
       <div className="order-fruit-mid">
         <div className='order-fruit-con'>

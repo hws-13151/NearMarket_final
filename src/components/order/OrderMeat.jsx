@@ -72,15 +72,13 @@ const OrderMeat = () => {
             </div>
           </div>
           <div className="order-meat-mid">
-            <div className="sortoption">
+            <div className="search">
+              <span style={{ display: 'block' }}><SearchBox handleChange={handleChange} /></span>
               <select value={sortOption} onChange={handleSortChange}>
                 <option value="default">기본순</option>
                 <option value="low">낮은 가격순</option>
                 <option value="high">높은 가격순</option>
               </select>
-            </div>
-            <div className="search">
-              <span style={{ display: 'block', margin: '10px' }}><SearchBox handleChange={handleChange} /></span>
             </div>
           </div>
           <div className="order-meat-item">
