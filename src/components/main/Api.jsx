@@ -86,29 +86,32 @@ const Api = () => {
 
   return (
     <>
-      <div id="map" style={{ width: "50%", height: "70vh" }}></div>
-      <div className="api-right">
-        <div className="api-btn">
-          {api.map((el) => (
-            <button key={el.id} onClick={() => shopInfoFn(el)}> {/* 클릭된 상점 정보 전달 */}
-              {el.title}
-            </button>
-          ))}
-        </div>
-        {selectedShop && ( // 선택된 상점 정보 표시
+      <div className="map-con">
+        <div id="map"></div>
+        <div className="api-right">
+          <div className="api-btn">
+            {api.map((el) => (
+              <button key={el.id} onClick={() => shopInfoFn(el)}>
+                {el.title}
+              </button>
+            ))}
+          </div>
+          {selectedShop && (
             <div className="shop-info">
-            <h3>선택된 상점 정보</h3>
-            <p><b>상점명:</b> {selectedShop.title}</p>
-            <p><b>주소:</b> {selectedShop.address}</p>
-            <p><b>전화번호:</b> {selectedShop.phoneNum}</p>
-            <p><b>우편번호:</b> {selectedShop.postNum}</p>
-            {selectedShop.img && (
-                  <img src={`/images/mart/${selectedShop.img}`} alt={selectedShop.img} 
-                    
+              <h3>선택된 상점 정보</h3>
+              <p><b>상점명:</b> {selectedShop.title}</p>
+              <p><b>주소:</b> {selectedShop.address}</p>
+              <p><b>전화번호:</b> {selectedShop.phoneNum}</p>
+              <p><b>우편번호:</b> {selectedShop.postNum}</p>
+              {selectedShop.img && (
+                <img
+                  src={`/images/mart/${selectedShop.img}`}
+                  alt={selectedShop.img}
                 />
-            )}
+              )}
+            </div>
+          )}
         </div>
-        )}
       </div>
     </>
   );

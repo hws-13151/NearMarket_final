@@ -62,7 +62,7 @@ const Login = () => {
   useEffect(() => {
     if (isLogin) {
       alert("로그아웃 후 이용가능합니다!!!")
-      navigate('/')
+      navigate('/main')
     }
   }, [])
 

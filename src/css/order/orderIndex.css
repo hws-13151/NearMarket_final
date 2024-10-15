@@ -12,3 +12,5 @@
 @import url(../order/DetailModal.css);
 /*cart*/
 @import url(../cart/cartList.css);
+
+@import url(../api/api.css);
