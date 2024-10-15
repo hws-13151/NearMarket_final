@@ -3,115 +3,156 @@
   height: calc(100vh - 130px - 220px);
   display: flex;
   justify-content: center;
+  align-items: center; /* 수직 중앙 정렬 추가 */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .order-snack-detail .order-snack-detail-con {
-  flex: 0 1 1600px;
+  flex: 1;
+  max-width: 1200px; /* 최대 너비 추가 */
   display: flex;
   justify-content: space-between;
+  gap: 20px; /* 양쪽 사이에 여백 추가 */
 }
 
 .order-snack-detail .left {
   flex: 1;
   display: flex;
-  justify-content: flex-start; /* 이미지를 왼쪽으로 정렬 */
-  align-items: center;
-  padding: 3vw;
+  justify-content: center;
+  align-items: center; /* 중앙 정렬 */
+  padding: 20px;
   box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+  background-color: #f9f9f9; /* 배경색 추가 */
 }
 
 .order-snack-detail .left-img {
-  width: auto;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  max-width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 10px; /* 이미지에 둥근 테두리 추가 */
 }
 
 .order-snack-detail .left-img img {
-  width: 100%;
-  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* 이미지 둥근 모서리 */
 }
 
 .order-snack-detail .right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  gap: 20px;
 }
 
 .order-snack-detail .right-top {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .order-snack-detail .right-top ul {
-  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .order-snack-detail .right-top ul li {
   padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .order-snack-detail .right-bottom {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .order-snack-detail .bottom-price {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .order-snack-detail .bottom-price ul {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  gap: 10px;
 }
 
 .order-snack-detail .bottom-price ul li {
-  padding: 10px 3vw;
-  background-color: #dadada5e;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .order-snack-detail .bottom-price ul li button {
   width: 30px;
   height: 30px;
-  border: 1px solid #969696;
+  border: 1px solid #ccc;
   background-color: white;
-  color: black;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .order-snack-detail .bottom-price ul li button:hover {
-  background-color: #f0f0f0;
+  background-color: #e6e6e6;
 }
 
 .order-snack-detail .bottom-price ul li span {
   width: 40px;
-  height: 28px;
-  border: 1px solid #969696;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
   background-color: white;
   font-size: 14px;
-  text-align: center;
-  line-height: 26px;
 }
 
 .order-snack-detail .bottom-price ul li p {
-  width: 100%;
-  text-align: end;
   font-weight: bold;
+  text-align: right;
+}
+
+.order-snack-detail .bottom-payment {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .order-snack-detail .bottom-payment ul {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: 10px;
 }
 
 .order-snack-detail .bottom-payment ul li {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-snack-detail .bottom-payment ul li p {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .order-snack-detail .bottom-payment ul li h1 {
@@ -119,11 +160,11 @@
 }
 
 .order-snack-detail .bottom-payment ul li button {
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 

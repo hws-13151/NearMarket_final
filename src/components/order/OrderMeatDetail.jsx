@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
-import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
+import { useDispatch, useSelector } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
 
@@ -11,14 +11,15 @@ const meatData = {
   title: "",
   price: 0,
   img: "",
-  description: ""
-
+  description: "",
 };
 
 const OrderMeatDetail = (param) => {
   const navigate = useNavigate();
   const [meatItem, setMeatItem] = useState(meatData);
   const [count, setCount] = useState(1);
+  const [isModal, setIsModal] = useState(false);
+  const [cartItem, setCartItem] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -27,10 +28,13 @@ const OrderMeatDetail = (param) => {
     state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
   );
 
+  // 상품 정보 가져오기
   useEffect(() => {
-    const ordermeatDetailFn = async () => {
+    const orderMeatDetailFn = async () => {
       const meatId = param.param.id;
-      dispatch(updateViewCountInServer({ productId: meatId, category: 'meat' }))
+      dispatch(
+        updateViewCountInServer({ productId: meatId, category: "meat" })
+      );
       try {
         const res = await axios.get(
           `http://localhost:3001/meatItems?id=${meatId}`
@@ -40,56 +44,46 @@ const OrderMeatDetail = (param) => {
         alert(error);
       }
     };
-    ordermeatDetailFn();
-  }, [param.param.id]); // 의존성 배열에 param.param.id 추가
+    orderMeatDetailFn();
+  }, [param.param.id, dispatch]); // 의존성 배열에 param.param.id 추가
 
-  const IncrementFn = () => {
-    setCount(count + 1);
-  };
+  // 수량 증가
+  const incrementFn = () => setCount(count + 1);
 
-  const DecrementFn = () => {
-    if (count === 1) {
-      setCount(1);
-    } else {
-      setCount(count - 1);
-    }
-  };
+  // 수량 감소
+  const decrementFn = () => setCount(count === 1 ? 1 : count - 1);
 
-  const [isModal, setIsModal] = useState(false);
-
-  const onModalFn = () => {
-    setIsModal(true);
-  };
-
-  const addCartFn2 = () => {
-    const setItemCart = {
+  const openCartModal = () => {
+    const itemToCart = {
       id: meatItem.id,
       title: meatItem.title,
       price: meatItem.price,
       img: `/images/meat/${meatItem.img}`,
-      count: count,
+      count,
       category: "meat",
-      userEmail, // 이메일 정보를 추가
+      userEmail,
     };
-    dispatch(addCart1(setItemCart));
+    setCartItem(itemToCart); // 모달에 전달할 장바구니 아이템 저장
+    setIsModal(true); // 모달 열기
   };
 
   const paymentFn = () => {
-    const setItemCart = {
+    const meatCart = {
       id: meatItem.id,
       title: meatItem.title,
       price: meatItem.price,
       img: `/images/meat/${meatItem.img}`,
-      count: count,
+      count,
       userEmail,
     };
-    dispatch(addCart1(setItemCart));
+    dispatch(addCart1(meatCart));
     navigate("/order/payment");
   };
 
   return (
     <>
-      {isModal && <DetailModal setIsModal={setIsModal} />}
+      {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
+
       <div className="order-meat-detail">
         <div className="order-meat-detail-con">
           <div className="left">
@@ -100,23 +94,16 @@ const OrderMeatDetail = (param) => {
           <div className="right">
             <div className="right-top">
               <ul>
-                <li>NM.K</li>
-                <li><span>조회수 {meatItem.viewcount}</span></li>
+                <div className="toptop">
+                  <span>NM.K</span>
+                  <span>조회수 {meatItem.viewcount} 회</span>
+                </div>
                 <li>
                   <h1>{meatItem.title}</h1>
                 </li>
                 <li>{meatItem.description}</li>
                 <li>
                   <h1>{meatItem.price.toLocaleString()}원</h1>
-                </li>
-                <li>
-                  <h3>상품설명 :</h3>
-                  <br />
-                  <p>
-                    어떻게 먹어도 언제나 맛있는 고기 항상 국내산 최고급만
-                    취급하기 때문에 <br /> 안전하고 맛있게 드실 수 있습니다!!{" "}
-                    <br /> 저희 가게를 찾아주셔서 감사합니다~ ♡⸜(˶˃ ᵕ ˂˶)⸝♡
-                  </p>
                 </li>
               </ul>
             </div>
@@ -126,9 +113,9 @@ const OrderMeatDetail = (param) => {
                   <ul>
                     <li>{meatItem.title}</li>
                     <li>
-                      <button onClick={IncrementFn}>+</button>
+                      <button onClick={incrementFn}>+</button>
                       <span>{count}</span>
-                      <button onClick={DecrementFn}>-</button>
+                      <button onClick={decrementFn}>-</button>
                       <p>{(meatItem.price * count).toLocaleString()}원</p>
                     </li>
                   </ul>
@@ -141,16 +128,9 @@ const OrderMeatDetail = (param) => {
                     </li>
                     <hr />
                     <li>
-                      <button
-                        onClick={() => {
-                          navigate(-1);
-                        }}
-                      >
-                        이전페이지
-                      </button>
-                      <button onClick={addCartFn2} onClickCapture={onModalFn}>
-                        장바구니
-                      </button>
+                      <button onClick={() => navigate(-1)}>이전페이지</button>
+                      <button onClick={openCartModal}>장바구니</button>
+
                       <button onClick={paymentFn}>결제</button>
                     </li>
                   </ul>

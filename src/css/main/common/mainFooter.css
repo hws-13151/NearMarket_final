@@ -12,7 +12,8 @@
 }
 
 .footer .footer-con{
-  width: 1600px;
+  flex: 0 1 1600px;
+  transition: all 0.3s;
 }
 
 .footer .footer-con #near{
@@ -21,4 +22,10 @@
 
 .footer .footer-con #call{
   font-size: 40px;
+}
+
+@media (max-width: 800px){
+  .footer .footer-con{
+    padding: 0 20px;
+  }
 }

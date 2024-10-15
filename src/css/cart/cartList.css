@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+.jua-regular {
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .cart-list {
   width: 100%;
   min-height: calc(100vh - 80px - 60px);
@@ -12,8 +20,8 @@
   flex: 0 1 1600px;
   background-color: #ffffff;
   display: flex;
-  flex-direction: column; /* 세로 방향으로 배치 */
-  align-items: center; /* 중앙 정렬 */
+  flex-direction: column;
+  align-items: center;
 }
 
 .cart-title {
@@ -24,11 +32,6 @@
   align-items: center;
   padding: 0.1vw !important;
   width: 100%;
-}
-
-.user-status {
-  color: #000; /* 회원 상태 텍스트 색상 */
-  margin-bottom: 10px; /* 간격 조정 */
 }
 
 .cart-item-con {
@@ -89,9 +92,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
-
+.cart-details-container span {
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-size: 25px;
+}
 .cart-delete {
   border-radius: 2px;
   padding: 0.3vw;
@@ -124,7 +131,8 @@
 
 .cart-payment {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-content: center;
   padding: 2vw;
   box-sizing: border-box;
 }
@@ -140,7 +148,14 @@
   font-weight: bold;
 }
 
-.cart-order-result button {
+.cart-payment-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cart-payment-buttons > button {
   background-color: #007bff;
   color: white;
   padding: 0.5vw 1vw;
@@ -148,7 +163,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
-.cart-order-result button:hover {
-  background-color: #0056b3;
+.cart-payment-buttons > button:hover {
+  background-color: red;
 }

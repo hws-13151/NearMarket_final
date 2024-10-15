@@ -8,6 +8,7 @@ const OrderMeat = () => {
   const [userInput, setUserInput] = useState("")
   const [limit, setLimit] = useState(6)
   const [page, setPage] = useState(1)
+  const [sortOption, setSortOption] = useState('default')
   const offset = (page - 1) * limit
 
   //가상 db에서 데이터 불러오기(get)
@@ -36,9 +37,23 @@ const OrderMeat = () => {
   const handleChange = (e) => {
     setUserInput(e.target.value)
   }
-  const filteredMeat = meatList.filter((meat) => {
-    return meat.title.toLowerCase().includes(userInput.toLocaleLowerCase())
-  })
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value)
+  }
+
+
+  const filteredMeat = [...meatList]
+    .filter((meat) =>
+      meat.title.toLowerCase().includes(userInput.toLocaleLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortOption === 'low') return a.price - b.price
+      if (sortOption === 'high') return b.price - a.price
+      return 0
+    })
+
+
 
   const paginatedMeats = filteredMeat.slice(offset, offset + limit)
 
@@ -49,6 +64,13 @@ const OrderMeat = () => {
     <>
       <div className="order-meat">
         <div className="order-meat-con">
+          <div className="sortoption">
+            <select value={sortOption} onChange={handleSortChange}>
+              <option value="default">기본순</option>
+              <option value="low">낮은 가격순</option>
+              <option value="high">높은 가격순</option>
+            </select>
+          </div>
           <div className="order-meat-title">
             <h1>육류코너</h1>
             <div className="title-right">
