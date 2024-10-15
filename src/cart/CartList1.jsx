@@ -24,6 +24,7 @@ const CartList1 = () => {
   const cartItems = useSelector((state) => state.cart.items);
 
   console.log(cartItems);
+
   // userEmail에 해당하는 cartItems 필터링
   const filteredCartItems = cartItems.filter(
     (item) => item.userEmail === userEmail
@@ -33,27 +34,6 @@ const CartList1 = () => {
     (total, item) => total + item.price * item.count,
     0
   );
-
-  // 페이지네이션 상태
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // 한 페이지당 표시할 아이템 수
-
-  // 현재 페이지에 표시할 아이템 계산
-  const lastItemIndex = currentPage * itemsPerPage;
-  const firstItemIndex = lastItemIndex - itemsPerPage;
-  const currentItems = filteredCartItems.slice(firstItemIndex, lastItemIndex);
-
-  // 총 페이지 수
-  const totalPages = Math.ceil(filteredCartItems.length / itemsPerPage);
-
-  // 페이지네이션 핸들러
-  const goToNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const goToPreviousPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
 
   // 모달 열기
   const openModal = (item) => {
@@ -106,8 +86,8 @@ const CartList1 = () => {
         <h3 className="cart-title">장바구니 목록</h3>
 
         <div className="cart-item-con">
-          {currentItems.length > 0 ? (
-            currentItems.map((el, idx) => (
+          {filteredCartItems.length > 0 ? (
+            filteredCartItems.map((el, idx) => (
               <div className="cart-item" key={idx}>
                 <div className="cart-item-top">
                   <img src={el.img} alt={el.title} />
@@ -146,23 +126,6 @@ const CartList1 = () => {
           )}
         </div>
 
-        {totalPages > 1 && (
-          <div className="cart-pagination">
-            <button onClick={goToPreviousPage} disabled={currentPage === 1}>
-              이전
-            </button>
-            <span>
-              {currentPage} / {totalPages}
-            </span>
-            <button
-              onClick={goToNextPage}
-              disabled={currentPage === totalPages}
-            >
-              다음
-            </button>
-          </div>
-        )}
-
         {filteredCartItems.length > 0 && (
           <div className="cart-payment">
             <div className="cart-payment-sub">
@@ -174,9 +137,11 @@ const CartList1 = () => {
           </div>
         )}
       </div>
+
       {isModalOpen && (
         <CartModal item={modalItem} setIsModalOpen={setIsModalOpen} />
       )}
+
       {isDeleteModalOpen && (
         <ConfirmDeleteModal
           item={itemToDelete}
