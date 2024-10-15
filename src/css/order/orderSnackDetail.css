@@ -2,37 +2,37 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; /* 수직 중앙 정렬 추가 */
+  align-items: center; /* 수직 중앙 정렬 */
   padding: 20px;
   box-sizing: border-box;
 }
 
 .order-snack-detail .order-snack-detail-con {
   flex: 1;
-  max-width: 1200px; /* 최대 너비 추가 */
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* 양쪽 사이에 여백 추가 */
+  gap: 20px;
 }
 
 .order-snack-detail .left {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center; /* 중앙 정렬 */
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
-  background-color: #f9f9f9; /* 배경색 추가 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
 }
 
 .order-snack-detail .left-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -88,13 +88,13 @@
 .order-snack-detail .bottom-price ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .order-snack-detail .bottom-price ul li {
   display: flex;
+  justify-content: space-between; /* 간격을 벌려서 정렬 */
   align-items: center;
-  justify-content: space-between;
   background-color: #f1f1f1;
   padding: 10px;
   border-radius: 8px;
@@ -128,6 +128,7 @@
 .order-snack-detail .bottom-price ul li p {
   font-weight: bold;
   text-align: right;
+  margin-left: auto; /* 오른쪽 정렬 */
 }
 
 .order-snack-detail .bottom-payment {
@@ -181,6 +182,7 @@
   color: white;
 }
 
+/* 반응형 디자인 */
 @media (max-width: 800px) {
   .order-snack-detail .order-snack-detail-con {
     flex-direction: column;
