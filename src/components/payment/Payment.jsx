@@ -15,9 +15,11 @@ const payData = {
 const Payment = () => {
   const paymentItems = useSelector((state) => state.cart.items);
   const loginUser = useSelector((state) => state.auth.loginUser);
-  const isLogin = useSelector((state) => state.auth.isLogin)
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
   const [onPayment, setOnPayment] = useState(payData);
+  //주문처 추가
+  const [shop, setShop] = useState([])
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,12 +34,14 @@ const Payment = () => {
     if (!isLogin) {
       navigate("/auth/login");
     }
+    else{
+      fetchShop();
+    }
   }, []);
   // loginUser가 비어 있거나 존재하지 않을 때 처리
   if (!loginUser || loginUser.length === 0) {
     return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
   }
-
 
   const today = new Date();
   const formattedDate = `${today.getFullYear()}/${String(
@@ -59,6 +63,17 @@ const Payment = () => {
     paymentAmount: totalPrice,
     time: formattedDate,
   };
+
+  //주문처추가
+  const fetchShop = async () =>{
+    try{
+      const res1 = await axios.get('http://localhost:3001/api');
+      setShop(res1.data)
+    }
+    catch(err){
+      alert(err)
+    }
+  }
 
   const paymentAxiosFn = async (e) => {
     try {
@@ -96,11 +111,9 @@ const Payment = () => {
   const paymentSubmitFn = async (e) => {
     e.preventDefault();
     await paymentAxiosFn();
-    dispatch(deleteCartAll())
+    dispatch(deleteCartAll());
     navigate("/order/detail");
   };
-
-
 
   return (
     <div className="payment">
@@ -182,15 +195,18 @@ const Payment = () => {
                     <option value="kakaopay">카카오페이</option>
                   </select>
                 </td>
+                {/* 주문처 db 연동 */}
                 <td>
-                  <select name="shopVal" id="shopVal" onChange={shopValFn}>
-                    <option value="">주문처</option>
-                    <option value="oasis">오아시스 마트</option>
-                    <option value="globla">세계로 마트</option>
-                    <option value="hana">하나로 마트</option>
-                    <option value="lottesuper">롯데슈퍼 상계11 마트</option>
-                  </select>
-                </td>
+                    <select name="shopVal" id="shopVal" onChange={shopValFn}>
+                      <option value="">주문처</option>
+                        {shop.map((shopEl) => (
+                          <option key={shopEl.id} value={shopEl.title}>
+                             {shopEl.title}
+                      </option>
+                    ))}
+                    </select>
+               </td>
+
                 <td>
                   <select
                     name="orderMethod"

@@ -16,7 +16,7 @@ const LogoutModal = ({ setLogout }) => {
         e.preventDefault()
         dispatch(logOutFn())
         closeFn()
-        navigate('/')
+        navigate('/main')
     }
 
     return (

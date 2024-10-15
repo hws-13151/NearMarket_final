@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
-
+//이미지 수정 시 이미지 경로 이상
 
 const ShopModal = ({shop, onClose}) => {
     const  [title, setTitle] = useState(shop.title);
@@ -11,7 +11,27 @@ const ShopModal = ({shop, onClose}) => {
     const  [phoneNum, setPhoneNum] = useState(shop.phoneNum);
     const  [lat, setLat] = useState(shop.lat);
     const  [lng, setLng] = useState(shop.lng);
+    const [img, setImg] = useState(shop.img);
+    const [previewImg, setPreviewImg] = useState([])
     const dispatch = useDispatch()
+
+const uploadFile = (e) => {
+      const file = e.target.files[0];
+      if (file && file.type.match('image.*')) {
+        setImg(file.name); // 이미지 파일 이름 저장
+      }
+    };
+  
+const preview = (e) => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImg(reader.result);
+      }
+      if(file && file.type.match('image.*')){
+        reader.readAsDataURL(file);
+      }
+    }
 
     const shopUpdate = async () =>{
         try{
@@ -20,6 +40,7 @@ const ShopModal = ({shop, onClose}) => {
                 address,
                 postNum,
                 phoneNum,
+                img,
                 lat,
                 lng
             })
@@ -61,6 +82,16 @@ const ShopModal = ({shop, onClose}) => {
           value={title} 
           onChange={(e) => setTitle(e.target.value)} 
         />
+        <label>이미지 수정</label>
+        <input 
+          type="file" 
+          accept="image/jpg, image/png, image/jpeg" 
+          name="img" 
+          id="img"
+          onChange={uploadFile} 
+          onChangeCapture={preview}
+        />
+        {img && <img src={previewImg ? previewImg : "/default-image-path.jpg"} alt="미리보기" style={{ width: '100px', height: '100px' }} />}
         <label>주소</label>
         <input 
           type="text" 

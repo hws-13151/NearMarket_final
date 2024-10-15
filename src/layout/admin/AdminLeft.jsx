@@ -26,7 +26,7 @@ const AdminLeft = ({ isGnbVisible }) => {
       <div className="admin-left" style={{ display: isGnbVisible ? 'block' : 'none' }}>
         <div className="admin-left-con">
           <h1>
-            <Link to={'/'}>
+            <Link to={'/main'}>
               <span className="mark">NM.k</span>
             </Link>
           </h1>
