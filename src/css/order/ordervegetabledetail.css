@@ -294,11 +294,6 @@
   background-color: #d68f8f;
 }
 
-
-
-
-
-
 .detail-page {
   width: 80%;
   max-width: 1200px;
@@ -317,5 +312,25 @@
   }
   .order-vegetable-detail-con .left {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 800px){
+  .order-vegetable-detail-con .right .order-go button:first-child {
+    padding: 10px;
+    width: auto;
+    font-size: 14px;
+  }
+  
+  .order-vegetable-detail-con .right .order-go button:nth-child(2) {
+    padding: 10px;
+    width: auto;
+    font-size: 14px;
+  }
+  
+  .order-vegetable-detail-con .right .order-go button:nth-child(3) {
+    padding: 10px;
+    width: auto;
+    font-size: 14px;
   }
 }
