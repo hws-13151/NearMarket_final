@@ -133,8 +133,8 @@
     box-sizing: border-box;
     border: 1px solid #b4b4b4;
     position: absolute;
-    right: 40px;
-    top: 50px;
+    right: 45px;
+    top: 45px;
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s;

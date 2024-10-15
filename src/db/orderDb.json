@@ -142,7 +142,11 @@
       "description": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["pumkin.jpg", "pumkin2.jpg", "pumkin3.jpg"],
+      "slideImage": [
+        "pumkin.jpg",
+        "pumkin2.jpg",
+        "pumkin3.jpg"
+      ],
       "viewcount": 2
     },
     {
@@ -152,7 +156,11 @@
       "description": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
       "img": "tomato.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["tomato.jpg", "tomato2.jpg", "tomato3.jpg"]
+      "slideImage": [
+        "tomato.jpg",
+        "tomato2.jpg",
+        "tomato3.jpg"
+      ]
     },
     {
       "id": "56c8",
@@ -314,20 +322,19 @@
       "viewcount": 5
     },
     {
-      "id": "6",
-      "title": "한우 국거리 1++등급 (300g)",
-      "price": 19500,
-      "img": "meat5.jpg",
-      "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 6
+      "title": "국내산 삼겹살 수육용",
+      "price": 12300,
+      "img": "meat6.jpg",
+      "description": "수육용으로 부드럽고 맛있습니다.",
+      "id": "6"
     },
     {
+      "title": "국내산 돼지갈비",
+      "price": 13000,
+      "img": "meat7.jpg",
+      "description": "국내산 돼지갈비 부드럽고 맛있습니다.",
       "id": "7",
-      "title": "한우 국거리 1++등급 (300g)",
-      "price": 19500,
-      "img": "meat5.jpg",
-      "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 5
+      "viewcount": 1
     }
   ],
   "indexItems": [
