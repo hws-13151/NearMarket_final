@@ -9,7 +9,7 @@ const Main = () => {
   const FirstIndex = 0;
   const LastIndex = 3;
   const MoveIndex = 1;
-  const intervalTime = 5000;
+  const intervalTime = 4000;
 
   const moveToSlide = (value) =>{
     if(value === 'prev'){
