@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 1
+      "viewcount": 2
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 11
+      "viewcount": 12
     },
     {
       "id": "3",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "6",
@@ -102,7 +102,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 6
+      "viewcount": 9
     },
     {
       "id": "3",
@@ -142,7 +142,8 @@
       "description": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["pumkin.jpg", "pumkin2.jpg", "pumkin3.jpg"]
+      "slideImage": ["pumkin.jpg", "pumkin2.jpg", "pumkin3.jpg"],
+      "viewcount": 2
     },
     {
       "id": "6",
@@ -220,7 +221,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 6
+      "viewcount": 7
     },
     {
       "id": "2",
@@ -228,7 +229,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 40
+      "viewcount": 45
     },
     {
       "id": "3",
@@ -236,7 +237,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 15
+      "viewcount": 16
     },
     {
       "id": "4",
@@ -244,7 +245,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 6
+      "viewcount": 7
     },
     {
       "id": "5",
@@ -252,7 +253,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 15
+      "viewcount": 18
     },
     {
       "id": "6",
