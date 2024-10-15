@@ -59,14 +59,14 @@ const OrderSnack = () => {
           과자코너 <span>Total {filteredSnack.length}</span>
         </h2>
         <div className="order-snack-header-right">
+          <span style={{ display: "block", marginLeft: "20px " }}>
+            <SearchBox handleChange={handleChange} />
+          </span>
           <select value={sortOption} onChange={handleSortChange}>
             <option value="default">기본순</option>
             <option value="low">낮은 가격순</option>
             <option value="high">높은 가격순</option>
           </select>
-          <span style={{ display: "block", marginLeft: "20px " }}>
-            <SearchBox handleChange={handleChange} />
-          </span>
         </div>
       </div>
 

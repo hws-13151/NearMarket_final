@@ -25,9 +25,9 @@ const OrderHeader = () => {
   const handleClickOutside = (e) => {
     // gnb 외부 클릭 시 gnb 숨기기
     const gnbElement = document.querySelector(".gnb");
-    const buttonElement = document.querySelector(".buttom");
+    const buttonElement = document.querySelector(".button");
     // gnb 외부 클릭 시 gnb 숨기기
-    if (window.innerWidth <= 1400) {
+    if (window.innerWidth <= 1030) {
       if (
         gnbElement &&
         !gnbElement.contains(e.target) &&
@@ -41,7 +41,7 @@ const OrderHeader = () => {
   // 화면 크기 변화 감지
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1400) {
+      if (window.innerWidth >= 1030) {
         setGnbVisible(true); // 너비가 1400px 이상일 때 gnb 보이기
       }
     };
@@ -70,10 +70,7 @@ const OrderHeader = () => {
             <span className="jum">.</span>
             <span className="k">K</span>
           </h1>
-          <div
-            className="gnb"
-            style={{ display: isGnbVisible ? "block" : "none" }}
-          >
+          <div className={`gnb ${isGnbVisible ? 'visible' : ''}`}>
             {" "}
             {/* gnb 표시 여부 */}
             <ul>
@@ -182,7 +179,7 @@ const OrderHeader = () => {
               )}
             </ul>
           </div>
-          <div className="buttom" onClick={toggleGnb}>
+          <div className="button" onClick={toggleGnb}>
             〓
           </div>
         </div>

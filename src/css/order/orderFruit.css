@@ -13,6 +13,13 @@ body {
   justify-content: center;
 }
 
+.order-fruit .order-fruit-header .search {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
 .order-fruit .order-fruit-header select {
   padding: 4px 8px;
@@ -134,7 +141,13 @@ body {
 
 
 
-
+@media (max-width: 1030px){
+  .order-fruit .order-fruit-con ul {
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
 
 @media (max-width: 800px) {
   .order-fruit {
@@ -142,9 +155,12 @@ body {
   }
 
   .order-fruit .order-fruit-header .search {
+    width: 100%;
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .order-fruit .order-fruit-con ul {

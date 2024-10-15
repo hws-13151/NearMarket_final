@@ -45,7 +45,7 @@ const AdminShop = () => {
                         <tr>
                             <th>상점이름</th>
                             <th>주소</th>
-                            <th>우편번호</th>
+                            <th>우편</th>
                             <th>전화번호</th>
                             <th>위도</th>
                             <th>경도</th>

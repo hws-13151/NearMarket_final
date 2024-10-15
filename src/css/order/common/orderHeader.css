@@ -42,7 +42,7 @@
   align-items: center;
 }
 
-.order-header-nav .buttom{
+.order-header-nav .button{
   position: absolute;
   top: -30px;
   right: 0;
@@ -67,12 +67,22 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  display: block;
 
-  transition: all 0.3s;
+  transition: opacity 0.3s, transform 0.3s ; /* 부드러운 전환 */
+  transform: translateX(100%);
+}
+
+.order-header .order-header-nav .gnb.visible {
+  opacity: 1; /* 보이게 할 때의 상태 */
+  transform: translateX(0); /* 원래 위치로 */
+  visibility: visible; /* 보이기 */
+  display: flex;
+  justify-content: flex-end;
 }
 
 .order-header .order-header-nav .gnb ul {
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -80,7 +90,7 @@
 }
 
 .order-header .order-header-nav .gnb ul li {
-  width: 5.5vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,14 +103,14 @@
 
 .order-header .order-header-nav .gnb ul li a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: inherit;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: color 0.3s ease;
   box-sizing: border-box;
+  transition: color 0.3s;
 }
 
 .order-header .order-header-nav .gnb ul li img {
@@ -108,38 +118,29 @@
   margin-right: 10px;
   display: block;
 }
-
-@media (max-width: 1800px){
-  .order-header .order-header-nav .gnb ul {
-    gap: 2px;
-  }
-  .order-header .order-header-nav .gnb ul li a {
-    font-size: 16px;
-  }
-}
 @media (max-width: 1530px){
   .order-header .order-header-nav .gnb ul {
     gap: 1px;
   }
   .order-header .order-header-nav .gnb ul li a {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
-@media (max-width: 1400px){
-  .order-header-nav .buttom{
+@media (max-width: 1030px){
+  .order-header-nav .button{
     background-color: #dfdfdf;
     border-radius: 10px;
     padding: 7px 9px;
     box-sizing: border-box;
     border: 1px solid #b4b4b4;
-    position: absolute;
+    position: fixed;
     right: 45px;
     top: 45px;
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s;
   }
-  .order-header-nav .buttom:hover{
+  .order-header-nav .button:hover{
     background-color: black;
     color: white;
   }
@@ -151,15 +152,18 @@
     color: white;
     border: 0;
     width: 200px;
-    height: auto;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
     top: 0;
     right: 0px;
     padding: 100px 0;
     z-index: 99;
   }
+  .order-header .order-header-nav .gnb.visible {
+    display: block;
+  }
   .order-header .order-header-nav .gnb ul{
-    /* height: auto; */
+    width: 100%;
     flex-direction: column;
     gap: 3vw;
   }
@@ -170,10 +174,11 @@
     font-size: 20px;
     padding: 10px;
   }
+  
 }
 
 @media (max-width: 500px){
-  .order-header-nav .buttom{
+  .order-header-nav .button{
     right: 20px;
   }
 }
