@@ -169,7 +169,7 @@
 }
 
 /* 페이지네이션 */
-.pagination {
+.cart-pagination {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,7 +177,7 @@
   margin-top: 20px;
 }
 
-.pagination button {
+.cart-pagination button {
   background-color: #007bff;
   color: white;
   padding: 0.5vw 1vw;
@@ -187,16 +187,16 @@
   font-size: 16px;
 }
 
-.pagination button:disabled {
+.cart-pagination button:disabled {
   background-color: #c0c0c0;
   cursor: not-allowed;
 }
 
-.pagination button:hover:not(:disabled) {
+.cart-pagination button:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
-.pagination span {
+.cart-pagination span {
   font-family: "Jua", serif;
   font-weight: 400;
   font-size: 18px;

@@ -147,7 +147,7 @@ const CartList1 = () => {
         </div>
 
         {totalPages > 1 && (
-          <div className="pagination">
+          <div className="cart-pagination">
             <button onClick={goToPreviousPage} disabled={currentPage === 1}>
               이전
             </button>
