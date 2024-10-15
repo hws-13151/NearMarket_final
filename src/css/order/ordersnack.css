@@ -24,7 +24,7 @@
   font-size: 22px;
 }
 
-.order-snack-header-right{
+.order-snack-header-right {
   display: flex;
   align-items: center;
 }
@@ -36,7 +36,7 @@
   border-radius: 5px;
   background-color: #f9f9f9;
   cursor: pointer;
-  width: 90px;
+  width: 120px;
   height: 30px;
 }
 
@@ -124,8 +124,6 @@
   margin-bottom: 10px;
 }
 
-
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -151,11 +149,11 @@
   .order-snack-header h2 {
     font-size: 25px;
   }
-  
+
   .order-snack-header h2 span {
     font-size: 15px;
   }
-  
+
   .order-snack-con ul {
     grid-template-columns: repeat(2, 1fr);
   }
