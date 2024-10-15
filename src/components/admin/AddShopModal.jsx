@@ -10,7 +10,27 @@ const AddShopModal = ({ onClose }) => {
     const [phoneNum, setPhoneNum] = useState('');
     const [lat, setLat] = useState('');
     const [lng, setLng] = useState('');
+    const [img, setImg] = useState('');
+    const [previewImg, setPreviewImg] = useState([])
     const dispatch = useDispatch();
+
+    const uploadFile = (e) => {
+        const file = e.target.files[0];
+        if (file && file.type.match('image.*')) {
+          setImg(file.name); // 이미지 파일 이름 저장
+        }
+      };
+    
+  const preview = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setPreviewImg(reader.result);
+        }
+        if(file && file.type.match('image.*')){
+          reader.readAsDataURL(file);
+        }
+      }
 
     const shopAdd = async () => {
         try {
@@ -19,6 +39,7 @@ const AddShopModal = ({ onClose }) => {
                 address,
                 postNum,
                 phoneNum,
+                img,
                 lat,
                 lng,
             });
@@ -40,6 +61,16 @@ const AddShopModal = ({ onClose }) => {
                     value={title} 
                     onChange={(e) => setTitle(e.target.value)} 
                 />
+                 <label>이미지 수정</label>
+        <input 
+          type="file" 
+          accept="image/jpg, image/png, image/jpeg" 
+          name="img" 
+          id="img"
+          onChange={uploadFile} 
+          onChangeCapture={preview}
+        />
+        {img && <img src={previewImg ? previewImg : "/default-image-path.jpg"} alt="미리보기" style={{ width: '100px', height: '100px' }} />}
                 <label>주소</label>
                 <input 
                     type="text" 
@@ -70,7 +101,7 @@ const AddShopModal = ({ onClose }) => {
                     value={lng} 
                     onChange={(e) => setLng(Number(e.target.value))} 
                 />    
-
+                
                 <button onClick={shopAdd} className="update-btn">추가</button>
                 <button onClick={onClose} className='close'>X</button>
             </div>

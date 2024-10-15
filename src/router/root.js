@@ -6,10 +6,12 @@ import ordermeatrouter from "./ordermeatrouter";
 import orderSnackRouter from "./orderSnackRouter";
 import authrouter from "./authrouter";
 import adminRouter from "./adminRouter";
-
 const Loading = <div className="loading">Loading...</div>;
 
 const OrderCartPage1 = lazy(() => import("../pages/cart/CartListPage1"));
+
+//Start
+const StartPage = lazy(() => import("../pages/StartPage"));
 
 // Main
 const MainPage = lazy(() => import("../pages/MainPage"));
@@ -33,6 +35,14 @@ const PaymentDetailPage = lazy(() =>
 const root = createBrowserRouter([
   {
     path: "/",
+    element: (
+      <Suspense fallback={Loading}>
+        <StartPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/main",
     element: (
       <Suspense fallback={Loading}>
         <MainLayout />

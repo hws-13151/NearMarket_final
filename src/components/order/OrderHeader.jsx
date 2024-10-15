@@ -65,7 +65,7 @@ const OrderHeader = () => {
       {logout && <LogoutModal setLogout={setLogout} />}
       <div className="order-header">
         <div className="order-header-nav">
-          <h1 className="logo" onClick={() => navigate("../")}>
+          <h1 className="logo" onClick={() => navigate("/main")}>
             <span className="nm">NM</span>
             <span className="jum">.</span>
             <span className="k">K</span>

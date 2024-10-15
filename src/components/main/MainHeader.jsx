@@ -26,7 +26,7 @@ const MainHeader = () => {
       <div className="main-header">
         <div className="nav">
           <h1 className="logo" onClick={() => {
-            navigate("/")
+            navigate("/main")
           }
           }>
             <span className="nm">NM</span>
