@@ -309,3 +309,13 @@
   border-radius: 10px;
   font-size: 16px;
 }
+
+@media (max-width: 1030px){
+  .order-vegetable-detail .order-vegetable-detail-con{
+    width: 100%;
+    flex-direction: column;
+  }
+  .order-vegetable-detail-con .left {
+    max-width: 100%;
+  }
+}

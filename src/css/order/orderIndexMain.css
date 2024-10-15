@@ -39,7 +39,7 @@
 }
 
 .order-index .order-index-con .order-index-top ul{
-  flex: 4;
+  flex: 0 1 80%;
   display: flex;
   gap: 4vw;
   justify-content: center;
@@ -47,7 +47,7 @@
 }
 
 .order-index .order-index-con .order-index-top ul li{
-  width: 100%;
+  width: 10vw;
   height: 100%;
   flex: 1;
   display: flex;
@@ -67,6 +67,7 @@
 }
 
 .order-index .order-index-con .order-index-top ul li .top{
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,11 +76,11 @@
 .order-index .order-index-con .order-index-top ul li .top img{
   width: 150px;
   height: 150px;
-
   display: block;
 }
 
 .order-index .order-index-con .order-index-top ul li .bottom{
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,14 +106,31 @@
   }
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1030px){
   .order-index .order-index-con .order-index-top ul{
     display: grid;
     grid-template-columns: repeat(2, 30vw);
-    gap: 10vw;
+    gap: 5vw;
+    transition: all 0.3s;
   }
   .order-index .order-index-con .order-index-top ul li{
+    width: 30vw;
     justify-content: space-between;
-    
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 800px){
+  .order-index .order-index-con .order-index-top ul{
+    display: grid;
+    grid-template-columns: repeat(2, 30vw);
+    gap: 1vw 5vw;
+  }
+  .order-index .order-index-con .order-index-top ul li{
+    height: 30vh;
+    justify-content: space-between;
+  }
+  .order-index .order-index-con .order-index-top ul li .bottom p{
+    width: 100%;
   }
 }

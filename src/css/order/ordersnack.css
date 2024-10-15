@@ -24,16 +24,20 @@
   font-size: 22px;
 }
 
-.order-snack-header select {
+.order-snack-header-right{
+  display: flex;
+  align-items: center;
+}
+
+.order-snack-header-right select {
   padding: 4px 8px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
   cursor: pointer;
-  width: 120px;
+  width: 90px;
   height: 30px;
-
 }
 
 .order-snack {
@@ -144,6 +148,14 @@
 }
 
 @media (max-width: 800px) {
+  .order-snack-header h2 {
+    font-size: 25px;
+  }
+  
+  .order-snack-header h2 span {
+    font-size: 15px;
+  }
+  
   .order-snack-con ul {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -151,9 +163,6 @@
   .order-snack-con ul li {
     width: 40vw;
   }
-}
-
-@media (max-width: 700px) {
   .order-snack-header {
     flex-direction: column;
   }

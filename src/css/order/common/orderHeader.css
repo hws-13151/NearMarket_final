@@ -159,7 +159,7 @@
     z-index: 99;
   }
   .order-header .order-header-nav .gnb ul{
-    height: auto;
+    /* height: auto; */
     flex-direction: column;
     gap: 3vw;
   }
