@@ -23,8 +23,6 @@
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
       "viewcount": 2
-      "description": "새콤달콤 청량한 체리",
-      "viewcount": 2
     },
     {
       "id": "4",
@@ -144,7 +142,11 @@
       "description": "한입이 한개가 되어버리는 변화! 매일 매일 밤호박 드세요~",
       "img": "pumkin.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["pumkin.jpg", "pumkin2.jpg", "pumkin3.jpg"]
+      "slideImage": [
+        "pumkin.jpg",
+        "pumkin2.jpg",
+        "pumkin3.jpg"
+      ]
     },
     {
       "id": "6",
@@ -153,7 +155,11 @@
       "description": "칼라푸드 중 Red Color Food인 대추방울 토마토 한 입에 쏙 넣어 깨물면 입안 가득 신선함과 건강한 맛으로 가득 채워집니다",
       "img": "tomato.jpg",
       "rocket": "rocket.png",
-      "slideImage": ["tomato.jpg", "tomato2.jpg", "tomato3.jpg"]
+      "slideImage": [
+        "tomato.jpg",
+        "tomato2.jpg",
+        "tomato3.jpg"
+      ]
     },
     {
       "id": "56c8",
@@ -222,7 +228,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 3
+      "viewcount": 2
     },
     {
       "id": "2",
@@ -238,15 +244,14 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 4
+      "viewcount": 1
     },
     {
       "id": "4",
       "title": "홈런볼 초코맛",
       "price": 1400,
       "img": "s3.jpg",
-      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 1
+      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여"
     },
     {
       "id": "5",
@@ -254,7 +259,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 7
+      "viewcount": 1
     }
   ],
   "meatItems": [
@@ -264,7 +269,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 6
+      "viewcount": 3
     },
     {
       "id": "2",
@@ -272,7 +277,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 9
+      "viewcount": 2
     },
     {
       "id": "3",
