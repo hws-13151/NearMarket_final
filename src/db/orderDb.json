@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 1
+      "viewcount": 2
     },
     {
       "id": "2",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 28
+      "viewcount": 32
     },
     {
       "id": "2",
@@ -228,7 +228,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 2
+      "viewcount": 4
     },
     {
       "id": "2",
@@ -270,7 +270,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 8
+      "viewcount": 9
     },
     {
       "id": "2",

@@ -13,7 +13,20 @@ body {
   justify-content: center;
 }
 
-.order-fruit .order-fruit-mid{
+
+.order-fruit .order-fruit-header select {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+
+}
+
+.order-fruit .order-fruit-mid {
   display: flex;
   flex-direction: column;
 }
