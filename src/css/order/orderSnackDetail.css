@@ -29,19 +29,19 @@
 
 .order-snack-detail .left-img {
   display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  align-items: center; /* 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
-  max-height: 400px;
+  max-height: 100%;
   overflow: hidden;
-  border-radius: 10px; /* 이미지에 둥근 테두리 추가 */
+  border-radius: 10px;
 }
 
 .order-snack-detail .left-img img {
   width: 100%;
   display: block;
   object-fit: cover;
-  border-radius: 10px; /* 이미지 둥근 모서리 */
+  border-radius: 10px;
 }
 
 .order-snack-detail .right {
@@ -181,8 +181,8 @@
   color: white;
 }
 
-@media (max-width: 800px){
-  .order-snack-detail .order-snack-detail-con{
+@media (max-width: 800px) {
+  .order-snack-detail .order-snack-detail-con {
     flex-direction: column;
   }
 }

@@ -5,11 +5,11 @@ import SearchBox from "./SearchBox";
 
 const OrderSnack = () => {
   const [snackList, setSnackList] = useState([]);
-  const [userInput, setUserInput] = useState("")
-  const [limit, setLimit] = useState(6)
-  const [page, setPage] = useState(1)
-  const [sortOption, setSortOption] = useState('default')
-  const offset = (page - 1) * limit
+  const [userInput, setUserInput] = useState("");
+  const [limit, setLimit] = useState(6);
+  const [page, setPage] = useState(1);
+  const [sortOption, setSortOption] = useState("default");
+  const offset = (page - 1) * limit;
 
   useEffect(() => {
     const axiosSetFn = async () => {
@@ -31,35 +31,32 @@ const OrderSnack = () => {
   };
 
   const handleChange = (e) => {
-    setUserInput(e.target.value)
-  }
-
-  const handleSortChange = (e) => {
-    setSortOption(e.target.value)
+    setUserInput(e.target.value);
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
 
   const filteredSnack = [...snackList]
     .filter((snack) =>
       snack.title.toLowerCase().includes(userInput.toLocaleLowerCase())
     )
     .sort((a, b) => {
-      if (sortOption === 'low') return a.price - b.price;
-      if (sortOption === 'high') return b.price - a.price;
+      if (sortOption === "low") return a.price - b.price;
+      if (sortOption === "high") return b.price - a.price;
       return 0;
-    })
+    });
 
+  const paginatedSnacks = filteredSnack.slice(offset, offset + limit);
 
-  const paginatedSnacks = filteredSnack.slice(offset, offset + limit)
-
-  const totalPages = Math.ceil(filteredSnack.length / limit)
-
+  const totalPages = Math.ceil(filteredSnack.length / limit);
 
   return (
     <>
       <div className="order-snack-header">
         <h2>
-          신메뉴 <span>Total {filteredSnack.length}</span>
+          과자코너 <span>Total {filteredSnack.length}</span>
         </h2>
         <div className="order-snack-header-right">
           <select value={sortOption} onChange={handleSortChange}>
@@ -67,7 +64,9 @@ const OrderSnack = () => {
             <option value="low">낮은 가격순</option>
             <option value="high">높은 가격순</option>
           </select>
-          <span style={{ display: 'block', marginLeft: '20px ' }}><SearchBox handleChange={handleChange} /></span>
+          <span style={{ display: "block", marginLeft: "20px " }}>
+            <SearchBox handleChange={handleChange} />
+          </span>
         </div>
       </div>
 
@@ -105,7 +104,7 @@ const OrderSnack = () => {
           <button
             key={i + 1}
             onClick={() => setPage(i + 1)}
-            className={page === i + 1 ? 'active' : ''}
+            className={page === i + 1 ? "active" : ""}
           >
             {i + 1}
           </button>
