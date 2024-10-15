@@ -8,6 +8,7 @@ const OrderFruit = () => {
   const [userInput, setUserInput] = useState("")
   const [limit, setLimit] = useState(6)
   const [page, setPage] = useState(1)
+  const [sortOption, setSortOption] = useState('default')
   const offset = (page - 1) * limit
   const navigate = useNavigate();
 
@@ -32,9 +33,21 @@ const OrderFruit = () => {
   const handleChange = (e) => {
     setUserInput(e.target.value)
   }
-  const filteredFruit = fruitList.filter((fruit) => {
-    return fruit.title.toLowerCase().includes(userInput.toLowerCase())
-  })
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value)
+  };
+
+
+  const filteredFruit = [...fruitList]
+    .filter((fruit) =>
+      fruit.title.toLowerCase().includes(userInput.toLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortOption === 'low') return a.price - b.price;
+      if (sortOption === 'high') return b.price - a.price;
+      return 0;
+    })
 
 
   const paginatedFruits = filteredFruit.slice(offset, offset + limit)
@@ -50,6 +63,11 @@ const OrderFruit = () => {
         <div className="search">
           <span ><SearchBox handleChange={handleChange} /></span>
         </div>
+        <select value={sortOption} onChange={handleSortChange}>
+          <option value="default">기본순</option>
+          <option value="low">낮은 가격순</option>
+          <option value="high">높은 가격순</option>
+        </select>
       </div>
       <div className="order-fruit-mid">
         <div className='order-fruit-con'>
