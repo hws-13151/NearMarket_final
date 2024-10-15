@@ -1,6 +1,5 @@
 .order-snack-detail {
   width: 100%;
-  height: calc(100vh - 130px - 220px);
   display: flex;
   justify-content: center;
   align-items: center; /* 수직 중앙 정렬 추가 */
@@ -39,8 +38,8 @@
 }
 
 .order-snack-detail .left-img img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  display: block;
   object-fit: cover;
   border-radius: 10px; /* 이미지 둥근 모서리 */
 }
@@ -180,4 +179,10 @@
 .order-snack-detail .bottom-payment ul li button:nth-child(3) {
   background-color: red;
   color: white;
+}
+
+@media (max-width: 800px){
+  .order-snack-detail .order-snack-detail-con{
+    flex-direction: column;
+  }
 }

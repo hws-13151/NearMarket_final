@@ -1,5 +1,4 @@
 .order-vegetable {
-  width: 100%;
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
@@ -161,4 +160,16 @@
 .order-vegetable .order-vegetable-con .pagination button.active {
   background-color: #71787c;
   color: white;
+}
+
+@media (max-width: 1030px) {
+  .order-vegetable-con ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .order-vegetable-con ul {
+    grid-template-columns: 1fr;
+  }
 }

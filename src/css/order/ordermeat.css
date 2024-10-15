@@ -11,38 +11,11 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 
   gap: 1vw;
 
   padding: 10px;
-}
-
-
-.order-meat .order-meat-con .sortoption {
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.order-meat .order-meat-con .sortoption select {
-  padding: 4px 8px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  width: 120px;
-  height: 30px;
-}
-
-.order-meat .order-meat-con .search {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .order-meat .order-meat-con .order-meat-title {
@@ -60,6 +33,36 @@
 
 .order-meat .order-meat-con .order-meat-title h1 {
   padding: 15px 0;
+}
+
+.order-meat .order-meat-con .order-meat-mid{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.order-meat .order-meat-con .order-meat-mid .sortoption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-meat .order-meat-con .order-meat-mid .sortoption select {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+}
+
+.order-meat .order-meat-con .order-meat-mid .search {
+  width: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .order-meat .order-meat-con .order-meat-item {
@@ -143,8 +146,6 @@
   background-color: #71787c;
   color: white;
 }
-
-
 
 
 @media (max-width: 800px) {

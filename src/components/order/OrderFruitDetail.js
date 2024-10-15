@@ -29,6 +29,7 @@ const OrderFruitDetail = (param) => {
   const userEmail = useSelector((state) =>
     state.auth.isLogin ? state.auth.loginUser[0].userEmail : "guest"
   );
+  console.log(userEmail);
 
   useEffect(() => {
     const fetchFruitDetail = async () => {
@@ -96,54 +97,57 @@ const OrderFruitDetail = (param) => {
   return (
     <div className="fruit-detail">
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
-
       <div className="fruit-detail-con">
-        <ul>
-          <li>
-            <h2>{fruitDetail.title}</h2>
-          </li>
-          <li>
-            <span>조회수 {fruitDetail.viewcount}</span>
-          </li>
-          <li>
+        <div className="fruit-detail-left">
+          <div className="fruit-detail-left-img">
             <img
               src={`/images/fruit/${fruitDetail.img}`}
               alt={fruitDetail.title}
             />
-          </li>
-          <li>{fruitDetail.description}</li>
-          <li>{calculateTotalPrice().toLocaleString()}원</li>
-          <li>
-            <button onClick={fruitIncrementFn}>+</button>
-            <span>{count}</span>
-            <button onClick={fruitDecrementFn}>-</button>
-          </li>
-          <li>
-            <label>
-              <input
-                type="checkbox"
-                checked={isPremium}
-                onChange={(e) => setIsPremium(e.target.checked)}
-              />
-              프리미엄 {fruitDetail.title} (3,000원 추가)
-            </label>
-          </li>
-          <li>
-            <label>
-              <input
-                type="checkbox"
-                checked={isOrganic}
-                onChange={(e) => setIsOrganic(e.target.checked)}
-              />
-              유기농 {fruitDetail.title} (2,000원 추가)
-            </label>
-          </li>
-        </ul>
-      </div>
-      <div className="order-go">
-        <button onClick={() => navigate(-1)}>이전페이지</button>
-        <button onClick={openCartModal}>장바구니</button> {/* 모달 열기 */}
-        <button onClick={paymentFn}>결제</button>
+          </div>
+        </div>
+        <div className="fruit-detail-right">
+          <ul>
+            <li>
+              <h2>{fruitDetail.title}</h2>
+            </li>
+            <li>
+              <span>조회수 {fruitDetail.viewcount}</span>
+            </li>
+            <li>{fruitDetail.description}</li>
+            <li>{calculateTotalPrice().toLocaleString()}원</li>
+            <li>
+              <button onClick={fruitIncrementFn}>+</button>
+              <span>{count}</span>
+              <button onClick={fruitDecrementFn}>-</button>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isPremium}
+                  onChange={(e) => setIsPremium(e.target.checked)}
+                />
+                프리미엄 {fruitDetail.title} (3,000원 추가)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isOrganic}
+                  onChange={(e) => setIsOrganic(e.target.checked)}
+                />
+                유기농 {fruitDetail.title} (2,000원 추가)
+              </label>
+            </li>
+          </ul>
+          <div className="order-go">
+            <button onClick={() => navigate(-1)}>이전페이지</button>
+            <button onClick={openCartModal}>장바구니</button> {/* 모달 열기 */}
+            <button onClick={paymentFn}>결제</button>
+          </div>
+        </div>
       </div>
     </div>
   );
