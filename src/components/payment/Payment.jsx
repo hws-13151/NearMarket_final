@@ -34,7 +34,7 @@ const Payment = () => {
     if (!isLogin) {
       navigate("/auth/login");
     }
-    else{
+    else {
       fetchShop();
     }
   }, []);
@@ -65,12 +65,12 @@ const Payment = () => {
   };
 
   //주문처추가
-  const fetchShop = async () =>{
-    try{
+  const fetchShop = async () => {
+    try {
       const res1 = await axios.get('http://localhost:3001/api');
       setShop(res1.data)
     }
-    catch(err){
+    catch (err) {
       alert(err)
     }
   }
@@ -114,6 +114,8 @@ const Payment = () => {
     dispatch(deleteCartAll());
     navigate("/order/detail");
   };
+
+
 
   return (
     <div className="payment">
@@ -197,15 +199,15 @@ const Payment = () => {
                 </td>
                 {/* 주문처 db 연동 */}
                 <td>
-                    <select name="shopVal" id="shopVal" onChange={shopValFn}>
-                      <option value="">주문처</option>
-                        {shop.map((shopEl) => (
-                          <option key={shopEl.id} value={shopEl.title}>
-                             {shopEl.title}
+                  <select name="shopVal" id="shopVal" onChange={shopValFn}>
+                    <option value="">주문처</option>
+                    {shop.map((shopEl) => (
+                      <option key={shopEl.id} value={shopEl.title}>
+                        {shopEl.title}
                       </option>
                     ))}
-                    </select>
-               </td>
+                  </select>
+                </td>
 
                 <td>
                   <select

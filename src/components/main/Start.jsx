@@ -47,7 +47,7 @@ const Start = () => {
   useEffect(() => {
     clearInterval(intervalRef.current);
     startAutoSlide();
-  }, []);
+  }, [intervalRef.current]);
 
 
 
@@ -77,12 +77,14 @@ const Start = () => {
 
       </div>
       <div className="arrows">
-        <button id="prev" onClick={handlePrev}>
-          &lt;
-        </button>
-        <button id="next" onClick={handleNext}>
-          &gt;
-        </button>
+        <div className="buttons">
+          <button id="prev" onClick={handlePrev}>
+            &lt;
+          </button>
+          <button id="next" onClick={handleNext}>
+            &gt;
+          </button>
+        </div>
       </div>
       <div className="thumbnail">
 

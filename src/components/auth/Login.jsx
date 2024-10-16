@@ -98,7 +98,7 @@ const Login = () => {
               </button>
               <button
                 onClick={() => {
-                  navigate("/");
+                  navigate("/main");
                 }}
               >
                 HOME

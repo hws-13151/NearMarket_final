@@ -76,8 +76,8 @@
     font-weight: 500;
     font-size: 50px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.356);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.603);
+    color: black;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -87,6 +87,8 @@
     background-color: white;
     color: black;
     font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.356);
+    color: white;
 }
 
 
@@ -139,7 +141,13 @@
     z-index: 100;
 }
 
-.slider .arrows button {
+.slider .arrows .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.slider .arrows .buttons button {
     background-color: #eee5;
     border: none;
     font-family: monospace;
@@ -150,7 +158,10 @@
     color: #eee;
     transition: .5s;
     cursor: pointer;
+
 }
+
+
 
 .slider .arrows button:hover {
     background-color: #eee;
@@ -182,6 +193,7 @@
     filter: brightness(0.5);
     transition: .5s;
     /* flex-shrink: 0; */
+    cursor: pointer;
 }
 
 .slider .thumbnail .item img {
