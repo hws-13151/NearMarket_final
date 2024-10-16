@@ -15,12 +15,12 @@ const CartList1 = () => {
   const [modalItem, setModalItem] = useState(null);
   const [itemToDelete, setItemToDelete] = useState(null);
 
-  // 사용자 인증 상태
+  // 페이지네이션 상태
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+
   const { isLogin, loginUser } = useSelector((state) => state.auth);
-
   const userEmail = isLogin ? loginUser[0].userEmail : "guest";
-
-  // 장바구니 아이템
   const cartItems = useSelector((state) => state.cart.items);
 
   console.log(cartItems);
@@ -28,6 +28,17 @@ const CartList1 = () => {
   // userEmail에 해당하는 cartItems 필터링
   const filteredCartItems = cartItems.filter(
     (item) => item.userEmail === userEmail
+  );
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(filteredCartItems.length / itemsPerPage);
+
+  // 현재 페이지에 해당하는 아이템만 추출
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredCartItems.slice(
+    indexOfFirstItem,
+    indexOfLastItem
   );
 
   const totalPrice = filteredCartItems.reduce(
@@ -67,12 +78,6 @@ const CartList1 = () => {
     setIsDeleteModalOpen(false);
   };
 
-  // 삭제 취소
-  const cancelDelete = () => {
-    setItemToDelete(null);
-    setIsDeleteModalOpen(false);
-  };
-
   // 사용자 장바구니 마이그레이션
   useEffect(() => {
     if (isLogin) {
@@ -80,14 +85,31 @@ const CartList1 = () => {
     }
   }, [isLogin, userEmail, dispatch]);
 
+  // 페이지네이션 버튼 렌더링 함수
+  const renderPaginationButtons = () => {
+    const buttons = [];
+    for (let i = 1; i <= totalPages; i++) {
+      buttons.push(
+        <button
+          key={i}
+          onClick={() => setCurrentPage(i)}
+          className={`cart-pagination-btn ${currentPage === i ? "active" : ""}`}
+        >
+          {i}
+        </button>
+      );
+    }
+    return buttons;
+  };
+
   return (
     <div className="cart-list">
       <div className="cart-list-con">
         <h3 className="cart-title">장바구니 목록</h3>
 
         <div className="cart-item-con">
-          {filteredCartItems.length > 0 ? (
-            filteredCartItems.map((el, idx) => (
+          {currentItems.length > 0 ? (
+            currentItems.map((el, idx) => (
               <div className="cart-item" key={idx}>
                 <div className="cart-item-top">
                   <img src={el.img} alt={el.title} />
@@ -106,14 +128,12 @@ const CartList1 = () => {
                     <span>갯수: {el.count}</span>
                     <span>총금액: {el.count * el.price} 원</span>
                   </div>
-                  <div className="cart-actions-container">
-                    <span
-                      className="cart-delete"
-                      onClick={() => openDeleteModal(el)}
-                    >
-                      X
-                    </span>
-                  </div>
+                  <span
+                    className="cart-delete"
+                    onClick={() => openDeleteModal(el)}
+                  >
+                    X
+                  </span>
                 </div>
               </div>
             ))
@@ -126,14 +146,15 @@ const CartList1 = () => {
           )}
         </div>
 
+        {/* 페이지네이션 버튼 표시 */}
+        {filteredCartItems.length > itemsPerPage && (
+          <div className="cart-pagination">{renderPaginationButtons()}</div>
+        )}
+
         {filteredCartItems.length > 0 && (
           <div className="cart-payment">
-            <div className="cart-payment-sub">
-              <div className="cart-sum-price">총합계: {totalPrice} 원</div>
-              <div className="cart-payment-buttons">
-                <button onClick={goToPayment}>결제하기</button>
-              </div>
-            </div>
+            <div className="cart-sum-price">총합계: {totalPrice} 원</div>
+            <button onClick={goToPayment}>결제하기</button>
           </div>
         )}
       </div>
@@ -141,12 +162,11 @@ const CartList1 = () => {
       {isModalOpen && (
         <CartModal item={modalItem} setIsModalOpen={setIsModalOpen} />
       )}
-
       {isDeleteModalOpen && (
         <ConfirmDeleteModal
           item={itemToDelete}
           onConfirm={confirmDelete}
-          onCancel={cancelDelete}
+          onCancel={() => setIsDeleteModalOpen(false)}
         />
       )}
     </div>
