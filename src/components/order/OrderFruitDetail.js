@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
+import { API_URL } from "../../constans";
 
 const orderData = {
   id: "",
@@ -39,7 +40,7 @@ const OrderFruitDetail = (param) => {
       );
       try {
         const res = await axios.get(
-          `http://localhost:3001/fruitItems/${fruitId}`
+          `${API_URL}/fruitItems/${fruitId}`
         );
         setFruitDetail(res.data);
       } catch (err) {

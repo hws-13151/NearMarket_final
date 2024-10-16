@@ -133,7 +133,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 7
+      "viewcount": 8
     },
     {
       "id": "5",
@@ -287,7 +287,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 9
+      "viewcount": 11
     },
     {
       "id": "2",
@@ -326,7 +326,8 @@
       "price": 12300,
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
-      "id": "6"
+      "id": "6",
+      "viewcount": 2
     },
     {
       "title": "국내산 돼지갈비",

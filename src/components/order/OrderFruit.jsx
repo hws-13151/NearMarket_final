@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import SearchBox from './SearchBox';
+import { API_URL } from '../../constans';
 
 const OrderFruit = () => {
   const [fruitList, setFruitList] = useState([]);
@@ -15,7 +16,7 @@ const OrderFruit = () => {
   useEffect(() => {
     const fetchFruitItems = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/fruitItems');
+        const res = await axios.get(`${API_URL}/fruitItems`);
         setFruitList(res.data);
       } catch (err) {
         alert(err);

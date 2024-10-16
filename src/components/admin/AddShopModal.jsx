@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
+import { API_URL } from '../../constans';
 
 const AddShopModal = ({ onClose }) => {
     const [title, setTitle] = useState('');
@@ -34,7 +35,7 @@ const AddShopModal = ({ onClose }) => {
 
     const shopAdd = async () => {
         try {
-            await axios.post('http://localhost:3001/api', {
+            await axios.post(`${API_URL}/api`, {
                 title,
                 address,
                 postNum,
