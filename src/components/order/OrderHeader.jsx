@@ -70,7 +70,7 @@ const OrderHeader = () => {
             <span className="jum">.</span>
             <span className="k">K</span>
           </h1>
-          <div className={`gnb ${isGnbVisible ? 'visible' : ''}`}>
+          <div className={`gnb ${isGnbVisible ? "visible" : ""}`}>
             {" "}
             {/* gnb 표시 여부 */}
             <ul>
