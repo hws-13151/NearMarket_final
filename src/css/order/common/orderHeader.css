@@ -71,6 +71,7 @@
 
   transition: opacity 0.3s, transform 0.3s ; /* 부드러운 전환 */
   transform: translateX(100%);
+  transition: all 0.3s;
 }
 
 .order-header .order-header-nav .gnb.visible {
@@ -82,11 +83,12 @@
 }
 
 .order-header .order-header-nav .gnb ul {
-  width: 60%;
+  width: 75%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1vw;
+  gap: 0.5vw;
+  transition: all 0.3s;
 }
 
 .order-header .order-header-nav .gnb ul li {
@@ -103,14 +105,14 @@
 
 .order-header .order-header-nav .gnb ul li a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: inherit;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 .order-header .order-header-nav .gnb ul li img {
@@ -118,12 +120,15 @@
   margin-right: 10px;
   display: block;
 }
-@media (max-width: 1530px){
+@media (max-width: 1400px){
+  .order-header .order-header-nav .gnb ul {
+    width: 80%;
+  }
   .order-header .order-header-nav .gnb ul {
     gap: 1px;
   }
   .order-header .order-header-nav .gnb ul li a {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 @media (max-width: 1030px){

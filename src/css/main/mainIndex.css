@@ -9,6 +9,7 @@
 
 .main .main-sec{
   flex: 0 1 1600px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,6 +232,7 @@
     grid-template-columns: repeat(4,15vmax);
     grid-template-rows: repeat(1,15vmax);
     grid-auto-rows: 10vw;
+    gap: 3vw;
   }
 }
 

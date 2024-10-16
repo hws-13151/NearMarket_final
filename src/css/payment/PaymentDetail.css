@@ -103,3 +103,27 @@
 .paymentlist-con table td div {
   margin-bottom: 5px;
 }
+
+@media (max-width: 1030px){
+  .paymentlist-con table th,
+  .paymentlist-con table td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 800px){
+  .paymentlist-con table th,
+  .paymentlist-con table td {
+    padding: 3px;
+  }
+
+  .paymentlist-con table th:nth-child(7),
+  .paymentlist-con table th:nth-child(6){
+    display: none;
+  }
+
+  .paymentlist-con table td:nth-child(7),
+  .paymentlist-con table td:nth-child(6){
+    display: none;
+  }
+}
