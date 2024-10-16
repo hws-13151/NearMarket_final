@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
+import { API_URL } from "../../constans";
 
 const detailData = {
   id: 0,
@@ -41,7 +42,7 @@ const OrderVegetableDetail = (param) => {
       );
       try {
         const res = await axios.get(
-          `http://localhost:3001/vegetableItems?id=${vegetableId}`
+          `${API_URL}/vegetableItems?id=${vegetableId}`
         );
         setVegetableDetail(res.data[0] || detailData);
       } catch (error) {

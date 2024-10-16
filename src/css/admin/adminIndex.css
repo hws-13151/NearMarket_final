@@ -226,6 +226,7 @@
     grid-template-rows: repeat(1, 7vh);
     grid-auto-rows: 7vh;
     transition: all 0.3s;
+    gap: 1.5vw;
   }
   .admin-index .admin-index-con ul li{
     border: 1px solid #ccc;

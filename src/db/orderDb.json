@@ -326,7 +326,8 @@
       "price": 12300,
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
-      "id": "6"
+      "id": "6",
+      "viewcount": 2
     },
     {
       "title": "국내산 돼지갈비",

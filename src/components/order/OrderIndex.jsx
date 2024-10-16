@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../constans';
 
 const OrderIndex = () => {
   const [indexList, setIndexList] = useState([]);
@@ -14,11 +15,11 @@ const OrderIndex = () => {
     const fetchData = async () =>{
       try{
         const [indexRes, fruitRes, vegetableRes, snackRes, meatRes] = await Promise.all([
-          axios.get(`http://localhost:3001/indexItems`),
-          axios.get(`http://localhost:3001/fruitItems`),
-          axios.get(`http://localhost:3001/vegetableItems`),
-          axios.get(`http://localhost:3001/snackItems`),
-          axios.get(`http://localhost:3001/meatItems`)
+          axios.get(`${API_URL}/indexItems`),
+          axios.get(`${API_URL}/fruitItems`),
+          axios.get(`${API_URL}/vegetableItems`),
+          axios.get(`${API_URL}/snackItems`),
+          axios.get(`${API_URL}/meatItems`)
         ])
         setIndexList(indexRes.data)
         setFruitItem(fruitRes.data[0])
