@@ -1,3 +1,14 @@
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+
+}
+
 .login {
 
     display: flex;
@@ -5,10 +16,10 @@
     align-items: center;
     height: 100vh;
 
-    background-image: url('/public/images/auth/login.jpg');
+    /* background-image: url('/public/images/auth/login.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
-    backdrop-filter: blur(30px);
+    /* backdrop-filter: blur(30px); */
 
 
 }
@@ -19,7 +30,7 @@
     border-radius: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
     width: 400px;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
 
 }
@@ -97,7 +108,7 @@ input[type="password"]:focus {
     background-repeat: no-repeat;
     background-position: 150px center;
     background-size: 20px;
-    /* padding-left: 10px; */
+
 }
 
 .login .login-con ul li button:last-child:hover {

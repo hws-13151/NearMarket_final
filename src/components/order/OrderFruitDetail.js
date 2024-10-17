@@ -91,8 +91,8 @@ const OrderFruitDetail = (param) => {
       userEmail,
       category: "fruit",
     };
-    dispatch(addCart1(fruitCart));
-    navigate("/order/payment");
+    // dispatch(addCart1(fruitCart));
+    navigate("/order/payment", { state: { selectedProduct: fruitCart } });
   };
 
   return (
