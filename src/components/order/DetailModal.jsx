@@ -38,8 +38,8 @@ const DetailModal = ({ setIsModal, cartItem }) => {
         <div className="modal-body">
           <p>장바구니에 추가했습니다.</p>
           <ul>
-            <li onClick={continueShopping}>계속 쇼핑하기</li>{" "}
-            <li onClick={moveToCart}>장바구니로 이동하기</li>{" "}
+            <li onClick={continueShopping}>계속 쇼핑하기</li>
+            <li onClick={moveToCart}>장바구니로 이동하기</li>
           </ul>
         </div>
       </div>

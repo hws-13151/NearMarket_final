@@ -82,7 +82,11 @@ const OrderHeader = () => {
             <ul>
               <li>
                 <Link to={"/order/cart"} onClick={handleLinkClick}>
-                  <img src="/images/orderheader/Ordercart.png" alt="cart" />
+                  <img
+                    className="cart-img"
+                    src="/images/orderheader/Ordercart.png"
+                    alt="cart"
+                  />
                   {cartItemCount > 0 && ( // 장바구니에 아이템이 있으면 알림 배지 표시
                     <span className="cart-badge">{cartItemCount}</span>
                   )}
@@ -97,7 +101,9 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/index"} onClick={handleLinkClick}>추천상품</Link>
+                <Link to={"/order/index"} onClick={handleLinkClick}>
+                  추천상품
+                </Link>
               </li>
               <li
                 style={{

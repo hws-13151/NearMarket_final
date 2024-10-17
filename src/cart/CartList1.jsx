@@ -19,7 +19,10 @@ const CartList1 = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
 
-  const { isLogin, loginUser } = useSelector((state) => state.auth);
+  // const { isLogin, loginUser } = useSelector((state) => state.auth);
+  const isLogin = useSelector((state) => state.auth.isLogin);
+
+  const loginUser = useSelector((state) => state.auth.loginUser);
   const userEmail = isLogin ? loginUser[0].userEmail : "guest";
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -85,7 +88,6 @@ const CartList1 = () => {
     }
   }, [isLogin, userEmail, dispatch]);
 
-  // 페이지네이션 버튼 렌더링 함수
   const renderPaginationButtons = () => {
     const buttons = [];
     for (let i = 1; i <= totalPages; i++) {
@@ -154,7 +156,9 @@ const CartList1 = () => {
         {filteredCartItems.length > 0 && (
           <div className="cart-payment">
             <div className="cart-sum-price">총합계: {totalPrice} 원</div>
-            <button onClick={goToPayment}>결제하기</button>
+            <button className="cart-payment-button" onClick={goToPayment}>
+              결제하기
+            </button>
           </div>
         )}
       </div>
