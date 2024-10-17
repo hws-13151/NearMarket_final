@@ -23,7 +23,7 @@ const AdminLeft = ({ isGnbVisible }) => {
 
   return (
     <>
-      <div className="admin-left" style={{ display: isGnbVisible ? 'block' : 'none' }}>
+      <div className={`admin-left ${isGnbVisible ? 'visible' : ''}`}>
         <div className="admin-left-con">
           <h1>
             <Link to={'/main'}>

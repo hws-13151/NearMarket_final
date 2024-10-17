@@ -24,7 +24,14 @@
   font-size: 22px;
 }
 
-.order-snack-header select {
+.order-snack-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 1vw;
+}
+
+.order-snack-header-right select {
   padding: 4px 8px;
   font-size: 14px;
   border: 1px solid #ddd;
@@ -33,7 +40,6 @@
   cursor: pointer;
   width: 120px;
   height: 30px;
-
 }
 
 .order-snack {
@@ -49,8 +55,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  overflow-y: auto;
   padding: 10px;
 }
 
@@ -78,6 +82,7 @@
   /* 박스 그림자 */
   box-sizing: border-box;
   /* 패딩이 전체 너비에 포함되도록 적용 */
+  transition: all 0.3s;
 }
 
 .order-snack-con li:hover {
@@ -120,8 +125,6 @@
   margin-bottom: 10px;
 }
 
-
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -143,7 +146,21 @@
   color: white;
 }
 
+@media (max-width: 1030px){
+  .order-snack-con ul li {
+    width: 29vw;
+  }
+}
+
 @media (max-width: 800px) {
+  .order-snack-header h2 {
+    font-size: 25px;
+  }
+
+  .order-snack-header h2 span {
+    font-size: 15px;
+  }
+
   .order-snack-con ul {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -151,10 +168,12 @@
   .order-snack-con ul li {
     width: 40vw;
   }
-}
-
-@media (max-width: 700px) {
   .order-snack-header {
     flex-direction: column;
+  }
+  .order-snack-header-right{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

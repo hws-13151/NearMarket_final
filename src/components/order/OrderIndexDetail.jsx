@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
 import { useDispatch, useSelector } from "react-redux"; // useSelector 추가
 import { addCart1 } from "../../slice/cartSlice1";
+import { API_URL } from "../../constans";
 
 const indexData = {
   id: 0,
@@ -29,7 +30,7 @@ const OrderIndexDetail = (param) => {
       const indexId = param.param.id;
       try {
         const res = await axios.get(
-          `http://localhost:3001/indexItems?id=${indexId}`
+          `${API_URL}/indexItems?id=${indexId}`
         );
         setIndexItem(res.data[0]);
       } catch (error) {

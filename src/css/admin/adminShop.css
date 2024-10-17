@@ -33,6 +33,7 @@
     text-align: left;
     background-color: #ccc; /* 헤더와 바디 배경색 동일하게 설정 */
     color: #4a4141; /* 헤더 글자색 */
+    transition: all 0.3s;
 }
 
 .admin-shop .admin-shop-con td {
@@ -41,6 +42,7 @@
     text-align: left;
     background-color: #ccc; /* 바디 배경색 */
     color: #4a4141; /* 바디 글자색 */
+    transition: all 0.3s;
 }
 
 .admin-shop .admin-shop-con .members tr.role-admin {
@@ -67,3 +69,22 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
+
+@media (max-width: 1030px) {
+    .admin-shop .admin-shop-con th{
+        font-size: 15px;
+    }
+    .admin-shop .admin-shop-con td{
+        font-size: 14px;
+    }
+    .admin-shop table th:nth-child(5),  /* 비밀번호 */
+    .admin-shop table th:nth-child(6)  /* 나이 */ 
+    {
+      display: none;
+    }
+  
+    .admin-shop table td:nth-child(5),  
+    .admin-shop table td:nth-child(6) {  
+      display: none;
+    }
+  }

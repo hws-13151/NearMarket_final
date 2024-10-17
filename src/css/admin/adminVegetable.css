@@ -73,13 +73,13 @@
   }
   
   /* 미디어 쿼리: 화면 크기 조정 */
-  @media (max-width: 1024px) {
+  @media (max-width: 1030px) {
     .admin-vegetable-con ul {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .admin-vegetable-con ul {
       grid-template-columns: 1fr;
     }

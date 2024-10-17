@@ -22,12 +22,18 @@ const OrderHeader = () => {
     setGnbVisible((prev) => !prev); // gnb의 표시 상태 토글
   };
 
+  const handleLinkClick = () => {
+    if (window.innerWidth < 800) {
+      setGnbVisible(false); // GNB 숨기기
+    }
+  };
+
   const handleClickOutside = (e) => {
     // gnb 외부 클릭 시 gnb 숨기기
     const gnbElement = document.querySelector(".gnb");
-    const buttonElement = document.querySelector(".buttom");
+    const buttonElement = document.querySelector(".button");
     // gnb 외부 클릭 시 gnb 숨기기
-    if (window.innerWidth <= 1400) {
+    if (window.innerWidth <= 1030) {
       if (
         gnbElement &&
         !gnbElement.contains(e.target) &&
@@ -41,7 +47,7 @@ const OrderHeader = () => {
   // 화면 크기 변화 감지
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1400) {
+      if (window.innerWidth >= 1030) {
         setGnbVisible(true); // 너비가 1400px 이상일 때 gnb 보이기
       }
     };
@@ -70,15 +76,12 @@ const OrderHeader = () => {
             <span className="jum">.</span>
             <span className="k">K</span>
           </h1>
-          <div
-            className="gnb"
-            style={{ display: isGnbVisible ? "block" : "none" }}
-          >
+          <div className={`gnb ${isGnbVisible ? "visible" : ""}`}>
             {" "}
             {/* gnb 표시 여부 */}
             <ul>
               <li>
-                <Link to={"/order/cart"}>
+                <Link to={"/order/cart"} onClick={handleLinkClick}>
                   <img src="/images/orderheader/Ordercart.png" alt="cart" />
                   {cartItemCount > 0 && ( // 장바구니에 아이템이 있으면 알림 배지 표시
                     <span className="cart-badge">{cartItemCount}</span>
@@ -94,7 +97,7 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/index"}>추천상품</Link>
+                <Link to={"/order/index"} onClick={handleLinkClick}>추천상품</Link>
               </li>
               <li
                 style={{
@@ -105,7 +108,7 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/vegetable"}>
+                <Link to={"/order/vegetable"} onClick={handleLinkClick}>
                   <img src="/images/orderheader/vegetable.png"></img>
                   채소
                 </Link>
@@ -119,7 +122,7 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/meat"}>
+                <Link to={"/order/meat"} onClick={handleLinkClick}>
                   <img src="/images/orderheader/meat.png"></img>
                   고기
                 </Link>
@@ -133,7 +136,7 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/fruit"}>
+                <Link to={"/order/fruit"} onClick={handleLinkClick}>
                   <img src="/images/orderheader/fruit.png"></img>
                   과일
                 </Link>
@@ -147,7 +150,7 @@ const OrderHeader = () => {
                   boxSizing: "border-box",
                 }}
               >
-                <Link to={"/order/snack"}>
+                <Link to={"/order/snack"} onClick={handleLinkClick}>
                   <img src="/images/orderheader/snack.png"></img>
                   과자
                 </Link>
@@ -182,7 +185,7 @@ const OrderHeader = () => {
               )}
             </ul>
           </div>
-          <div className="buttom" onClick={toggleGnb}>
+          <div className="button" onClick={toggleGnb}>
             〓
           </div>
         </div>

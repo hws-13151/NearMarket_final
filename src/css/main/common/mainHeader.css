@@ -33,6 +33,7 @@
   align-items: center;
 
   transition: all 0.3s;
+  padding: 10px;
 }
 
 .main-header .nav .gnb>ul{
@@ -61,10 +62,8 @@
 @media (max-width: 800px) {
   .main-header .nav .gnb>ul{
     display: flex;
-    gap: 4vw;
+    gap: 2vw;
     font-size: 15px;
-    
-    
     align-items: center;
     justify-content: center;
   }

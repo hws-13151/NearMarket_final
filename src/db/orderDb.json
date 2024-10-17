@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 5
+      "viewcount": 1
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 13
+      "viewcount": 11
     },
     {
       "id": "3",
@@ -37,7 +37,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 6
+      "viewcount": 5
     },
     {
       "id": "6",
@@ -78,7 +78,14 @@
       "img": "carrot.jpg",
       "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "rocket": "rocket.png",
-      "id": "1"
+      "slideImage": [
+        "carrot.jpg",
+        "carrot2.jpg",
+        "carrot3.jpg",
+        "carrot4.jpg",
+        "carrot5.jpg"
+      ],
+      "viewcount": 28
     },
     {
       "id": "2",
@@ -94,7 +101,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 6
+      "viewcount": 12
     },
     {
       "id": "3",
@@ -125,7 +132,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 2
+      "viewcount": 12
     },
     {
       "id": "5",
@@ -138,7 +145,8 @@
         "pumkin.jpg",
         "pumkin2.jpg",
         "pumkin3.jpg"
-      ]
+      ],
+      "viewcount": 4
     },
     {
       "id": "6",
@@ -219,7 +227,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "id": "1"
+      "viewcount": 2
     },
     {
       "id": "2",
@@ -227,7 +235,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 1
+      "viewcount": 53
     },
     {
       "id": "3",
@@ -235,14 +243,15 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 1
+      "viewcount": 21
     },
     {
       "id": "4",
       "title": "홈런볼 초코맛",
       "price": 1400,
       "img": "s3.jpg",
-      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여"
+      "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
+      "viewcount": 12
     },
     {
       "id": "5",
@@ -250,7 +259,23 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 1
+      "viewcount": 22
+    },
+    {
+      "id": "6",
+      "title": "옥수수깡",
+      "price": 1000,
+      "img": "s5.jpg",
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "viewcount": 21
+    },
+    {
+      "id": "7",
+      "title": "포스틱",
+      "price": 1000,
+      "img": "s6.jpg",
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "viewcount": 13
     }
   ],
   "meatItems": [
@@ -260,15 +285,15 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 4
+      "viewcount": 3
     },
     {
       "id": "2",
-      "title": "국내산 목살[냉장보관]",
+      "title": "국내산목 살[냉장보관]",
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 3
+      "viewcount": 2
     },
     {
       "id": "3",
@@ -284,14 +309,31 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 1
+      "viewcount": 5
     },
     {
       "id": "5",
       "title": "한우 국거리 1++등급 (300g)",
       "price": 19500,
       "img": "meat5.jpg",
-      "description": "깊은 감칠맛의 엄선된 1++ 한우"
+      "description": "깊은 감칠맛의 엄선된 1++ 한우",
+      "viewcount": 7
+    },
+    {
+      "title": "국내산 삼겹살 수육용",
+      "price": 12300,
+      "img": "meat6.jpg",
+      "description": "수육용으로 부드럽고 맛있습니다.",
+      "id": "6",
+      "viewcount": 2
+    },
+    {
+      "title": "국내산 돼지갈비",
+      "price": 13000,
+      "img": "meat7.jpg",
+      "description": "국내산 돼지갈비 부드럽고 맛있습니다.",
+      "id": "7",
+      "viewcount": 1
     }
   ],
   "indexItems": [

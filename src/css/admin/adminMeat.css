@@ -97,10 +97,16 @@
   padding: 3px 0;
 }
 
-@media (max-width: 800px){
-  .admin-meat .admin-meat-con .admin-meat-item {
+@media (max-width: 1030px){  
+  .admin-meat .admin-meat-con .admin-meat-title {
+    width: 100%;
+  }
+  .admin-meat .admin-meat-con .admin-meat-item{
     width: 90vw;
   }
+}
+
+@media (max-width: 800px){
   .admin-meat .admin-meat-con .admin-meat-item>ul{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
