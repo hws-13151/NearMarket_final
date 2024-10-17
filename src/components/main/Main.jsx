@@ -2,27 +2,27 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
-  
+
   const navigate = useNavigate()
   const [autoImg, setAutoImg] = useState(0)
-  
+
   const FirstIndex = 0;
   const LastIndex = 3;
   const MoveIndex = 1;
   const intervalTime = 4000;
 
-  const moveToSlide = (value) =>{
-    if(value === 'prev'){
-      setAutoImg((prevState)=>
+  const moveToSlide = (value) => {
+    if (value === 'prev') {
+      setAutoImg((prevState) =>
         prevState > FirstIndex ? prevState - MoveIndex : LastIndex
       )
     }
-    if(value === 'next'){
-      setAutoImg((prevState)=>
+    if (value === 'next') {
+      setAutoImg((prevState) =>
         prevState < LastIndex ? prevState + MoveIndex : FirstIndex
       )
     }
-    if(typeof value === 'number'){
+    if (typeof value === 'number') {
       setAutoImg(value)
     }
   }
@@ -45,33 +45,33 @@ const Main = () => {
           <div className="section1">
             {/* 이미지 양 옆 넘기기 버튼 */}
             <div className="bCon">
-              <button className="leftBtn" onClick={()=>moveToSlide('prev')}>&lsaquo;</button>
-              <button className="rightBtn" onClick={()=>moveToSlide('next')}>&rsaquo;</button>
+              <button className="leftBtn" onClick={() => moveToSlide('prev')}>&lsaquo;</button>
+              <button className="rightBtn" onClick={() => moveToSlide('next')}>&rsaquo;</button>
             </div>
             {/* 자동 넘기기 이미지 */}
             <div className="autoGallery">
               <ul>
                 <li style={{
                   transform: `translateX(${-100 * autoImg}%)`
-                 }}></li>
+                }}></li>
                 <li style={{
                   transform: `translateX(${-100 * autoImg}%)`
-                 }}></li>
+                }}></li>
                 <li style={{
                   transform: `translateX(${-100 * autoImg}%)`
-                 }}></li>
+                }}></li>
                 <li style={{
                   transform: `translateX(${-100 * autoImg}%)`
-                 }}></li>
+                }}></li>
               </ul>
             </div>
             {/* 이미지 넘어가면 한 칸씩 넘어가는 하단 바 */}
             <div className="bottomBar">
               <ul>
-                 {Array.from({ length: 4 }).map((_, idx) => (
-                  <li key={idx} 
-                  onClick={()=>moveToSlide(idx)}
-                  style={{ backgroundColor: autoImg === idx ? 'white' : 'rgba(255, 255, 255, 0.3)'}}></li>
+                {Array.from({ length: 4 }).map((_, idx) => (
+                  <li key={idx}
+                    onClick={() => moveToSlide(idx)}
+                    style={{ backgroundColor: autoImg === idx ? 'white' : 'rgba(255, 255, 255, 0.3)' }}></li>
                 ))}
               </ul>
             </div>

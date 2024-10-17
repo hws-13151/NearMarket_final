@@ -62,6 +62,10 @@ const Login = () => {
 
   return (
     <>
+      <video autoPlay loop muted playsInline>
+        <source src="/images/auth/video.mp4" type="video/mp4" />
+
+      </video>
       {loginModal && <LoginModal setLoginModal={setLoginModal} />}
       <div className="login">
         <div className="login-con">
