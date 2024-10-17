@@ -30,7 +30,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 4
+      "viewcount": 6
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 11
+      "viewcount": 12
     },
     {
       "id": "6",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 36
+      "viewcount": 52
     },
     {
       "id": "2",
@@ -102,7 +102,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 38
     },
     {
       "id": "3",
@@ -118,7 +118,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 2
+      "viewcount": 3
     },
     {
       "id": "4",
@@ -133,7 +133,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 22
     },
     {
       "id": "5",
@@ -147,7 +147,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 4
+      "viewcount": 6
     },
     {
       "id": "6",
@@ -160,7 +160,8 @@
         "tomato.jpg",
         "tomato2.jpg",
         "tomato3.jpg"
-      ]
+      ],
+      "viewcount": 9
     },
     {
       "id": "56c8",
@@ -253,7 +254,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 12
+      "viewcount": 14
     },
     {
       "id": "5",
@@ -261,7 +262,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 22
+      "viewcount": 23
     },
     {
       "id": "6",
@@ -287,7 +288,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 10
+      "viewcount": 21
     },
     {
       "id": "2",
@@ -295,7 +296,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 21
+      "viewcount": 24
     },
     {
       "id": "3",
@@ -303,7 +304,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 3
+      "viewcount": 5
     },
     {
       "id": "4",
@@ -311,7 +312,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "5",
@@ -319,7 +320,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 7
+      "viewcount": 8
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -327,7 +328,7 @@
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
       "id": "6",
-      "viewcount": 2
+      "viewcount": 5
     },
     {
       "title": "국내산 돼지갈비",
@@ -713,6 +714,532 @@
       ],
       "paymentAmount": 26800,
       "time": "2024/10/15 10:04:20"
+    },
+    {
+      "id": "2809",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 3,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T01:47:16.964Z"
+        }
+      ],
+      "paymentAmount": 15000,
+      "time": "2024/10/17 10:47:31"
+    },
+    {
+      "id": "b631",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "4",
+          "title": "파프리카",
+          "price": 4000,
+          "img": "/images/vegetable/paprica.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 4000,
+      "time": "2024/10/17 11:23:42"
+    },
+    {
+      "id": "07d0",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:32:38.685Z"
+        }
+      ],
+      "paymentAmount": 5000,
+      "time": "2024/10/17 11:32:47"
+    },
+    {
+      "id": "71c5",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 5,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:34:47.718Z"
+        }
+      ],
+      "paymentAmount": 10000,
+      "time": "2024/10/17 11:34:52"
+    },
+    {
+      "id": "0dc2",
+      "paymentMethod": "카카오페이",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 4,
+          "category": "meat",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:36:02.670Z"
+        },
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 5,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:36:19.294Z"
+        }
+      ],
+      "paymentAmount": 59600,
+      "time": "2024/10/17 11:36:40"
+    },
+    {
+      "id": "a74b",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 4,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:36:49.862Z"
+        },
+        {
+          "id": "5",
+          "img": "/images/fruit/f4.jpg",
+          "title": "포도",
+          "price": 6900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:37:29.734Z"
+        },
+        {
+          "id": "3",
+          "title": "국내산 대패 삼겹살",
+          "price": 13420,
+          "img": "/images/meat/meat3.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "meat",
+          "createdAt": "2024-10-17T02:37:36.950Z"
+        }
+      ],
+      "paymentAmount": 40320,
+      "time": "2024/10/17 11:38:00"
+    },
+    {
+      "id": "69b9",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "국내산목 살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:44:13.710Z"
+        }
+      ],
+      "paymentAmount": 13000,
+      "time": "2024/10/17 11:44:15"
+    },
+    {
+      "id": "0505",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "국내산목 살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:44:41.038Z"
+        }
+      ],
+      "paymentAmount": 13000,
+      "time": "2024/10/17 11:44:41"
+    },
+    {
+      "id": "c7a9",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "배달",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 2,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:46:19.797Z"
+        }
+      ],
+      "paymentAmount": 10000,
+      "time": "2024/10/17 11:46:28"
+    },
+    {
+      "id": "79aa",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 4,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T02:50:06.222Z"
+        }
+      ],
+      "paymentAmount": 8000,
+      "time": "2024/10/17 11:50:13"
+    },
+    {
+      "id": "7b8d",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "",
+      "memberEmail": "a1@email.com",
+      "orderAddress": "서울시 노원구",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "a1@email.com",
+          "createdAt": "2024-10-17T02:50:48.775Z"
+        }
+      ],
+      "paymentAmount": 12400,
+      "time": "2024/10/17 11:50:55"
+    },
+    {
+      "id": "8bff",
+      "paymentMethod": "카카오페이",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 2000,
+      "time": "2024/10/17 12:07:04"
+    },
+    {
+      "id": "2b0c",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "5",
+          "title": "호박",
+          "price": 10000,
+          "img": "/images/vegetable/pumkin.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:07:21.238Z"
+        },
+        {
+          "id": "6",
+          "title": "토마토",
+          "price": 6000,
+          "img": "/images/vegetable/tomato.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:07:31.998Z"
+        }
+      ],
+      "paymentAmount": 16000,
+      "time": "2024/10/17 12:07:38"
+    },
+    {
+      "id": "4ed8",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "벨을 누르지 말아주세요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 2,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:09:50.207Z"
+        },
+        {
+          "id": "6",
+          "title": "토마토",
+          "price": 6000,
+          "img": "/images/vegetable/tomato.jpg",
+          "count": 2,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:09:59.095Z"
+        }
+      ],
+      "paymentAmount": 16000,
+      "time": "2024/10/17 12:10:21"
+    },
+    {
+      "id": "7622",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "양파",
+          "price": 1000,
+          "img": "/images/vegetable/onion.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 1000,
+      "time": "2024/10/17 12:11:02"
+    },
+    {
+      "id": "eee1",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 5000,
+      "time": "2024/10/17 12:21:31"
+    },
+    {
+      "id": "e3ed",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "주문방식",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "토마토",
+          "price": 6000,
+          "img": "/images/vegetable/tomato.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 6000,
+      "time": "2024/10/17 12:24:09"
+    },
+    {
+      "id": "5069",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "4",
+          "title": "파프리카",
+          "price": 4000,
+          "img": "/images/vegetable/paprica.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:24:21.863Z"
+        }
+      ],
+      "paymentAmount": 4000,
+      "time": "2024/10/17 12:24:37"
+    },
+    {
+      "id": "861d",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "국내산 삼겹살 수육용",
+          "price": 12300,
+          "img": "/images/meat/meat6.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "meat"
+        }
+      ],
+      "paymentAmount": 12300,
+      "time": "2024/10/17 12:24:53"
+    },
+    {
+      "id": "94c6",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "국내산 삼겹살 수육용",
+          "price": 12300,
+          "img": "/images/meat/meat6.jpg",
+          "count": 1,
+          "userEmail": "yyk6591@email.com",
+          "category": "meat"
+        }
+      ],
+      "paymentAmount": 12300,
+      "time": "2024/10/17 12:25:20"
+    },
+    {
+      "id": "aaef",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com",
+          "createdAt": "2024-10-17T03:25:31.263Z"
+        }
+      ],
+      "paymentAmount": 5000,
+      "time": "2024/10/17 12:25:36"
     }
   ],
   "api": [

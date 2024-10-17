@@ -76,9 +76,10 @@ const OrderMeatDetail = (param) => {
       img: `/images/meat/${meatItem.img}`,
       count,
       userEmail,
+      category: "meat"
     };
-    dispatch(addCart1(meatCart));
-    navigate("/order/payment");
+    // dispatch(addCart1(meatCart));
+    navigate("/order/payment", { state: { selectedProduct: meatCart } });
   };
 
   return (

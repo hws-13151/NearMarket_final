@@ -84,8 +84,8 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
-    dispatch(addCart1(snackCart));
-    navigate("/order/payment");
+    // dispatch(addCart1(snackCart));
+    navigate("/order/payment", { state: { selectedProduct: snackCart } });
   };
   return (
     <>
