@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 4
+      "viewcount": 7
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 14
+      "viewcount": 17
     },
     {
       "id": "3",
@@ -30,7 +30,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 4
+      "viewcount": 8
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 11
+      "viewcount": 12
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 3
+      "viewcount": 4
     },
     {
       "id": "7",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 36
+      "viewcount": 40
     },
     {
       "id": "2",
@@ -102,7 +102,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 16
     },
     {
       "id": "3",
@@ -118,7 +118,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 2
+      "viewcount": 3
     },
     {
       "id": "4",
@@ -133,7 +133,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 14
     },
     {
       "id": "5",
@@ -147,7 +147,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 4
+      "viewcount": 6
     },
     {
       "id": "6",
@@ -237,7 +237,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 53
+      "viewcount": 55
     },
     {
       "id": "3",
@@ -245,7 +245,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 21
+      "viewcount": 24
     },
     {
       "id": "4",
@@ -253,7 +253,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 12
+      "viewcount": 14
     },
     {
       "id": "5",
@@ -261,7 +261,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 22
+      "viewcount": 27
     },
     {
       "id": "6",
@@ -269,7 +269,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 21
+      "viewcount": 23
     },
     {
       "id": "7",
@@ -287,7 +287,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 10
+      "viewcount": 12
     },
     {
       "id": "2",
@@ -295,7 +295,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 21
+      "viewcount": 23
     },
     {
       "id": "3",
@@ -303,7 +303,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 3
+      "viewcount": 4
     },
     {
       "id": "4",
@@ -311,7 +311,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "5",
@@ -319,14 +319,15 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 7
+      "viewcount": 9
     },
     {
       "title": "국내산 삼겹살 수육용",
       "price": 12300,
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
-      "id": "6"
+      "id": "6",
+      "viewcount": 1
     },
     {
       "title": "국내산 돼지갈비",
@@ -712,6 +713,192 @@
       ],
       "paymentAmount": 26800,
       "time": "2024/10/15 10:04:20"
+    },
+    {
+      "id": "9065",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "서울시 노원구 ",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "먹태깡 청양마요맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s1.jpeg",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:26.503Z"
+        },
+        {
+          "id": "5",
+          "img": "/images/fruit/f4.jpg",
+          "title": "포도",
+          "price": 6900,
+          "count": 2,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:29.351Z"
+        },
+        {
+          "id": "5",
+          "title": "호박",
+          "price": 10000,
+          "img": "/images/vegetable/pumkin.jpg",
+          "count": 2,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:32.072Z"
+        },
+        {
+          "id": "4",
+          "title": "파프리카",
+          "price": 4000,
+          "img": "/images/vegetable/paprica.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:35.000Z"
+        },
+        {
+          "id": "3",
+          "title": "초코송이",
+          "price": 900,
+          "img": "/images/ordersnack/s2.jpg",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:40.727Z"
+        },
+        {
+          "id": "4",
+          "title": "한우 등심 구이용 1+등급 (100g)",
+          "price": 13080,
+          "img": "/images/meat/meat4.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-16T03:27:43.696Z"
+        }
+      ],
+      "paymentAmount": 52780,
+      "time": "2024/10/16 12:32:25"
+    },
+    {
+      "id": "030a",
+      "paymentMethod": "카카오페이",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "서울시 노원구 ",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:19:31.429Z"
+        },
+        {
+          "id": "4",
+          "title": "홈런볼 초코맛",
+          "price": 1400,
+          "img": "/images/ordersnack/s3.jpg",
+          "count": 2,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:13.722Z"
+        },
+        {
+          "id": "5",
+          "title": "자갈치 문어맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s4.webp",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:26.178Z"
+        },
+        {
+          "id": "3",
+          "title": "국내산 대패 삼겹살",
+          "price": 13420,
+          "img": "/images/meat/meat3.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:35.466Z"
+        },
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:51.338Z"
+        },
+        {
+          "id": "5",
+          "title": "한우 국거리 1++등급 (300g)",
+          "price": 19500,
+          "img": "/images/meat/meat5.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:55.106Z"
+        },
+        {
+          "id": "4",
+          "img": "/images/fruit/f3.jpg",
+          "title": "바나나",
+          "price": 5900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:20:58.138Z"
+        },
+        {
+          "id": "6",
+          "img": "/images/fruit/f5.jpg",
+          "title": "메론",
+          "price": 13900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:21:01.810Z"
+        },
+        {
+          "id": "4",
+          "title": "한우 등심 구이용 1+등급 (100g)",
+          "price": 13080,
+          "img": "/images/meat/meat4.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:21:41.890Z"
+        },
+        {
+          "id": "6",
+          "title": "옥수수깡",
+          "price": 1000,
+          "img": "/images/ordersnack/s5.jpg",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com",
+          "createdAt": "2024-10-17T00:21:45.826Z"
+        }
+      ],
+      "paymentAmount": 85000,
+      "time": "2024/10/17 09:35:07"
     }
   ],
   "api": [

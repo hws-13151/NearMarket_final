@@ -70,3 +70,12 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 800px) {
+  .cart-modal-con {
+    box-sizing: border-box;
+  }
+}

@@ -19,7 +19,6 @@ const cartSlice = createSlice({
       if (num === -1) {
         state.items.push({
           ...action.payload,
-          createdAt: new Date().toISOString(),
         });
       } else {
         state.items[num].count += action.payload.count;
