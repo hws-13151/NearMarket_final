@@ -21,7 +21,7 @@ const Payment = () => {
   const [onPayment, setOnPayment] = useState(payData);
   //주문처 추가
   const [shop, setShop] = useState([])
-  const [paymentModal, setPaymentModal] = useState(false)
+  const [paymentGo, setPaymentGo] = useState(false)
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -50,26 +50,7 @@ const Payment = () => {
     return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
   }
 
-  const today = new Date();
-  const formattedDate = `${today.getFullYear()}/${String(
-    today.getMonth() + 1
-  ).padStart(2, "0")}/${String(today.getDate()).padStart(2, "0")} ${String(
-    today.getHours()
-  ).padStart(2, "0")}:${String(today.getMinutes()).padStart(2, "0")}:${String(
-    today.getSeconds()
-  ).padStart(2, "0")}`;
 
-  const accoutData = {
-    paymentMethod: onPayment.paymentMethod,
-    shopVal: onPayment.shopVal,
-    orderMethod: onPayment.orderMethod,
-    addressMessage: onPayment.addressMessage,
-    memberEmail: loginUser[0].userEmail,
-    orderAddress: loginUser[0].address,
-    paymentResult: itemsTopay,
-    paymentAmount: totalPrice,
-    time: formattedDate,
-  };
 
   //주문처추가
   const fetchShop = async () => {
@@ -82,15 +63,46 @@ const Payment = () => {
     }
   }
 
-  const paymentAxiosFn = async (e) => {
+  // const paymentAxiosFn = async (e) => {
+  //   try {
+  //     const res = await axios.post(
+  //       `http://localhost:3001/payment`,
+  //       JSON.stringify(accoutData)
+  //     );
+  //     const resData = res.data;
+  //   } catch (err) {
+  //     alert(err);
+  //   }
+  // };
+
+  const paymentAxiosFn = async () => {
+    const today = new Date();
+    const formattedDate = `${today.getFullYear()}/${String(
+      today.getMonth() + 1
+    ).padStart(2, "0")}/${String(today.getDate()).padStart(2, "0")} ${String(
+      today.getHours()
+    ).padStart(2, "0")}:${String(today.getMinutes()).padStart(2, "0")}:${String(
+      today.getSeconds()
+    ).padStart(2, "0")}`;
+
+    const accoutData = {
+      paymentMethod: onPayment.paymentMethod,
+      shopVal: onPayment.shopVal,
+      orderMethod: onPayment.orderMethod,
+      addressMessage: onPayment.addressMessage,
+      memberEmail: loginUser[0].userEmail,
+      orderAddress: loginUser[0].address,
+      paymentResult: itemsTopay,
+      paymentAmount: totalPrice,
+      time: formattedDate,
+    };
+
     try {
-      const res = await axios.post(
-        `http://localhost:3001/payment`,
-        JSON.stringify(accoutData)
-      );
-      const resData = res.data;
+      await axios.post(`http://localhost:3001/payment`, accoutData);
+      // dispatch(deleteCartAll());
+      navigate("/order/detail");
     } catch (err) {
-      alert(err);
+      alert("결제 처리 중 오류가 발생했습니다.");
     }
   };
 
@@ -115,16 +127,14 @@ const Payment = () => {
     setOnPayment({ ...onPayment, addressMessage: selectedAddressMessage });
   };
 
-  const paymentSubmitFn = async (e) => {
+  const paymentSubmitFn = (e) => {
+
     e.preventDefault();
-    await paymentAxiosFn();
-    dispatch(deleteCartAll());
-    paymentModalFn()
+    setPaymentGo(true)
+
   };
 
-  const paymentModalFn = () => {
-    setPaymentModal(true)
-  }
+
 
   const isPaymentReady = onPayment.paymentMethod && onPayment.shopVal && onPayment.orderMethod
 
@@ -133,7 +143,7 @@ const Payment = () => {
 
   return (
     <>
-      {paymentModal && <PaymentGoModal setPaymentModal={setPaymentModal} />}
+      {paymentGo && <PaymentGoModal setPaymentGo={setPaymentGo} paymentAxiosFn={paymentAxiosFn} />}
       <div className="payment">
         <h1>주문/결제</h1>
         <div className="payment-con">
