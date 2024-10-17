@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .cart-list {
   width: 100%;
   min-height: calc(100vh - 80px - 60px);
@@ -79,7 +83,7 @@
 }
 
 .cart-details-button:hover {
-  background-color: red;
+  background-color: red !important;
 }
 
 .cart-item-bottom {
