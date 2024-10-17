@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
-//이미지 수정 시 이미지 경로 이상
+import ConfirmModal from './ConfirmModal'; 
 
 const ShopModal = ({shop, onClose}) => {
     const  [title, setTitle] = useState(shop.title);
@@ -14,6 +14,9 @@ const ShopModal = ({shop, onClose}) => {
     const [img, setImg] = useState(shop.img);
     const [previewImg, setPreviewImg] = useState([])
     const dispatch = useDispatch()
+//모달창
+const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
+const [isDeleteModalOpen, setDeleteModalOpen] = useState(false); 
 
 const uploadFile = (e) => {
       const file = e.target.files[0];
@@ -44,7 +47,7 @@ const preview = (e) => {
                 lat,
                 lng
             })
-            alert('주문처 정보가 수정되었습니다.')
+            setConfirmModalOpen(false); 
             onClose();
             dispatch(asyncAdminShopFn())
         }
@@ -55,18 +58,16 @@ const preview = (e) => {
     }
 
     const shopDelete = async()=>{
-        const isConfirmed = window.confirm("정말로 주문처 정보를 삭제하시겠습니까?")
-        if(isConfirmed){
             try{
                 await axios.delete(`http://localhost:3001/api/${shop.id}`)
-                alert("주문처가 삭제되었습니다.")
+                setDeleteModalOpen(false); // 삭제 모달 닫기
                 onClose()
                 dispatch(asyncAdminShopFn())
             }
             catch(err){
                 alert(err)
             }
-        }
+        
     }
 
     
@@ -125,11 +126,29 @@ const preview = (e) => {
         
         
         <div className="btn1-con">
-        <button onClick={shopUpdate} className="update-btn">수정</button>
-        <button onClick={shopDelete} className="delete-btn">삭제</button>
+        <button onClick={() => setConfirmModalOpen(true)} className="update-btn">수정</button>
+        <button onClick={() => setDeleteModalOpen(true)} className="delete-btn">삭제</button>
         </div>
         <button onClick={onClose} className='close'>X</button>
       </div>
+       {/* 수정 확인 모달 */}
+    {isConfirmModalOpen && (
+        <ConfirmModal 
+          message="주문처 정보가 수정되었습니다." 
+          onConfirm={shopUpdate} 
+          confirmOnly={true} // 확인 버튼만 보이도록 설정
+        />
+      )}
+
+      {/* 삭제 확인 모달 */}
+      {isDeleteModalOpen && (
+        <ConfirmModal 
+          message="정말로 주문처 정보를 삭제하시겠습니까?" 
+          onConfirm={shopDelete} 
+          confirmOnly={false} // 취소 버튼도 보이게 false
+          onCancel={() => setDeleteModalOpen(false)} // 모달 닫기
+        />
+      )}
     </div>
     </>
   )

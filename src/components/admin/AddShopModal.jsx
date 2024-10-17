@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
+import ConfirmModal from './ConfirmModal'; 
 
 const AddShopModal = ({ onClose }) => {
     const [title, setTitle] = useState('');
@@ -13,6 +14,8 @@ const AddShopModal = ({ onClose }) => {
     const [img, setImg] = useState('');
     const [previewImg, setPreviewImg] = useState([])
     const dispatch = useDispatch();
+    //모달창
+    const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
 
     const uploadFile = (e) => {
         const file = e.target.files[0];
@@ -43,7 +46,7 @@ const AddShopModal = ({ onClose }) => {
                 lat,
                 lng,
             });
-            alert('주문처가 추가되었습니다.');
+            setConfirmModalOpen(false); // 수정 모달 닫기
             onClose();
             dispatch(asyncAdminShopFn());
         } catch (err) {
@@ -102,9 +105,17 @@ const AddShopModal = ({ onClose }) => {
                     onChange={(e) => setLng(Number(e.target.value))} 
                 />    
                 
-                <button onClick={shopAdd} className="update-btn">추가</button>
+                <button onClick={() => setConfirmModalOpen(true)} className="update-btn">추가</button>
                 <button onClick={onClose} className='close'>X</button>
             </div>
+            {/* 수정 확인 모달 */}
+           {isConfirmModalOpen && (
+                 <ConfirmModal 
+                  message="주문처가 추가되었습니다." 
+                 onConfirm={shopAdd} 
+                  confirmOnly={true} // 확인 버튼
+                />
+             )}
         </div>
     );
 };

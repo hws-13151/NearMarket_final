@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 1
+      "viewcount": 5
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 11
+      "viewcount": 13
     },
     {
       "id": "3",
@@ -25,12 +25,11 @@
       "viewcount": 2
     },
     {
-      "id": "4",
       "title": "바나나",
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 4
+      "id": "4"
     },
     {
       "id": "5",
@@ -38,7 +37,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "6",
@@ -49,11 +48,11 @@
       "viewcount": 3
     },
     {
-      "id": "7",
       "title": "오렌지",
       "price": 8900,
       "img": "f6.jpg",
-      "description": "상큼하면서 달콤한 오렌지"
+      "description": "상큼하면서 달콤한 오렌지",
+      "id": "7"
     },
     {
       "title": "파인애플",
@@ -64,29 +63,22 @@
       "viewcount": 1
     },
     {
-      "title": "123",
-      "price": 123213,
-      "img": "f0.jpg",
-      "description": "123123",
-      "id": "0a27"
+      "id": "e131",
+      "title": "123213",
+      "price": 123,
+      "description": "123",
+      "img": "f5.jpg",
+      "order-corner": "fruit"
     }
   ],
   "vegetableItems": [
     {
-      "id": "1",
       "title": "당근",
       "price": 2000,
-      "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "img": "carrot.jpg",
+      "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "rocket": "rocket.png",
-      "slideImage": [
-        "carrot.jpg",
-        "carrot2.jpg",
-        "carrot3.jpg",
-        "carrot4.jpg",
-        "carrot5.jpg"
-      ],
-      "viewcount": 28
+      "id": "1"
     },
     {
       "id": "2",
@@ -223,12 +215,11 @@
   ],
   "snackItems": [
     {
-      "id": "1",
       "title": "오감자 오리지널",
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 2
+      "id": "1"
     },
     {
       "id": "2",
@@ -269,7 +260,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 3
+      "viewcount": 4
     },
     {
       "id": "2",
@@ -277,7 +268,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 2
+      "viewcount": 3
     },
     {
       "id": "3",
@@ -345,44 +336,24 @@
       "role": "ROLE_MEMBER"
     },
     {
-      "id": "3",
       "userEmail": "a3@email.com",
       "userPw": "1111",
       "age": "10",
       "userName": "수지",
       "address": "서울시 노원구",
       "phoneNumber": "010123456789",
-      "role": "ROLE_MEMBER"
+      "role": "ROLE_MEMBER",
+      "id": "3"
     },
     {
-      "id": "e79d",
-      "userEmail": "admin1234@naver.com",
-      "userPw": "1234",
-      "age": "21",
-      "userName": "권오철",
-      "address": "서울시 노원구 ",
-      "phoneNumber": "010-1234-1234",
-      "role": "ROLE_ADMIN"
-    },
-    {
-      "userEmail": "yyk6591@email.com",
-      "userPw": "1111",
-      "age": "11111111",
-      "userName": "김영연",
-      "address": "11",
-      "phoneNumber": "11",
-      "role": "ROLE_ADMIN",
-      "id": "9111"
-    },
-    {
-      "id": "792c",
       "userEmail": "a2@email.com",
       "userPw": "1111",
-      "age": "24",
-      "userName": "a2",
+      "age": "25205",
+      "userName": "a21111",
       "address": "노원구",
       "phoneNumber": "01012345678",
-      "role": "ROLE_ADMIN"
+      "role": "ROLE_ADMIN",
+      "id": "792c"
     }
   ],
   "payment": [
@@ -678,6 +649,94 @@
       ],
       "paymentAmount": 26800,
       "time": "2024/10/15 10:04:20"
+    },
+    {
+      "id": "be65",
+      "paymentMethod": "",
+      "shopVal": "롯데슈퍼 상계11 마트 수락산점",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "딸기",
+          "price": 9900,
+          "img": "/images/fruit/f0.jpg",
+          "count": 1,
+          "userEmail": "guest",
+          "category": "fruit",
+          "createdAt": "2024-10-17T00:38:32.052Z"
+        },
+        {
+          "id": "5",
+          "title": "포도",
+          "price": 6900,
+          "img": "/images/fruit/f4.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "fruit",
+          "createdAt": "2024-10-17T00:38:39.716Z"
+        },
+        {
+          "id": "2",
+          "title": "국내산 목살[냉장보관]",
+          "price": 13000,
+          "img": "/images/meat/meat2.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "createdAt": "2024-10-17T00:50:59.964Z"
+        }
+      ],
+      "paymentAmount": 29800,
+      "time": "2024/10/17 09:55:50"
+    },
+    {
+      "id": "ce5d",
+      "paymentMethod": "",
+      "shopVal": "",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "딸기",
+          "price": 9900,
+          "img": "/images/fruit/f0.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "fruit",
+          "createdAt": "2024-10-17T00:58:07.755Z"
+        }
+      ],
+      "paymentAmount": 9900,
+      "time": "2024/10/17 09:58:07"
+    },
+    {
+      "id": "5a49",
+      "paymentMethod": "",
+      "shopVal": "123",
+      "orderMethod": "",
+      "addressMessage": "",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "딸기",
+          "price": 9900,
+          "img": "/images/fruit/f0.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "fruit",
+          "createdAt": "2024-10-17T01:00:22.538Z"
+        }
+      ],
+      "paymentAmount": 9900,
+      "time": "2024/10/17 10:09:35"
     }
   ],
   "api": [

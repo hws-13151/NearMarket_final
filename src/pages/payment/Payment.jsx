@@ -5,6 +5,7 @@ import { loginUserFn } from "../../slice/authSlice";
 import axios from "axios";
 import { deleteCartAll } from "../../slice/cartSlice1";
 
+
 const payData = {
   paymentMethod: "",
   shopVal: "",

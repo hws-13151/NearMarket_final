@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { asyncAuthMemberFn } from '../../slice/authSlice';
 import { useDispatch } from 'react-redux';
+import { asyncAdminMemberFn } from '../../slice/adminSlice';
+import ConfirmModal from './ConfirmModal'; 
 
 const MemberModal = ({ member, onClose }) => {
   const [userEmail, setUserEmail] = useState(member.userEmail);
@@ -11,7 +12,11 @@ const MemberModal = ({ member, onClose }) => {
   const [address, setAddress] = useState(member.address);
   const [phoneNumber, setPhoneNumber] = useState(member.phoneNumber); 
   const [role, setRole] = useState(member.role);
-  const dispatch = useDispatch()
+//모달창
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); 
+
+  const dispatch = useDispatch();
 
   const userUpdate = async () => {
     try {
@@ -24,31 +29,24 @@ const MemberModal = ({ member, onClose }) => {
         phoneNumber,
         role,
       });
-      alert('회원 정보가 수정되었습니다.');
-      onClose(); 
-      dispatch(asyncAuthMemberFn()); 
-    }
-     catch (err) {
-      alert(err);
+      setIsConfirmModalOpen(false); // 수정 모달 e닫기
+      onClose(); // 메인 모달 닫기
+      dispatch(asyncAdminMemberFn()); 
+    } catch (err) {
+      alert(err)
     }
   };
 
   const userDelete = async () => {
-    const isConfirmed = window.confirm("정말로 회원 정보를 삭제하시겠습니까?"); // 삭제 확인창
-    if (isConfirmed) { // 삭제 확인 버튼을 누를 경우
-      try {
-        await axios.delete(`http://localhost:3001/members/${member.id}`);
-        alert('회원 정보가 삭제되었습니다.');
-        onClose(); 
-        dispatch(asyncAuthMemberFn()); 
-      } catch (err) {
-        alert(err);
-      }
-    } else {
-      alert('삭제가 취소되었습니다.'); 
+    try {
+      await axios.delete(`http://localhost:3001/members/${member.id}`);
+      setIsDeleteModalOpen(false); // 삭제 모달 닫기
+      onClose(); // 메인 모달 닫기
+      dispatch(asyncAdminMemberFn()); 
+    } catch (err) {
+      alert(err);
     }
   };
-  
 
   return (
     <div className="modal">
@@ -97,11 +95,30 @@ const MemberModal = ({ member, onClose }) => {
         </select>
         
         <div className="btn1-con">
-        <button onClick={userUpdate} className="update-btn">수정</button>
-        <button onClick={userDelete} className="delete-btn">삭제</button>
+          <button onClick={() => setIsConfirmModalOpen(true)} className="update-btn">수정</button>
+          <button onClick={() => setIsDeleteModalOpen(true)} className="delete-btn">삭제</button>
         </div>
         <button onClick={onClose} className='close'>X</button>
       </div>
+
+      {/* 수정 확인 모달 */}
+      {isConfirmModalOpen && (
+        <ConfirmModal 
+          message="회원 정보가 수정되었습니다." 
+          onConfirm={userUpdate} 
+          confirmOnly={true} // 확인 버튼만 보이도록 설정
+        />
+      )}
+
+      {/* 삭제 확인 모달 */}
+      {isDeleteModalOpen && (
+        <ConfirmModal 
+          message="정말로 회원 정보를 삭제하시겠습니까?" 
+          onConfirm={userDelete} 
+          confirmOnly={false} // 취소 버튼도
+          onCancel={() => setIsDeleteModalOpen(false)} // 모달 닫기
+        />
+      )}
     </div>
   );
 };

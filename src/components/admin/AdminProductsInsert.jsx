@@ -1,23 +1,22 @@
+import React, { useRef, useState } from 'react';
 import axios from 'axios';
-import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import ConfirmModal from './ConfirmModal'; 
 const itemData = {
   title: "",
   price: 0,
   description: "",
   img: ""
-
 }
 
 const AdminProductsInsert = () => {
-
-  const [formData, setFormData] = useState(itemData)
+  const [formData, setFormData] = useState(itemData);
   const [imgFile, setImgFile] = useState([]);
-  const [isTitle, setIsTitle] = useState(false)
+  const [modalMessage, setModalMessage] = useState(''); // 모달 메시지 
+  const [isConfirmModalOpen, setConfirmModalOpen] = useState(false); // 모달 
   const imgRef = useRef();
   const selectedCategory = formData["order-corner"];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const itemAddFn = (e) => {
     const { name, value } = e.target;
@@ -25,8 +24,8 @@ const AdminProductsInsert = () => {
     setFormData({
       ...formData,
       [name]: newValue
-    })
-  }
+    });
+  };
 
   // 이미지 미리보기
   const saveImgFile = (e) => {
@@ -40,69 +39,83 @@ const AdminProductsInsert = () => {
       setFormData({
         ...formData,
         img: file.name
-      })
+      });
     }
   };
 
+  // 상품 등록 로직
   const updateItemFn = async () => {
     try {
       if (formData.title === "") {
-        alert("상품 이름을 입력해 주세요")
-        return
+        setModalMessage("상품 이름을 입력해 주세요");
+        setConfirmModalOpen(true);
+        return;
       }
       if (formData.price === 0) {
-        alert("상품 가격을 입력해 주세요")
-        return
+        setModalMessage("상품 가격을 입력해 주세요");
+        setConfirmModalOpen(true);
+        return;
       }
       if (formData.description === "") {
-        alert("상품 설명을 입력해 주세요")
-        return
+        setModalMessage("상품 설명을 입력해 주세요");
+        setConfirmModalOpen(true);
+        return;
       }
       if (formData.img === "") {
-        alert("상품 이미지를 등록해 주세요")
-        return
+        setModalMessage("상품 이미지를 등록해 주세요");
+        setConfirmModalOpen(true);
+        return;
       }
-      // 상품을 코너별로 db에 저장
+      
       let itemUrl = '';
       switch (selectedCategory) {
         case 'vegetable':
-          itemUrl = 'vegetableItems'
-          break
+          itemUrl = 'vegetableItems';
+          break;
         case 'meat':
-          itemUrl = 'meatItems'
-          break
+          itemUrl = 'meatItems';
+          break;
         case 'fruit':
-          itemUrl = 'fruitItems'
-          break
+          itemUrl = 'fruitItems';
+          break;
         case 'snack':
-          itemUrl = 'snackItems'
-          break
+          itemUrl = 'snackItems';
+          break;
         case 'best':
-          itemUrl = 'indexItems'
-          break
+          itemUrl = 'indexItems';
+          break;
         default:
-          alert('상품 코너를 선택하세요.');
-          return
+          setModalMessage('상품 코너를 선택하세요.');
+          setConfirmModalOpen(true);
+          return;
       }
-      const res = await axios.get(`http://localhost:3001/${itemUrl}`)
-      const num = res.data.findIndex(el => {
-        return el.title === formData.title
-      })
+
+      const res = await axios.get(`http://localhost:3001/${itemUrl}`);
+      const num = res.data.findIndex(el => el.title === formData.title);
+
       if (num !== -1) {
-        alert("이미 등록된 상품입니다.")
-        setIsTitle(false)
-        console.log(isTitle)
-        return
-      } else {
-        setIsTitle(true)
+        setModalMessage("이미 등록된 상품입니다.");
+        setConfirmModalOpen(true);
+        return;
       }
-      await axios.post(`http://localhost:3001/${itemUrl}`, formData)
-      alert("상품등록 성공!~ (˶ᵔ ᵕ ᵔ˶)")
-      navigate(`/admin/${selectedCategory}`)
+
+      await axios.post(`http://localhost:3001/${itemUrl}`, formData);
+      setModalMessage("상품등록 성공!~ (˶ᵔ ᵕ ᵔ˶)");
+      setConfirmModalOpen(true);
+      
     } catch (error) {
-      alert('상품 등록 중 오류가 발생했습니다.')
+      setModalMessage('상품 등록 중 오류가 발생했습니다.');
+      setConfirmModalOpen(true);
     }
-  }
+  };
+
+  // 모달 확인 버튼 클릭 시
+  const checkConfirm = () => {
+    setConfirmModalOpen(false); // 모달 닫기
+    if (modalMessage === "상품등록 성공!~ (˶ᵔ ᵕ ᵔ˶)") {//에러가 있으면 이동 불가
+      navigate(`/admin/${selectedCategory}`); // 상품 등록 성공 시 이동
+    }
+  };
 
   return (
     <>
@@ -156,7 +169,6 @@ const AdminProductsInsert = () => {
                 <label htmlFor="img">상품 이미지 선택</label>
                 <input multiple type="file" accept='image/jpg, image/png, image/jpeg' name="img" id="img"
                   onChange={saveImgFile}
-                  onChangeCapture={itemAddFn}
                   ref={imgRef}
                 />
                 <button onClick={updateItemFn}>상품등록</button>
@@ -165,8 +177,14 @@ const AdminProductsInsert = () => {
           </div>
         </div>
       </div>
+      {isConfirmModalOpen && (
+        <ConfirmModal
+          confirmOnly={true}
+          message={modalMessage}
+          onConfirm={checkConfirm}
+        />
+      )}
     </>
-  )
+  );
 }
-
-export default AdminProductsInsert
+export default AdminProductsInsert;
