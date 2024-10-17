@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import { API_URL } from "../../constans";
 
 const OrderSnack = () => {
   const [snackList, setSnackList] = useState([]);
@@ -14,7 +15,7 @@ const OrderSnack = () => {
   useEffect(() => {
     const axiosSetFn = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/snackItems`);
+        const res = await axios.get(`${API_URL}/snackItems`);
         setSnackList(res.data);
       } catch (err) {
         alert(err);

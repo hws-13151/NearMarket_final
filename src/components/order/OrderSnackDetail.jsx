@@ -5,6 +5,7 @@ import { addCart1 } from "../../slice/cartSlice1";
 import { useNavigate } from "react-router-dom";
 import DetailModal from "./DetailModal";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
+import { API_URL } from "../../constans";
 
 const orderData = {
   id: "",
@@ -37,7 +38,7 @@ const OrderSnackDetail = (param) => {
       ); // 조회수 업데이트
       try {
         const res = await axios.get(
-          `http://localhost:3001/snackItems?id=${orderId}`
+          `${API_URL}/snackItems?id=${orderId}`
         );
         setSnackItem(res.data[0]);
       } catch (err) {

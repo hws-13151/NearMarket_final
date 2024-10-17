@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import { API_URL } from "../../constans";
 
 const OrderVegetable = () => {
   const [vegetable, setVgetable] = useState([]);
@@ -16,7 +17,7 @@ const OrderVegetable = () => {
   useEffect(() => {
     const axiosFn = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/vegetableItems`);
+        const res = await axios.get(`${API_URL}/vegetableItems`);
         setVgetable(res.data);
       } catch (error) {
         alert(error);

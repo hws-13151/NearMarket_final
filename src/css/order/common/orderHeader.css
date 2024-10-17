@@ -182,6 +182,16 @@
   
 }
 
+@media (max-width: 800px){
+  .order-header .order-header-nav .gnb{
+    background-color: rgba(190, 190, 190);
+    width: 100%;
+  }
+  .order-header .order-header-nav .gnb ul li{
+    width: 40%;
+  }
+}
+
 @media (max-width: 500px){
   .order-header-nav .button{
     right: 20px;
