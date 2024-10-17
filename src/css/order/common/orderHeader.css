@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
-/* .jua-regular {
-  font-family: "Jua", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
-
 .nm {
   font-family: "Jua", sans-serif;
   color: red;
@@ -27,7 +21,7 @@
   color: blue;
   font-size: 30px;
 }
-.order-header{
+.order-header {
   width: 100%;
   height: auto;
   box-shadow: inset 0 -2px 0 #ccc;
@@ -42,14 +36,14 @@
   align-items: center;
 }
 
-.order-header-nav .button{
+.order-header-nav .button {
   position: absolute;
   top: -30px;
   right: 0;
   color: white;
 }
 
-.order-header-nav h1.logo{
+.order-header-nav h1.logo {
   height: 100%;
   /* border: 1px solid; */
   box-sizing: border-box;
@@ -59,17 +53,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-.order-header .order-header-nav .gnb{
+.order-header .order-header-nav .gnb {
   width: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   display: block;
 
-  transition: opacity 0.3s, transform 0.3s ; /* 부드러운 전환 */
+  transition: opacity 0.3s, transform 0.3s; /* 부드러운 전환 */
   transform: translateX(100%);
   transition: all 0.3s;
 }
@@ -89,6 +82,9 @@
   align-items: center;
   gap: 0.5vw;
   transition: all 0.3s;
+}
+.cart-img {
+  width: 50px !important;
 }
 
 .order-header .order-header-nav .gnb ul li {
@@ -120,7 +116,7 @@
   margin-right: 10px;
   display: block;
 }
-@media (max-width: 1400px){
+@media (max-width: 1400px) {
   .order-header .order-header-nav .gnb ul {
     width: 80%;
   }
@@ -131,8 +127,8 @@
     font-size: 18px;
   }
 }
-@media (max-width: 1030px){
-  .order-header-nav .button{
+@media (max-width: 1030px) {
+  .order-header-nav .button {
     background-color: #dfdfdf;
     border-radius: 10px;
     padding: 7px 9px;
@@ -145,14 +141,14 @@
     z-index: 999;
     transition: all 0.3s;
   }
-  .order-header-nav .button:hover{
+  .order-header-nav .button:hover {
     background-color: black;
     color: white;
   }
-  .order-header .order-header-nav{
+  .order-header .order-header-nav {
     position: relative;
   }
-  .order-header .order-header-nav .gnb{
+  .order-header .order-header-nav .gnb {
     background-color: rgba(190, 190, 190, 0.897);
     color: white;
     border: 0;
@@ -167,33 +163,32 @@
   .order-header .order-header-nav .gnb.visible {
     display: block;
   }
-  .order-header .order-header-nav .gnb ul{
+  .order-header .order-header-nav .gnb ul {
     width: 100%;
     flex-direction: column;
     gap: 3vw;
   }
-  .order-header .order-header-nav .gnb ul li{
+  .order-header .order-header-nav .gnb ul li {
     width: 60%;
   }
-  .order-header .order-header-nav .gnb ul li a{
+  .order-header .order-header-nav .gnb ul li a {
     font-size: 20px;
     padding: 10px;
   }
-  
 }
 
-@media (max-width: 800px){
-  .order-header .order-header-nav .gnb{
+@media (max-width: 800px) {
+  .order-header .order-header-nav .gnb {
     background-color: rgba(190, 190, 190);
     width: 100%;
   }
-  .order-header .order-header-nav .gnb ul li{
+  .order-header .order-header-nav .gnb ul li {
     width: 40%;
   }
 }
 
-@media (max-width: 500px){
-  .order-header-nav .button{
+@media (max-width: 500px) {
+  .order-header-nav .button {
     right: 20px;
   }
 }
