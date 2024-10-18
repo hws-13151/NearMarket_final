@@ -51,8 +51,8 @@
 }
 
 .admin-right .admin-right-con .admin-right-header ul li{
-  width: 130px;
-  height: 35px;
+  width: 10vmax;
+  height: 4vmin;
 
   /* border: 1px solid; */
   border-radius: 3px;
@@ -100,5 +100,12 @@
   .admin-right .admin-right-con .admin-right-header{
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-right .admin-right-con .admin-right-header ul li{
+    width: 12vmax;
+    height: 4vmax;
   }
 }
