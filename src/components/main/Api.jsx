@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../constans';
 
 const { kakao } = window;
 
@@ -11,7 +12,7 @@ const Api = () => {
   useEffect(() => {
     const fetchApi = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api');
+        const res = await axios.get(`${API_URL}/api`);
         setApi(res.data); // API 데이터 설정
         if (res.data.length > 0) {
           setSelectedShop(res.data[0]);}

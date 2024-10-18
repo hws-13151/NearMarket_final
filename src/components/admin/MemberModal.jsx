@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { asyncAdminMemberFn } from '../../slice/adminSlice';
 import ConfirmModal from './ConfirmModal'; 
+import { API_URL } from '../../constans';
 
 const MemberModal = ({ member, onClose }) => {
   const [userEmail, setUserEmail] = useState(member.userEmail);
@@ -49,7 +50,7 @@ const MemberModal = ({ member, onClose }) => {
         return;
       }
       
-      await axios.put(`http://localhost:3001/members/${member.id}`, {
+      await axios.put(`${API_URL}/members/${member.id}`, {
         userEmail,
         userPw,
         age,
@@ -69,7 +70,7 @@ const MemberModal = ({ member, onClose }) => {
 
   const userDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/members/${member.id}`);
+      await axios.delete(`${API_URL}/members/${member.id}`);
       setIsDeleteModalOpen(false); // 삭제 모달 닫기
       onClose();
       dispatch(asyncAdminMemberFn()); 
