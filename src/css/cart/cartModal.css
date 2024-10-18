@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+.jua-regular {
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .cart-modal {
   position: fixed;
   top: 0;
@@ -8,15 +16,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 .cart-modal-con {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: 500px;
+  width: 600px;
   max-width: 90%;
-  height: 500px;
+  height: 600px;
   max-height: 90%;
   position: relative;
   display: flex;
@@ -28,12 +37,12 @@
 /* 닫기 버튼 */
 .cart-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+  top: 20px;
+  right: 5px;
+  font-size: 20px;
   color: white;
   background-color: red;
-  cursor: pointer;
+
   border: none;
   padding: 5px 10px;
 }
@@ -44,7 +53,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 200px;
+  height: 200%;
 }
 
 .cart-top img {
@@ -62,10 +71,13 @@
   width: 100%;
   margin-bottom: 20px;
   text-align: center;
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .cart-title-bottom span {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -74,41 +86,43 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* 수량 조절 */
 .cart-count-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+}
+
+.cart-count-wrapper button {
+  font-size: 30px;
 }
 
 .cart-count {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /* 총합계 */
-.sum-price {
+.cart-sum-price {
   font-size: 20px;
 }
 
-/* 버튼 그룹 */
-.cart-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.add-btn {
+.cart-add-btn {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 1300px) {
   .cart-modal-con {
-    width: 400px;
+    width: 100%;
     padding: 15px;
   }
 }

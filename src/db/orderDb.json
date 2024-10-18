@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 28
+      "viewcount": 29
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "price": 10900,
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
-      "viewcount": 5
+      "viewcount": 7
     },
     {
       "title": "바나나",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 14
+      "viewcount": 15
     },
     {
       "id": "6",
@@ -103,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 24
+      "viewcount": 25
     },
     {
       "id": "3",
@@ -119,7 +119,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 4
+      "viewcount": 5
     },
     {
       "id": "4",
@@ -134,7 +134,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 19
+      "viewcount": 20
     },
     {
       "id": "5",
@@ -247,7 +247,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 25
+      "viewcount": 26
     },
     {
       "id": "4",
@@ -255,7 +255,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 15
+      "viewcount": 17
     },
     {
       "id": "5",
@@ -263,7 +263,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 27
+      "viewcount": 28
     },
     {
       "id": "6",
@@ -271,7 +271,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 29
+      "viewcount": 30
     },
     {
       "id": "7",
@@ -297,7 +297,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 21
+      "viewcount": 22
     },
     {
       "id": "3",
