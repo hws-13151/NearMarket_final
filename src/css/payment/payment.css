@@ -131,3 +131,10 @@
     font-size: 18px;
   }
  
+
+  @media (max-width: 800px){
+    .address table th:nth-child(2),
+    .address table td:nth-child(2){
+      display: none;
+    }
+  }

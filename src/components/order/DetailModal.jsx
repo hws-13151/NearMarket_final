@@ -32,7 +32,7 @@ const DetailModal = ({ setIsModal, cartItem }) => {
         <div className="modal-top">
           <span>알림</span>
           <span className="close" onClick={closeModal}>
-            X
+            Ⅹ
           </span>
         </div>
         <div className="modal-body">
