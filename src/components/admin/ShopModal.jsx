@@ -17,6 +17,8 @@ const ShopModal = ({shop, onClose}) => {
 //모달창
 const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
 const [isDeleteModalOpen, setDeleteModalOpen] = useState(false); 
+const [modalMessage, setModalMessage] = useState("")
+const [updateSuccess, setUpdateSuccess] = useState(false);
 
 const uploadFile = (e) => {
       const file = e.target.files[0];
@@ -37,7 +39,43 @@ const preview = (e) => {
     }
 
     const shopUpdate = async () =>{
-        try{
+      try {
+        if (title.trim() === "") { //trim()앞뒤 공백을 제거 / trim이 없으면 스페이스, 탭을 못 잡음
+          setModalMessage("상점 이름을 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (img.trim() === "") {
+          setModalMessage("상점 이미지를 등록해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (address.trim() === "") {
+          setModalMessage("상점 주소를 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (postNum.trim() === "") {
+          setModalMessage("상점 우편번호를 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (phoneNum.trim() === "") {
+          setModalMessage("상점 전화번호를 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (lat === "") {//trim은 문자열만 가능하다 숫자는 공백이 없다
+          setModalMessage("상점 위도를 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        if (lng === "") {
+          setModalMessage("상점 경도를 입력해 주세요.");
+          setConfirmModalOpen(true);
+          return;
+        }
+        
             await axios.put(`http://localhost:3001/api/${shop.id}`,{
                 title,
                 address,
@@ -47,9 +85,10 @@ const preview = (e) => {
                 lat,
                 lng
             })
-            setConfirmModalOpen(false); 
-            onClose();
+            setModalMessage("상점 정보가 수정되었습니다.");
+            setConfirmModalOpen(true); 
             dispatch(asyncAdminShopFn())
+            setUpdateSuccess(true);
         }
         catch(err){
             alert(err)
@@ -69,7 +108,12 @@ const preview = (e) => {
             }
         
     }
-
+    const checkConfirm = () =>{
+      setConfirmModalOpen(false);
+      if(updateSuccess===true){
+        onClose();
+      }
+    }
     
 
   return (
@@ -126,7 +170,7 @@ const preview = (e) => {
         
         
         <div className="btn1-con">
-        <button onClick={() => setConfirmModalOpen(true)} className="update-btn">수정</button>
+        <button onClick={shopUpdate} className="update-btn">수정</button>
         <button onClick={() => setDeleteModalOpen(true)} className="delete-btn">삭제</button>
         </div>
         <button onClick={onClose} className='close'>X</button>
@@ -134,9 +178,9 @@ const preview = (e) => {
        {/* 수정 확인 모달 */}
     {isConfirmModalOpen && (
         <ConfirmModal 
-          message="주문처 정보가 수정되었습니다." 
-          onConfirm={shopUpdate} 
           confirmOnly={true} // 확인 버튼만 보이도록 설정
+          message={modalMessage} 
+          onConfirm={checkConfirm} 
         />
       )}
 

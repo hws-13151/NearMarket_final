@@ -41,18 +41,19 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
+  // 선택한 주문처 모달오픈
   useEffect(() => {
     if (onPayment.shopVal) {
       const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
       if (selectedShopInfo) {
-        setSelectedShop(selectedShopInfo); // 선택된 주문처 정보를 상태에 저장
-        setIsModalOpen(true); // 모달 열기
+        setSelectedShop(selectedShopInfo); 
+        setIsModalOpen(true);
       }
     }
   }, [onPayment.shopVal, shop]);
 
   const closeModal = () => {
-    setIsModalOpen(false); // 모달 닫기
+    setIsModalOpen(false); 
   };
   // loginUser가 비어 있거나 존재하지 않을 때 처리
   if (!loginUser || loginUser.length === 0) {
@@ -258,10 +259,11 @@ const Payment = () => {
             </tbody>
           </table>
         </div>
-        {/* 모달 창 */}
+        {/* 모달 창 추가*/}
          {isModalOpen && selectedShop && (
           <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />
         )}          
+
         {paymentItems.length > 0 ? (
           <div className="payment-sub">
             <div className="sum-price">

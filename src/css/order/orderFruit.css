@@ -36,6 +36,7 @@ body {
 .order-fruit .order-fruit-mid {
   display: flex;
   flex-direction: column;
+  flex: 0 0 800px;
 }
 
 .order-fruit .order-fruit-con {
@@ -45,7 +46,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow-y: auto;
 }
 
 .order-fruit .order-fruit-con ul {

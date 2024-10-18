@@ -37,7 +37,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 5
+      "viewcount": 7
     },
     {
       "id": "6",
@@ -45,7 +45,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 3
+      "viewcount": 5
     },
     {
       "title": "오렌지",
@@ -85,7 +85,8 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 28
+      "viewcount": 28,
+      "id": "0133"
     },
     {
       "id": "2",
@@ -227,7 +228,8 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 2
+      "viewcount": 2,
+      "id": "d89d"
     },
     {
       "id": "2",
@@ -285,7 +287,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 3
+      "viewcount": 4
     },
     {
       "id": "2",
@@ -317,7 +319,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 7
+      "viewcount": 8
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -368,19 +370,9 @@
   ],
   "members": [
     {
-      "id": "1",
-      "userEmail": "a1@email.com",
-      "userPw": "1111",
-      "age": "10",
-      "userName": "철수",
-      "address": "서울시 노원구",
-      "phoneNumber": "010123456789",
-      "role": "ROLE_MEMBER"
-    },
-    {
       "userEmail": "a3@email.com",
       "userPw": "1111",
-      "age": "10",
+      "age": "111",
       "userName": "수지",
       "address": "서울시 노원구",
       "phoneNumber": "010123456789",
@@ -390,7 +382,7 @@
     {
       "userEmail": "a2@email.com",
       "userPw": "1111",
-      "age": "25205",
+      "age": "111111",
       "userName": "a21111",
       "address": "노원구",
       "phoneNumber": "01012345678",
@@ -783,14 +775,14 @@
   ],
   "api": [
     {
-      "id": "1",
       "title": "오아시스 마트 노원점",
       "address": "노원구 동일로 1396",
       "postNum": "01751",
       "phoneNum": "02-123-5678",
       "img": "oasisMart.jpg",
       "lat": 37.65323,
-      "lng": 127.061308
+      "lng": 127.061308,
+      "id": "1"
     },
     {
       "title": "세계로 마트 상계점",
