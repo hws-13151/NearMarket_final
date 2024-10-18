@@ -41,16 +41,19 @@ const PaymentDetail = () => {
             <ul>
               {loginUser.map((el, idx) => (
                 <li key={idx}>
-                  <div>이메일: {el.userEmail}</div>
-                  <div>이름: {el.userName}</div>
-                  <div>나이: {el.age}</div>
-                  <div>주소: {el.address}</div>
-                  <div>핸드폰번호: {el.phoneNumber}</div>
-                  <div>권한: {el.role}</div>
+                  <li>이메일: {el.userEmail}</li>
+                  <li>이름: {el.userName}</li>
+                  <li>나이: {el.age}</li>
+                  <li>주소: {el.address}</li>
+                  <li>핸드폰번호: {el.phoneNumber}</li>
+                  <li>권한: {el.role}</li>
                 </li>
               ))}
             </ul>
             <button onClick={paymentModalFn}>내 정보 수정</button>
+          </div>
+          <div className="my-image">
+            <img src="/images/payment/profile.jpg.png" alt="프로필 이미지" />
           </div>
         </div>
         <div className="paymentlist"></div>

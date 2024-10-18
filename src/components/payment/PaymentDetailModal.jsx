@@ -21,6 +21,31 @@ const PaymentDetailModal = ({ onClose }) => {
 
     const userUpdate = async () => {
         try {
+            if (userEmail === "") {
+                alert("이메일을 입력해 주세요")
+                return
+            }
+            if (userPw === "") {
+                alert("비밀번호를 입력해 주세요")
+                return
+            }
+            if (age === "") {
+                alert("나이를 입력해 주세요")
+                return
+            }
+            if (userName === "") {
+                alert("이름을 입력해 주세요")
+                return
+            }
+            if (address === "") {
+                alert("주소를 입력해 주세요")
+                return
+            }
+            if (phoneNumber === "") {
+                alert("전화번호를 입력해 주세요")
+                return
+            }
+
             await axios.put(`http://localhost:3001/members/${loginUser[0].id}`, {
                 userEmail,
                 userPw,
