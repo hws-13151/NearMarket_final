@@ -17,26 +17,20 @@ const CartList1 = () => {
 
   // 페이지네이션 상태
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // 한 페이지에 보여줄 아이템 수
+  const itemsPerPage = 5;
 
-  // const { isLogin, loginUser } = useSelector((state) => state.auth);
   const isLogin = useSelector((state) => state.auth.isLogin);
-
   const loginUser = useSelector((state) => state.auth.loginUser);
   const userEmail = isLogin ? loginUser[0].userEmail : "guest";
   const cartItems = useSelector((state) => state.cart.items);
 
   console.log(cartItems);
 
-  // userEmail에 해당하는 cartItems 필터링
   const filteredCartItems = cartItems.filter(
     (item) => item.userEmail === userEmail
   );
 
-  // 총 페이지 수 계산
   const totalPages = Math.ceil(filteredCartItems.length / itemsPerPage);
-
-  // 현재 페이지에 해당하는 아이템만 추출
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredCartItems.slice(
@@ -49,24 +43,20 @@ const CartList1 = () => {
     0
   );
 
-  // 모달 열기
   const openModal = (item) => {
     setModalItem({ ...item, userEmail });
     setIsModalOpen(true);
   };
 
-  // 결제 페이지로 이동
   const goToPayment = () => {
     navigate("/order/payment");
   };
 
-  // 삭제 모달 열기
   const openDeleteModal = (item) => {
     setItemToDelete(item);
     setIsDeleteModalOpen(true);
   };
 
-  // 아이템 삭제 확인
   const confirmDelete = () => {
     if (itemToDelete) {
       dispatch(
@@ -81,7 +71,6 @@ const CartList1 = () => {
     setIsDeleteModalOpen(false);
   };
 
-  // 사용자 장바구니 마이그레이션
   useEffect(() => {
     if (isLogin) {
       dispatch(migrateGuestCartToUser({ userEmail }));
@@ -148,7 +137,6 @@ const CartList1 = () => {
           )}
         </div>
 
-        {/* 페이지네이션 버튼 표시 */}
         {filteredCartItems.length > itemsPerPage && (
           <div className="cart-pagination">{renderPaginationButtons()}</div>
         )}
