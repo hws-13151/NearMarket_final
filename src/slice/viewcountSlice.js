@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { API_URL } from '../constans';
 
 
 const viewcountSlice = createSlice({
@@ -41,11 +42,11 @@ export const updateViewCountInServer = createAsyncThunk(
             } else if (category === 'fruit') {
                 itemCategory = 'fruitItems'
             }
-            const response = await axios.get(`http://localhost:3001/${itemCategory}/${productId}`);
+            const response = await axios.get(`${API_URL}/${itemCategory}/${productId}`);
             const currentViewCount = response.data.viewcount || 0;
 
 
-            await axios.patch(`http://localhost:3001/${itemCategory}/${productId}`, {
+            await axios.patch(`${API_URL}/${itemCategory}/${productId}`, {
                 viewcount: currentViewCount + 1,
             });
 

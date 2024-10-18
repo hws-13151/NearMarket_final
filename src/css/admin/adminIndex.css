@@ -61,13 +61,15 @@
 
   .admin-con .admin-left .admin-left-con .menu{
     height: calc(100vh - 50px - 100px);
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 
   .admin .admin-con span.button{
     background-color: #dfdfdf;
     left: 15px;
     top: 10px;
-    padding: 5px 11px;
+    padding: 5px 12px;
     border-radius: 10px;
     border: 1px solid #b4b4b4;
     box-sizing: border-box;
@@ -214,8 +216,8 @@
 @media (max-width: 1030px){
   .admin-index .admin-index-con ul {
     grid-template-columns: repeat(3, 30vw);
-    grid-template-rows: repeat(1, 18vw);
-    grid-auto-rows: 18vw;
+    grid-template-rows: repeat(1, 19vh);
+    grid-auto-rows: 19vh;
   }
   .admin-index .admin-index-con ul li p{
     font-size: 30px;
@@ -225,9 +227,8 @@
 @media (max-width: 800px){
   .admin-index .admin-index-con ul {
     grid-template-columns: repeat(1, 90vw);
-    grid-template-rows: repeat(1, 7vh);
-    grid-auto-rows: 7vh;
-    transition: all 0.3s;
+    grid-template-rows: repeat(1, 7.5vh);
+    grid-auto-rows: 7.5vh;
     gap: 1.5vw;
   }
   .admin-index .admin-index-con ul li{

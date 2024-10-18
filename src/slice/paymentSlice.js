@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
-import React from 'react'
+import { API_URL } from '../constans';
 
 const initState ={  
     paymentInformation:[]
@@ -37,7 +37,7 @@ export const asyncPaymentFn = createAsyncThunk(
     `payment/asyncPaymentFn`,
     async()=>{
         try{
-            const res = await axios.get("http://localhost:3001/payment")
+            const res = await axios.get(`${API_URL}/payment`)
             const data = res.data
             // console.log(data)
             // console.log(data.data)

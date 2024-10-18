@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUserFn } from "../../slice/authSlice";
 import axios from "axios";
 import { deleteCartAll } from "../../slice/cartSlice1";
+import { API_URL } from "../../constans";
 
 
 const payData = {
@@ -62,7 +63,7 @@ const Payment = () => {
   const paymentAxiosFn = async (e) => {
     try {
       const res = await axios.post(
-        `http://localhost:3001/payment`,
+        `${API_URL}/payment`,
         JSON.stringify(accoutData)
       );
       const resData = res.data;
