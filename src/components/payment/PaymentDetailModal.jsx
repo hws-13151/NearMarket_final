@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { asyncAuthMemberFn, logOutFn } from '../../slice/authSlice'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../../constans'
 
 const PaymentDetailModal = ({ onClose }) => {
 
@@ -46,7 +47,7 @@ const PaymentDetailModal = ({ onClose }) => {
                 return
             }
 
-            await axios.put(`http://localhost:3001/members/${loginUser[0].id}`, {
+            await axios.put(`${API_URL}/members/${loginUser[0].id}`, {
                 userEmail,
                 userPw,
                 age,
@@ -70,7 +71,7 @@ const PaymentDetailModal = ({ onClose }) => {
         const isConfirmed = window.confirm("정말 탈퇴하시겠습니까? 탈퇴하면 모든 정보가 사라집니다")
         if (isConfirmed) {
             try {
-                await axios.delete(`http://localhost:3001/members/${loginUser[0].id}`)
+                await axios.delete(`${API_URL}/members/${loginUser[0].id}`)
                 alert('회원 탈퇴 되었습니다')
                 onClose()
                 dispatch(asyncAuthMemberFn())

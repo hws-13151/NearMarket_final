@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { deleteCartAll } from "../../slice/cartSlice1";
 import PaymentGoModal from "./PaymentGoModal";
+import { API_URL } from "../../constans";
 
 
 const payData = {
@@ -55,7 +56,7 @@ const Payment = () => {
   //주문처추가
   const fetchShop = async () => {
     try {
-      const res1 = await axios.get('http://localhost:3001/api');
+      const res1 = await axios.get(`${API_URL}/api`);
       setShop(res1.data)
     }
     catch (err) {
@@ -66,7 +67,7 @@ const Payment = () => {
   // const paymentAxiosFn = async (e) => {
   //   try {
   //     const res = await axios.post(
-  //       `http://localhost:3001/payment`,
+  //       `${API_URL}/payment`,
   //       JSON.stringify(accoutData)
   //     );
   //     const resData = res.data;
@@ -98,7 +99,7 @@ const Payment = () => {
     };
 
     try {
-      await axios.post(`http://localhost:3001/payment`, accoutData);
+      await axios.post(`${API_URL}/payment`, accoutData);
       // dispatch(deleteCartAll());
       navigate("/order/detail");
     } catch (err) {

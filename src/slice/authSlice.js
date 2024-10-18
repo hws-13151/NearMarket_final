@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_URL } from "../constans";
 
 const initState = {
   loginUser: [],
@@ -44,7 +45,7 @@ export const asyncAuthMemberFn = createAsyncThunk(
   `auth/asyncAuthMemberFn`,
   async () => {
     try {
-      const res = await axios.get("http://localhost:3001/members");
+      const res = await axios.get(`${API_URL}/members`);
       const data = res.data;
       return data;
     } catch (err) {
