@@ -23,7 +23,7 @@ const OrderHeader = () => {
 
   // GNB 열림 상태에 따른 스크롤 제어
   useEffect(() => {
-    if (window.innerWidth <= 800){
+    if (window.innerWidth <= 800) {
       if (isGnbVisible) {
         document.body.style.overflow = "hidden"; // GNB가 열리면 스크롤 비활성화
       } else {
@@ -117,16 +117,17 @@ const OrderHeader = () => {
               <li
                 style={{
                   backgroundColor:
-                    location.pathname === "/order/vegetable"
-                      ? "lightgray"
-                      : "",
+                    location.pathname === "/order/vegetable" ? "lightgray" : "",
                   borderRadius: "8px",
                   padding: "5px",
                   boxSizing: "border-box",
                 }}
               >
                 <Link to={"/order/vegetable"} onClick={handleLinkClick}>
-                  <img src="/images/orderheader/vegetable.png" alt="vegetable" />
+                  <img
+                    src="/images/orderheader/vegetable.png"
+                    alt="vegetable"
+                  />
                   채소
                 </Link>
               </li>
@@ -184,7 +185,9 @@ const OrderHeader = () => {
                 {!isLogin ? (
                   <Link to={"/auth/join"}>회원가입</Link>
                 ) : (
-                  <Link to={"/order/detail"} onClick={handleLinkClick}>{loginUser[0].userName}님</Link>
+                  <Link to={"/order/detail"} onClick={handleLinkClick}>
+                    {loginUser[0].userName}님
+                  </Link>
                 )}
               </li>
               {isLogin && userRole === "ROLE_ADMIN" && (
