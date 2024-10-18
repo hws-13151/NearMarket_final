@@ -84,5 +84,27 @@
     opacity: 0.8;
   }
   
+ 
+  @media (max-width: 800px){
+    .modal-con label {
+      margin-top: 0px;
+    }
+    .modal-con {
+      padding: 20px;
+    }
+    .modal-con input, 
+    .modal-con select {
+      padding: 1vh;
+      margin-top: 0px;
+    }
+    .update-btn {
+      margin-top: 5px;
+      padding: 10px 15px;
+    }
+    .delete-btn {
+      margin-top: 5px;
+      padding: 10px 15px;
+    }
+  }
 
   

@@ -165,63 +165,13 @@
       "viewcount": 13
     },
     {
-      "id": "56c8",
-      "title": "깻잎",
-      "price": 800,
-      "description": "깻잎",
-      "img": "free-icon-search-1150612.png",
-      "order-corner": "vegetable",
-      "viewcount": 2
-    },
-    {
-      "id": "c5a0",
-      "title": "가지",
-      "price": 3000,
-      "description": "가지",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable"
-    },
-    {
-      "id": "bae2",
-      "title": "오이",
-      "price": 500,
-      "description": "오이",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable"
-    },
-    {
-      "id": "6a6d",
-      "title": "감자",
-      "price": 500,
-      "description": "감자",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable"
-    },
-    {
-      "id": "8478",
-      "title": "고구마",
-      "price": 600,
-      "description": "고구마",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable",
-      "viewcount": 3
-    },
-    {
-      "id": "3bee",
-      "title": "도라지",
-      "price": 300,
-      "description": "도라지",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable",
-      "viewcount": 2
-    },
-    {
       "id": "f15e",
       "title": "산삼",
       "price": 60000,
       "description": "산삼",
-      "img": "free-icon-sign-out-11026501.png",
-      "order-corner": "vegetable"
+      "img": "ginseng.jpg",
+      "order-corner": "vegetable",
+      "viewcount": 1
     }
   ],
   "snackItems": [
