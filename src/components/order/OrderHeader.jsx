@@ -202,7 +202,7 @@ const OrderHeader = () => {
             </ul>
           </div>
           <div className="button" onClick={toggleGnb}>
-            〓
+            =
           </div>
         </div>
       </div>
