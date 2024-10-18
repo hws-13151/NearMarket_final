@@ -31,5 +31,9 @@
     white-space: nowrap; /* 줄바꿈  */
 }
 
-
-  
+@media (max-width: 800px){
+  .paymentApi-modal-con {
+    width: 90vw;
+    height: auto;
+  }
+}
