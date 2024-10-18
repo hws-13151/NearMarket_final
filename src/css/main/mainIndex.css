@@ -209,7 +209,7 @@
 
 .main .main-sec .section2 .sec2-con>ul>li .top{
   width: 6vw;
-  height: 6vw;
+  height: auto;
 }
 
 .main .main-sec .section2 .sec2-con>ul>li .top img{
@@ -250,9 +250,9 @@
     height: 50px;
   }
   .main .main-sec .section2 .sec2-con > ul {
-    grid-template-columns: repeat(2, 150px);
-    grid-template-rows: repeat(2,150px);
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(2, 30vw);
+    grid-template-rows: repeat(2,30vw);
+    grid-auto-rows: 30vw;
     gap: 6vw;
   }
   .main .main-sec .section2 .sec2-con > ul li{

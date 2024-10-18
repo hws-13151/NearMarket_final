@@ -41,8 +41,9 @@
 }
 
 .admin-left .admin-left-con .menu{
-  height: calc(100vh - 50px - 40px);
-
+  height: calc(100vh - 50px - 20px);
+  overflow-y: scroll;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,8 +57,8 @@
   align-items: center;
   background-color: rgb(80, 80, 80);
 
-  padding: 20px;
-  gap: 30px;
+  padding: 2vw;
+  gap: 3vh;
 }
 
 .admin-left .admin-left-con .menu ul li a{

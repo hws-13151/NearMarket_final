@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { API_URL } from '../constans'
 
 const initState ={
   fruitItems: [],
@@ -99,7 +100,7 @@ const adminSlice = createSlice({
 export const asyncAdminMemberFn = createAsyncThunk(`admin/asyncAdminMemberFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/members')
+      const res = await axios.get(`${API_URL}:3001/members`)
       const data = res.data
       return data
     } catch (err) {
@@ -112,7 +113,7 @@ export const asyncAdminMemberFn = createAsyncThunk(`admin/asyncAdminMemberFn`,
 export const asyncAdminFruitFn = createAsyncThunk(`admin/asyncAdminFruitFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/fruitItems')
+      const res = await axios.get(`${API_URL}/fruitItems`)
       const data = res.data
       return data
     } catch (err) {
@@ -125,7 +126,7 @@ export const asyncAdminFruitFn = createAsyncThunk(`admin/asyncAdminFruitFn`,
 export const asyncAdminVegetableItemsFn = createAsyncThunk(`admin/asyncAdminvegetableItemsFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/vegetableItems')
+      const res = await axios.get(`${API_URL}/vegetableItems`)
       const data = res.data
       return data
     } catch (err) {
@@ -138,7 +139,7 @@ export const asyncAdminVegetableItemsFn = createAsyncThunk(`admin/asyncAdminvege
 export const asyncAdminSnackItemsFn = createAsyncThunk(`admin/asyncAdminsnackItemsFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/snackItems')
+      const res = await axios.get(`${API_URL}/snackItems`)
       const data = res.data
       return data
     } catch (err) {
@@ -151,7 +152,7 @@ export const asyncAdminSnackItemsFn = createAsyncThunk(`admin/asyncAdminsnackIte
 export const asyncAdminMeatItemsFn = createAsyncThunk(`admin/asyncAdminmeatItemsFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/meatItems')
+      const res = await axios.get(`${API_URL}/meatItems`)
       console.log(res.data);
       const data = res.data
       return data
@@ -165,7 +166,7 @@ export const asyncAdminMeatItemsFn = createAsyncThunk(`admin/asyncAdminmeatItems
 export const asyncAdminindexItemsFn = createAsyncThunk(`admin/asyncAdminindexItemsFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/indexItems')
+      const res = await axios.get(`${API_URL}/indexItems`)
       console.log(res.data);
       const data = res.data
       return data
@@ -178,7 +179,7 @@ export const asyncAdminindexItemsFn = createAsyncThunk(`admin/asyncAdminindexIte
 export const asyncAdminShopFn = createAsyncThunk(`admin/asyncAdminShopFn`,
   async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api')
+      const res = await axios.get(`${API_URL}/api`)
       console.log(res.data);
       const data = res.data
       return data
