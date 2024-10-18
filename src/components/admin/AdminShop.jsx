@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
 import ShopModal from './ShopModal';
 import AddShopModal from './AddShopModal';
+import ApiShopModal from './ApiShopModal';
 
 const AdminShop = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [isAddModalOpen, setAddModalOpen] = useState(false);
     const [selectedShop, setSelectedShop] = useState(); 
+    const [isApiModalOpen, setIsApiModalOpen]=useState(false);
 
     const dispatch = useDispatch();
     const api = useSelector(state => state.admin.api); 
@@ -33,7 +35,14 @@ const AdminShop = () => {
     const handleCloseAddModal = () => {
         setAddModalOpen(false);
     };
-
+    const handleOpenApiModal = (shop) =>{
+        setSelectedShop(shop); 
+        setIsApiModalOpen(true);
+    }
+    const handleCloseApiModal = () => {
+        setIsApiModalOpen(false);
+        setSelectedShop(null); 
+    };
     return (
         <>
         <div className="admin-shop">
@@ -63,7 +72,8 @@ const AdminShop = () => {
                                 <td>{el.lng}</td>
                                 <td>
                                     <button onClick={() => handleOpenModal(el)}>보기</button>
-                                </td>
+                                    <button onClick={() => handleOpenApiModal(el)}>지도보기</button>
+                                </td>                       
                             </tr>
                         ))}
                     </tbody>
@@ -72,6 +82,7 @@ const AdminShop = () => {
         </div>
         {isModalOpen && <ShopModal shop={selectedShop} onClose={handleCloseModal} />}
         {isAddModalOpen && <AddShopModal onClose={handleCloseAddModal} />}
+        {isApiModalOpen && <ApiShopModal shop={selectedShop} onClose={handleCloseApiModal} />}
         </>
     );
 }
