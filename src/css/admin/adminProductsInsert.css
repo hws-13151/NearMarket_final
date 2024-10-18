@@ -61,7 +61,6 @@
 
 .insert .insert-con .insert-right .insert-right-con{
   width: 70%;
-  height: auto;
 
   background-color: white;
 
@@ -117,11 +116,15 @@
   font-weight: bold;
 }
 
+.insert .insert-con .insert-right .insert-right-con .right-top ul li p{
+  font-size: 2vh;
+}
+
 .insert .insert-con .insert-right .insert-right-con .right-top ul li input{
   width: 60%;
   line-height: 10px;
 
-  font-size: 15px;
+  font-size: 1.5vh;
 }
 
 input::-webkit-outer-spin-button,
@@ -135,21 +138,22 @@ input::-webkit-inner-spin-button {
   height: 10vh;
   resize: none;
 
-  font-size: 16px;
+  font-size: 1.5vh;
   /* font-weight: bold; */
 }
 
 .insert .insert-con .insert-right .insert-right-con .right-top ul li select{
   width: 96%;
+  margin: 0;
+  padding: 1vw;
 }
 
 .insert .insert-con .insert-right .insert-right-con .right-bottom{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 6vw;
 
-  padding: 10px;
+  padding: 1vw;
 }
 
 .insert .insert-con .insert-right .insert-right-con .right-bottom input[type="file"]{
@@ -176,7 +180,7 @@ input::-webkit-inner-spin-button {
   background-color: red;
   color: white;
 
-  padding: 10px;
+  padding: 1vw;
 
   cursor: pointer;
 }
@@ -186,13 +190,12 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1030px){
   .insert .insert-con{
     flex-direction: column;
   }
   .insert .insert-con .insert-right .insert-right-con{
     width: 80%;
-    height: 90%;
   }
   .insert .insert-con .insert-right .insert-right-con .right-top ul li textarea{
     width: 60%;

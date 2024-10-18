@@ -37,7 +37,7 @@ const OrderHeader = () => {
   }, [isGnbVisible]);
 
   const handleLinkClick = () => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 1030) {
       setGnbVisible(false); // GNB 숨기기
     }
   };
@@ -111,7 +111,11 @@ const OrderHeader = () => {
                 }}
               >
                 <Link to={"/order/index"} onClick={handleLinkClick}>
-                  추천상품
+                  <img
+                    src="/images/orderheader/best.png"
+                    alt="vegetable"
+                  />
+                  추천
                 </Link>
               </li>
               <li

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import JoinModal from './JoinModal'
+import { API_URL } from '../../constans'
 
 const joinData = {
     userEmail: "",
@@ -38,7 +39,7 @@ const Join = () => {
 
     const checkEmailFn = async () => {
         try {
-            const res = await axios.get(`http://localhost:3001/members`)
+            const res = await axios.get(`${API_URL}/members`)
             const num = res.data.findIndex(el => {
                 return el.userEmail === join.userEmail
             })
