@@ -6,6 +6,7 @@ import axios from "axios";
 import { deleteCartAll } from "../../slice/cartSlice1";
 import { API_URL } from "../../constans";
 
+
 const payData = {
   paymentMethod: "",
   shopVal: "",

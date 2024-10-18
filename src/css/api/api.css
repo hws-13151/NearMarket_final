@@ -53,6 +53,16 @@
     margin-top: 10px;
 }
 
+.api-info-window {
+    max-width: 200px;  
+    max-height: 150px; 
+    padding: 10px; 
+    font-size: 14px; 
+    white-space: nowrap; /* 줄바꿈 없이 한 줄로 표시 */
+}
+
+
+
 @media (max-width: 1030px) {
     .map-con {
         flex-direction: column; 

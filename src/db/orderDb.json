@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 10
+      "viewcount": 5
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 26
+      "viewcount": 25
     },
     {
       "id": "3",
@@ -25,12 +25,12 @@
       "viewcount": 3
     },
     {
-      "id": "4",
       "title": "바나나",
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 7
+      "viewcount": 4,
+      "id": "e988"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 13
+      "viewcount": 11
     },
     {
       "id": "6",
@@ -46,14 +46,14 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 4
+      "viewcount": 3
     },
     {
-      "id": "7",
       "title": "오렌지",
       "price": 8900,
       "img": "f6.jpg",
-      "description": "상큼하면서 달콤한 오렌지"
+      "description": "상큼하면서 달콤한 오렌지",
+      "id": "7"
     },
     {
       "title": "파인애플",
@@ -64,20 +64,20 @@
       "viewcount": 1
     },
     {
-      "title": "123",
-      "price": 123213,
-      "img": "f0.jpg",
-      "description": "123123",
-      "id": "0a27"
+      "id": "e131",
+      "title": "123213",
+      "price": 123,
+      "description": "123",
+      "img": "f5.jpg",
+      "order-corner": "fruit"
     }
   ],
   "vegetableItems": [
     {
-      "id": "1",
       "title": "당근",
       "price": 2000,
-      "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "img": "carrot.jpg",
+      "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "rocket": "rocket.png",
       "slideImage": [
         "carrot.jpg",
@@ -86,7 +86,8 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 40
+      "viewcount": 36,
+      "id": "5722"
     },
     {
       "id": "2",
@@ -102,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 25
+      "viewcount": 22
     },
     {
       "id": "3",
@@ -225,12 +226,11 @@
   ],
   "snackItems": [
     {
-      "id": "1",
       "title": "오감자 오리지널",
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 22
+      "viewcount": 20
     },
     {
       "id": "2",
@@ -288,7 +288,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 14
+      "viewcount": 11
     },
     {
       "id": "2",
@@ -296,7 +296,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 25
+      "viewcount": 21
     },
     {
       "id": "3",
@@ -371,54 +371,24 @@
   ],
   "members": [
     {
-      "id": "1",
-      "userEmail": "a1@email.com",
-      "userPw": "1111",
-      "age": "10",
-      "userName": "철수",
-      "address": "서울시 노원구",
-      "phoneNumber": "010123456789",
-      "role": "ROLE_MEMBER"
-    },
-    {
-      "id": "3",
       "userEmail": "a3@email.com",
       "userPw": "1111",
-      "age": "10",
+      "age": "12",
       "userName": "수지",
       "address": "서울시 노원구",
       "phoneNumber": "010123456789",
-      "role": "ROLE_MEMBER"
+      "role": "ROLE_MEMBER",
+      "id": "3"
     },
     {
-      "id": "e79d",
-      "userEmail": "admin1234@naver.com",
-      "userPw": "1234",
-      "age": "21",
-      "userName": "권오철",
-      "address": "서울시 노원구 ",
-      "phoneNumber": "010-1234-1234",
-      "role": "ROLE_ADMIN"
-    },
-    {
-      "userEmail": "yyk6591@email.com",
-      "userPw": "1111",
-      "age": "11111111",
-      "userName": "김영연",
-      "address": "11",
-      "phoneNumber": "11",
-      "role": "ROLE_ADMIN",
-      "id": "9111"
-    },
-    {
-      "id": "792c",
       "userEmail": "a2@email.com",
       "userPw": "1111",
-      "age": "24",
-      "userName": "a2",
+      "age": "111111",
+      "userName": "a21111",
       "address": "노원구",
       "phoneNumber": "01012345678",
-      "role": "ROLE_ADMIN"
+      "role": "ROLE_ADMIN",
+      "id": "792c"
     }
   ],
   "payment": [
@@ -716,112 +686,37 @@
       "time": "2024/10/15 10:04:20"
     },
     {
-      "id": "7c47",
+      "id": "dc98",
       "paymentMethod": "신용카드",
-      "shopVal": "오아시스 마트 노원점",
-      "orderMethod": "배달",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "memberEmail": "admin1234@naver.com",
-      "orderAddress": "서울시 노원구 ",
-      "paymentResult": [
-        {
-          "id": "4",
-          "title": "파프리카",
-          "price": 4000,
-          "img": "/images/vegetable/paprica.jpg",
-          "count": 3,
-          "category": "vegetable",
-          "userEmail": "admin1234@naver.com"
-        },
-        {
-          "id": "1",
-          "img": "/images/fruit/f0.jpg",
-          "title": "딸기",
-          "price": 9900,
-          "count": 2,
-          "category": "fruit",
-          "userEmail": "admin1234@naver.com"
-        },
-        {
-          "id": "1",
-          "title": "당근",
-          "price": 2000,
-          "img": "/images/vegetable/carrot.jpg",
-          "count": 3,
-          "category": "vegetable",
-          "userEmail": "admin1234@naver.com"
-        }
-      ],
-      "paymentAmount": 37800,
-      "time": "2024/10/17 14:39:27"
-    },
-    {
-      "id": "07c2",
-      "paymentMethod": "카카오페이",
-      "shopVal": "오아시스 마트 노원점",
+      "shopVal": "롯데슈퍼 상계11 마트 수락산점",
       "orderMethod": "직접방문",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "memberEmail": "admin1234@naver.com",
-      "orderAddress": "서울시 노원구 ",
-      "paymentResult": [],
-      "paymentAmount": 0,
-      "time": "2024/10/17 14:39:45"
-    },
-    {
-      "id": "ce6a",
-      "paymentMethod": "신용카드",
-      "shopVal": "오아시스 마트 노원점",
-      "orderMethod": "직접방문",
-      "addressMessage": "벨을 누르지 말아주세요.",
-      "memberEmail": "yyk6591@email.com",
-      "orderAddress": "11",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
       "paymentResult": [
         {
-          "id": "1",
-          "title": "국내산 삼겹살 구이용",
-          "price": 12400,
-          "img": "/images/meat/meat1.jpg",
-          "count": 1,
-          "category": "meat",
-          "userEmail": "yyk6591@email.com"
-        }
-      ],
-      "paymentAmount": 12400,
-      "time": "2024/10/17 17:48:27"
-    },
-    {
-      "id": "f83e",
-      "paymentMethod": "신용카드",
-      "shopVal": "오아시스 마트 노원점",
-      "orderMethod": "배달",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "memberEmail": "yyk6591@email.com",
-      "orderAddress": "11",
-      "paymentResult": [
-        {
-          "id": "1",
           "title": "당근",
           "price": 2000,
           "img": "/images/vegetable/carrot.jpg",
           "count": 1,
-          "category": "vegetable",
-          "userEmail": "yyk6591@email.com"
+          "userEmail": "a2@email.com",
+          "category": "vegetable"
         }
       ],
       "paymentAmount": 2000,
-      "time": "2024/10/18 09:29:58"
+      "time": "2024/10/18 11:11:03"
     }
   ],
   "api": [
     {
-      "id": "1",
       "title": "오아시스 마트 노원점",
       "address": "노원구 동일로 1396",
       "postNum": "01751",
       "phoneNum": "02-123-5678",
       "img": "oasisMart.jpg",
       "lat": 37.65323,
-      "lng": 127.061308
+      "lng": 127.061308,
+      "id": "1"
     },
     {
       "title": "세계로 마트 상계점",

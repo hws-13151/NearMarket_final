@@ -13,8 +13,10 @@ const Api = () => {
       try {
         const res = await axios.get('http://localhost:3001/api');
         setApi(res.data); // API 데이터 설정
-      } catch (error) {
-        console.error("상점 정보를 가져오는 데 오류가 발생했습니다:", error);
+        if (res.data.length > 0) {
+          setSelectedShop(res.data[0]);}
+      } catch (err) {
+        alert(err)
       }
     };
 
@@ -51,7 +53,7 @@ const Api = () => {
 
               // 인포윈도우 내용 생성
               const content = `
-                <div style="padding:5px; width:150px;">
+                <div class="api-info-window">
                   <b>${shop.title}</b><br>
                   주소:${shop.address}<br>
                   전화번호: ${shop.phoneNum}<br>

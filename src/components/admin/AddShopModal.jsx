@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
+import ConfirmModal from './ConfirmModal'; 
 import { API_URL } from '../../constans';
 
 const AddShopModal = ({ onClose }) => {
@@ -14,6 +15,10 @@ const AddShopModal = ({ onClose }) => {
     const [img, setImg] = useState('');
     const [previewImg, setPreviewImg] = useState([])
     const dispatch = useDispatch();
+    //모달창
+    const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState("")
+    const [updateSuccess, setUpdateSuccess] = useState(false);
 
     const uploadFile = (e) => {
         const file = e.target.files[0];
@@ -35,6 +40,41 @@ const AddShopModal = ({ onClose }) => {
 
     const shopAdd = async () => {
         try {
+            if (title.trim() === "") { //trim()앞뒤 공백을 제거 / trim이 없으면 스페이스, 탭을 못 잡음
+                setModalMessage("상점 이름을 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (img.trim() === "") {
+                setModalMessage("상점 이미지를 등록해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (address.trim() === "") {
+                setModalMessage("상점 주소를 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (postNum.trim() === "") {
+                setModalMessage("상점 우편번호를 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (phoneNum.trim() === "") {
+                setModalMessage("상점 전화번호를 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (lat === "") {//trim은 문자열만 가능하다 숫자는 공백이 없다
+                setModalMessage("상점 위도를 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
+              if (lng === "") {
+                setModalMessage("상점 경도를 입력해 주세요.");
+                setConfirmModalOpen(true);
+                return;
+              }
             await axios.post(`${API_URL}/api`, {
                 title,
                 address,
@@ -44,14 +84,20 @@ const AddShopModal = ({ onClose }) => {
                 lat,
                 lng,
             });
-            alert('주문처가 추가되었습니다.');
-            onClose();
+            setModalMessage("상점이 추가되었습니다.");
+            setConfirmModalOpen(true); // 수정 모달 닫기 
             dispatch(asyncAdminShopFn());
+            setUpdateSuccess(true);
         } catch (err) {
             alert(err);
         }
     };
-
+        const checkConfirm = () =>{
+            setConfirmModalOpen(false);
+            if(updateSuccess===true){
+                onClose();
+            }
+        }
     return (
         <div className="modal">
             <div className="modal-con">
@@ -101,11 +147,18 @@ const AddShopModal = ({ onClose }) => {
                     type="number" 
                     value={lng} 
                     onChange={(e) => setLng(Number(e.target.value))} 
-                />    
-                
+                />           
                 <button onClick={shopAdd} className="update-btn">추가</button>
                 <button onClick={onClose} className='close'>X</button>
             </div>
+            {/* 수정 확인 모달 */}
+           {isConfirmModalOpen && (
+                 <ConfirmModal 
+                  message={modalMessage}
+                  onConfirm={checkConfirm} 
+                  confirmOnly={true} // 확인 버튼
+                />
+             )}
         </div>
     );
 };

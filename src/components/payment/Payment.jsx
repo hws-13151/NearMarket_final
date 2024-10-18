@@ -6,6 +6,7 @@ import { deleteCartAll } from "../../slice/cartSlice1";
 import PaymentGoModal from "./PaymentGoModal";
 import { API_URL } from "../../constans";
 
+import PaymentApiModal from "./PaymentApiModal";
 
 const payData = {
   paymentMethod: "",
@@ -20,9 +21,11 @@ const Payment = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   const [onPayment, setOnPayment] = useState(payData);
-  //주문처 추가
-  const [shop, setShop] = useState([])
-  const [paymentGo, setPaymentGo] = useState(false)
+   //주문처 추가
+   const [shop, setShop] = useState([])
+   const [paymentGo, setPaymentGo] = useState(false)
+   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
+   const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,6 +49,19 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
+// 선택한 주문처 모달오픈
+useEffect(() => {
+  if (onPayment.shopVal) {
+    const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
+    if (selectedShopInfo) {
+      setSelectedShop(selectedShopInfo); 
+      setIsModalOpen(true);
+    }
+  }
+}, [onPayment.shopVal, shop]);
+  const closeModal = () => {
+  setIsModalOpen(false); 
+  };
   // loginUser가 비어 있거나 존재하지 않을 때 처리
   if (!loginUser || loginUser.length === 0) {
     return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
@@ -266,6 +282,10 @@ const Payment = () => {
               </tbody>
             </table>
           </div>
+           {/* 모달 창 추가*/}
+         {isModalOpen && selectedShop && (
+          <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />
+            )}   
           <div className="payment-sub">
             <div className="sum-price">
               총합계: {totalPrice.toLocaleString()} 원

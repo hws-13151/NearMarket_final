@@ -100,7 +100,7 @@ const adminSlice = createSlice({
 export const asyncAdminMemberFn = createAsyncThunk(`admin/asyncAdminMemberFn`,
   async () => {
     try {
-      const res = await axios.get(`${API_URL}:3001/members`)
+      const res = await axios.get(`${API_URL}/members`)
       const data = res.data
       return data
     } catch (err) {

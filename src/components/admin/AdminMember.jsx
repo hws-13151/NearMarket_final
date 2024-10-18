@@ -15,16 +15,9 @@ const AdminMember = () => {
   useEffect(() => {
     dispatch(asyncAdminMemberFn())
   }, [])
-  //   const dispatch = useDispatch();
-
-  //   const members = useSelector((state) => state.auth.memberList); 
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState();
   const [userInput, setUserInput] = useState("")
-
-  //   useEffect(() => {
-  //     dispatch(asyncAuthMemberFn());
-  //   },[]); 
 
   const handleOpenModal = (member) => {
     setSelectedMember(member);
