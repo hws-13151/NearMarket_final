@@ -44,7 +44,9 @@
     color: #4a4141; /* 바디 글자색 */
     transition: all 0.3s;
 }
-
+.admin-shop .admin-shop-con td button{
+    margin-right: 5px;
+}
 .admin-shop .admin-shop-con .members tr.role-admin {
     background-color: #abb2dd; /* 관리자 배경색 */
 }
