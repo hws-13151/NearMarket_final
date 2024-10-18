@@ -1,6 +1,6 @@
 .order-footer{
   width: 100%;
-  height: 200px;
+  height: 100%;
   
   background-color: rgb(241, 242, 246);
   display: flex;
@@ -13,6 +13,7 @@
 
 .order-footer .order-footer-con{
   flex: 0 1 1600px;
+  height: auto;
   transition: all 0.3s;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .order-footer .order-footer-con #call{
-  font-size: 40px;
+  font-size: 35px;
 }
 
 @media (max-width: 800px){

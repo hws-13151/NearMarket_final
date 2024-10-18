@@ -138,11 +138,11 @@
     padding: 7px 9px;
     box-sizing: border-box;
     border: 1px solid #b4b4b4;
-    position: fixed;
+    position: absolute;
     right: 45px;
     top: 45px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 0;
     transition: all 0.3s;
   }
   .order-header-nav .button:hover{
@@ -153,13 +153,11 @@
     position: relative;
   }
   .order-header .order-header-nav .gnb{
-    background-color: rgba(190, 190, 190, 0.897);
+    background-color: rgba(190, 190, 190);
     color: white;
     border: 0;
     width: 200px;
     height: 100vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
     position: fixed;
     top: 0;
     right: 0px;
@@ -171,6 +169,7 @@
   }
   .order-header .order-header-nav .gnb ul{
     width: 100%;
+    height: 70vmin;
     flex-direction: column;
     gap: 2vw;
   }
@@ -178,24 +177,41 @@
     width: 60%;
   }
   .order-header .order-header-nav .gnb ul li a{
-    font-size: 20px;
-    padding: 10px;
+    font-size: 2vmin;
+    padding: 1vmin;
+  }
+  .order-header .order-header-nav .gnb ul li img {
+    width: 3vmin;
   }
   
 }
 
 @media (max-width: 800px){
+  .order-header-nav .button{
+    z-index: 999;
+  }
+
   .order-header .order-header-nav .gnb{
     background-color: rgba(190, 190, 190);
     width: 100%;
   }
 
+  .order-header .order-header-nav .gnb ul{
+    justify-content: flex-start;
+    height: 70vmax;
+  }
+
   .order-header .order-header-nav .gnb ul li{
-    width: 40%;
+    width: 20vmax;
+  }
+
+  .order-header .order-header-nav .gnb ul li a{
+    font-size: 2vmax;
+    padding: 1vmax;
   }
 
   .order-header .order-header-nav .gnb ul li img {
-    width: 25%;
+    width: 4vmax;
   }
 }
 

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ConfirmModal from './ConfirmModal'; 
+import { API_URL } from '../../constans';
 const itemData = {
   title: "",
   price: 0,
@@ -90,7 +91,7 @@ const AdminProductsInsert = () => {
           return;
       }
 
-      const res = await axios.get(`http://localhost:3001/${itemUrl}`);
+      const res = await axios.get(`${API_URL}/${itemUrl}`);
       const num = res.data.findIndex(el => el.title === formData.title);
 
       if (num !== -1) {
@@ -99,7 +100,7 @@ const AdminProductsInsert = () => {
         return;
       }
 
-      await axios.post(`http://localhost:3001/${itemUrl}`, formData);
+      await axios.post(`${API_URL}/${itemUrl}`, formData);
       setModalMessage("상품등록 성공!~ (˶ᵔ ᵕ ᵔ˶)");
       setConfirmModalOpen(true);
       
