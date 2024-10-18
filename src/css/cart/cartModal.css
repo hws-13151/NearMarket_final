@@ -23,10 +23,9 @@
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: 600px;
-  max-width: 90%;
-  height: 600px;
-  max-height: 90%;
+
+  max-width: 80%;
+  max-height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -49,19 +48,22 @@
 
 /* 상품 이미지 */
 .cart-top {
+  width: 100%;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 200%;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .cart-top img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
 }
-
 /* 상품 정보 */
 .cart-title-bottom {
   display: grid;
@@ -121,9 +123,22 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .cart-modal-con {
+  .cart-top {
     width: 100%;
-    padding: 15px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cart-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
@@ -133,6 +148,14 @@
     max-height: 80%;
     overflow-y: auto;
     padding: 10px;
+  }
+
+  .cart-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
   }
 
   .cart-top img {
