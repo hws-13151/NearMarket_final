@@ -211,6 +211,15 @@
 }
 
 @media screen and (max-width: 1300px) {
+  .cart-item-con {
+    width: 100%;
+    padding: 0.5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+    box-sizing: border-box;
+  }
+
   .cart-item-top img {
     width: 120px;
     border-radius: 5px;
