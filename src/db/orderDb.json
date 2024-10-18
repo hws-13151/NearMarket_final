@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 39
+      "viewcount": 40
     },
     {
       "id": "2",
@@ -102,7 +102,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 20
+      "viewcount": 22
     },
     {
       "id": "3",
@@ -288,7 +288,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 13
+      "viewcount": 14
     },
     {
       "id": "2",
@@ -296,7 +296,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 24
+      "viewcount": 25
     },
     {
       "id": "3",
@@ -766,6 +766,50 @@
       "paymentResult": [],
       "paymentAmount": 0,
       "time": "2024/10/17 14:39:45"
+    },
+    {
+      "id": "ce6a",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "벨을 누르지 말아주세요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "yyk6591@email.com"
+        }
+      ],
+      "paymentAmount": 12400,
+      "time": "2024/10/17 17:48:27"
+    },
+    {
+      "id": "f83e",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "배달",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "yyk6591@email.com",
+      "orderAddress": "11",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "yyk6591@email.com"
+        }
+      ],
+      "paymentAmount": 2000,
+      "time": "2024/10/18 09:29:58"
     }
   ],
   "api": [
