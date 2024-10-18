@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 14
+      "viewcount": 25
     },
     {
       "id": "3",
@@ -103,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 23
+      "viewcount": 22
     },
     {
       "id": "3",
@@ -134,7 +134,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 16
+      "viewcount": 18
     },
     {
       "id": "5",
@@ -148,7 +148,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 6
+      "viewcount": 7
     },
     {
       "id": "6",
@@ -230,8 +230,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 15,
-      "id": "d5f1"
+      "viewcount": 20
     },
     {
       "id": "2",
@@ -239,7 +238,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 66
+      "viewcount": 68
     },
     {
       "id": "3",
@@ -271,7 +270,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 28
+      "viewcount": 29
     },
     {
       "id": "7",
@@ -279,7 +278,7 @@
       "price": 1000,
       "img": "s6.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 13
+      "viewcount": 15
     }
   ],
   "meatItems": [
