@@ -9,6 +9,7 @@ import {
   asyncAdminindexItemsFn
 } from '../../slice/adminSlice';
 import ConfirmModal from './ConfirmModal'; 
+import { API_URL } from '../../constans';
 
 
 
@@ -47,7 +48,7 @@ const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   // 상품 업데이트 함수
   const productUpdate = async () => {
     try {
-      await axios.put(`http://localhost:3001/${type}/${product.id}`, {
+      await axios.put(`${API_URL}/${type}/${product.id}`, {
         title,
         price,
         img, // img 파일 이름 전송
@@ -87,7 +88,7 @@ const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   // 상품 삭제 함수
   const productDelete = async () => {
       try {
-        await axios.delete(`http://localhost:3001/${type}/${product.id}`);
+        await axios.delete(`${API_URL}/${type}/${product.id}`);
         setIsDeleteModalOpen(false); // 삭제 모달 닫기
         onClose();
 

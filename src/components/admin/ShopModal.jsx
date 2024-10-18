@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { asyncAdminShopFn } from '../../slice/adminSlice';
 import ConfirmModal from './ConfirmModal'; 
+import { API_URL } from '../../constans';
 
 const ShopModal = ({shop, onClose}) => {
     const  [title, setTitle] = useState(shop.title);
@@ -76,7 +77,7 @@ const preview = (e) => {
           return;
         }
         
-            await axios.put(`http://localhost:3001/api/${shop.id}`,{
+            await axios.put(`${API_URL}/api/${shop.id}`,{
                 title,
                 address,
                 postNum,
@@ -98,7 +99,7 @@ const preview = (e) => {
 
     const shopDelete = async()=>{
             try{
-                await axios.delete(`http://localhost:3001/api/${shop.id}`)
+                await axios.delete(`${API_URL}/api/${shop.id}`)
                 setDeleteModalOpen(false); // 삭제 모달 닫기
                 onClose()
                 dispatch(asyncAdminShopFn())
