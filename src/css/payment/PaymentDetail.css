@@ -14,35 +14,69 @@
 }
 
 .paymentDetail .paymentDetail-con .myinfo {
-  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
+
+.paymentDetail .paymentDetail-con .myinfo .myinfo-con {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.paymentDetail .paymentDetail-con .myinfo .my-image {
+  width: 250px;
+
+  height: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.paymentDetail .paymentDetail-con .myinfo .my-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con h2 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #333;
+  margin-left: 200px;
+  box-sizing: border-box;
+
 }
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con ul li {
   margin-bottom: 10px;
   font-size: 16px;
+  color: #555;
+
 }
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con button {
   padding: 10px 15px;
-  background-color: #a6aeb4;
-  color: white;
+  background-color: #d1d1d1;
+  color: #333;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con button:hover {
-  background-color: #9299a1;
+  background-color: #c0c0c0;
 }
 
 .paymentDetail .paymentDetail-con .paymentlist-con {
@@ -95,6 +129,7 @@
 .paymentlist-con table tr:nth-child(odd) {
   background-color: #fff;
 }
+
 /* 
 .paymentlist-con table tr:hover {
   background-color: #f1f1f1;
@@ -104,26 +139,28 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 1030px){
+@media (max-width: 1030px) {
+
   .paymentlist-con table th,
   .paymentlist-con table td {
     padding: 10px;
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
+
   .paymentlist-con table th,
   .paymentlist-con table td {
     padding: 3px;
   }
 
   .paymentlist-con table th:nth-child(7),
-  .paymentlist-con table th:nth-child(6){
+  .paymentlist-con table th:nth-child(6) {
     display: none;
   }
 
   .paymentlist-con table td:nth-child(7),
-  .paymentlist-con table td:nth-child(6){
+  .paymentlist-con table td:nth-child(6) {
     display: none;
   }
 }

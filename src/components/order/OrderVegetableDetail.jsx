@@ -97,9 +97,10 @@ const OrderVegetableDetail = (param) => {
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
       userEmail,
+      category: "vegetable"
     };
-    dispatch(addCart1(vegetableCart));
-    navigate("/order/payment");
+    // dispatch(addCart1(vegetableCart));
+    navigate("/order/payment", { state: { selectedProduct: vegetableCart } });
   };
 
   const previousSlideFn = () =>
@@ -120,7 +121,7 @@ const OrderVegetableDetail = (param) => {
         <div className="order-vegetable-detail-con">
           <div className="left">
             {Array.isArray(vegetableDetail.slideImage) &&
-            vegetableDetail.slideImage.length > 0 ? (
+              vegetableDetail.slideImage.length > 0 ? (
               <>
                 <img
                   className="slide"
