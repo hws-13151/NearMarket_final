@@ -82,6 +82,12 @@
   }
 }
 
+@media (max-width: 800px){
+  .admin-con .admin-left .admin-left-con .menu{
+    height: calc(100vh - 30px - 100px);
+  }
+}
+
 @media (max-height: 700px){
   .admin-left .admin-left-con .menu ul{
     padding: 1vh;
