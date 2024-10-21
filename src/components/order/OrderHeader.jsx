@@ -23,7 +23,7 @@ const OrderHeader = () => {
 
   // GNB 열림 상태에 따른 스크롤 제어
   useEffect(() => {
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 1030) {
       if (isGnbVisible) {
         document.body.style.overflow = "hidden"; // GNB가 열리면 스크롤 비활성화
       } else {

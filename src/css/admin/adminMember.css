@@ -88,6 +88,20 @@
 
 @media (max-width: 1030px) {
     .admin-member table th:nth-child(3),  /* 비밀번호 */
+    .admin-member table th:nth-child(6),  /* 주소 */
+    .admin-member table th:nth-child(8) {  /* 권한 */
+      display: none;
+    }
+  
+    .admin-member table td:nth-child(3),  
+    .admin-member table td:nth-child(6),  
+    .admin-member table td:nth-child(8) {  
+      display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .admin-member table th:nth-child(3),  /* 비밀번호 */
     .admin-member table th:nth-child(4),  /* 나이 */
     .admin-member table th:nth-child(6),  /* 주소 */
     .admin-member table th:nth-child(7),  /* 전화번호 */
