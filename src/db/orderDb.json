@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "id": "2",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 18
+      "viewcount": 19
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 7
+      "viewcount": 6
     },
     {
       "title": "오렌지",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 50,
+      "viewcount": 45,
       "id": "5722"
     },
     {
@@ -103,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 25
+      "viewcount": 28
     },
     {
       "id": "3",
@@ -134,7 +134,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 25
+      "viewcount": 28
     },
     {
       "id": "5",
@@ -148,7 +148,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 11
     },
     {
       "id": "6",
@@ -189,7 +189,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 75
+      "viewcount": 77
     },
     {
       "id": "3",
@@ -197,7 +197,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 33
+      "viewcount": 34
     },
     {
       "id": "4",
@@ -205,7 +205,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 22
+      "viewcount": 24
     },
     {
       "id": "5",
@@ -213,7 +213,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 31
+      "viewcount": 33
     },
     {
       "id": "6",
@@ -221,7 +221,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 31
+      "viewcount": 34
     },
     {
       "id": "7",
@@ -229,7 +229,7 @@
       "price": 1000,
       "img": "s6.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 13
+      "viewcount": 14
     }
   ],
   "meatItems": [
@@ -239,7 +239,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 19
+      "viewcount": 21
     },
     {
       "id": "2",
@@ -247,7 +247,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 25
+      "viewcount": 27
     },
     {
       "id": "3",
@@ -255,7 +255,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 6
+      "viewcount": 8
     },
     {
       "id": "4",
@@ -271,7 +271,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -279,7 +279,7 @@
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
       "id": "6",
-      "viewcount": 3
+      "viewcount": 2
     },
     {
       "title": "국내산 돼지갈비",
@@ -666,148 +666,6 @@
       ],
       "paymentAmount": 2000,
       "time": "2024/10/18 11:11:03"
-    },
-    {
-      "id": "a874",
-      "paymentMethod": "",
-      "shopVal": "",
-      "orderMethod": "",
-      "addressMessage": "",
-      "memberEmail": "a2@email.com",
-      "orderAddress": "노원구",
-      "paymentResult": [
-        {
-          "id": "5722",
-          "title": "당근",
-          "price": 2000,
-          "img": "/images/vegetable/carrot.jpg",
-          "count": 1,
-          "category": "vegetable",
-          "userEmail": "a2@email.com"
-        },
-        {
-          "id": "5",
-          "title": "호박",
-          "price": 10000,
-          "img": "/images/vegetable/pumkin.jpg",
-          "count": 1,
-          "category": "vegetable",
-          "userEmail": "a2@email.com"
-        }
-      ],
-      "paymentAmount": 12000,
-      "time": "2024/10/21 11:33:08"
-    },
-    {
-      "id": "aa5d",
-      "paymentMethod": "신용카드",
-      "shopVal": "세계로 마트 상계점",
-      "orderMethod": "직접방문",
-      "addressMessage": "",
-      "memberEmail": "a2@email.com",
-      "orderAddress": "노원구",
-      "paymentResult": [
-        {
-          "id": "2",
-          "title": "옥수수",
-          "price": 5000,
-          "img": "/images/vegetable/corn.jpg",
-          "count": 1,
-          "category": "vegetable",
-          "userEmail": "a2@email.com"
-        }
-      ],
-      "paymentAmount": 5000,
-      "time": "2024/10/21 11:36:13"
-    },
-    {
-      "id": "1980",
-      "paymentMethod": "신용카드",
-      "shopVal": "오아시스 마트 노원점",
-      "orderMethod": "직접방문",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "memberEmail": "a2@email.com",
-      "orderAddress": "노원구",
-      "paymentResult": [
-        {
-          "id": "5722",
-          "title": "당근",
-          "price": 2000,
-          "img": "/images/vegetable/carrot.jpg",
-          "count": 1,
-          "category": "vegetable",
-          "userEmail": "a2@email.com"
-        },
-        {
-          "id": "5",
-          "title": "호박",
-          "price": 10000,
-          "img": "/images/vegetable/pumkin.jpg",
-          "count": 1,
-          "userEmail": "a2@email.com",
-          "category": "vegetable"
-        }
-      ],
-      "paymentAmount": 12000,
-      "time": "2024/10/21 11:42:04"
-    },
-    {
-      "id": "4c28",
-      "paymentMethod": "신용카드",
-      "shopVal": "세계로 마트 상계점",
-      "orderMethod": "직접방문",
-      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
-      "memberEmail": "a2@email.com",
-      "orderAddress": "노원구",
-      "paymentResult": [
-        {
-          "id": "2",
-          "title": "국내산목 살[냉장보관]",
-          "price": 13000,
-          "img": "/images/meat/meat2.jpg",
-          "count": 1,
-          "category": "meat",
-          "userEmail": "a2@email.com"
-        },
-        {
-          "id": "6",
-          "title": "국내산 삼겹살 수육용",
-          "price": 12300,
-          "img": "/images/meat/meat6.jpg",
-          "count": 1,
-          "userEmail": "a2@email.com",
-          "category": "meat"
-        },
-        {
-          "id": "2",
-          "title": "먹태깡 청양마요맛",
-          "price": 1000,
-          "img": "/images/ordersnack/s1.jpeg",
-          "count": 1,
-          "category": "snack",
-          "userEmail": "a2@email.com"
-        },
-        {
-          "id": "6",
-          "title": "메론",
-          "price": 13900,
-          "img": "/images/fruit/f5.jpg",
-          "count": 2,
-          "userEmail": "a2@email.com",
-          "category": "fruit"
-        },
-        {
-          "id": "e988",
-          "img": "/images/fruit/f3.jpg",
-          "title": "바나나",
-          "price": 5900,
-          "count": 1,
-          "category": "fruit",
-          "userEmail": "a2@email.com"
-        }
-      ],
-      "paymentAmount": 60000,
-      "time": "2024/10/21 11:43:01"
     }
   ],
   "api": [
