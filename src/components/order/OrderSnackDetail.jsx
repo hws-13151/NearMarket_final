@@ -37,9 +37,7 @@ const OrderSnackDetail = (param) => {
         updateViewCountInServer({ productId: orderId, category: "snack" })
       ); // 조회수 업데이트
       try {
-        const res = await axios.get(
-          `${API_URL}/snackItems?id=${orderId}`
-        );
+        const res = await axios.get(`${API_URL}/snackItems?id=${orderId}`);
         setSnackItem(res.data[0]);
       } catch (err) {
         alert(err);
@@ -73,9 +71,10 @@ const OrderSnackDetail = (param) => {
     setCartItem(itemToCart);
     setIsModal(true);
   };
+  const existingCartItems = useSelector((state) => state.cart.items) || [];
 
   const paymentFn = () => {
-    const snackCart = {
+    const selectedProduct = {
       id: snackItem.id,
       title: snackItem.title,
       price: snackItem.price,
@@ -84,8 +83,27 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
-    // dispatch(addCart1(snackCart));
-    navigate("/order/payment", { state: { selectedProduct: snackCart } });
+
+    let mergedItems = [...existingCartItems];
+
+    const existingItemIndex = mergedItems.findIndex(
+      (item) =>
+        item.id === selectedProduct.id &&
+        item.category === selectedProduct.category
+    );
+
+    if (existingItemIndex !== -1) {
+      mergedItems[existingItemIndex] = {
+        ...mergedItems[existingItemIndex],
+        count: mergedItems[existingItemIndex].count + snackCount,
+      };
+    } else {
+      mergedItems.push(selectedProduct);
+    }
+
+    dispatch(addCart1(selectedProduct));
+
+    navigate("/order/payment");
   };
   return (
     <>

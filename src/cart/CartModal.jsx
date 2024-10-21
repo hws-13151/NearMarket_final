@@ -67,7 +67,7 @@ const CartModal = ({ item, setIsModalOpen }) => {
             총합계: {item.price * itemCount} 원
           </span>
 
-          <button onClick={addCartFn} className="cart-add-btn">
+          <button onClick={addCartFn} className="cart-update-btn">
             장바구니 업데이트
           </button>
           <button onClick={closeFn}>닫기</button>
