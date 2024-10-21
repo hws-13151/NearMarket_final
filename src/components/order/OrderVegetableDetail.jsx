@@ -88,7 +88,8 @@ const OrderVegetableDetail = (param) => {
     setCartItem(itemToCart);
     setIsModal(true);
   };
-  const existingCartItems = useSelector((state) => state.cart.items) || [];
+
+
 
   const paymentFn = () => {
     const vegetableCart = {
@@ -98,31 +99,12 @@ const OrderVegetableDetail = (param) => {
       img: `/images/vegetable/${vegetableDetail.img}`,
       count: vegetableCount,
       userEmail,
-      category: "vegetable",
+      category: "vegetable"
     };
-
-    let mergedItems = [...existingCartItems];
-
-    const existingItemIndex = mergedItems.findIndex(
-      (item) =>
-        item.id === vegetableCart.id &&
-        item.category === vegetableCart.category &&
-        item.userEmail === vegetableCart.userEmail
-    );
-
-    if (existingItemIndex !== -1) {
-      mergedItems[existingItemIndex] = {
-        ...mergedItems[existingItemIndex],
-        count: mergedItems[existingItemIndex].count + vegetableCount,
-      };
-    } else {
-      mergedItems.push(vegetableCart);
-    }
-
     dispatch(addCart1(vegetableCart));
-
     navigate("/order/payment");
   };
+
   const previousSlideFn = () =>
     setSlide((prevSlide) =>
       prevSlide === 0 ? vegetableDetail.slideImage.length - 1 : prevSlide - 1
@@ -141,7 +123,7 @@ const OrderVegetableDetail = (param) => {
         <div className="order-vegetable-detail-con">
           <div className="left">
             {Array.isArray(vegetableDetail.slideImage) &&
-            vegetableDetail.slideImage.length > 0 ? (
+              vegetableDetail.slideImage.length > 0 ? (
               <>
                 <img
                   className="slide"

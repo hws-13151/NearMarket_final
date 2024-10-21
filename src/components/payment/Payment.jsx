@@ -21,23 +21,23 @@ const Payment = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   const [onPayment, setOnPayment] = useState(payData);
-   //주문처 추가
-   const [shop, setShop] = useState([])
-   const [paymentGo, setPaymentGo] = useState(false)
-   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
-   const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
+  //주문처 추가
+  const [shop, setShop] = useState([])
+  const [paymentGo, setPaymentGo] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
+  const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const location = useLocation();
 
-  const selectedProduct = location.state?.selectedProduct
 
-  const itemsTopay = selectedProduct ? [selectedProduct] : paymentItems
+
+
+
 
   let totalPrice = 0;
 
-  itemsTopay.forEach((item) => {
+  paymentItems.forEach((item) => {
     totalPrice += item.price * item.count;
   });
 
@@ -49,18 +49,18 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
-// 선택한 주문처 모달오픈
-useEffect(() => {
-  if (onPayment.shopVal) {
-    const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
-    if (selectedShopInfo) {
-      setSelectedShop(selectedShopInfo); 
-      setIsModalOpen(true);
+  // 선택한 주문처 모달오픈
+  useEffect(() => {
+    if (onPayment.shopVal) {
+      const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
+      if (selectedShopInfo) {
+        setSelectedShop(selectedShopInfo);
+        setIsModalOpen(true);
+      }
     }
-  }
-}, [onPayment.shopVal, shop]);
+  }, [onPayment.shopVal, shop]);
   const closeModal = () => {
-  setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
   // loginUser가 비어 있거나 존재하지 않을 때 처리
   if (!loginUser || loginUser.length === 0) {
@@ -109,7 +109,7 @@ useEffect(() => {
       addressMessage: onPayment.addressMessage,
       memberEmail: loginUser[0].userEmail,
       orderAddress: loginUser[0].address,
-      paymentResult: itemsTopay,
+      paymentResult: paymentItems,
       paymentAmount: totalPrice,
       time: formattedDate,
     };
@@ -196,7 +196,7 @@ useEffect(() => {
           <div className="payment-item">
             <h3>배송상품</h3>
             <div className="payment-item-con">
-              {itemsTopay && itemsTopay.map((el, idx) => {
+              {paymentItems && paymentItems.map((el, idx) => {
                 return (
                   <div className="payment-list" key={idx}>
                     <div className="top">
@@ -282,10 +282,10 @@ useEffect(() => {
               </tbody>
             </table>
           </div>
-           {/* 모달 창 추가*/}
-         {isModalOpen && selectedShop && (
-          <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />
-            )}   
+          {/* 모달 창 추가*/}
+          {isModalOpen && selectedShop && (
+            <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />
+          )}
           <div className="payment-sub">
             <div className="sum-price">
               총합계: {totalPrice.toLocaleString()} 원
