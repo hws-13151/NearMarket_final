@@ -1,140 +1,144 @@
 .payment {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .payment-con {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .payment .payment-con h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .payment .payment-con .address h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #444;
-  }
-  
-  .payment .payment-con .address table,
-  .payment-select table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .address th,
-  .address td,
-  .payment-select th,
-  .payment-select td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .address th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-  
-  .payment-select select,
-  #addressMessage {
-    padding: 10px;
-    font-size: 14px;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  .payment-item {
-    margin-bottom: 30px;
-    box-sizing: border-box;
-  }
-  
-  .payment-item .payment-item-con {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .payment-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    width: 240px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-  }
-  
-  .payment-list img {
-    width: 200px; /* 모든 이미지의 너비 고정 */
-    height: 200px; /* 모든 이미지의 높이 고정 */
-    object-fit: cover; /* 이미지 비율을 유지하며, 컨테이너에 맞춰 자르기 */
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-  
-  .payment-list .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .payment-list .bottom span {
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .payment-select {
-    margin-bottom: 20px;
-  }
-  
-  .payment-sub {
-    text-align: center;
-  }
-  
-  .payment-sub .sum-price {
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  .payment-result button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .payment-result button:hover {
-    background-color: #45a049;
-  }
-  
-  .payment-null h1 {
-    color: red;
-    cursor: pointer;
-    font-size: 18px;
-  }
- 
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  @media (max-width: 800px){
-    .address table th:nth-child(2),
-    .address table td:nth-child(2){
-      display: none;
-    }
+.payment-con {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment .payment-con h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.payment .payment-con .address h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.payment .payment-con .address table,
+.payment-select table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.address th,
+.address td,
+.payment-select th,
+.payment-select td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.address th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.payment-select select,
+#addressMessage {
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.payment-item {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.payment-item .payment-item-con {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  width: 240px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.payment-list img {
+  width: 200px;
+  /* 모든 이미지의 너비 고정 */
+  height: 200px;
+  /* 모든 이미지의 높이 고정 */
+  object-fit: cover;
+  /* 이미지 비율을 유지하며, 컨테이너에 맞춰 자르기 */
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.payment-list .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-list .bottom span {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.payment-select {
+  margin-bottom: 20px;
+}
+
+.payment-sub {
+  text-align: center;
+}
+
+.payment-sub .sum-price {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.payment-result button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.payment-result button:hover {
+  background-color: #45a049;
+}
+
+.payment-null h1 {
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+@media (max-width: 800px) {
+
+  .address table th:nth-child(2),
+  .address table td:nth-child(2) {
+    display: none;
   }
+}

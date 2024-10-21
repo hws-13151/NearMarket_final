@@ -7,6 +7,7 @@ import PaymentGoModal from "./PaymentGoModal";
 import { API_URL } from "../../constans";
 
 import PaymentApiModal from "./PaymentApiModal";
+import PaymentSelectedModal from "./PaymentSelectedModal";
 
 const payData = {
   paymentMethod: "",
@@ -23,6 +24,8 @@ const Payment = () => {
   const [onPayment, setOnPayment] = useState(payData);
   const [paymentGo, setPaymentGo] = useState(false)
   const [selectedItems, setSelectedItems] = useState([])
+  const [selectedModal, setSelectedModal] = useState(false)
+
   //주문처 추가
   const [shop, setShop] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
@@ -146,20 +149,13 @@ const Payment = () => {
 
   const paymentSubmitFn = (e) => {
     e.preventDefault();
-    setPaymentGo(true);
-
+    if (selectedItems.length === 0) {
+      setSelectedModal(true)
+    } else {
+      setPaymentGo(true);
+    }
   };
 
-  // const paymentSubmitFn = (e) => {
-  //   e.preventDefault();
-
-  //   if (!isLogin) {
-  //     // 로그인 페이지로 이동하면서, 현재 페이지 정보를 state로 넘김
-  //     navigate("/auth/login", { state: { from: location.pathname } });
-  //   } else {
-  //     setPaymentGo(true);
-  //   }
-  // };
 
 
   const handleItemCheck = (item) => {
@@ -180,6 +176,7 @@ const Payment = () => {
   return (
     <>
       {paymentGo && <PaymentGoModal setPaymentGo={setPaymentGo} paymentAxiosFn={paymentAxiosFn} />}
+      {selectedModal && <PaymentSelectedModal onclose={() => setSelectedModal(false)} />}
       <div className="payment">
         <h1>주문/결제</h1>
         <div className="payment-con">
@@ -311,7 +308,7 @@ const Payment = () => {
               총합계: {totalPrice.toLocaleString()} 원
             </div>
             <div className="payment-result">
-              <button onClick={paymentSubmitFn} disabled={!isPaymentReady || selectedItems.length === 0} >결제하기</button>
+              <button onClick={paymentSubmitFn} disabled={!isPaymentReady} >결제하기</button>
             </div>
           </div>
         </div>

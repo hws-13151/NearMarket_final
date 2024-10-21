@@ -1,5 +1,5 @@
 .paymentDetail {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -48,7 +48,7 @@
 
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con h2 {
-  font-size: 24px;
+  font-size: 23px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;

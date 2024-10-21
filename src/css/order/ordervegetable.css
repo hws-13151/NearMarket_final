@@ -1,5 +1,5 @@
 .order-vegetable {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -168,8 +168,9 @@
   }
 }
 
-@media (max-width: 800px) {
+
+/* @media (max-width: 800px) {
   .order-vegetable-con ul {
     grid-template-columns: 1fr;
   }
-}
+} */
