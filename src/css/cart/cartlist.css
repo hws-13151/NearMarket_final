@@ -100,13 +100,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2vw;
+  gap: 1vw;
   flex-wrap: wrap;
 }
 
 .cart-details-container span {
   font-family: "Jua", serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .cart-delete {
@@ -168,10 +168,6 @@
   background-color: #ff6347;
   font-weight: bold;
   border: 2px solid black;
-}
-
-.cart-pagination-btn:hover {
-  background-color: #0056b3;
 }
 
 .pagination-arrow {
@@ -255,7 +251,7 @@
 
   .cart-item {
     flex-direction: column;
-    position: relative;
+    position: relative; /*포지션 delete조상님*/
   }
 
   .cart-item-top {
@@ -279,7 +275,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 30px;
+    font-size: 20px;
     z-index: 10;
   }
 

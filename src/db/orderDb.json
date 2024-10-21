@@ -189,7 +189,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 77
+      "viewcount": 78
     },
     {
       "id": "3",
@@ -220,7 +220,7 @@
       "title": "옥수수깡",
       "price": 1000,
       "img": "s5.jpg",
-      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "description": "콘칩보다 맛있어여",
       "viewcount": 34
     },
     {
@@ -228,7 +228,7 @@
       "title": "포스틱",
       "price": 1000,
       "img": "s6.jpg",
-      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "description": "포스틱 맘스터치보다 나아여 칼로리 적어여",
       "viewcount": 14
     }
   ],

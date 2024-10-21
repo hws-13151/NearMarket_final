@@ -86,7 +86,7 @@ const CartList1 = () => {
             }`}
             disabled={currentPage === 1}
           >
-            ←
+            {/* ← */} 이전
           </button>
         )}
 
@@ -110,7 +110,7 @@ const CartList1 = () => {
             }`}
             disabled={currentPage === totalPages}
           >
-            →
+            {/* → */} 다음
           </button>
         )}
       </>
