@@ -29,9 +29,7 @@ const OrderIndexDetail = (param) => {
     const orderindexDetailFn = async () => {
       const indexId = param.param.id;
       try {
-        const res = await axios.get(
-          `${API_URL}/indexItems?id=${indexId}`
-        );
+        const res = await axios.get(`${API_URL}/indexItems?id=${indexId}`);
         setIndexItem(res.data[0]);
       } catch (error) {
         alert(error);
@@ -66,9 +64,45 @@ const OrderIndexDetail = (param) => {
       img: `/images/index/${indexItem.img}`,
       count: count,
       category: "index",
-      userEmail, // 이메일 정보를 추가
+      userEmail,
     };
     dispatch(addCart1(setItemCart));
+  };
+
+  const existingCartItems = useSelector((state) => state.cart.items) || [];
+
+  const paymentFn = () => {
+    const indexCart = {
+      id: indexItem.id,
+      title: indexItem.title,
+      price: indexItem.price,
+      img: `/images/index/${indexItem.img}`,
+      count,
+      category: "index",
+      userEmail,
+    };
+
+    let mergedItems = [...existingCartItems];
+
+    const existingItemIndex = mergedItems.findIndex(
+      (item) =>
+        item.id === indexCart.id &&
+        item.category === indexCart.category &&
+        item.userEmail === indexCart.userEmail
+    );
+
+    if (existingItemIndex !== -1) {
+      mergedItems[existingItemIndex] = {
+        ...mergedItems[existingItemIndex],
+        count: mergedItems[existingItemIndex].count + count,
+      };
+    } else {
+      mergedItems.push(indexCart);
+    }
+
+    dispatch(addCart1(indexCart));
+
+    navigate("/order/payment");
   };
 
   return (
@@ -130,7 +164,7 @@ const OrderIndexDetail = (param) => {
                       <button onClick={addCartFn2} onClickCapture={onModalFn}>
                         장바구니
                       </button>
-                      <button>결제</button>
+                      <button onClick={paymentFn}>결제</button>
                     </li>
                   </ul>
                 </div>

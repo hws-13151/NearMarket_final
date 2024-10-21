@@ -39,9 +39,7 @@ const OrderFruitDetail = (param) => {
         updateViewCountInServer({ productId: fruitId, category: "fruit" })
       );
       try {
-        const res = await axios.get(
-          `${API_URL}/fruitItems/${fruitId}`
-        );
+        const res = await axios.get(`${API_URL}/fruitItems/${fruitId}`);
         setFruitDetail(res.data);
       } catch (err) {
         alert(err);
@@ -89,11 +87,13 @@ const OrderFruitDetail = (param) => {
       img: `/images/fruit/${fruitDetail.img}`,
       count,
       userEmail,
-      category: "fruit",
+      category: "fruit"
     };
-    // dispatch(addCart1(fruitCart));
-    navigate("/order/payment", { state: { selectedProduct: fruitCart } });
-  };
+    dispatch(addCart1(fruitCart))
+    navigate("/order/payment")
+  }
+
+
 
   return (
     <div className="fruit-detail">

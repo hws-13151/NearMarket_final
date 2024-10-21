@@ -9,22 +9,17 @@ const CartList1 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // 모달 상태 관리
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [modalItem, setModalItem] = useState(null);
   const [itemToDelete, setItemToDelete] = useState(null);
-
-  // 페이지네이션 상태
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 4;
 
   const isLogin = useSelector((state) => state.auth.isLogin);
   const loginUser = useSelector((state) => state.auth.loginUser);
   const userEmail = isLogin ? loginUser[0].userEmail : "guest";
   const cartItems = useSelector((state) => state.cart.items);
-
-  console.log(cartItems);
 
   const filteredCartItems = cartItems.filter(
     (item) => item.userEmail === userEmail
@@ -38,10 +33,11 @@ const CartList1 = () => {
     indexOfLastItem
   );
 
-  const totalPrice = filteredCartItems.reduce(
-    (total, item) => total + item.price * item.count,
-    0
-  );
+  let totalPrice = 0;
+
+  filteredCartItems.forEach((item) => {
+    totalPrice += item.price * item.count;
+  });
 
   const openModal = (item) => {
     setModalItem({ ...item, userEmail });
@@ -78,19 +74,47 @@ const CartList1 = () => {
   }, [isLogin, userEmail, dispatch]);
 
   const renderPaginationButtons = () => {
-    const buttons = [];
-    for (let i = 1; i <= totalPages; i++) {
-      buttons.push(
-        <button
-          key={i}
-          onClick={() => setCurrentPage(i)}
-          className={`cart-pagination-btn ${currentPage === i ? "active" : ""}`}
-        >
-          {i}
-        </button>
-      );
-    }
-    return buttons;
+    const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    return (
+      <>
+        {currentPage > 1 && (
+          <button
+            onClick={() => setCurrentPage(currentPage - 1)}
+            className={`pagination-arrow ${
+              currentPage === 1 ? "disabled" : ""
+            }`}
+            disabled={currentPage === 1}
+          >
+            {/* ← */} 이전
+          </button>
+        )}
+
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={`cart-pagination-btn ${
+              currentPage === page ? "active" : ""
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+
+        {currentPage < totalPages && (
+          <button
+            onClick={() => setCurrentPage(currentPage + 1)}
+            className={`pagination-arrow ${
+              currentPage === totalPages ? "disabled" : ""
+            }`}
+            disabled={currentPage === totalPages}
+          >
+            {/* → */} 다음
+          </button>
+        )}
+      </>
+    );
   };
 
   return (
@@ -115,15 +139,17 @@ const CartList1 = () => {
                   <div className="cart-details-container">
                     <span>카테고리: {el.category}</span>
                     <span>상품명: {el.title}</span>
-                    <span>가격: {el.price} 원</span>
+                    <span>가격: {el.price.toLocaleString()} 원</span>
                     <span>갯수: {el.count}</span>
-                    <span>총금액: {el.count * el.price} 원</span>
+                    <span>
+                      총금액: {(el.count * el.price).toLocaleString()} 원
+                    </span>
                   </div>
                   <span
                     className="cart-delete"
                     onClick={() => openDeleteModal(el)}
                   >
-                    X
+                    삭제
                   </span>
                 </div>
               </div>
@@ -143,7 +169,9 @@ const CartList1 = () => {
 
         {filteredCartItems.length > 0 && (
           <div className="cart-payment">
-            <div className="cart-sum-price">총합계: {totalPrice} 원</div>
+            <div className="cart-sum-price">
+              총합계: {totalPrice.toLocaleString()} 원
+            </div>
             <button className="cart-payment-button" onClick={goToPayment}>
               결제하기
             </button>

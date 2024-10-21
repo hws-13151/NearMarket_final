@@ -37,9 +37,7 @@ const OrderMeatDetail = (param) => {
         updateViewCountInServer({ productId: meatId, category: "meat" })
       );
       try {
-        const res = await axios.get(
-          `${API_URL}/meatItems?id=${meatId}`
-        );
+        const res = await axios.get(`${API_URL}/meatItems?id=${meatId}`);
         setMeatItem(res.data[0]);
       } catch (error) {
         alert(error);
@@ -68,6 +66,7 @@ const OrderMeatDetail = (param) => {
     setIsModal(true); // 모달 열기
   };
 
+
   const paymentFn = () => {
     const meatCart = {
       id: meatItem.id,
@@ -76,11 +75,12 @@ const OrderMeatDetail = (param) => {
       img: `/images/meat/${meatItem.img}`,
       count,
       userEmail,
-      category: "meat"
+      category: "meat",
     };
-    // dispatch(addCart1(meatCart));
-    navigate("/order/payment", { state: { selectedProduct: meatCart } });
-  };
+    dispatch(addCart1(meatCart))
+    navigate("/order/payment")
+  }
+
 
   return (
     <>

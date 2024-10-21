@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 12
+      "viewcount": 6
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 26
+      "viewcount": 25
     },
     {
       "id": "3",
@@ -29,7 +29,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 4,
+      "viewcount": 6,
       "id": "e988"
     },
     {
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 15
+      "viewcount": 20
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 5
+      "viewcount": 4
     },
     {
       "title": "오렌지",
@@ -78,7 +78,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 38,
+      "viewcount": 46,
       "id": "5722"
     },
     {
@@ -95,7 +95,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 22
+      "viewcount": 30
     },
     {
       "id": "3",
@@ -111,7 +111,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 5
+      "viewcount": 6
     },
     {
       "id": "4",
@@ -126,7 +126,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 18
+      "viewcount": 30
     },
     {
       "id": "5",
@@ -140,7 +140,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 6
+      "viewcount": 12
     },
     {
       "id": "6",
@@ -154,7 +154,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 13
+      "viewcount": 15
     },
     {
       "id": "f15e",
@@ -172,8 +172,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 20,
-      "id": "fe17"
+      "viewcount": 20
     },
     {
       "id": "2",
@@ -181,7 +180,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 69
+      "viewcount": 68
     },
     {
       "id": "3",
@@ -189,7 +188,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 27
+      "viewcount": 26
     },
     {
       "id": "4",
@@ -197,7 +196,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 17
+      "viewcount": 25
     },
     {
       "id": "5",
@@ -205,23 +204,23 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 28
+      "viewcount": 34
     },
     {
       "id": "6",
       "title": "옥수수깡",
       "price": 1000,
       "img": "s5.jpg",
-      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 29
+      "description": "콘칩보다 맛있어여",
+      "viewcount": 34
     },
     {
       "id": "7",
       "title": "포스틱",
       "price": 1000,
       "img": "s6.jpg",
-      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 13
+      "description": "포스틱 맘스터치보다 나아여 칼로리 적어여",
+      "viewcount": 14
     }
   ],
   "meatItems": [
@@ -231,7 +230,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 15
+      "viewcount": 21
     },
     {
       "id": "2",
@@ -239,7 +238,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 23
+      "viewcount": 22
     },
     {
       "id": "3",
@@ -247,7 +246,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 7
+      "viewcount": 6
     },
     {
       "id": "4",
@@ -255,7 +254,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 6
+      "viewcount": 9
     },
     {
       "id": "5",
@@ -263,7 +262,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 9
+      "viewcount": 11
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -327,7 +326,7 @@
       "userEmail": "a2@email.com",
       "userPw": "1111",
       "age": "111111",
-      "userName": "a21111",
+      "userName": "a21",
       "address": "노원구",
       "phoneNumber": "01012345678",
       "role": "ROLE_ADMIN",

@@ -42,7 +42,7 @@ const AdminLayout = () => {
   return (
     <div className="admin">
       <div className="admin-con">
-        <AdminLeft isGnbVisible={isGnbVisible} />
+        <AdminLeft isGnbVisible={isGnbVisible} setGnbVisible={setGnbVisible}/>
         <AdminRight />
         <span className='button' onClick={toggleGnb}>=</span>
       </div>

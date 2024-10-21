@@ -89,6 +89,8 @@ const OrderVegetableDetail = (param) => {
     setIsModal(true);
   };
 
+
+
   const paymentFn = () => {
     const vegetableCart = {
       id: vegetableDetail.id,
@@ -99,8 +101,8 @@ const OrderVegetableDetail = (param) => {
       userEmail,
       category: "vegetable"
     };
-    // dispatch(addCart1(vegetableCart));
-    navigate("/order/payment", { state: { selectedProduct: vegetableCart } });
+    dispatch(addCart1(vegetableCart));
+    navigate("/order/payment");
   };
 
   const previousSlideFn = () =>

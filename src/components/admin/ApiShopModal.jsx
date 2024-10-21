@@ -68,7 +68,7 @@ const ApiShopModal = ({ shop, onClose }) => {
             <div className="paymentApi-modal-con">
                 <button className="paymentApi-close-btn" onClick={onClose}>X</button>
                 <h3>{shop.title}의 위치</h3>
-                <div id="shop-map" style={{ width: '350px', height: '500px', boxSizing: 'border-box' }}></div>
+                <div id="shop-map" style={{ width: '100%', height: '500px', boxSizing: 'border-box' }}></div>
             </div>
         </div>
     );

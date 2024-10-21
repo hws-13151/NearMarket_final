@@ -43,17 +43,13 @@ const CartModal = ({ item, setIsModalOpen }) => {
   return (
     <div className="cart-modal">
       <div className="cart-modal-con">
-        <span className="cart-close" onClick={closeFn}>
-          X
-        </span>
-
         <div className="cart-top">
           <img src={item.img} alt={item.title} />
         </div>
 
         <div className="cart-title-bottom">
           <span>상품명: {item.title}</span>
-          <span>가격: {item.price}원</span>
+          <span>가격: {item.price.toLocaleString()}원</span>
         </div>
 
         <div className="cart-sum">
@@ -64,13 +60,15 @@ const CartModal = ({ item, setIsModalOpen }) => {
           </div>
 
           <span className="cart-sum-price">
-            총합계: {item.price * itemCount} 원
+            총합계: {(item.price * itemCount).toLocaleString()} 원
           </span>
 
-          <button onClick={addCartFn} className="cart-add-btn">
+          <button onClick={addCartFn} className="cart-update-btn">
             장바구니 업데이트
           </button>
-          <button onClick={closeFn}>닫기</button>
+          <button className="cart-close" onClick={closeFn}>
+            닫기
+          </button>
         </div>
       </div>
     </div>

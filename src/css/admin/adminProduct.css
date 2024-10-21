@@ -1,9 +1,9 @@
-.admin-member {
+.admin-product {
     width: 100%;
     height: calc(100vh - 50px);
 }
 
-.admin-member .admin-member-con {
+.admin-product .admin-product-con {
     width: 100%;
     height: calc(100vh - 50px);
     display: flex;
@@ -11,7 +11,7 @@
     justify-content: flex-start;
 }
 
-.admin-member .admin-member-con h1 {
+.admin-product .admin-product-con h1 {
     width: 100%;
     height: 50px;
     background-color: rgb(71, 69, 73);
@@ -21,47 +21,47 @@
     align-items: center;
 }
 
-.admin-member .admin-member-con span {
+.admin-product .admin-product-con span {
     width: 100%;
     height: 50px;
     justify-content: center;
     background-color: #ccc;
 }
 
-.admin-member .admin-member-con .members {
+.admin-product .admin-product-con .products {
     width: 100%;
     height: calc(100vh - 50px - 50px);
     background-color: #ccc;
     overflow-y: auto;
 }
 
-.admin-member .admin-member-con .members tr.role-admin {
+.admin-product .admin-product-con .products tr.role-admin {
     background-color: #abb2dd; /* 관리자 배경색 */
 }
 
-.admin-member .admin-member-con .members table {
+.admin-product .admin-product-con .products table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.admin-member .admin-member-con .members th {
+.admin-product .admin-product-con .products th {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
 }
 
-.admin-member .admin-member-con .members td {
+.admin-product .admin-product-con .products td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
 }
 
-.admin-member .admin-member-con .members th {
+.admin-product .admin-product-con .products th {
     background-color: #ccc; /* 헤더 */
     color: #4a4141;
 }
 
-.admin-member .admin-member-con .members td {
+.admin-product .admin-product-con .products td {
     color: #4a4141; /* 일반 */
 }
 
@@ -87,33 +87,11 @@
 }
 
 @media (max-width: 1030px) {
-    .admin-member table th:nth-child(3),  /* 비밀번호 */
-    .admin-member table th:nth-child(6),  /* 주소 */
-    .admin-member table th:nth-child(8) {  /* 권한 */
+    .admin-product table th:nth-child(5) {  /* 권한 */
       display: none;
     }
-  
-    .admin-member table td:nth-child(3),  
-    .admin-member table td:nth-child(6),  
-    .admin-member table td:nth-child(8) {  
+    .admin-product table td:nth-child(5) {  
       display: none;
     }
 }
 
-@media (max-width: 800px) {
-    .admin-member table th:nth-child(3),  /* 비밀번호 */
-    .admin-member table th:nth-child(4),  /* 나이 */
-    .admin-member table th:nth-child(6),  /* 주소 */
-    .admin-member table th:nth-child(7),  /* 전화번호 */
-    .admin-member table th:nth-child(8) {  /* 권한 */
-      display: none;
-    }
-  
-    .admin-member table td:nth-child(3),  
-    .admin-member table td:nth-child(4),  
-    .admin-member table td:nth-child(6),  
-    .admin-member table td:nth-child(7),  
-    .admin-member table td:nth-child(8) {  
-      display: none;
-    }
-  }

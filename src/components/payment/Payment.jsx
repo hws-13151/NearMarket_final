@@ -7,6 +7,7 @@ import PaymentGoModal from "./PaymentGoModal";
 import { API_URL } from "../../constans";
 
 import PaymentApiModal from "./PaymentApiModal";
+import PaymentSelectedModal from "./PaymentSelectedModal";
 
 const payData = {
   paymentMethod: "",
@@ -21,25 +22,25 @@ const Payment = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   const [onPayment, setOnPayment] = useState(payData);
-   //주문처 추가
-   const [shop, setShop] = useState([])
-   const [paymentGo, setPaymentGo] = useState(false)
-   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
-   const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
+  const [paymentGo, setPaymentGo] = useState(false)
+  const [selectedItems, setSelectedItems] = useState([])
+  const [selectedModal, setSelectedModal] = useState(false)
+
+  //주문처 추가
+  const [shop, setShop] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
+  const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
+
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const location = useLocation();
+  // const dispatch = useDispatch();
 
-  const selectedProduct = location.state?.selectedProduct
 
-  const itemsTopay = selectedProduct ? [selectedProduct] : paymentItems
 
-  let totalPrice = 0;
-
-  itemsTopay.forEach((item) => {
-    totalPrice += item.price * item.count;
-  });
+  let totalPrice = selectedItems.reduce(
+    (sum, item) => sum + item.price * item.count,
+    0
+  );
 
   useEffect(() => {
     if (!isLogin) {
@@ -59,12 +60,8 @@ const Payment = () => {
 };
 
   const closeModal = () => {
-  setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
-  // loginUser가 비어 있거나 존재하지 않을 때 처리
-  if (!loginUser || loginUser.length === 0) {
-    return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
-  }
 
 
 
@@ -91,6 +88,8 @@ const Payment = () => {
   //   }
   // };
 
+
+
   const paymentAxiosFn = async () => {
     const today = new Date();
     const formattedDate = `${today.getFullYear()}/${String(
@@ -108,7 +107,7 @@ const Payment = () => {
       addressMessage: onPayment.addressMessage,
       memberEmail: loginUser[0].userEmail,
       orderAddress: loginUser[0].address,
-      paymentResult: itemsTopay,
+      paymentResult: selectedItems,
       paymentAmount: totalPrice,
       time: formattedDate,
     };
@@ -143,11 +142,24 @@ const Payment = () => {
     setOnPayment({ ...onPayment, addressMessage: selectedAddressMessage });
   };
 
+
   const paymentSubmitFn = (e) => {
-
     e.preventDefault();
-    setPaymentGo(true)
+    if (selectedItems.length === 0) {
+      setSelectedModal(true)
+    } else {
+      setPaymentGo(true);
+    }
+  };
 
+
+
+  const handleItemCheck = (item) => {
+    setSelectedItems((prevSelectedItems) =>
+      prevSelectedItems.includes(item)
+        ? prevSelectedItems.filter((i) => i !== item)
+        : [...prevSelectedItems, item]
+    );
   };
 
 
@@ -160,6 +172,7 @@ const Payment = () => {
   return (
     <>
       {paymentGo && <PaymentGoModal setPaymentGo={setPaymentGo} paymentAxiosFn={paymentAxiosFn} />}
+      {selectedModal && <PaymentSelectedModal onclose={() => setSelectedModal(false)} />}
       <div className="payment">
         <h1>주문/결제</h1>
         <div className="payment-con">
@@ -195,10 +208,11 @@ const Payment = () => {
           <div className="payment-item">
             <h3>배송상품</h3>
             <div className="payment-item-con">
-              {itemsTopay && itemsTopay.map((el, idx) => {
+              {paymentItems && paymentItems.map((el, idx) => {
                 return (
                   <div className="payment-list" key={idx}>
                     <div className="top">
+                      <input type="checkbox" checked={selectedItems.includes(el)} onChange={() => handleItemCheck(el)} />
                       <img src={el.img} alt={el.img} />
                     </div>
                     <div className="bottom">
@@ -290,7 +304,7 @@ const Payment = () => {
               총합계: {totalPrice.toLocaleString()} 원
             </div>
             <div className="payment-result">
-              <button onClick={paymentSubmitFn} disabled={!isPaymentReady}>결제하기</button>
+              <button onClick={paymentSubmitFn} disabled={!isPaymentReady} >결제하기</button>
             </div>
           </div>
         </div>
