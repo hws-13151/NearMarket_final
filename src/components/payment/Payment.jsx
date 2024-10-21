@@ -21,25 +21,23 @@ const Payment = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
 
   const [onPayment, setOnPayment] = useState(payData);
+  const [paymentGo, setPaymentGo] = useState(false)
+  const [selectedItems, setSelectedItems] = useState([])
   //주문처 추가
   const [shop, setShop] = useState([])
-  const [paymentGo, setPaymentGo] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
   const [selectedShop, setSelectedShop] = useState(null); // 선택된 주문처 정보
 
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 
 
-
-
-
-  let totalPrice = 0;
-
-  paymentItems.forEach((item) => {
-    totalPrice += item.price * item.count;
-  });
+  let totalPrice = selectedItems.reduce(
+    (sum, item) => sum + item.price * item.count,
+    0
+  );
 
   useEffect(() => {
     if (!isLogin) {
@@ -49,6 +47,9 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
+
+
+
   // 선택한 주문처 모달오픈
   useEffect(() => {
     if (onPayment.shopVal) {
@@ -62,10 +63,6 @@ const Payment = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  // loginUser가 비어 있거나 존재하지 않을 때 처리
-  if (!loginUser || loginUser.length === 0) {
-    return <div>유저 정보가 없습니다. 로그인 후 다시 시도하세요.</div>;
-  }
 
 
 
@@ -92,6 +89,8 @@ const Payment = () => {
   //   }
   // };
 
+
+
   const paymentAxiosFn = async () => {
     const today = new Date();
     const formattedDate = `${today.getFullYear()}/${String(
@@ -109,7 +108,7 @@ const Payment = () => {
       addressMessage: onPayment.addressMessage,
       memberEmail: loginUser[0].userEmail,
       orderAddress: loginUser[0].address,
-      paymentResult: paymentItems,
+      paymentResult: selectedItems,
       paymentAmount: totalPrice,
       time: formattedDate,
     };
@@ -144,11 +143,31 @@ const Payment = () => {
     setOnPayment({ ...onPayment, addressMessage: selectedAddressMessage });
   };
 
+
   const paymentSubmitFn = (e) => {
-
     e.preventDefault();
-    setPaymentGo(true)
+    setPaymentGo(true);
 
+  };
+
+  // const paymentSubmitFn = (e) => {
+  //   e.preventDefault();
+
+  //   if (!isLogin) {
+  //     // 로그인 페이지로 이동하면서, 현재 페이지 정보를 state로 넘김
+  //     navigate("/auth/login", { state: { from: location.pathname } });
+  //   } else {
+  //     setPaymentGo(true);
+  //   }
+  // };
+
+
+  const handleItemCheck = (item) => {
+    setSelectedItems((prevSelectedItems) =>
+      prevSelectedItems.includes(item)
+        ? prevSelectedItems.filter((i) => i !== item)
+        : [...prevSelectedItems, item]
+    );
   };
 
 
@@ -200,6 +219,7 @@ const Payment = () => {
                 return (
                   <div className="payment-list" key={idx}>
                     <div className="top">
+                      <input type="checkbox" checked={selectedItems.includes(el)} onChange={() => handleItemCheck(el)} />
                       <img src={el.img} alt={el.img} />
                     </div>
                     <div className="bottom">
@@ -291,7 +311,7 @@ const Payment = () => {
               총합계: {totalPrice.toLocaleString()} 원
             </div>
             <div className="payment-result">
-              <button onClick={paymentSubmitFn} disabled={!isPaymentReady}>결제하기</button>
+              <button onClick={paymentSubmitFn} disabled={!isPaymentReady || selectedItems.length === 0} >결제하기</button>
             </div>
           </div>
         </div>
