@@ -130,6 +130,21 @@
     cursor: pointer;
     font-size: 18px;
   }
+  /* 주문처 선택 추가 css */
+  .payment-shop{
+    display: flex;
+  }
+  .payment-shop-list{
+    width: auto; 
+    margin-right: 10px; 
+  }
+  .payment-shop button {
+    font-size: 12px; 
+    white-space: nowrap; /* 줄바꿈 X */
+    cursor: pointer;
+    
+    padding: 5px;
+  }
  
 
   @media (max-width: 800px){

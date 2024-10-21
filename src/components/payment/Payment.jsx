@@ -50,15 +50,14 @@ const Payment = () => {
     }
   }, []);
 // 선택한 주문처 모달오픈
-useEffect(() => {
-  if (onPayment.shopVal) {
-    const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
-    if (selectedShopInfo) {
-      setSelectedShop(selectedShopInfo); 
-      setIsModalOpen(true);
-    }
+  const openModal = () => {
+  const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
+  if (selectedShopInfo) {
+    setSelectedShop(selectedShopInfo);
+    setIsModalOpen(true);
   }
-}, [onPayment.shopVal, shop]);
+};
+
   const closeModal = () => {
   setIsModalOpen(false); 
   };
@@ -241,7 +240,9 @@ useEffect(() => {
                   </td>
                   {/* 주문처 db 연동 */}
                   <td>
-                    <select name="shopVal" id="shopVal" onChange={shopValFn}>
+                  <div className="payment-shop">
+                    <select name="shopVal" id="shopVal" onChange={shopValFn}
+                    className="payment-shop-list">
                       <option value="">주문처</option>
                       {shop.map((shopEl) => (
                         <option key={shopEl.id} value={shopEl.title}>
@@ -249,6 +250,8 @@ useEffect(() => {
                         </option>
                       ))}
                     </select>
+                    <button onClick={openModal}>지도보기</button>
+                  </div>
                   </td>
 
                   <td>
@@ -281,11 +284,7 @@ useEffect(() => {
                 </tr>
               </tbody>
             </table>
-          </div>
-           {/* 모달 창 추가*/}
-         {isModalOpen && selectedShop && (
-          <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />
-            )}   
+          </div>       
           <div className="payment-sub">
             <div className="sum-price">
               총합계: {totalPrice.toLocaleString()} 원
@@ -296,6 +295,9 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      {/* 모달 창 추가*/}
+      {isModalOpen && selectedShop && (
+          <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />)}  
     </>
   );
 };

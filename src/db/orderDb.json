@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 6
+      "viewcount": 12
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 25
+      "viewcount": 26
     },
     {
       "id": "3",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 4
+      "viewcount": 5
     },
     {
       "title": "오렌지",
@@ -62,14 +62,6 @@
       "description": "강한 신맛과 상큼한 파인애플",
       "id": "8",
       "viewcount": 1
-    },
-    {
-      "id": "e131",
-      "title": "123213",
-      "price": 123,
-      "description": "123",
-      "img": "f5.jpg",
-      "order-corner": "fruit"
     }
   ],
   "vegetableItems": [
@@ -180,7 +172,8 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 20
+      "viewcount": 20,
+      "id": "fe17"
     },
     {
       "id": "2",
@@ -188,7 +181,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 68
+      "viewcount": 69
     },
     {
       "id": "3",
@@ -196,7 +189,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 26
+      "viewcount": 27
     },
     {
       "id": "4",
@@ -246,7 +239,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 22
+      "viewcount": 23
     },
     {
       "id": "3",
@@ -254,7 +247,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 6
+      "viewcount": 7
     },
     {
       "id": "4",

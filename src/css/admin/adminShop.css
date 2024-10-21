@@ -31,8 +31,8 @@
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
-    background-color: #ccc; /* 헤더와 바디 배경색 동일하게 설정 */
-    color: #4a4141; /* 헤더 글자색 */
+    background-color: #ccc; 
+    color: #4a4141;
     transition: all 0.3s;
 }
 
@@ -40,8 +40,8 @@
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
-    background-color: #ccc; /* 바디 배경색 */
-    color: #4a4141; /* 바디 글자색 */
+    background-color: #ccc;
+    color: #4a4141; 
     transition: all 0.3s;
 }
 .admin-shop .admin-shop-con td button{
