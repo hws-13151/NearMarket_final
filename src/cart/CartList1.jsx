@@ -31,7 +31,6 @@ const CartList1 = () => {
     currentPage * itemsPerPage
   );
 
-  // forEach로 총합 계산
   let totalPrice = 0;
   filteredCartItems.forEach((item) => {
     totalPrice += item.price * item.count;
@@ -69,6 +68,8 @@ const CartList1 = () => {
     }
   }, [isLogin, userEmail, dispatch]);
 
+  const handlePageClick = (page) => setCurrentPage(page);
+
   const nextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
@@ -82,17 +83,25 @@ const CartList1 = () => {
       <button
         onClick={prevPage}
         disabled={currentPage === 1}
-        className="cart-pagination-btn1"
+        className="cart-pagination-before-btn"
       >
         이전
       </button>
-      <span className="cart-pagination-info">
-        {currentPage} / {totalPages}
-      </span>
+      {Array.from({ length: totalPages }, (_, i) => (
+        <button
+          key={i + 1}
+          onClick={() => handlePageClick(i + 1)}
+          className={`cart-pagination-btn ${
+            currentPage === i + 1 ? "active" : ""
+          }`}
+        >
+          {i + 1}
+        </button>
+      ))}
       <button
         onClick={nextPage}
         disabled={currentPage === totalPages}
-        className="cart-pagination-btn2"
+        className="cart-pagination-after-btn"
       >
         다음
       </button>
@@ -144,7 +153,7 @@ const CartList1 = () => {
             </div>
           )}
         </div>
-        {/* 페이지네이션 작동구간 */}
+
         {filteredCartItems.length > itemsPerPage && renderPaginationButtons()}
 
         {filteredCartItems.length > 0 && (
