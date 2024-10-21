@@ -39,9 +39,7 @@ const OrderFruitDetail = (param) => {
         updateViewCountInServer({ productId: fruitId, category: "fruit" })
       );
       try {
-        const res = await axios.get(
-          `${API_URL}/fruitItems/${fruitId}`
-        );
+        const res = await axios.get(`${API_URL}/fruitItems/${fruitId}`);
         setFruitDetail(res.data);
       } catch (err) {
         alert(err);
@@ -79,6 +77,7 @@ const OrderFruitDetail = (param) => {
       setIsModal(true); // 모달 열기
     }
   };
+  const existingCartItems = useSelector((state) => state.cart.items) || [];
 
   const paymentFn = () => {
     const fruitCart = {
@@ -91,8 +90,25 @@ const OrderFruitDetail = (param) => {
       userEmail,
       category: "fruit",
     };
-    // dispatch(addCart1(fruitCart));
-    navigate("/order/payment", { state: { selectedProduct: fruitCart } });
+
+    let mergedItems = [...existingCartItems];
+
+    const existingItemIndex = mergedItems.findIndex(
+      (item) => item.id === fruitCart.id && item.category === fruitCart.category
+    );
+
+    if (existingItemIndex !== -1) {
+      mergedItems[existingItemIndex] = {
+        ...mergedItems[existingItemIndex],
+        count: mergedItems[existingItemIndex].count + count,
+      };
+    } else {
+      mergedItems.push(fruitCart);
+    }
+
+    dispatch(addCart1(fruitCart));
+
+    navigate("/order/payment", { state: { cartItems: mergedItems } });
   };
 
   return (

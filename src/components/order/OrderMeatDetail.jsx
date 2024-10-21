@@ -37,9 +37,7 @@ const OrderMeatDetail = (param) => {
         updateViewCountInServer({ productId: meatId, category: "meat" })
       );
       try {
-        const res = await axios.get(
-          `${API_URL}/meatItems?id=${meatId}`
-        );
+        const res = await axios.get(`${API_URL}/meatItems?id=${meatId}`);
         setMeatItem(res.data[0]);
       } catch (error) {
         alert(error);
@@ -68,6 +66,8 @@ const OrderMeatDetail = (param) => {
     setIsModal(true); // 모달 열기
   };
 
+  const existingCartItems = useSelector((state) => state.cart.items) || [];
+
   const paymentFn = () => {
     const meatCart = {
       id: meatItem.id,
@@ -76,12 +76,28 @@ const OrderMeatDetail = (param) => {
       img: `/images/meat/${meatItem.img}`,
       count,
       userEmail,
-      category: "meat"
+      category: "meat",
     };
-    // dispatch(addCart1(meatCart));
-    navigate("/order/payment", { state: { selectedProduct: meatCart } });
-  };
 
+    let mergedItems = [...existingCartItems];
+
+    const existingItemIndex = mergedItems.findIndex(
+      (item) => item.id === meatCart.id && item.category === meatCart.category
+    );
+
+    if (existingItemIndex !== -1) {
+      mergedItems[existingItemIndex] = {
+        ...mergedItems[existingItemIndex],
+        count: mergedItems[existingItemIndex].count + count,
+      };
+    } else {
+      mergedItems.push(meatCart);
+    }
+
+    dispatch(addCart1(meatCart));
+
+    navigate("/order/payment");
+  };
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
