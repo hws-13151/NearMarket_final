@@ -79,14 +79,6 @@
       "img": "carrot.jpg",
       "description": "흙이 묻어있는 그대로의 당근, 달콤하고 아삭아삭한 고향당근입니다!",
       "rocket": "rocket.png",
-      "slideImage": [
-        "carrot.jpg",
-        "carrot2.jpg",
-        "carrot3.jpg",
-        "carrot4.jpg",
-        "carrot5.jpg"
-      ],
-      "viewcount": 45,
       "id": "5722"
     },
     {
@@ -180,7 +172,6 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 22,
       "id": "34c4"
     },
     {
@@ -238,8 +229,7 @@
       "price": 12400,
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
-      "id": "1",
-      "viewcount": 21
+      "id": "1"
     },
     {
       "id": "2",

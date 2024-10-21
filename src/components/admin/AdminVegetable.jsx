@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { asyncAdminVegetableItemsFn } from '../../slice/adminSlice'; 
-import AdminProductModal from './AdminProductModal'; 
+import AdminProductModal from './AdminProductModal';
+import { asyncAdminVegetableItemsFn } from '../../slice/adminSlice';
 
-const AdminVegetable = () => {
-  const vegetableItems = useSelector(state => state.admin.vegetableItems);
-  const dispatch = useDispatch();
+const AdminBest = () => {
+  const indexItems = useSelector(state => state.admin.vegetableItems);
+  const dispatch = useDispatch(); 
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
-    dispatch(asyncAdminVegetableItemsFn()); 
-  }, []);
+    dispatch(asyncAdminVegetableItemsFn());
+  }, [dispatch]); 
 
   // 모달 열기 함수
   const openModal = (product) => {
@@ -22,39 +22,49 @@ const AdminVegetable = () => {
   // 모달 닫기 함수
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedProduct(null);
+    setSelectedProduct(null); 
   };
 
   return (
-    <div className="admin-vegetable">
-      <div className="admin-vegetable-con">
-        <ul>
-        {vegetableItems && vegetableItems.length > 0 ? (
-          vegetableItems.map((el, idx) => (
-            <li key={idx} onClick={() => openModal(el)}> 
-              <li>{el.id}</li>
-              <div className="top">
-                  <img src={`/images/vegetable/${el.img}`} alt={el.img} />
-                </div>
-
-              <div className="bottom">
-                  <span>{el.title}</span>
-                  <span className="delivery-order">
-                    <img src={`/images/vegetable/${el.rocket}`} alt= {el.rocket}/>로켓배송
-                  </span>
-                  <span>{el.description}</span>
-                  <span>{el.price}원</span>
-                </div>
-            </li>
-          ))
-        ) : (
-          <p>상품 정보가 없습니다.</p>
-        )}
-        </ul>
+    <div className="admin-product">
+      <div className="admin-product-con">
+        <h1>채소 상품 목록</h1>
+        <div className="products">
+          <table>
+            <thead>
+              <tr>
+                <th>아이디</th>
+                <th>제목</th>
+                <th>이미지</th>
+                <th>가격</th>
+                <th>설명</th>
+                <th>보기</th>
+              </tr>
+            </thead>
+            <tbody>
+              {indexItems && indexItems.length > 0 ? (
+                indexItems.map((el, idx) => (
+                  <tr key={idx}>
+                    <td>{el.id}</td>
+                    <td>{el.title}</td>
+                    <td><img src={`/images/vegetable/${el.img}`} alt={el.title} style={{ width: '50px' }} /></td>
+                    <td>{el.price.toLocaleString()}원</td>
+                    <td>{el.description}</td>
+                    <td><button onClick={() => openModal(el)}>보기</button></td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6">상품 정보가 없습니다.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {isModalOpen && selectedProduct && (
-        <AdminProductModal 
+        <AdminProductModal
           product={selectedProduct} 
           type="vegetableItems" 
           onClose={closeModal} 
@@ -64,4 +74,4 @@ const AdminVegetable = () => {
   );
 };
 
-export default AdminVegetable;
+export default AdminBest;
