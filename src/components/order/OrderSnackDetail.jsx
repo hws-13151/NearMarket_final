@@ -71,7 +71,7 @@ const OrderSnackDetail = (param) => {
     setCartItem(itemToCart);
     setIsModal(true);
   };
-  const existingCartItems = useSelector((state) => state.cart.items) || [];
+
 
   const paymentFn = () => {
     const selectedProduct = {
@@ -83,29 +83,11 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
+    dispatch(addCart1(selectedProduct))
+    navigate("/order/payment")
+  }
 
-    let mergedItems = [...existingCartItems];
 
-    const existingItemIndex = mergedItems.findIndex(
-      (item) =>
-        item.id === selectedProduct.id &&
-        item.category === selectedProduct.category &&
-        item.userEmail === selectedProduct.userEmail
-    );
-
-    if (existingItemIndex !== -1) {
-      mergedItems[existingItemIndex] = {
-        ...mergedItems[existingItemIndex],
-        count: mergedItems[existingItemIndex].count + snackCount,
-      };
-    } else {
-      mergedItems.push(selectedProduct);
-    }
-
-    dispatch(addCart1(selectedProduct));
-
-    navigate("/order/payment");
-  };
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}

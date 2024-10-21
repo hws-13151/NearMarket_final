@@ -66,7 +66,6 @@ const OrderMeatDetail = (param) => {
     setIsModal(true); // 모달 열기
   };
 
-  const existingCartItems = useSelector((state) => state.cart.items) || [];
 
   const paymentFn = () => {
     const meatCart = {
@@ -78,29 +77,11 @@ const OrderMeatDetail = (param) => {
       userEmail,
       category: "meat",
     };
+    dispatch(addCart1(meatCart))
+    navigate("/order/payment")
+  }
 
-    let mergedItems = [...existingCartItems];
 
-    const existingItemIndex = mergedItems.findIndex(
-      (item) =>
-        item.id === meatCart.id &&
-        item.category === meatCart.category &&
-        item.userEmail === meatCart.userEmail
-    );
-
-    if (existingItemIndex !== -1) {
-      mergedItems[existingItemIndex] = {
-        ...mergedItems[existingItemIndex],
-        count: mergedItems[existingItemIndex].count + count,
-      };
-    } else {
-      mergedItems.push(meatCart);
-    }
-
-    dispatch(addCart1(meatCart));
-
-    navigate("/order/payment");
-  };
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}

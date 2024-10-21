@@ -77,7 +77,6 @@ const OrderFruitDetail = (param) => {
       setIsModal(true); // 모달 열기
     }
   };
-  const existingCartItems = useSelector((state) => state.cart.items) || [];
 
   const paymentFn = () => {
     const fruitCart = {
@@ -88,31 +87,13 @@ const OrderFruitDetail = (param) => {
       img: `/images/fruit/${fruitDetail.img}`,
       count,
       userEmail,
-      category: "fruit",
+      category: "fruit"
     };
+    dispatch(addCart1(fruitCart))
+    navigate("/order/payment")
+  }
 
-    let mergedItems = [...existingCartItems];
 
-    const existingItemIndex = mergedItems.findIndex(
-      (item) =>
-        item.id === fruitCart.id &&
-        item.category === fruitCart.category &&
-        item.userEmail === fruitCart.userEmail
-    );
-
-    if (existingItemIndex !== -1) {
-      mergedItems[existingItemIndex] = {
-        ...mergedItems[existingItemIndex],
-        count: mergedItems[existingItemIndex].count + count,
-      };
-    } else {
-      mergedItems.push(fruitCart);
-    }
-
-    dispatch(addCart1(fruitCart));
-
-    navigate("/order/payment", { state: { cartItems: mergedItems } });
-  };
 
   return (
     <div className="fruit-detail">
