@@ -94,7 +94,10 @@ const OrderFruitDetail = (param) => {
     let mergedItems = [...existingCartItems];
 
     const existingItemIndex = mergedItems.findIndex(
-      (item) => item.id === fruitCart.id && item.category === fruitCart.category
+      (item) =>
+        item.id === fruitCart.id &&
+        item.category === fruitCart.category &&
+        item.userEmail === fruitCart.userEmail
     );
 
     if (existingItemIndex !== -1) {

@@ -82,7 +82,10 @@ const OrderMeatDetail = (param) => {
     let mergedItems = [...existingCartItems];
 
     const existingItemIndex = mergedItems.findIndex(
-      (item) => item.id === meatCart.id && item.category === meatCart.category
+      (item) =>
+        item.id === meatCart.id &&
+        item.category === meatCart.category &&
+        item.userEmail === meatCart.userEmail
     );
 
     if (existingItemIndex !== -1) {

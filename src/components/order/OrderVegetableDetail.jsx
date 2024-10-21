@@ -105,7 +105,9 @@ const OrderVegetableDetail = (param) => {
 
     const existingItemIndex = mergedItems.findIndex(
       (item) =>
-        item.id === vegetableCart.id && item.category === vegetableCart.category
+        item.id === vegetableCart.id &&
+        item.category === vegetableCart.category &&
+        item.userEmail === vegetableCart.userEmail
     );
 
     if (existingItemIndex !== -1) {

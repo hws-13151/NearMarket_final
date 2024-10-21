@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 7
+      "viewcount": 10
     },
     {
       "id": "2",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 38,
+      "viewcount": 43,
       "id": "5722"
     },
     {
@@ -103,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 23
+      "viewcount": 24
     },
     {
       "id": "3",
@@ -134,7 +134,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 23
+      "viewcount": 25
     },
     {
       "id": "5",
@@ -148,7 +148,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 9
+      "viewcount": 10
     },
     {
       "id": "6",
@@ -162,7 +162,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 13
+      "viewcount": 14
     },
     {
       "id": "f15e",
@@ -180,7 +180,8 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 20
+      "viewcount": 22,
+      "id": "34c4"
     },
     {
       "id": "2",
@@ -196,7 +197,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 31
+      "viewcount": 33
     },
     {
       "id": "4",
@@ -204,7 +205,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 21
+      "viewcount": 22
     },
     {
       "id": "5",
@@ -212,7 +213,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 29
+      "viewcount": 31
     },
     {
       "id": "6",
@@ -220,7 +221,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 29
+      "viewcount": 31
     },
     {
       "id": "7",
@@ -238,7 +239,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 18
+      "viewcount": 19
     },
     {
       "id": "2",
