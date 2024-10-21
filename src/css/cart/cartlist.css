@@ -150,28 +150,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 20px;
 }
 
-.cart-pagination-btn1 {
-  padding: 10px 15px;
-  margin: 5px;
+.cart-pagination-btn {
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.cart-pagination-btn2 {
-  padding: 10px 15px;
-  margin: 5px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .cart-pagination-btn.active {
@@ -180,24 +170,22 @@
   border: 2px solid black;
 }
 
-.cart-pagination-info {
-  font-size: 22px;
-  font-weight: bold;
-  color: #007bff;
-  background-color: #f0f0f0;
-  padding: 8px 15px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.cart-pagination-btn:hover {
+  background-color: #ccc;
 }
 
-.cart-pagination-info:hover {
+.cart-pagination-before-btn {
   background-color: #007bff;
+  border: none;
+  font-size: 20px;
   color: white;
-  transform: scale(1.05);
+}
+
+.cart-pagination-after-btn {
+  background-color: red;
+  border: none;
+  font-size: 20px;
+  color: white;
 }
 .cart-payment {
   display: flex;
