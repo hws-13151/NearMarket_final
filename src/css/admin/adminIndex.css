@@ -80,7 +80,7 @@
 
 @media (max-width: 800px){
   .admin-con .admin-left .admin-left-con .menu{
-    height: calc(100vh - 30px - 100px);
+    height: calc(100vh - 20px - 100px);
   }
 }
 
