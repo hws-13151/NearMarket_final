@@ -85,7 +85,10 @@ const OrderIndexDetail = (param) => {
     let mergedItems = [...existingCartItems];
 
     const existingItemIndex = mergedItems.findIndex(
-      (item) => item.id === indexCart.id && item.category === indexCart.category
+      (item) =>
+        item.id === indexCart.id &&
+        item.category === indexCart.category &&
+        item.userEmail === indexCart.userEmail
     );
 
     if (existingItemIndex !== -1) {

@@ -43,10 +43,6 @@ const CartModal = ({ item, setIsModalOpen }) => {
   return (
     <div className="cart-modal">
       <div className="cart-modal-con">
-        <span className="cart-close" onClick={closeFn}>
-          X
-        </span>
-
         <div className="cart-top">
           <img src={item.img} alt={item.title} />
         </div>
@@ -70,7 +66,9 @@ const CartModal = ({ item, setIsModalOpen }) => {
           <button onClick={addCartFn} className="cart-update-btn">
             장바구니 업데이트
           </button>
-          <button onClick={closeFn}>닫기</button>
+          <button className="cart-close" onClick={closeFn}>
+            닫기
+          </button>
         </div>
       </div>
     </div>

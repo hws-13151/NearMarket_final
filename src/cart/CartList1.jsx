@@ -32,6 +32,7 @@ const CartList1 = () => {
     indexOfFirstItem,
     indexOfLastItem
   );
+
   let totalPrice = 0;
 
   filteredCartItems.forEach((item) => {
@@ -146,7 +147,7 @@ const CartList1 = () => {
                     className="cart-delete"
                     onClick={() => openDeleteModal(el)}
                   >
-                    X
+                    삭제
                   </span>
                 </div>
               </div>

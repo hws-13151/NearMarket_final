@@ -89,7 +89,8 @@ const OrderSnackDetail = (param) => {
     const existingItemIndex = mergedItems.findIndex(
       (item) =>
         item.id === selectedProduct.id &&
-        item.category === selectedProduct.category
+        item.category === selectedProduct.category &&
+        item.userEmail === selectedProduct.userEmail
     );
 
     if (existingItemIndex !== -1) {
