@@ -139,9 +139,11 @@ const CartList1 = () => {
                   <div className="cart-details-container">
                     <span>카테고리: {el.category}</span>
                     <span>상품명: {el.title}</span>
-                    <span>가격: {el.price} 원</span>
+                    <span>가격: {el.price.toLocaleString()} 원</span>
                     <span>갯수: {el.count}</span>
-                    <span>총금액: {el.count * el.price} 원</span>
+                    <span>
+                      총금액: {(el.count * el.price).toLocaleString()} 원
+                    </span>
                   </div>
                   <span
                     className="cart-delete"
