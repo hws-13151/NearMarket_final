@@ -26,15 +26,13 @@ const CartList1 = () => {
   );
 
   const totalPages = Math.ceil(filteredCartItems.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredCartItems.slice(
-    indexOfFirstItem,
-    indexOfLastItem
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
+  // forEach로 총합 계산
   let totalPrice = 0;
-
   filteredCartItems.forEach((item) => {
     totalPrice += item.price * item.count;
   });
@@ -44,9 +42,7 @@ const CartList1 = () => {
     setIsModalOpen(true);
   };
 
-  const goToPayment = () => {
-    navigate("/order/payment");
-  };
+  const goToPayment = () => navigate("/order/payment");
 
   const openDeleteModal = (item) => {
     setItemToDelete(item);
@@ -73,49 +69,35 @@ const CartList1 = () => {
     }
   }, [isLogin, userEmail, dispatch]);
 
-  const renderPaginationButtons = () => {
-    const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-    return (
-      <>
-        {currentPage > 1 && (
-          <button
-            onClick={() => setCurrentPage(currentPage - 1)}
-            className={`pagination-arrow ${
-              currentPage === 1 ? "disabled" : ""
-            }`}
-            disabled={currentPage === 1}
-          >
-            {/* ← */} 이전
-          </button>
-        )}
-
-        {pages.map((page) => (
-          <button
-            key={page}
-            onClick={() => setCurrentPage(page)}
-            className={`cart-pagination-btn ${
-              currentPage === page ? "active" : ""
-            }`}
-          >
-            {page}
-          </button>
-        ))}
-
-        {currentPage < totalPages && (
-          <button
-            onClick={() => setCurrentPage(currentPage + 1)}
-            className={`pagination-arrow ${
-              currentPage === totalPages ? "disabled" : ""
-            }`}
-            disabled={currentPage === totalPages}
-          >
-            {/* → */} 다음
-          </button>
-        )}
-      </>
-    );
+  const nextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
+
+  const prevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const renderPaginationButtons = () => (
+    <div className="cart-pagination-container">
+      <button
+        onClick={prevPage}
+        disabled={currentPage === 1}
+        className="cart-pagination-btn1"
+      >
+        이전
+      </button>
+      <span className="cart-pagination-info">
+        {currentPage} / {totalPages}
+      </span>
+      <button
+        onClick={nextPage}
+        disabled={currentPage === totalPages}
+        className="cart-pagination-btn2"
+      >
+        다음
+      </button>
+    </div>
+  );
 
   return (
     <div className="cart-list">
@@ -142,7 +124,7 @@ const CartList1 = () => {
                     <span>가격: {el.price.toLocaleString()} 원</span>
                     <span>갯수: {el.count}</span>
                     <span>
-                      총금액: {(el.count * el.price).toLocaleString()} 원
+                      총금액: {(el.price * el.count).toLocaleString()} 원
                     </span>
                   </div>
                   <span
@@ -162,10 +144,8 @@ const CartList1 = () => {
             </div>
           )}
         </div>
-
-        {filteredCartItems.length > itemsPerPage && (
-          <div className="cart-pagination">{renderPaginationButtons()}</div>
-        )}
+        {/* 페이지네이션 작동구간 */}
+        {filteredCartItems.length > itemsPerPage && renderPaginationButtons()}
 
         {filteredCartItems.length > 0 && (
           <div className="cart-payment">

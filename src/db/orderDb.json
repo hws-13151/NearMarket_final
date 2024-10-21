@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 13
+      "viewcount": 11
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "price": 10900,
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
-      "viewcount": 7
+      "viewcount": 8
     },
     {
       "title": "바나나",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 20
+      "viewcount": 19
     },
     {
       "id": "6",
@@ -86,7 +86,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 46,
+      "viewcount": 45,
       "id": "5722"
     },
     {
@@ -103,7 +103,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 30
+      "viewcount": 29
     },
     {
       "id": "3",
@@ -134,7 +134,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 30
+      "viewcount": 29
     },
     {
       "id": "5",
@@ -148,7 +148,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 12
+      "viewcount": 11
     },
     {
       "id": "6",
@@ -162,7 +162,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 15
+      "viewcount": 17
     },
     {
       "id": "f15e",
@@ -171,7 +171,7 @@
       "description": "산삼",
       "img": "ginseng.jpg",
       "order-corner": "vegetable",
-      "viewcount": 1
+      "viewcount": 2
     }
   ],
   "snackItems": [
@@ -180,7 +180,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 22,
+      "viewcount": 23,
       "id": "34c4"
     },
     {
@@ -189,7 +189,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 80
+      "viewcount": 79
     },
     {
       "id": "3",
@@ -197,7 +197,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 34
+      "viewcount": 35
     },
     {
       "id": "4",
@@ -205,7 +205,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 25
+      "viewcount": 26
     },
     {
       "id": "5",
@@ -213,22 +213,22 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 34
+      "viewcount": 33
     },
     {
       "id": "6",
       "title": "옥수수깡",
       "price": 1000,
       "img": "s5.jpg",
-      "description": "콘칩보다 맛있어여",
-      "viewcount": 34
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
+      "viewcount": 35
     },
     {
       "id": "7",
       "title": "포스틱",
       "price": 1000,
       "img": "s6.jpg",
-      "description": "포스틱 맘스터치보다 나아여 칼로리 적어여",
+      "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
       "viewcount": 14
     }
   ],
@@ -247,7 +247,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 28
+      "viewcount": 27
     },
     {
       "id": "3",
@@ -255,7 +255,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 10
+      "viewcount": 8
     },
     {
       "id": "4",
