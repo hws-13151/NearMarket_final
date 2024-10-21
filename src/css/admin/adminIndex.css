@@ -1,16 +1,12 @@
 @import url(adminLeft.css);
 @import url(adminRight.css);
-@import url(adminFruit.css);
-@import url(adminMeat.css);
 @import url(adminMember.css);
 @import url(adminProductsInsert.css);
-@import url(adminSnack.css);
-@import url(adminVegetable.css);
 @import url(memberModal.css);
 @import url(adminPayment.css);
 @import url(adminCart.css);
 @import url(adminCartModal.css);
-@import url(adminBest.css);
+@import url(adminProduct.css);
 @import url(adminShop.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url(confirmModal.css);
@@ -73,7 +69,7 @@
     box-sizing: border-box;
     position: fixed;
     cursor: pointer;
-    z-index: 999;
+    z-index: 100;
     transition: all 0.3s;
   }
   .admin .admin-con span.button:hover{

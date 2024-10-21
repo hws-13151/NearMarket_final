@@ -204,14 +204,14 @@
   }
 
   .order-header .order-header-nav .gnb ul{
-    width: 50%;
+    width: 40%;
     background-color: #b6b6b6;
     justify-content: center;
     height: 100vh;
   }
 
   .order-header .order-header-nav .gnb ul li{
-    width: 20vmax;
+    width: 15vmax;
   }
 
   .order-header .order-header-nav .gnb ul li a{
