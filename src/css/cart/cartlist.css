@@ -46,7 +46,7 @@
   padding: 2vw;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1vw;
+  gap: 2vw;
   box-sizing: border-box;
 }
 
@@ -222,6 +222,7 @@
 @media screen and (max-width: 1300px) {
   .cart-item-con {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .cart-item-top img {
@@ -243,10 +244,10 @@
   }
 }
 
-/* 800px 이하에서 결제하기 버튼 스타일 유지 */
 @media screen and (max-width: 800px) {
   .cart-item-con {
     grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
 
   .cart-item {
@@ -269,14 +270,16 @@
 
   .cart-details-container {
     flex-direction: column;
+    gap: 20px;
   }
-
+  .cart-details-button {
+    font-size: 20px;
+  }
   .cart-delete {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
-    z-index: 10;
+    font-size: 15px;
   }
 
   .cart-delete:hover {

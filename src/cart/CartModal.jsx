@@ -49,7 +49,7 @@ const CartModal = ({ item, setIsModalOpen }) => {
 
         <div className="cart-title-bottom">
           <span>상품명: {item.title}</span>
-          <span>가격: {item.price}원</span>
+          <span>가격: {item.price.toLocaleString()}원</span>
         </div>
 
         <div className="cart-sum">
@@ -60,7 +60,7 @@ const CartModal = ({ item, setIsModalOpen }) => {
           </div>
 
           <span className="cart-sum-price">
-            총합계: {item.price * itemCount} 원
+            총합계: {(item.price * itemCount).toLocaleString()} 원
           </span>
 
           <button onClick={addCartFn} className="cart-update-btn">
