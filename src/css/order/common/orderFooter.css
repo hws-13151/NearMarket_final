@@ -11,6 +11,7 @@
   justify-content: center;
   font-family: 'Poppins', sans-serif;
 
+
 }
 
 .order-footer .order-footer-con .information {
@@ -79,14 +80,14 @@
 }
 
 
-@media(max-width: 800px) {
+@media(max-width: 1030px) {
   .information-con {
     width: 50%;
     margin-bottom: 30px;
   }
 }
 
-@media(max-width: 574px) {
+@media(max-width: 800px) {
   .information-con {
     width: 100%;
   }

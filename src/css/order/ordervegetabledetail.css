@@ -4,6 +4,7 @@
   align-items: center;
   padding: 150px 20px 20px 20px;
   background-color: #fff;
+
 }
 
 .order-vegetable-detail .order-vegetable-detail-con {
@@ -305,29 +306,30 @@
   font-size: 16px;
 }
 
-@media (max-width: 1030px){
-  .order-vegetable-detail .order-vegetable-detail-con{
+@media (max-width: 1030px) {
+  .order-vegetable-detail .order-vegetable-detail-con {
     width: 100%;
     flex-direction: column;
   }
+
   .order-vegetable-detail-con .left {
     max-width: 100%;
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .order-vegetable-detail-con .right .order-go button:first-child {
     padding: 10px;
     width: auto;
     font-size: 14px;
   }
-  
+
   .order-vegetable-detail-con .right .order-go button:nth-child(2) {
     padding: 10px;
     width: auto;
     font-size: 14px;
   }
-  
+
   .order-vegetable-detail-con .right .order-go button:nth-child(3) {
     padding: 10px;
     width: auto;
