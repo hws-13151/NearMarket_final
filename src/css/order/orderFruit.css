@@ -20,6 +20,18 @@ body {
   padding: 20px;
 }
 
+.order-fruit .order-fruit-header{
+  border-radius: 10px 0px 0px 10px;
+}
+
+.order-fruit .order-fruit-con{
+  border-radius: 0 10px 0 0;
+}
+
+.pagination{
+  border-radius: 0 0 10px 0;
+}
+
 .order-fruit .order-fruit-con {
   flex: 0 1 600px;
   box-sizing: border-box;
@@ -181,5 +193,17 @@ body {
     padding: 10px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+  }
+
+  .order-fruit .order-fruit-header{
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  .order-fruit .order-fruit-con{
+    border-radius: 0;
+  }
+  
+  .pagination{
+    border-radius: 0 0 10px 10px;
   }
 }

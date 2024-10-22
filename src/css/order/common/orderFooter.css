@@ -48,6 +48,7 @@
 .order-footer .order-footer-con .information .information-con ul li {
   margin-bottom: 10px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 
@@ -107,5 +108,9 @@
   }
   .order-footer .order-footer-con .information .information-con .social-links {
     flex-direction: row;
+  }
+  .order-footer .order-footer-con .information .information-con ul li:hover {
+    transform: translateY(-10px);
+    padding: 0;
   }
 }
