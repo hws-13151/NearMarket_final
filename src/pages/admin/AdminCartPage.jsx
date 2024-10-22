@@ -4,7 +4,7 @@ import AdminCart from '../../components/admin/AdminCart'
 const AdminCartPage = () => {
   return (
     <>
-    <AdminCart />
+      <AdminCart />
     </>
   )
 }

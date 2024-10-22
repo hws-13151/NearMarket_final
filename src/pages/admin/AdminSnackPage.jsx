@@ -4,7 +4,7 @@ import AdminSnack from '../../components/admin/AdminSnack'
 const AdminSnackPage = () => {
   return (
     <>
-    <AdminSnack />
+      <AdminSnack />
     </>
   )
 }

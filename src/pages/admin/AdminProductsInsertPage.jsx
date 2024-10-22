@@ -4,7 +4,7 @@ import AdminProductsInsert from '../../components/admin/AdminProductsInsert'
 const AdminProductsInsertPage = () => {
   return (
     <>
-    <AdminProductsInsert />
+      <AdminProductsInsert />
     </>
   )
 }
