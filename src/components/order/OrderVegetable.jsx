@@ -57,6 +57,8 @@ const OrderVegetable = () => {
 
   return (
     <>
+    <div className="order-vtb">
+    </div>
       <div className="order-vegetable">
         <div className="order-vegetable-header">
           <div className="title">신선한 채소</div>

@@ -7,6 +7,7 @@
   justify-content: center;
   background: url('../../../public/images/main-img/main.jpg') no-repeat 50%/cover;
   padding-top: 130px;
+  background-attachment: fixed;
 }
 
 .main .main-sec {
@@ -193,8 +194,8 @@
   border: 1px solid;
   box-sizing: border-box;
 
-  border: 1px solid rgb(170, 170, 170);
-  background-color: rgba(236, 236, 236, 0.651);
+  border: 1px solid rgb(214, 214, 214);
+  background-color: rgba(247, 247, 247, 0.774);
   border-radius: 10px;
 
   display: flex;

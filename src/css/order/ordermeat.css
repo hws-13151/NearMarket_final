@@ -6,12 +6,14 @@
   justify-content: center;
   align-items: center;
   padding-top: 130px;
+  
   background: url(../../../public/images/meat/main.jpg) no-repeat 50%/cover;
+  background-attachment: fixed;
 }
 
 .order-meat .order-meat-con {
-  flex: 0 1 100%;
-
+  flex: 0 1 75%;
+  margin: 20px auto;
   background-color: rgba(255, 255, 255, 0.7);
 
   display: flex;
@@ -25,7 +27,7 @@
 }
 
 .order-meat .order-meat-con .order-meat-title {
-  width: 75%;
+  width: 95%;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -41,7 +43,7 @@
 }
 
 .order-meat .order-meat-con .order-meat-mid{
-  width: 75%;
+  width: 95%;
   display: flex;
   justify-content: flex-end;
 }
@@ -107,6 +109,7 @@
   transform: scale(1.03);
 
   box-shadow: 2px 2px 2px #ccc;
+  background-color: rgba(255, 255, 255, 0.74);
 }
 
 .order-meat .order-meat-con .order-meat-item>ul>li .top {
@@ -171,6 +174,10 @@
 }
 
 @media (max-width: 800px) {
+  .order-meat {
+    background: url(../../../public/images/meat/main.jpg) no-repeat 85%/cover;
+    background-attachment: fixed;
+  }
   .order-meat .order-meat-con .order-meat-item>ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);

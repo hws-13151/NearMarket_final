@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 15
+      "viewcount": 12
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 27
+      "viewcount": 26
     },
     {
       "id": "3",
@@ -22,14 +22,14 @@
       "price": 10900,
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
-      "viewcount": 10
+      "viewcount": 8
     },
     {
       "title": "바나나",
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 9,
+      "viewcount": 8,
       "id": "e988"
     },
     {
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 23
+      "viewcount": 19
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 9
+      "viewcount": 10
     },
     {
       "title": "오렌지",
@@ -87,7 +87,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 49,
+      "viewcount": 48,
       "id": "5722"
     },
     {
@@ -104,7 +104,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 30
+      "viewcount": 33
     },
     {
       "id": "3",
@@ -120,7 +120,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 7
+      "viewcount": 9
     },
     {
       "id": "4",
@@ -135,7 +135,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 31
+      "viewcount": 30
     },
     {
       "id": "5",
@@ -163,7 +163,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 18
+      "viewcount": 22
     },
     {
       "id": "f15e",
@@ -172,7 +172,7 @@
       "description": "산삼",
       "img": "ginseng.jpg",
       "order-corner": "vegetable",
-      "viewcount": 2
+      "viewcount": 3
     }
   ],
   "snackItems": [
@@ -181,7 +181,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 24,
+      "viewcount": 23,
       "id": "34c4"
     },
     {
@@ -198,7 +198,7 @@
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 36
+      "viewcount": 37
     },
     {
       "id": "4",
@@ -206,7 +206,7 @@
       "price": 1400,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 27
+      "viewcount": 26
     },
     {
       "id": "5",
@@ -240,7 +240,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 25
+      "viewcount": 32
     },
     {
       "id": "2",
@@ -248,7 +248,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 23
+      "viewcount": 24
     },
     {
       "id": "3",
@@ -256,7 +256,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 8
+      "viewcount": 9
     },
     {
       "id": "4",
@@ -288,7 +288,7 @@
       "img": "meat7.jpg",
       "description": "국내산 돼지갈비 부드럽고 맛있습니다.",
       "id": "7",
-      "viewcount": 2
+      "viewcount": 3
     }
   ],
   "indexItems": [
