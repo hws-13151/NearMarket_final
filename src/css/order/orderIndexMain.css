@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
 
-  padding: 1vw 0;
+  padding: calc(130px + 1vw) 0 1vw 0;
 
   transition: all 0.3s;
 }
@@ -123,9 +123,6 @@
 }
 
 @media (max-width: 800px){
-  .order-index{
-    padding: 2vw 0;
-  }
   .order-index .order-index-con{
     gap: 2vw;
   }

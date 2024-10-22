@@ -16,6 +16,8 @@ const StartPage = lazy(() => import("../pages/StartPage"));
 // Main
 const MainPage = lazy(() => import("../pages/MainPage"));
 const MainLayout = lazy(() => import("../layout/MainLayout"));
+
+// order
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
 const OrderIndexPage = lazy(() => import("../pages/order/OrderIndexPage"));
 const OrderIndexDetailPage = lazy(() => import("../pages/order/OrderIndexDetailPage"));
