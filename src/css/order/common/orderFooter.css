@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-}
 
 .order-footer {
   width: 100%;
@@ -12,13 +9,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: center;
+  font-family: 'Poppins', sans-serif;
 
 }
 
 .order-footer .order-footer-con .information {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  margin-left: 10vw;
+  box-sizing: border-box;
 }
 
 .order-footer .order-footer-con .information .information-con {
@@ -39,7 +38,7 @@ body {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #829ca1;
+  background-color: #bb69a6;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
@@ -56,17 +55,22 @@ body {
   padding-left: 5px;
 }
 
-.order-footer .order-footer-con .information .information-con .social-links i {
+.order-footer .order-footer-con .information .information-con .social-links {
+  display: flex;
+}
+
+.order-footer .order-footer-con .information .information-con i {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.637);
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: #ffffff;
+  color: #111111;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .footer-col .social-links i:hover {

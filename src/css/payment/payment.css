@@ -1,7 +1,8 @@
 .payment {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 150px;
 }
 
 .payment-con {
@@ -13,7 +14,7 @@
 
 .payment .payment-con h1 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: #333;
 }
 

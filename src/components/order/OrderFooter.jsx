@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const OrderFooter = () => {
   return (
     <>
-      <div class="order-footer">
-        <div class="order-footer-con">
-          <div class="information">
-            <div class="information-con">
+      <div className="order-footer">
+        <div className="order-footer-con">
+          <div className="information">
+            <div className="information-con">
               <h4>NM.K</h4>
               <ul>
                 <li>About us</li>
@@ -15,7 +17,7 @@ const OrderFooter = () => {
                 <li>Affiliate program</li>
               </ul>
             </div>
-            <div class="information-con">
+            <div className="information-con">
               <h4>Get help</h4>
               <ul>
                 <li>FAQ</li>
@@ -25,22 +27,22 @@ const OrderFooter = () => {
                 <li>Payment options</li>
               </ul>
             </div>
-            <div class="information-con">
+            <div className="information-con">
               <h4>Online shop</h4>
               <ul>
-                <li>Vegetable</li>
-                <li>Meat</li>
-                <li>Fruit</li>
-                <li>Snack</li>
+                <li><Link to={"/order/vegetable"}>Vegetable</Link></li>
+                <li><Link to={"/order/meat"}>Meat</Link></li>
+                <li><Link to={"/order/fruit"}>Fruit</Link></li>
+                <li><Link to={"/order/snack"}>Snack</Link></li>
               </ul>
             </div>
-            <div class="information-con">
+            <div className="information-con">
               <h4>follow us</h4>
-              <div class="social-links">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-linkedin-in"></i>
+              <div className="social-links">
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-linkedin-in"></i>
               </div>
             </div>
           </div>
