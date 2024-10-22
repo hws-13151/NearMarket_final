@@ -50,14 +50,14 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
-// 선택한 주문처 모달오픈
+  // 선택한 주문처 모달오픈
   const openModal = () => {
-  const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
-  if (selectedShopInfo) {
-    setSelectedShop(selectedShopInfo);
-    setIsModalOpen(true);
-  }
-};
+    const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
+    if (selectedShopInfo) {
+      setSelectedShop(selectedShopInfo);
+      setIsModalOpen(true);
+    }
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -162,6 +162,17 @@ const Payment = () => {
     );
   };
 
+  const handleSelectAll = () => {
+    if (selectedItems.length === paymentItems.length) {
+      setSelectedItems([]);
+    } else {
+      setSelectedItems(paymentItems);
+    }
+  };
+
+
+
+
 
 
   const isPaymentReady = onPayment.paymentMethod && onPayment.shopVal && onPayment.orderMethod
@@ -208,6 +219,9 @@ const Payment = () => {
           <div className="payment-item">
             <h3>배송상품</h3>
             <div className="payment-item-con">
+              <button onClick={handleSelectAll}>
+                {selectedItems.length === paymentItems.length ? "전체 해제" : "전체 선택"}
+              </button>
               {paymentItems && paymentItems.map((el, idx) => {
                 return (
                   <div className="payment-list" key={idx}>
@@ -254,18 +268,18 @@ const Payment = () => {
                   </td>
                   {/* 주문처 db 연동 */}
                   <td>
-                  <div className="payment-shop">
-                    <select name="shopVal" id="shopVal" onChange={shopValFn}
-                    className="payment-shop-list">
-                      <option value="">주문처</option>
-                      {shop.map((shopEl) => (
-                        <option key={shopEl.id} value={shopEl.title}>
-                          {shopEl.title}
-                        </option>
-                      ))}
-                    </select>
-                    <button onClick={openModal}>지도보기</button>
-                  </div>
+                    <div className="payment-shop">
+                      <select name="shopVal" id="shopVal" onChange={shopValFn}
+                        className="payment-shop-list">
+                        <option value="">주문처</option>
+                        {shop.map((shopEl) => (
+                          <option key={shopEl.id} value={shopEl.title}>
+                            {shopEl.title}
+                          </option>
+                        ))}
+                      </select>
+                      <button onClick={openModal}>지도보기</button>
+                    </div>
                   </td>
 
                   <td>
@@ -298,7 +312,7 @@ const Payment = () => {
                 </tr>
               </tbody>
             </table>
-          </div>       
+          </div>
           <div className="payment-sub">
             <div className="sum-price">
               총합계: {totalPrice.toLocaleString()} 원
@@ -311,7 +325,7 @@ const Payment = () => {
       </div>
       {/* 모달 창 추가*/}
       {isModalOpen && selectedShop && (
-          <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />)}  
+        <PaymentApiModal selectedShop={selectedShop} onClose={closeModal} />)}
     </>
   );
 };
