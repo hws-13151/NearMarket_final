@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncAdminSnackItemsFn } from '../../slice/adminSlice';
-import AdminProductModal from './AdminProductModal'; 
+import AdminProductModal from './AdminProductModal';  
 
 const AdminSnack = () => {
   const snackItems = useSelector(state => state.admin.snackItems); // 수정된 부분
