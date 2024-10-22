@@ -191,13 +191,13 @@
 }
 
 @media (max-width: 800px) {
-  .order-vtb {
-    height: 230vh;
+  .order-vtb{
+    height: 220vh;
   }
 }
 
-@media (max-width: 500px) {
-  .order-vtb {
+@media (max-width: 450px) {
+  .order-vtb{
     height: 250vh;
   }
 }

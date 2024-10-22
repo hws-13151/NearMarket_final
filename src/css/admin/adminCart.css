@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+.admin-cart .admin-cart-header{
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 h2 {
   text-align: center;
   color: #333;
@@ -17,11 +25,12 @@ h2 {
 .order-table-con{
   width: 90%;
   overflow-y: scroll;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
 }
 
 .order-table {
   width: 100%;
+  overflow-y: scroll;
   border-collapse: collapse;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -75,9 +84,12 @@ h2 {
   .order-table td:nth-child(6){
     display: none;
   }
+  .admin-cart .admin-cart-header{
+    justify-content: center;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .order-table {
     font-size: 14px;
   }

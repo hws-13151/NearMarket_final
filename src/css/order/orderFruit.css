@@ -1,7 +1,6 @@
 body {
   margin: 0;
   height: 100vh;
-  overflow-y: auto;
 }
 
 .order-fruit {
@@ -9,9 +8,16 @@ body {
   height: 100%;
   padding: 150px 20px 20px 20px;
   box-sizing: border-box;
-  background-color: #f8f8f8;
+  background: url(../../../public/images/fruit/main.jpg) no-repeat 50%/cover;
   display: flex;
   justify-content: center;
+}
+
+.order-fruit .order-fruit-header,
+.order-fruit .order-fruit-con,
+.pagination{
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
 }
 
 .order-fruit .order-fruit-con {
@@ -125,7 +131,8 @@ body {
 .order-fruit .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .order-fruit .pagination button {
