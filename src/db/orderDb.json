@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "title": "오렌지",
@@ -240,7 +240,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 32
+      "viewcount": 33
     },
     {
       "id": "2",

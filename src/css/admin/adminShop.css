@@ -1,7 +1,7 @@
 .admin-shop {
     width: 100%;
     height: calc(100vh - 50px);
-    background-color: #ccc; /* 전체 배경색 */
+    background-color: rgb(238, 238, 238);
 }
 
 .admin-shop .admin-shop-con {
@@ -29,18 +29,18 @@
 
 .admin-shop .admin-shop-con th {
     padding: 10px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     text-align: left;
-    background-color: #ccc; 
+    background-color: rgb(238, 238, 238);
     color: #4a4141;
     transition: all 0.3s;
 }
 
 .admin-shop .admin-shop-con td {
     padding: 10px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     text-align: left;
-    background-color: #ccc;
+    background-color: rgb(238, 238, 238);
     color: #4a4141; 
     transition: all 0.3s;
 }

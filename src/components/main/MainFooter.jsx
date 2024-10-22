@@ -14,7 +14,6 @@ const OrderFooter = () => {
                 <li>About us</li>
                 <li>Our services</li>
                 <li>Privacy policy</li>
-                <li>Affiliate program</li>
               </ul>
             </div>
             <div className="information-con">
@@ -24,7 +23,6 @@ const OrderFooter = () => {
                 <li>Shipping</li>
                 <li>Return</li>
                 <li>Order status</li>
-                <li>Payment options</li>
               </ul>
             </div>
             <div className="information-con">

@@ -169,7 +169,7 @@
 
 @media (max-width: 1030px){
   .order-snack-main{
-    height: 180vh;
+    height: 150vh;
   }
   .order-snack-con ul li {
     width: 29vw;
@@ -178,7 +178,7 @@
 
 @media (max-width: 800px) {
   .order-snack-main{
-    height: 256vh;
+    height: 200vh;
   }
   .order-snack-header h2 {
     font-size: 25px;
@@ -202,5 +202,11 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-end;
+  }
+}
+
+@media (max-width: 500px){
+  .order-snack-main{
+    height: 220vh;
   }
 }

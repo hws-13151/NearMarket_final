@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncPaymentFn } from "../../slice/paymentSlice";
+import SearchBox from "../order/SearchBox";
 
 const AdminCart = () => {
+  const [userInput, setUserInput] = useState("")
   const dispatch = useDispatch();
   const paymentInformation = useSelector(
     (state) => state.payment.paymentInformation
@@ -13,9 +15,21 @@ const AdminCart = () => {
     dispatch(asyncPaymentFn());
   }, [dispatch]);
 
+  const handleChange = (e) => {
+    setUserInput(e.target.value)
+  }
+  const filteredPaymentMember = paymentInformation.filter((paymentList) => {
+    return paymentList.memberEmail.toLowerCase().includes(userInput.toLowerCase())
+  })
+
   return (
     <div className="admin-cart">
       <h2>주문 내역 조회</h2>
+      <div className="admin-cart-header">
+        <div className="admin-payment-header">
+          <span style={{ display: 'block'}}><SearchBox handleChange={handleChange} /></span>
+        </div>
+      </div>
       {status === "Pending" && <p>로딩 중...</p>}
       {status === "Fail" && <p>결제 내역을 불러오는데 실패했습니다.</p>}
       {status === "Complete" && paymentInformation.length > 0 ? (
@@ -33,7 +47,7 @@ const AdminCart = () => {
               </tr>
             </thead>
             <tbody>
-              {paymentInformation.map((order, index) => (
+              {filteredPaymentMember && filteredPaymentMember.map((order, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{order.paymentMethod}</td>
