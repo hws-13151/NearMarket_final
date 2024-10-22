@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 30
+      "viewcount": 26
     },
     {
       "id": "3",
@@ -29,7 +29,7 @@
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 6,
+      "viewcount": 7,
       "id": "e988"
     },
     {
@@ -240,7 +240,7 @@
       "price": 13000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 28
+      "viewcount": 22
     },
     {
       "id": "3",
