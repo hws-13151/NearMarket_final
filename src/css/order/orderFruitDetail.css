@@ -1,8 +1,8 @@
 .fruit-detail {
     width: 80%;
-    height: calc(100vh - 130px - 236px);
-    margin: 0 auto;
-    padding: 20px;
+    height: 80vh;
+    margin: 10px auto;
+    padding: 160px 20px 40px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     box-sizing: border-box;
@@ -17,6 +17,7 @@
     flex-direction: row; /* 수평 배치로 변경 */
     align-items: center; /* 세로 중앙 정렬 */
     gap: 2vw;
+    
 }
 
 .fruit-detail-con ul {
@@ -32,10 +33,11 @@
 .fruit-detail .fruit-detail-con .fruit-detail-left{
     flex: 1;
     display: flex;
+    justify-content: center;
 }
 .fruit-detail .fruit-detail-con .fruit-detail-left .fruit-detail-left-img{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .fruit-detail-con .fruit-detail-left .fruit-detail-left-img img {
