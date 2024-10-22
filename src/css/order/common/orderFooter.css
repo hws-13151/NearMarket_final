@@ -1,32 +1,89 @@
-.order-footer{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.order-footer {
   width: 100%;
   height: 100%;
-  
-  background-color: rgb(241, 242, 246);
-  display: flex;
+  padding: 70px 0;
+  background: url('/public/images/orderfooter/footer.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
 
-  box-shadow: inset 0 2px 0 rgb(221, 221, 221);;
-
-  padding: 1vw 0;
 }
 
-.order-footer .order-footer-con{
-  flex: 0 1 1600px;
-  height: auto;
-  transition: all 0.3s;
+.order-footer .order-footer-con .information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.order-footer .order-footer-con #near{
-  font-size: 30px;
+.order-footer .order-footer-con .information .information-con {
+  width: 25%;
+  padding: 0 15px;
 }
 
-.order-footer .order-footer-con #call{
-  font-size: 35px;
+.order-footer .order-footer-con .information .information-con h4 {
+  font-size: 18px;
+  color: #252525;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
 }
 
-@media (max-width: 800px){
-  .order-footer .order-footer-con{
-    padding: 0 20px;
+.order-footer .order-footer-con .information .information-con h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #829ca1;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.order-footer .order-footer-con .information .information-con ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
+.order-footer .order-footer-con .information .information-con ul li:hover {
+  color: #2c2a2a;
+  padding-left: 5px;
+}
+
+.order-footer .order-footer-con .information .information-con .social-links i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links i:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+
+@media(max-width: 800px) {
+  .information-con {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 574px) {
+  .information-con {
+    width: 100%;
   }
 }
