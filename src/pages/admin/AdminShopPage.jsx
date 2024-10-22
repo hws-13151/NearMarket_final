@@ -4,7 +4,7 @@ import AdminShop from '../../components/admin/AdminShop'
 const AdminShopPage = () => {
   return (
     <>
-    <AdminShop />
+      <AdminShop />
     </>
   )
 }

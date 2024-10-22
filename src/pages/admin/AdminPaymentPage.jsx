@@ -4,7 +4,7 @@ import AdminPayment from '../../components/admin/AdminPayment'
 const AdminPaymentPage = () => {
   return (
     <>
-    <AdminPayment />
+      <AdminPayment />
     </>
   )
 }

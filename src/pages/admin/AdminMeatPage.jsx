@@ -4,7 +4,6 @@ import AdminMeat from '../../components/admin/AdminMeat'
 const AdminMeatPage = () => {
   return (
     <>
-    
     <AdminMeat />
     </>
   )
