@@ -146,13 +146,13 @@ const Join = () => {
                                 value={join.phoneNumber}
                                 onChange={joinChangeFn} />
                         </li>
-                        <li>
+                        {/* <li>
                             <select name="role" id="role" value={join.role}
                                 onChange={joinChangeFn}>
                                 <option value="ROLE_MEMBER">MEMBER</option>
                                 <option value="ROLE_ADMIN">ADMIN</option>
                             </select>
-                        </li>
+                        </li> */}
                         <li>
                             <button onClick={joinFn} onClickCapture={joinModalFn} disabled={!isEmailCheck || !isEmail || !isFormValid}>회원가입</button>
                             <button onClick={() => {
