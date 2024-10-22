@@ -56,53 +56,56 @@ const PaymentDetail = () => {
             <img src="/images/payment/profile.jpg.png" alt="프로필 이미지" />
           </div>
         </div>
-        <div className="paymentlist"></div>
-        <div className="paymentlist-con">
-          <h2>주문/배송 조회</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>주문일자</th>
-                <th>상품상세내역</th>
-                <th>주문금액</th>
-                <th>주문처</th>
-                <th>주문방식</th>
-                <th>주소</th>
-                <th>배송메시지</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paymentInformation && paymentInformation.length > 0 ? (
-                paymentInformation
-                  .filter((el) => el.memberEmail === loginUser[0].userEmail) // 이메일이 같은 결제 정보만 필터링
-                  .map((el, idx) => (
-                    <tr key={idx}>
-                      <td>{el.time}</td>
-                      <td>
-                        {el.paymentResult.map((el2, idx2) => (
-                          <div key={idx2}>
-                            <div>{el2.title}</div>
-                            <div>
-                              <img src={el2.img} alt={el2.img} />
-                            </div>
-                            <div>가격: {el2.price.toLocaleString()}원</div>
-                            <div>수량: {el2.count}개</div>
-                          </div>
-                        ))}
-                      </td>
-                      <td>{el.paymentAmount.toLocaleString()}원</td>
-                      <td>{el.shopVal}</td>
-                      <td>{el.orderMethod}</td>
-                      <td>{el.orderAddress}</td>
-                      <td>{el.addressMessage}</td>
-                    </tr>
-                  ))
-              ) : (
+        <div className="paymentlist">
 
-                <div className="nopayment">주문내역이 없습니다</div>
-              )}
-            </tbody>
-          </table>
+
+          <div className="paymentlist-con">
+            <h2>주문/배송 조회</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>주문일자</th>
+                  <th>상품상세내역</th>
+                  <th>주문금액</th>
+                  <th>주문처</th>
+                  <th>주문방식</th>
+                  <th>주소</th>
+                  <th>배송메시지</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paymentInformation && paymentInformation.length > 0 ? (
+                  paymentInformation
+                    .filter((el) => el.memberEmail === loginUser[0].userEmail) // 이메일이 같은 결제 정보만 필터링
+                    .map((el, idx) => (
+                      <tr key={idx}>
+                        <td>{el.time}</td>
+                        <td>
+                          {el.paymentResult.map((el2, idx2) => (
+                            <div key={idx2}>
+                              <div>{el2.title}</div>
+                              <div>
+                                <img src={el2.img} alt={el2.img} />
+                              </div>
+                              <div>가격: {el2.price.toLocaleString()}원</div>
+                              <div>수량: {el2.count}개</div>
+                            </div>
+                          ))}
+                        </td>
+                        <td>{el.paymentAmount.toLocaleString()}원</td>
+                        <td>{el.shopVal}</td>
+                        <td>{el.orderMethod}</td>
+                        <td>{el.orderAddress}</td>
+                        <td>{el.addressMessage}</td>
+                      </tr>
+                    ))
+                ) : (
+
+                  <div className="nopayment">주문내역이 없습니다</div>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {paymentModal && <PaymentDetailModal onClose={closePaymentModalFn} />}

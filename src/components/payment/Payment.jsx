@@ -50,6 +50,11 @@ const Payment = () => {
       fetchShop();
     }
   }, []);
+
+
+
+
+
   // 선택한 주문처 모달오픈
   const openModal = () => {
     const selectedShopInfo = shop.find((shopEl) => shopEl.title === onPayment.shopVal);
@@ -62,7 +67,11 @@ const Payment = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
+  useEffect(() => {
+    if (paymentItems && paymentItems.length > 0) {
+      setSelectedItems(paymentItems);
+    }
+  }, [paymentItems]);
 
 
   //주문처추가
