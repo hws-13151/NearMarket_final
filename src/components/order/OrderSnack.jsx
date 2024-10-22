@@ -55,6 +55,9 @@ const OrderSnack = () => {
 
   return (
     <>
+      <div className="order-snack-main">
+        <div className="osm"></div>
+      </div>
       <div className="order-snack-header">
         <h2>
           과자코너 <span>Total {filteredSnack.length}</span>
@@ -70,7 +73,6 @@ const OrderSnack = () => {
           </select>
         </div>
       </div>
-
       <div className="order-snack">
         <div className="order-snack-con">
           <ul>
