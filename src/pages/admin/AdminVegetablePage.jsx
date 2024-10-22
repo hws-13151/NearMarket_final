@@ -4,7 +4,7 @@ import AdminVegetable from '../../components/admin/AdminVegetable'
 const AdminVegetablePage = () => {
   return (
     <>
-    <AdminVegetable />
+      <AdminVegetable />
     </>
   )
 }
