@@ -12,7 +12,7 @@ const itemData = {
 
 const AdminProductsInsert = () => {
   const [formData, setFormData] = useState(itemData);
-  const [imgFile, setImgFile] = useState([]);
+  const [imgFile, setImgFile] = useState('');
   const [modalMessage, setModalMessage] = useState(''); // 모달 메시지 
   const [isConfirmModalOpen, setConfirmModalOpen] = useState(false); // 모달 
   const imgRef = useRef();
@@ -124,7 +124,10 @@ const AdminProductsInsert = () => {
         <div className="insert-con">
           <div className="insert-left">
             <div className="insert-left-con">
-              <img src={imgFile ? imgFile : "/default-image-path.jpg"} alt="이미지를 첨부해 주세요" />
+              <img
+                src={imgFile ? imgFile : "https://placehold.co/500x500"}
+                alt="이미지를 첨부해 주세요"
+              />
             </div>
           </div>
           <div className="insert-right">

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 
-const OrderFooter = () => {
+const MrderFooter = () => {
   return (
     <>
       <div className="main-footer">
@@ -11,9 +11,10 @@ const OrderFooter = () => {
             <div className="information-con">
               <h4>NM.K</h4>
               <ul>
-                <li>About us</li>
-                <li>Our services</li>
-                <li>Privacy policy</li>
+                <li>서울시 노원구</li>
+                <li>02-6953-7551</li>
+                <li>그린컴퓨터학원</li>
+                <li>greenart.co.kr</li>
               </ul>
             </div>
             <div className="information-con">
@@ -22,11 +23,11 @@ const OrderFooter = () => {
                 <li>FAQ</li>
                 <li>Shipping</li>
                 <li>Return</li>
-                <li>Order status</li>
+                <li>Payment</li>
               </ul>
             </div>
             <div className="information-con">
-              <h4>Online shop</h4>
+              <h4>shop</h4>
               <ul>
                 <li><Link to={"/order/vegetable"}>Vegetable</Link></li>
                 <li><Link to={"/order/meat"}>Meat</Link></li>
@@ -51,4 +52,4 @@ const OrderFooter = () => {
   )
 }
 
-export default OrderFooter
+export default MrderFooter

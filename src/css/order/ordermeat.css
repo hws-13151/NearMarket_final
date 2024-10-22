@@ -78,10 +78,12 @@
   transition: all 0.3s;
 
   background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .order-meat .order-meat-con .order-meat-item>ul {
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 2fr);
@@ -157,7 +159,7 @@
 
 @media (max-width: 1030px){
   .order-meat .order-meat-con{
-    flex: 0 1 90%;
+    flex: 0 1 95%;
   }
   .order-meat .order-meat-con .order-meat-item{
     width: 90%;

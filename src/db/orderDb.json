@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 13
+      "viewcount": 15
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 26
+      "viewcount": 32
     },
     {
       "id": "3",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 19
+      "viewcount": 20
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 11
+      "viewcount": 12
     },
     {
       "title": "오렌지",
@@ -87,7 +87,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 49,
+      "viewcount": 51,
       "id": "5722"
     },
     {
@@ -104,7 +104,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 33
+      "viewcount": 35
     },
     {
       "id": "3",
@@ -120,7 +120,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "id": "4",
@@ -135,7 +135,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 30
+      "viewcount": 32
     },
     {
       "id": "5",
@@ -149,7 +149,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 14
+      "viewcount": 17
     },
     {
       "id": "6",
@@ -163,7 +163,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 22
+      "viewcount": 23
     },
     {
       "id": "f15e",
@@ -181,7 +181,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 24,
+      "viewcount": 25,
       "id": "34c4"
     },
     {
@@ -190,23 +190,21 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 81
+      "viewcount": 85
     },
     {
-      "id": "3",
       "title": "초코송이",
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "viewcount": 37
+      "id": "3"
     },
     {
-      "id": "4",
       "title": "홈런볼 초코맛",
-      "price": 1400,
+      "price": 2000,
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
-      "viewcount": 26
+      "id": "4"
     },
     {
       "id": "5",
@@ -214,7 +212,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 35
+      "viewcount": 36
     },
     {
       "id": "6",
@@ -222,7 +220,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "콘칩 보다 얇아서 좋아여",
-      "viewcount": 38
+      "viewcount": 41
     },
     {
       "id": "7",
@@ -240,15 +238,14 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 34
+      "viewcount": 37
     },
     {
-      "id": "2",
-      "title": "국내산목 살[냉장보관]",
-      "price": 13000,
+      "title": "국내산 목살[냉장보관]",
+      "price": 30000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "viewcount": 24
+      "id": "2"
     },
     {
       "id": "3",
@@ -256,7 +253,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 9
+      "viewcount": 10
     },
     {
       "id": "4",
@@ -264,7 +261,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 9
+      "viewcount": 10
     },
     {
       "id": "5",
@@ -689,6 +686,170 @@
       ],
       "paymentAmount": 1000,
       "time": "2024/10/22 16:00:36"
+    },
+    {
+      "id": "ea6e",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "green",
+      "paymentResult": [
+        {
+          "id": "4",
+          "title": "파프리카",
+          "price": 4000,
+          "img": "/images/vegetable/paprica.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com"
+        },
+        {
+          "id": "5",
+          "title": "호박",
+          "price": 10000,
+          "img": "/images/vegetable/pumkin.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com"
+        },
+        {
+          "id": "2",
+          "img": "/images/fruit/f1.jpg",
+          "title": "사과",
+          "price": 4900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com"
+        },
+        {
+          "id": "5",
+          "title": "자갈치 문어맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s4.webp",
+          "count": 3,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com"
+        }
+      ],
+      "paymentAmount": 21900,
+      "time": "2024/10/22 16:30:26"
+    },
+    {
+      "id": "2236",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "green",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "토마토",
+          "price": 6000,
+          "img": "/images/vegetable/tomato.jpg",
+          "count": 1,
+          "category": "vegetable",
+          "userEmail": "admin1234@naver.com"
+        },
+        {
+          "id": "1",
+          "title": "국내산 삼겹살 구이용",
+          "price": 12400,
+          "img": "/images/meat/meat1.jpg",
+          "count": 1,
+          "category": "meat",
+          "userEmail": "admin1234@naver.com"
+        }
+      ],
+      "paymentAmount": 18400,
+      "time": "2024/10/22 16:37:41"
+    },
+    {
+      "id": "f3b1",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "green",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "먹태깡 청양마요맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s1.jpeg",
+          "count": 2,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com"
+        }
+      ],
+      "paymentAmount": 2000,
+      "time": "2024/10/22 16:47:30"
+    },
+    {
+      "id": "30af",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "배달",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "양파",
+          "price": 1000,
+          "img": "/images/vegetable/onion.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "vegetable"
+        },
+        {
+          "id": "5722",
+          "title": "당근",
+          "price": 2000,
+          "img": "/images/vegetable/carrot.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "vegetable"
+        },
+        {
+          "id": "2",
+          "title": "옥수수",
+          "price": 5000,
+          "img": "/images/vegetable/corn.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 8000,
+      "time": "2024/10/22 16:56:12"
+    },
+    {
+      "id": "3dc3",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "옥수수깡",
+          "price": 1000,
+          "img": "/images/ordersnack/s5.jpg",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "a2@email.com"
+        }
+      ],
+      "paymentAmount": 1000,
+      "time": "2024/10/22 16:59:01"
     }
   ],
   "api": [
