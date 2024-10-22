@@ -218,10 +218,10 @@ const Payment = () => {
           </div>
           <div className="payment-item">
             <h3>배송상품</h3>
+            <button onClick={handleSelectAll}>
+              {selectedItems.length === paymentItems.length ? "전체 해제" : "전체 선택"}
+            </button>
             <div className="payment-item-con">
-              <button onClick={handleSelectAll}>
-                {selectedItems.length === paymentItems.length ? "전체 해제" : "전체 선택"}
-              </button>
               {paymentItems && paymentItems.map((el, idx) => {
                 return (
                   <div className="payment-list" key={idx}>
