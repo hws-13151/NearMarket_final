@@ -19,7 +19,7 @@ const Paymenlietail = () => {
   }, []);
 
   if (!isLogin) {
-    return <div>로그인 되지 않았습니다. 로그인 후 다시 시도하세요.</div>;
+    return <div className="notLogIn"><p>로그인 되지 않았습니다.<br/> 로그인 후 다시 시도하세요.</p></div>;
   }
 
   const paymentModalFn = (e) => {

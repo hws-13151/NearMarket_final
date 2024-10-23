@@ -158,6 +158,26 @@
   margin-bottom: 10px;
 }
 
+.notLogIn{
+  width: 100%;
+  height: calc(100vh - 130px - 433px);
+  padding-top: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: violet;
+}
+.notLogIn p{
+  width: 50%;
+  height: 50%;
+  background-color: violet;
+  font-size: 30px;
+  color: springgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 800px){
   .paymentDetail .paymentDetail-con {
     flex: 0 1 95%;
