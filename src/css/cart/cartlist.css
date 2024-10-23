@@ -11,6 +11,7 @@
   min-height: calc(100vh - 130px - 225px);
   display: flex;
   justify-content: center;
+  align-items: center; /* 세로 중앙 정렬 */
   padding: 130px 0.5vw 0.5vw;
   background-color: antiquewhite;
 }
@@ -22,7 +23,8 @@
   display: flex;
   flex-direction: column;
   padding: 1vw;
-  gap: 10px;
+  gap: 20px; /* 간격 조정 */
+  align-items: center; /* 가로 중앙 정렬 */
 }
 
 .cart-title {
@@ -31,6 +33,7 @@
   padding: 0.5vw;
   text-align: center;
   font-family: "Jua", serif;
+  width: 100%;
 }
 
 .cart-item-con {
@@ -41,20 +44,21 @@
 
 .cart-item {
   display: flex;
-  justify-content: space-between; /* 좌우 정렬 */
+  justify-content: space-between;
   align-items: center;
   padding: 1vw;
   border-radius: 10px;
   background-color: #f9f9f9;
   box-shadow: 1px 2px 2px 3px #560e0e;
-  gap: 20px;
+  gap: 10px;
+  width: auto;
 }
 
 .cart-item-top {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 50%; /* 왼쪽 영역 */
+  width: 50%;
 }
 
 .cart-item-top img {
@@ -71,18 +75,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%; /* 오른쪽 영역 */
+  width: 80%;
   gap: 10px;
-  text-align: right; /* 오른쪽 정렬 */
+  text-align: right;
   font-family: "Jua", serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 20px;
-}
-
-.cart-item-top img {
-  width: 150px;
-  border-radius: 5px;
 }
 
 .cart-details-button {
@@ -101,7 +99,6 @@
   background-color: red;
 }
 
-/* 삭제 버튼: 오른쪽 위 대각선 */
 .cart-delete {
   top: 10px;
   right: 10px;
@@ -120,10 +117,31 @@
 
 .cart-footer-controls {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
   justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.cart-footer-controls button {
+  background-color: red;
+  border: none;
+}
+.cart-footer-controls > * {
+  font-size: 16px;
+  font-family: "Jua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cart-footer-controls label:hover {
+  background-color: #ccc;
+  color: black;
+}
+.delete-button:hover {
+  background-color: #2bee0d;
+  color: black;
 }
 
 .cart-pagination-container {
@@ -158,17 +176,16 @@
 .cart-payment {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 3vw;
+  gap: 1vw;
   width: 100%;
-  gap: 6vw;
 }
 
 .cart-sum-price {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .cart-payment-button {
@@ -188,6 +205,7 @@
 
 .cart-null {
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,11 +217,10 @@
   align-items: center;
   background-color: #560e0e;
   color: white;
-  width: 90%;
+  width: 80%;
   border-radius: 10px;
 }
 
-/* 반응형 설정: 1300px 이하 */
 @media screen and (max-width: 1300px) {
   .cart-item-con {
     grid-template-columns: repeat(2, 1fr);
@@ -213,6 +230,7 @@
   .cart-item-top img {
     width: 100px;
   }
+
   .cart-details-button {
     font-size: 15px;
   }
@@ -221,12 +239,12 @@
     width: auto;
     font-size: 25px;
   }
+
   .cart-item-bottom {
     font-size: 14px;
   }
 }
 
-/* 반응형 설정: 800px 이하 */
 @media screen and (max-width: 800px) {
   .cart-item-con {
     grid-template-columns: repeat(1, 1fr);
@@ -234,9 +252,8 @@
 
   .cart-item {
     flex-direction: column;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .cart-item-top {
@@ -244,10 +261,13 @@
     align-items: center;
   }
 
+  .cart-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
   .cart-item-top img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 90px;
   }
 
@@ -265,6 +285,14 @@
 
   .cart-delete:hover {
     color: #0056b3;
+  }
+
+  .cart-payment {
+    font-size: 30px;
+  }
+
+  .cart-sum-price {
+    font-size: 30px;
   }
 
   .cart-payment-button {

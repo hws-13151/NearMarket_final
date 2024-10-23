@@ -191,7 +191,7 @@ const CartList1 = () => {
           </>
         ) : (
           <div className="cart-null">
-            <h1>장바구니가 비어 있습니다</h1>
+            <h1 onClick={() => navigate(-1)}>장바구니가 비어 있습니다</h1>
           </div>
         )}
 
