@@ -20,11 +20,16 @@ const CartList1 = () => {
   const itemsPerPage = 4;
   const isLogin = useSelector((state) => state.auth.isLogin);
   const loginUser = useSelector((state) => state.auth.loginUser || []);
-  const userEmail = isLogin ? loginUser[0]?.userEmail : "guest";
+  const userEmail = isLogin ? loginUser[0].userEmail : "guest";
   const cartItems = useSelector((state) => state.cart.items || []);
 
-  const filteredCartItems = cartItems.filter(
-    (item) => item.userEmail === userEmail
+  // 중복 제거된 장바구니 아이템 필터링
+  const filteredCartItems = Array.from(
+    new Map(
+      cartItems
+        .filter((item) => item.userEmail === userEmail)
+        .map((item) => [item.id + item.category, item])
+    ).values()
   );
 
   const totalPages = Math.ceil(filteredCartItems.length / itemsPerPage);
@@ -39,10 +44,10 @@ const CartList1 = () => {
   );
 
   useEffect(() => {
-    if (isLogin) {
+    if (isLogin && cartItems.some((item) => item.userEmail === "guest")) {
       dispatch(migrateGuestCartToUser({ userEmail }));
     }
-  }, [isLogin, userEmail, dispatch]);
+  }, [isLogin, userEmail, cartItems, dispatch]);
 
   const isItemSelected = (item) =>
     selectedItems.some(
@@ -92,12 +97,35 @@ const CartList1 = () => {
     selectedItems.forEach((item) => dispatch(deleteCart(item)));
     setSelectedItems([]);
     setIsSelectDeleteModalOpen(false);
+
+    const updatedFilteredCartItems = cartItems.filter(
+      (item) =>
+        !selectedItems.some(
+          (selected) =>
+            selected.id === item.id &&
+            selected.category === item.category &&
+            selected.userEmail === item.userEmail
+        )
+    );
+
+    const newTotalPages = Math.ceil(
+      updatedFilteredCartItems.length / itemsPerPage
+    );
+    setCurrentPage((prevPage) => Math.min(prevPage, newTotalPages));
   };
 
-  const handlePageClick = (page) => setCurrentPage(page);
+  const handlePageClick = (page) => {
+    if (page !== currentPage) setCurrentPage(page);
+  };
+
   const nextPage = () =>
     currentPage < totalPages && setCurrentPage(currentPage + 1);
+
   const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   return (
     <div className="cart-list">
@@ -108,7 +136,7 @@ const CartList1 = () => {
           <>
             <div className="cart-item-con">
               {currentItems.map((item) => (
-                <div className="cart-item" key={item.id}>
+                <div className="cart-item" key={item.id + item.category}>
                   <input
                     type="checkbox"
                     checked={isItemSelected(item)}
