@@ -63,7 +63,7 @@ const root = createBrowserRouter([
     ],
   },
   {
-    path: "/order",
+    path: "/order/api",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -71,7 +71,7 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "api",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <ApiPage />
@@ -82,7 +82,7 @@ const root = createBrowserRouter([
   },
 
   {
-    path: "/order",
+    path: "/order/cart",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -90,7 +90,7 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "cart",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <OrderCartPage1 />
@@ -100,7 +100,7 @@ const root = createBrowserRouter([
     ],
   },
   {
-    path: "/order",
+    path: "/order/index",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -108,7 +108,7 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "index",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <OrderIndexPage />
