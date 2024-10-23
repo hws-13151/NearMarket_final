@@ -35,9 +35,9 @@ const Paymenlietail = () => {
 
     <div className="paymentDetail">
       <div className="paymentDetail-con">
+        <h2>내 정보</h2>
         <div className="myinfo">
           <div className="myinfo-con">
-            <h2>내 정보</h2>
             <ul>
               {loginUser.map((el, idx) => (
                 <li key={idx}>
@@ -49,17 +49,16 @@ const Paymenlietail = () => {
                   <li>권한: {el.role}</li>
                 </li>
               ))}
+              <button onClick={paymentModalFn}>내 정보 수정</button>
             </ul>
-            <button onClick={paymentModalFn}>내 정보 수정</button>
-          </div>
-          <div className="my-image">
-            <img src="/images/payment/profile.jpg.png" alt="프로필 이미지" />
+            <div className="my-image">
+              <img src="/images/payment/profile.jpg.png" alt="프로필 이미지" />
+            </div>
           </div>
         </div>
-
         <div className="paymentlist">
+          <h2>주문/배송 조회</h2>
           <div className="paymentlist-con">
-            <h2>주문/배송 조회</h2>
             {paymentInformation && paymentInformation.length > 0 ? (
               paymentInformation
                 .filter((el) => el.memberEmail === loginUser[0].userEmail)
