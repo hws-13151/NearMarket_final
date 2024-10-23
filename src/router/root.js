@@ -20,7 +20,9 @@ const MainLayout = lazy(() => import("../layout/MainLayout"));
 // order
 const OrderLayout = lazy(() => import("../layout/OrderLayout"));
 const OrderIndexPage = lazy(() => import("../pages/order/OrderIndexPage"));
-const OrderIndexDetailPage = lazy(() => import("../pages/order/OrderIndexDetailPage"));
+const OrderIndexDetailPage = lazy(() =>
+  import("../pages/order/OrderIndexDetailPage")
+);
 const ApiPage = lazy(() => import("../pages/apiPage"));
 
 const AuthLayout = lazy(() => import("../layout/authLayout"));
@@ -32,7 +34,6 @@ const PaymentPage = lazy(() => import("../pages/payment/PaymentPage"));
 const PaymentDetailPage = lazy(() =>
   import("../pages/payment/PaymentDetailPage")
 );
-
 
 const root = createBrowserRouter([
   {
@@ -62,7 +63,7 @@ const root = createBrowserRouter([
     ],
   },
   {
-    path: "/order",
+    path: "/order/api",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -70,7 +71,7 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "api",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <ApiPage />
@@ -79,9 +80,9 @@ const root = createBrowserRouter([
       },
     ],
   },
- 
+
   {
-    path: "/order",
+    path: "/order/cart",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -89,31 +90,13 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "cart",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <OrderCartPage1 />
           </Suspense>
         ),
       },
-    ],
-  },
-  {
-    path: "/order",
-    element: (
-      <Suspense fallback={Loading}>
-        <OrderLayout />
-      </Suspense>
-    ),
-    children: [
-      {
-        path: "index",
-        element: (
-          <Suspense fallback={Loading}>
-            <OrderIndexPage />
-          </Suspense>
-        ),
-      }
     ],
   },
   {
@@ -125,13 +108,31 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: 'detail/:id',
+        path: "",
+        element: (
+          <Suspense fallback={Loading}>
+            <OrderIndexPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/order/index",
+    element: (
+      <Suspense fallback={Loading}>
+        <OrderLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "detail/:id",
         element: (
           <Suspense fallback={Loading}>
             <OrderIndexDetailPage />
           </Suspense>
-        )
-      }
+        ),
+      },
     ],
   },
   {
@@ -224,7 +225,7 @@ const root = createBrowserRouter([
         ),
       },
     ],
-  }
+  },
 ]);
 
 export default root;

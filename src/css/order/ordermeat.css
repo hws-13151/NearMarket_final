@@ -71,6 +71,7 @@
 .order-meat .order-meat-con .order-meat-item {
   width: 65vw;
   height: auto;
+  min-height: 800px;
   border: 0.2px solid #ccc;
 
   box-shadow: 2px 2px 3px #ccc;

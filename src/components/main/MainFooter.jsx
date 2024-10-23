@@ -14,11 +14,11 @@ const MrderFooter = () => {
                 <li>서울시 노원구</li>
                 <li>02-6953-7551</li>
                 <li>그린컴퓨터학원</li>
-                <li>greenart.co.kr</li>
+                <li>www.greenart.co.kr</li>
               </ul>
             </div>
             <div className="information-con">
-              <h4>Get help</h4>
+              <h4>help</h4>
               <ul>
                 <li>FAQ</li>
                 <li>Shipping</li>
@@ -36,7 +36,7 @@ const MrderFooter = () => {
               </ul>
             </div>
             <div className="information-con">
-              <h4>follow us</h4>
+              <h4>follow</h4>
               <div className="social-links">
                 <i className="fab fa-facebook-f"></i>
                 <i className="fab fa-twitter"></i>

@@ -118,9 +118,11 @@ const OrderFruitDetail = (param) => {
             <li>{fruitDetail.description}</li>
             <li>{calculateTotalPrice().toLocaleString()}원</li>
             <li>
+             <div className="pmbtn">
               <button onClick={fruitIncrementFn}>+</button>
               <span>{count}</span>
               <button onClick={fruitDecrementFn}>-</button>
+              </div>
             </li>
             <li>
               <label>
