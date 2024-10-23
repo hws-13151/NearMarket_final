@@ -114,3 +114,49 @@ input[type="password"]:focus {
 .login .login-con ul li button:last-child:hover {
     background-color: #444749;
 }
+
+
+@media screen and (max-width: 1030px) {
+    .login .login-con {
+        width: 300px;
+    }
+
+    .login .login-con h1 {
+        font-size: 24px;
+    }
+
+    .login .login-con ul li input[type="text"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    .login .login-con ul li button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .login {
+        flex-direction: column;
+    }
+
+    .login .login-con {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .login .login-con h1 {
+        font-size: 20px;
+    }
+
+    .login .login-con ul li input[type="text"],
+    input[type="password"] {
+        font-size: 12px;
+    }
+
+    .login .login-con ul li button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
