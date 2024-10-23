@@ -125,7 +125,7 @@ const AdminProductsInsert = () => {
           <div className="insert-left">
             <div className="insert-left-con">
               <img
-                src={imgFile ? imgFile : "https://placehold.co/500x500"}
+                src={imgFile ? imgFile : "https://placehold.co/500x500/ffffff/cccccc.png"}
                 alt="이미지를 첨부해 주세요"
               />
             </div>

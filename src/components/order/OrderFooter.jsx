@@ -18,7 +18,7 @@ const OrderFooter = () => {
               </ul>
             </div>
             <div className="information-con">
-              <h4>Get help</h4>
+              <h4>help</h4>
               <ul>
                 <li>FAQ</li>
                 <li>Shipping</li>
@@ -36,7 +36,7 @@ const OrderFooter = () => {
               </ul>
             </div>
             <div className="information-con">
-              <h4>follow us</h4>
+              <h4>follow</h4>
               <div className="social-links">
                 <i className="fab fa-facebook-f"></i>
                 <i className="fab fa-twitter"></i>
