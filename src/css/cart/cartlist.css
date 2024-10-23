@@ -63,7 +63,7 @@
 
 .cart-item-top img {
   width: 150px;
-  border-radius: 5px;
+  height: 150px;
 }
 
 .cart-item input[type="checkbox"] {
@@ -229,7 +229,8 @@
   }
 
   .cart-item-top img {
-    width: 100px;
+    width: 130px;
+    height: 130px;
   }
 
   .cart-details-button {
@@ -269,7 +270,8 @@
   }
 
   .cart-item-top img {
-    width: 90px;
+    width: 100px;
+    height: 100px;
   }
 
   .cart-item-bottom {
