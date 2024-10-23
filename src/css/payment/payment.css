@@ -43,10 +43,7 @@
   margin-bottom: 20px;
 }
 
-.address th,
-.address td,
-.payment-select th,
-.payment-select td {
+.address th, .address td {
   padding: 12px;
   border: 1px solid #ddd;
   text-align: center;
@@ -57,8 +54,7 @@
   font-weight: bold;
 }
 
-.payment-select select,
-#addressMessage {
+.payment-select select {
   padding: 10px;
   font-size: 14px;
   width: 100%;
@@ -117,6 +113,33 @@
   margin-bottom: 20px;
 }
 
+.payment-select .payment-slt {
+  width: 100%;
+}
+
+.payment-select .payment-slt .payment-slt-con{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.payment-select .payment-slt .payment-slt-con ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.payment-select .payment-slt .payment-slt-con ul li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
+
+.payment-select .payment-slt .payment-slt-con ul li select{
+  width: 15vw;
+}
+
 .payment-sub {
   text-align: center;
 }
@@ -150,20 +173,21 @@
 /* 주문처 선택 추가 css */
 .payment-shop {
   display: flex;
+  gap: 0.5vw;
 }
 
 .payment-shop-list {
   width: auto;
-  margin-right: 10px;
 }
 
 .payment-shop button {
+  height: 40px;
   font-size: 12px;
   white-space: nowrap;
   /* 줄바꿈 X */
   cursor: pointer;
-
-  padding: 5px;
+  padding: 0 5px;
+  margin-top: 5px;
 }
 
 
@@ -172,5 +196,19 @@
   .address table th:nth-child(2),
   .address table td:nth-child(2) {
     display: none;
+  }
+  .payment-select .payment-slt .payment-slt-con ul{
+    flex-direction: column;
+  }
+  .payment-select .payment-slt .payment-slt-con ul li{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .payment-select .payment-slt .payment-slt-con ul li select{
+    width: 50vw;
+    height: 40px;
+  }
+  .payment-select .payment-slt .payment-slt-con ul li:nth-child(2) select{
+    width: calc(50vw - 0.5vw - 62px);
   }
 }

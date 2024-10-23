@@ -253,30 +253,23 @@ const Payment = () => {
           </div>
           <div className="payment-select">
             <h3>결제</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>결제 수단</th>
-                  <th>주문처</th>
-                  <th>주문방식</th>
-                  <th>배송 메시지</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
+            <div className="payment-slt">
+              <div className="payment-slt-con">
+                <ul>
+                  <li>
+                    결제 수단
                     <select
-                      name="paymentMethod"
-                      id="paymentMethod"
-                      onChange={paymentMethodFn}
-                    >
-                      <option value="">결제수단</option>
-                      <option value="credit-card">신용카드</option>
-                      <option value="kakaopay">카카오페이</option>
-                    </select>
-                  </td>
-                  {/* 주문처 db 연동 */}
-                  <td>
+                    name="paymentMethod"
+                    id="paymentMethod"
+                    onChange={paymentMethodFn}
+                  >
+                    <option value="">결제수단</option>
+                    <option value="credit-card">신용카드</option>
+                    <option value="kakaopay">카카오페이</option>
+                  </select>
+                  </li>
+                  <li>
+                    주문처
                     <div className="payment-shop">
                       <select name="shopVal" id="shopVal" onChange={shopValFn}
                         className="payment-shop-list">
@@ -289,9 +282,9 @@ const Payment = () => {
                       </select>
                       <button onClick={openModal}>지도보기</button>
                     </div>
-                  </td>
-
-                  <td>
+                  </li>
+                  <li>
+                    주문방식
                     <select
                       name="orderMethod"
                       id="orderMethod"
@@ -302,8 +295,9 @@ const Payment = () => {
                       <option value="delivery">배달</option>
                       <option value="reservation"> 예약주문</option>
                     </select>
-                  </td>
-                  <td>
+                  </li>
+                  <li>
+                    배송 메시지
                     <select
                       name="addressMessage"
                       id="addressMessage"
@@ -317,10 +311,10 @@ const Payment = () => {
                         도착 후 전화주시면 직접 받으러 갈게요.
                       </option>
                     </select>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="payment-sub">
             <div className="sum-price">
