@@ -50,6 +50,35 @@
 .fruit-detail .fruit-detail-con .fruit-detail-right{
     flex: 1;
 }
+.fruit-detail-con li button {
+    padding: 10px;
+    border: 2px solid skyblue; 
+    border-radius: 50%; 
+    background-color: white; 
+    color: skyblue; 
+    font-size: 1.2em; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fruit-detail-con li button:hover {
+    background-color: skyblue; /* hover 시 배경색 변경 */
+    color: white; /* hover 시 글씨색 변경 */
+  }
+  .pmbtn{
+    display: flex;
+  }
+  
+  .fruit-detail-con li span {
+    margin: 0 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
 
 .order-go {
     display: flex;
@@ -68,7 +97,9 @@
 }
 
 .order-go button:hover {
-    background-color: blue;
+    background-color: white; 
+    border: 1px solid;
+    color: skyblue;
 }
 
 label {
