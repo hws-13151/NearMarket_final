@@ -45,3 +45,39 @@
 .loginmodal .loginmodal-con button:hover {
     background-color: #272829;
 }
+
+@media screen and (max-width: 1030px) {
+    .loginmodal .loginmodal-con {
+        width: 300px;
+        padding: 15px;
+
+    }
+
+    .loginmodal .loginmodal-con p {
+        font-size: 14px;
+
+    }
+
+    .loginmodal .loginmodal-con button {
+        font-size: 14px;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .loginmodal .loginmodal-con {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .loginmodal .loginmodal-con p {
+        font-size: 12px;
+
+    }
+
+    .loginmodal .loginmodal-con button {
+        padding: 8px 15px;
+        font-size: 12px;
+
+    }
+}

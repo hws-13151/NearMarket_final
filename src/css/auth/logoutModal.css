@@ -56,3 +56,47 @@
 .logoutmodal .logoutmodal-con button:hover {
     background-color: #272829;
 }
+
+
+@media screen and (max-width: 1030px) {
+    .logoutmodal .logoutmodal-con {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .logoutmodal .logoutmodal-con p {
+        font-size: 14px;
+    }
+
+    .logoutmodal .logoutmodal-con .button-con {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logoutmodal .logoutmodal-con button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logoutmodal .logoutmodal-con {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .logoutmodal .logoutmodal-con p {
+        font-size: 12px;
+    }
+
+    .logoutmodal .logoutmodal-con .button-con {
+        gap: 8px;
+
+    }
+
+    .logoutmodal .logoutmodal-con button {
+        padding: 8px 15px;
+
+        font-size: 12px;
+    }
+}
