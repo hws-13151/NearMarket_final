@@ -4,6 +4,7 @@ import authSlice from "../slice/authSlice";
 import adminSlice from "../slice/adminSlice";
 import paymentSlice from "../slice/paymentSlice";
 import viewcountSlice from "../slice/viewcountSlice";
+import commentSlice from "../slice/commentSlice";
 
 
 
@@ -17,7 +18,8 @@ const index = configureStore({
     auth: authSlice.reducer,
     admin: adminSlice.reducer,
     payment: paymentSlice.reducer,
-    viewcount: viewcountSlice.reducer
+    viewcount: viewcountSlice.reducer,
+    comments: commentSlice.reducer
 
   },
 });
