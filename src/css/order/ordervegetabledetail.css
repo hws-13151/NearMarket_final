@@ -334,9 +334,10 @@
 }
 
 .order-vegetable-detail .comment-page .comment-page-con button {
+  width: 100px;
   padding: 10px 20px;
   background-color: #eb7a7a;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   cursor: pointer;

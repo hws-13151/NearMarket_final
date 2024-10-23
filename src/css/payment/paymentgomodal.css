@@ -53,3 +53,44 @@
 .payment-go-modal .payment-go-modal-con button:hover {
     background-color: #272829;
 }
+
+
+@media screen and (max-width: 1030px) {
+    .payment-go-modal .payment-go-modal-con {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .payment-go-modal .payment-go-modal-con p {
+        font-size: 14px;
+    }
+
+    .payment-go-modal .payment-go-modal-con .button-con {
+        gap: 15px;
+    }
+
+    .payment-go-modal .payment-go-modal-con button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .payment-go-modal .payment-go-modal-con {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .payment-go-modal .payment-go-modal-con p {
+        font-size: 12px;
+    }
+
+    .payment-go-modal .payment-go-modal-con .button-con {
+        gap: 10px;
+    }
+
+    .payment-go-modal .payment-go-modal-con button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
