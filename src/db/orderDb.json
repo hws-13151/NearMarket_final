@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 15
+      "viewcount": 16
     },
     {
       "id": "2",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 12
+      "viewcount": 13
     },
     {
       "title": "오렌지",
@@ -104,7 +104,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 35
+      "viewcount": 36
     },
     {
       "id": "3",
@@ -135,7 +135,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 32
+      "viewcount": 33
     },
     {
       "id": "5",
@@ -149,7 +149,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 17
+      "viewcount": 18
     },
     {
       "id": "6",
@@ -190,14 +190,15 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 85
+      "viewcount": 91
     },
     {
       "title": "초코송이",
       "price": 900,
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
-      "id": "3"
+      "id": "3",
+      "viewcount": 4
     },
     {
       "title": "홈런볼 초코맛",
@@ -212,7 +213,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 36
+      "viewcount": 37
     },
     {
       "id": "6",
@@ -220,7 +221,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "콘칩 보다 얇아서 좋아여",
-      "viewcount": 41
+      "viewcount": 43
     },
     {
       "id": "7",
@@ -245,7 +246,8 @@
       "price": 30000,
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
-      "id": "2"
+      "id": "2",
+      "viewcount": 1
     },
     {
       "id": "3",
