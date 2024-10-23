@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const items = [
-  { src: '/images/start/snack.jpg', title: 'SNACK', content: 'Dessert is a course that concludes a meal. The course consists of sweet foods, such as cake, biscuit, ice cream and possibly a beverage such as dessert wine and liqueur.' },
+  { src: '/images/start/snack.jpg', title: 'SNACK', content: 'Dessert is a course that concludes a meal. The course consists of sweet food.' },
   { src: '/images/start/vegetable.jpg', title: 'VEGETABLE', content: 'Vegetables are parts of plants that are consumed by humans or other animals as food.' },
   { src: '/images/start/meat.jpg', title: 'MEAT', content: 'Meat is animal tissue, often muscle, that is eaten as food. Humans have hunted and farmed other animals for meat since prehistory.' },
   { src: '/images/start/fruit.jpg', title: 'FRUIT', content: 'Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds.' }

@@ -34,10 +34,11 @@
 
 .order-vegetable-detail-con .left img {
   width: 100%;
-  height: 500px;
+  height: 450px;
   display: block;
   object-fit: cover;
   border-radius: 10px;
+
 }
 
 /* .order-vegetable-detail-con .left img {

@@ -14,7 +14,7 @@
 .join .join-con {
     background-color: transparent;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
     backdrop-filter: blur(30px);
@@ -128,4 +128,62 @@ input[type="password"]:focus {
 
 .join .join-con ul li button:last-child:hover {
     background-color: #45484b;
+}
+
+
+@media screen and (max-width: 1030px) {
+    .join .join-con {
+        width: 300px;
+
+    }
+
+    .join .join-con h1 {
+        font-size: 24px;
+
+    }
+
+    .join .join-con ul li input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 14px;
+
+    }
+
+    .join .join-con ul li button {
+        padding: 10px;
+        font-size: 14px;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .join {
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+
+    }
+
+    .join .join-con {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .join .join-con h1 {
+        font-size: 20px;
+
+    }
+
+    .join .join-con ul li input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 12px;
+
+    }
+
+    .join .join-con ul li button {
+        padding: 8px;
+        font-size: 12px;
+
+    }
 }

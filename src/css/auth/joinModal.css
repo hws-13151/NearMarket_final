@@ -45,3 +45,35 @@
 .joinmodal .joinmodal-con button:hover {
     background-color: #272829;
 }
+
+
+@media screen and (max-width: 1030px) {
+    .joinmodal .joinmodal-con {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .joinmodal .joinmodal-con p {
+        font-size: 14px;
+    }
+
+    .joinmodal .joinmodal-con button {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .joinmodal .joinmodal-con {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .joinmodal .joinmodal-con p {
+        font-size: 12px;
+    }
+
+    .joinmodal .joinmodal-con button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
