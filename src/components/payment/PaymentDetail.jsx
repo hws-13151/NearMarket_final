@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { asyncPaymentFn } from "../../slice/paymentSlice";
 import PaymentDetailModal from "./PaymentDetailModal";
 
-const PaymentDetail = () => {
+const Paymenlietail = () => {
   const loginUser = useSelector((state) => state.auth.loginUser);
   const isLogin = useSelector((state) => state.auth.isLogin);
   const paymentInformation = useSelector((state) => state.payment.paymentInformation);
@@ -56,55 +56,39 @@ const PaymentDetail = () => {
             <img src="/images/payment/profile.jpg.png" alt="프로필 이미지" />
           </div>
         </div>
+
         <div className="paymentlist">
-
-
           <div className="paymentlist-con">
             <h2>주문/배송 조회</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>주문일자</th>
-                  <th>상품상세내역</th>
-                  <th>주문금액</th>
-                  <th>주문처</th>
-                  <th>주문방식</th>
-                  <th>주소</th>
-                  <th>배송메시지</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paymentInformation && paymentInformation.length > 0 ? (
-                  paymentInformation
-                    .filter((el) => el.memberEmail === loginUser[0].userEmail) // 이메일이 같은 결제 정보만 필터링
-                    .map((el, idx) => (
-                      <tr key={idx}>
-                        <td>{el.time}</td>
-                        <td>
-                          {el.paymentResult.map((el2, idx2) => (
-                            <div key={idx2}>
-                              <div>{el2.title}</div>
-                              <div>
-                                <img src={el2.img} alt={el2.img} />
-                              </div>
-                              <div>가격: {el2.price.toLocaleString()}원</div>
-                              <div>수량: {el2.count}개</div>
-                            </div>
-                          ))}
-                        </td>
-                        <td>{el.paymentAmount.toLocaleString()}원</td>
-                        <td>{el.shopVal}</td>
-                        <td>{el.orderMethod}</td>
-                        <td>{el.orderAddress}</td>
-                        <td>{el.addressMessage}</td>
-                      </tr>
-                    ))
-                ) : (
-
-                  <div className="nopayment">주문내역이 없습니다</div>
-                )}
-              </tbody>
-            </table>
+            {paymentInformation && paymentInformation.length > 0 ? (
+              paymentInformation
+                .filter((el) => el.memberEmail === loginUser[0].userEmail)
+                .map((el, idx) => (
+                  <div key={idx} className="payment-section">
+                    <h3 className="order-time">{el.time}</h3>
+                    <ul>
+                      {el.paymentResult.map((el2, idx2) => (
+                        <li key={idx2} className="order-item">
+                          <div>
+                            <img src={el2.img} alt={el2.img} />
+                          </div>
+                          <div>{el2.title}</div>
+                          <div>수량: {el2.count}개</div>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="order-summary">
+                      <p>총 금액: {el.paymentAmount.toLocaleString()}원</p>
+                      <p>거래처: {el.shopVal}</p>
+                      <p>주문방법: {el.orderMethod}</p>
+                      <p>배송지: {el.orderAddress}</p>
+                      <p>{el.addressMessage}</p>
+                    </div>
+                  </div>
+                ))
+            ) : (
+              <div className="nopayment">주문내역이 없습니다</div>
+            )}
           </div>
         </div>
       </div>
@@ -113,5 +97,5 @@ const PaymentDetail = () => {
   );
 };
 
-export default PaymentDetail;
+export default Paymenlietail;
 
