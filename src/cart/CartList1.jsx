@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { deleteCart, migrateGuestCartToUser } from "../../src/slice/cartSlice1";
 import CartModal from "./CartModal";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
-import SelectDeleteModal from "./cartSeleteModal";
+import SelectDeleteModal from "./SeleteModal";
 
 const CartList1 = () => {
   const dispatch = useDispatch();
@@ -81,9 +81,7 @@ const CartList1 = () => {
     setIsDeleteModalOpen(true);
   };
 
-  const openSelectDeleteModal = () => {
-    setIsSelectDeleteModalOpen(true);
-  };
+  const openSelectDeleteModal = () => setIsSelectDeleteModalOpen(true);
 
   const confirmDelete = () => {
     dispatch(deleteCart(modalItem));
@@ -106,29 +104,26 @@ const CartList1 = () => {
       <div className="cart-list-con">
         <h3 className="cart-title">장바구니 목록</h3>
 
-        <div className="cart-item-con">
-          {currentItems.length > 0 ? (
-            currentItems.map((item) => (
-              <div
-                className="cart-item"
-                key={`${item.id}-${item.category}-${item.userEmail}`}
-              >
-                <input
-                  type="checkbox"
-                  checked={isItemSelected(item)}
-                  onChange={() => toggleItemSelection(item)}
-                />
-                <div className="cart-item-top">
-                  <img src={item.img} alt={item.title} />
-                  <button
-                    onClick={() => openModal(item)}
-                    className="cart-details-button"
-                  >
-                    상세정보
-                  </button>
-                </div>
-                <div className="cart-item-bottom">
-                  <div className="cart-details-container">
+        {currentItems.length > 0 ? (
+          <>
+            <div className="cart-item-con">
+              {currentItems.map((item) => (
+                <div className="cart-item" key={item.id}>
+                  <input
+                    type="checkbox"
+                    checked={isItemSelected(item)}
+                    onChange={() => toggleItemSelection(item)}
+                  />
+                  <div className="cart-item-top">
+                    <img src={item.img} alt={item.title} />
+                    <button
+                      onClick={() => openModal(item)}
+                      className="cart-details-button"
+                    >
+                      상세정보
+                    </button>
+                  </div>
+                  <div className="cart-item-bottom">
                     <span>카테고리: {item.category}</span>
                     <span>상품명: {item.title}</span>
                     <span>가격: {item.price.toLocaleString()} 원</span>
@@ -136,74 +131,69 @@ const CartList1 = () => {
                     <span>
                       총금액: {(item.price * item.count).toLocaleString()} 원
                     </span>
+                    <span
+                      className="cart-delete"
+                      onClick={() => openDeleteModal(item)}
+                    >
+                      삭제
+                    </span>
                   </div>
-                  <span
-                    className="cart-delete"
-                    onClick={() => openDeleteModal(item)}
-                  >
-                    삭제
-                  </span>
                 </div>
-              </div>
-            ))
-          ) : (
-            <div className="cart-null">
-              <h1 onClick={() => navigate(-1)}>장바구니가 비어 있습니다!!!</h1>
+              ))}
             </div>
-          )}
-        </div>
 
-        {currentItems.length > 0 && (
-          <div className="cart-controls">
-            <input
-              type="checkbox"
-              checked={selectedItems.length === currentItems.length}
-              onChange={handleSelectAll}
-            />
-            <label>전체 선택</label>
-            <button onClick={openSelectDeleteModal}>선택 삭제</button>
-          </div>
-        )}
-
-        {filteredCartItems.length > itemsPerPage && (
-          <div className="cart-pagination-container">
-            <button
-              className="cart-pagination-before-btn"
-              onClick={prevPage}
-              disabled={currentPage === 1}
-            >
-              이전
-            </button>
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i + 1}
-                onClick={() => handlePageClick(i + 1)}
-                className={currentPage === i + 1 ? "active" : ""}
-              >
-                {i + 1}
+            <div className="cart-footer-controls">
+              <input
+                type="checkbox"
+                checked={selectedItems.length === currentItems.length}
+                onChange={handleSelectAll}
+              />
+              <label>전체 선택</label>
+              <button onClick={openSelectDeleteModal} className="delete-button">
+                선택 삭제
               </button>
-            ))}
-            <button
-              className="cart-pagination-after-btn"
-              onClick={nextPage}
-              disabled={currentPage === totalPages}
-            >
-              다음
-            </button>
+            </div>
+
+            {filteredCartItems.length > itemsPerPage && (
+              <div className="cart-pagination-container">
+                <button onClick={prevPage} disabled={currentPage === 1}>
+                  이전
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => (
+                  <button
+                    key={i + 1}
+                    onClick={() => handlePageClick(i + 1)}
+                    className={currentPage === i + 1 ? "active" : ""}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+                <button
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages}
+                >
+                  다음
+                </button>
+              </div>
+            )}
+
+            <div className="cart-payment">
+              <div className="cart-sum-price">
+                총합계: {totalPrice.toLocaleString()} 원
+              </div>
+              <button
+                className="cart-payment-button"
+                onClick={() => navigate("/order/payment")}
+              >
+                결제하기
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="cart-null">
+            <h1>장바구니가 비어 있습니다</h1>
           </div>
         )}
-
-        <div className="cart-payment">
-          <div className="cart-sum-price">
-            총합계: {totalPrice.toLocaleString()} 원
-          </div>
-          <button
-            className="cart-payment-button"
-            onClick={() => navigate("/order/payment")}
-          >
-            결제하기
-          </button>
-        </div>
 
         {isModalOpen && (
           <CartModal item={modalItem} setIsModalOpen={setIsModalOpen} />
