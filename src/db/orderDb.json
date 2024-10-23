@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 40
+      "viewcount": 41
     },
     {
       "id": "3",
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 23
+      "viewcount": 24
     },
     {
       "id": "6",
@@ -105,7 +105,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 58
+      "viewcount": 59
     },
     {
       "id": "3",
@@ -150,7 +150,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 18
+      "viewcount": 19
     },
     {
       "id": "6",
@@ -215,7 +215,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 39
+      "viewcount": 40
     },
     {
       "id": "6",
@@ -241,7 +241,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 42
+      "viewcount": 43
     },
     {
       "title": "국내산 목살[냉장보관]",
