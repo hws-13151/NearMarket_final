@@ -6,6 +6,8 @@ import { addCart1 } from "../../slice/cartSlice1";
 import DetailModal from "./DetailModal";
 import { updateViewCountInServer } from "../../slice/viewcountSlice";
 import { API_URL } from "../../constans";
+import CommentList from "./CommentList";
+import { addComment } from "../../slice/commentSlice";
 
 const detailData = {
   id: 0,
@@ -24,12 +26,24 @@ const OrderVegetableDetail = (param) => {
   const [isModal, setIsModal] = useState(false);
   const [cartItem, setCartItem] = useState(null);
 
+  const [comment, setComment] = useState('')
+  const [isValid, setIsValid] = useState(false)
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
 
   const userEmail = useSelector((state) =>
     state.auth.isLogin ? state.auth.loginUser[0]?.userEmail : "guest"
   );
+
+
+
+  const userName = useSelector((state) =>
+    state.auth.isLogin ? state.auth.loginUser[0]?.userName : "guest")
+  const feedComments = useSelector((state) => state.comments)
+
 
   useEffect(() => {
     const axiosFn = async () => {
@@ -115,6 +129,22 @@ const OrderVegetableDetail = (param) => {
       prevSlide === vegetableDetail.slideImage.length - 1 ? 0 : prevSlide + 1
     );
 
+
+  const commentFn = (e) => {
+    const newComment = {
+      text: comment,
+      userName: userName || "guest",
+      productId: vegetableDetail.id
+    };
+    dispatch(addComment(newComment));
+    setComment("");
+  };
+
+  const filteredComments = feedComments.filter(
+    (commentObj) => commentObj.productId === vegetableDetail.id
+  );
+
+
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
@@ -198,7 +228,25 @@ const OrderVegetableDetail = (param) => {
             </div>
           </div>
         </div>
-        <div className="detail-page">상세설명</div>
+        <div className="comment-page">
+          <div className="comment-page-con">
+            <span>댓글창</span>
+            <input type="text" className="inputComment" placeholder="댓글달기" onChange={(e) => {
+              setComment(e.target.value)
+            }} onKeyUp={(e) => {
+              e.target.value.length > 0 ? setIsValid(true) : setIsValid(false)
+            }} value={comment}
+            />
+            <button type="button" onClick={commentFn} disabled={isValid ? false : true}>게시</button>
+            <div className="comment-list">
+              {filteredComments.map((commentArr, i) => {
+                return (
+                  <CommentList key={i} userComment={commentArr} />
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
