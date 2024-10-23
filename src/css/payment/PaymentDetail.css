@@ -52,7 +52,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 .paymentDetail .paymentDetail-con .myinfo .myinfo-con ul li {
@@ -156,6 +155,26 @@
 
 .paymentDetail .paymentDetail-con .payment-section .order-summary p {
   margin-bottom: 10px;
+}
+
+.notLogIn{
+  width: 100%;
+  height: calc(100vh - 130px - 433px);
+  padding-top: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: violet;
+}
+.notLogIn p{
+  width: 50%;
+  height: 50%;
+  background-color: violet;
+  font-size: 30px;
+  color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 800px){

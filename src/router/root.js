@@ -136,7 +136,7 @@ const root = createBrowserRouter([
     ],
   },
   {
-    path: "/order",
+    path: "/order/payment",
     element: (
       <Suspense fallback={Loading}>
         <OrderLayout />
@@ -144,7 +144,7 @@ const root = createBrowserRouter([
     ),
     children: [
       {
-        path: "payment",
+        path: "",
         element: (
           <Suspense fallback={Loading}>
             <PaymentPage />
