@@ -45,3 +45,36 @@
 .payment-selected-modal .payment-selected-modal-con button:hover {
     background-color: #272829;
 }
+
+
+@media screen and (max-width: 1030px) {
+    .payment-selected-modal .payment-selected-modal-con {
+        width: 300px;
+        padding: 15px;
+    }
+
+    .payment-selected-modal .payment-selected-modal-con p {
+        font-size: 14px;
+    }
+
+    .payment-selected-modal .payment-selected-modal-con button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .payment-selected-modal .payment-selected-modal-con {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .payment-selected-modal .payment-selected-modal-con p {
+        font-size: 12px;
+    }
+
+    .payment-selected-modal .payment-selected-modal-con button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
