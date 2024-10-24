@@ -28,7 +28,7 @@ const CartList1 = () => {
     new Map(
       cartItems
         .filter((item) => item.userEmail === userEmail)
-        .map((item) => [item.id + item.category, item])
+        .map((item) => [`${item.id}-${item.category}-${item.userEmail}`, item])
     ).values()
   );
 
@@ -91,6 +91,20 @@ const CartList1 = () => {
   const confirmDelete = () => {
     dispatch(deleteCart(modalItem));
     setIsDeleteModalOpen(false);
+
+    const updatedFilteredCartItems = cartItems.filter(
+      (item) =>
+        item.id !== modalItem.id ||
+        item.category !== modalItem.category ||
+        item.userEmail !== modalItem.userEmail
+    );
+
+    const newTotalPages = Math.ceil(
+      updatedFilteredCartItems.length / itemsPerPage
+    );
+
+    // 페이지 수가 줄어들 경우 현재 페이지를 재조정
+    setCurrentPage((prevPage) => Math.min(prevPage, newTotalPages));
   };
 
   const confirmSelectDelete = () => {
@@ -111,6 +125,8 @@ const CartList1 = () => {
     const newTotalPages = Math.ceil(
       updatedFilteredCartItems.length / itemsPerPage
     );
+
+    // 페이지 수가 줄어들 경우 현재 페이지를 재조정
     setCurrentPage((prevPage) => Math.min(prevPage, newTotalPages));
   };
 
@@ -136,7 +152,10 @@ const CartList1 = () => {
           <>
             <div className="cart-item-con">
               {currentItems.map((item) => (
-                <div className="cart-item" key={item.id + item.category}>
+                <div
+                  className="cart-item"
+                  key={`${item.id}-${item.category}-${item.userEmail}`}
+                >
                   <input
                     type="checkbox"
                     checked={isItemSelected(item)}
