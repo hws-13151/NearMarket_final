@@ -72,7 +72,6 @@ const OrderSnackDetail = (param) => {
     setIsModal(true);
   };
 
-
   const paymentFn = () => {
     const selectedProduct = {
       id: snackItem.id,
@@ -83,10 +82,9 @@ const OrderSnackDetail = (param) => {
       category: "snack",
       userEmail,
     };
-    dispatch(addCart1(selectedProduct))
-    navigate("/order/payment")
-  }
-
+    dispatch(addCart1(selectedProduct));
+    navigate("/order/payment");
+  };
 
   return (
     <>

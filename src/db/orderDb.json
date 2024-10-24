@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 21
+      "viewcount": 22
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 41
+      "viewcount": 43
     },
     {
       "id": "3",
@@ -22,14 +22,14 @@
       "price": 10900,
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
-      "viewcount": 9
+      "viewcount": 10
     },
     {
       "title": "바나나",
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 8,
+      "viewcount": 10,
       "id": "e988"
     },
     {
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 24
+      "viewcount": 29
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 12
+      "viewcount": 13
     },
     {
       "title": "오렌지",
@@ -88,7 +88,7 @@
         "carrot4.jpg",
         "carrot5.jpg"
       ],
-      "viewcount": 100,
+      "viewcount": 101,
       "id": "5722"
     },
     {
@@ -105,7 +105,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 59
+      "viewcount": 62
     },
     {
       "id": "3",
@@ -121,7 +121,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 16
+      "viewcount": 17
     },
     {
       "id": "4",
@@ -136,7 +136,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 44
+      "viewcount": 48
     },
     {
       "id": "5",
@@ -150,7 +150,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 19
+      "viewcount": 26
     },
     {
       "id": "6",
@@ -164,7 +164,7 @@
         "tomato2.jpg",
         "tomato3.jpg"
       ],
-      "viewcount": 25
+      "viewcount": 30
     },
     {
       "id": "f15e",
@@ -182,7 +182,7 @@
       "price": 1000,
       "img": "s0.jpg",
       "description": "오감자입니다 소스가 들어있어서 좋습니다",
-      "viewcount": 27,
+      "viewcount": 31,
       "id": "34c4"
     },
     {
@@ -191,7 +191,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 92
+      "viewcount": 95
     },
     {
       "title": "초코송이",
@@ -199,7 +199,7 @@
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
       "id": "3",
-      "viewcount": 7
+      "viewcount": 14
     },
     {
       "title": "홈런볼 초코맛",
@@ -207,7 +207,7 @@
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
       "id": "4",
-      "viewcount": 1
+      "viewcount": 5
     },
     {
       "id": "5",
@@ -215,7 +215,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 40
+      "viewcount": 43
     },
     {
       "id": "6",
@@ -223,7 +223,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "콘칩 보다 얇아서 좋아여",
-      "viewcount": 46
+      "viewcount": 53
     },
     {
       "id": "7",
@@ -281,7 +281,7 @@
       "img": "meat6.jpg",
       "description": "수육용으로 부드럽고 맛있습니다.",
       "id": "6",
-      "viewcount": 2
+      "viewcount": 4
     },
     {
       "title": "국내산 돼지갈비",
@@ -894,6 +894,28 @@
       ],
       "paymentAmount": 20420,
       "time": "2024/10/23 15:08:20"
+    },
+    {
+      "id": "c51f",
+      "paymentMethod": "신용카드",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "배달",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "a2@email.com",
+      "orderAddress": "노원구",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "토마토",
+          "price": 6000,
+          "img": "/images/vegetable/tomato.jpg",
+          "count": 1,
+          "userEmail": "a2@email.com",
+          "category": "vegetable"
+        }
+      ],
+      "paymentAmount": 6000,
+      "time": "2024/10/23 16:33:05"
     }
   ],
   "api": [
