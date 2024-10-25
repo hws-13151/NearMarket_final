@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 22
+      "viewcount": 30
     },
     {
       "id": "2",
@@ -136,7 +136,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 48
+      "viewcount": 69
     },
     {
       "id": "5",
@@ -191,7 +191,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 95
+      "viewcount": 96
     },
     {
       "title": "초코송이",
@@ -207,7 +207,7 @@
       "img": "s3.jpg",
       "description": "홈런볼 먹기좋은 중독성있는 과자 금방사라져여",
       "id": "4",
-      "viewcount": 5
+      "viewcount": 13
     },
     {
       "id": "5",
@@ -241,7 +241,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 43
+      "viewcount": 108
     },
     {
       "title": "국내산 목살[냉장보관]",
@@ -249,7 +249,7 @@
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
       "id": "2",
-      "viewcount": 1
+      "viewcount": 17
     },
     {
       "id": "3",
@@ -257,7 +257,7 @@
       "price": 13420,
       "img": "meat3.jpg",
       "description": "빠르게 구워먹는 대패삼겹살",
-      "viewcount": 11
+      "viewcount": 13
     },
     {
       "id": "4",
@@ -265,7 +265,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "id": "5",
@@ -273,7 +273,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 13
+      "viewcount": 14
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -289,7 +289,16 @@
       "img": "meat7.jpg",
       "description": "국내산 돼지갈비 부드럽고 맛있습니다.",
       "id": "7",
-      "viewcount": 3
+      "viewcount": 4
+    },
+    {
+      "id": "bc62",
+      "title": "고기",
+      "price": 10000,
+      "description": "고기",
+      "img": "meat1.jpg",
+      "order-corner": "meat",
+      "viewcount": 1
     }
   ],
   "indexItems": [

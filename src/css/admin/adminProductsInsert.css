@@ -146,6 +146,7 @@ input::-webkit-inner-spin-button {
   width: 96%;
   margin: 0;
   padding: 1vw;
+  background-color: white;
 }
 
 .insert .insert-con .insert-right .insert-right-con .right-bottom{
@@ -191,14 +192,17 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 1030px){
-  .insert .insert-con{
-    flex-direction: column;
-  }
   .insert .insert-con .insert-right .insert-right-con{
     width: 80%;
   }
   .insert .insert-con .insert-right .insert-right-con .right-top ul li textarea{
     width: 60%;
     height: 5vh;
+  }
+}
+
+@media (max-width: 800px){
+  .insert .insert-con{
+    flex-direction: column;
   }
 }

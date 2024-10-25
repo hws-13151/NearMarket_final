@@ -24,6 +24,7 @@ const DetailModal = ({ setIsModal, cartItem }) => {
       dispatch(addCart1(cartItem));
     }
     closeModal();
+    navigate(-1);
   };
 
   return (
