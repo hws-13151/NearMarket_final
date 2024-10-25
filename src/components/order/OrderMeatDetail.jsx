@@ -85,7 +85,6 @@ const OrderMeatDetail = (param) => {
   return (
     <>
       {isModal && <DetailModal setIsModal={setIsModal} cartItem={cartItem} />}
-
       <div className="order-meat-detail">
         <div className="order-meat-detail-con">
           <div className="left">

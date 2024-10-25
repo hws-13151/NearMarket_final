@@ -5,6 +5,7 @@
   align-items: center; /* 수직 중앙 정렬 */
   padding: 150px 20px 20px 20px;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .order-snack-detail .order-snack-detail-con {
