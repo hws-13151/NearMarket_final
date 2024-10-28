@@ -6,7 +6,7 @@
       "img": "f0.jpg",
       "description": "특유의 단맛과 상큼한 딸기",
       "id": "1",
-      "viewcount": 30
+      "viewcount": 32
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 4900,
       "img": "f1.jpg",
       "description": "새콤달콤 아삭아삭 사과",
-      "viewcount": 43
+      "viewcount": 46
     },
     {
       "id": "3",
@@ -22,14 +22,14 @@
       "price": 10900,
       "img": "f2.jpg",
       "description": "새콤달콤 청량한 체리",
-      "viewcount": 10
+      "viewcount": 11
     },
     {
       "title": "바나나",
       "price": 5900,
       "img": "f3.jpg",
       "description": "부드럽고 달콤한 바나나",
-      "viewcount": 10,
+      "viewcount": 14,
       "id": "e988"
     },
     {
@@ -38,7 +38,7 @@
       "price": 6900,
       "img": "f4.jpg",
       "description": "약간의 신맛과 달콤한 포도",
-      "viewcount": 29
+      "viewcount": 32
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 13900,
       "img": "f5.jpg",
       "description": "부드럽고 달콤한 메론",
-      "viewcount": 13
+      "viewcount": 15
     },
     {
       "title": "오렌지",
@@ -105,7 +105,7 @@
         "corn4.jpg",
         "corn5.jpg"
       ],
-      "viewcount": 62
+      "viewcount": 71
     },
     {
       "id": "3",
@@ -121,7 +121,7 @@
         "onion4.jpg",
         "onion5.jpg"
       ],
-      "viewcount": 17
+      "viewcount": 18
     },
     {
       "id": "4",
@@ -136,7 +136,7 @@
         "paprica3.jpg",
         "paprica4.jpg"
       ],
-      "viewcount": 69
+      "viewcount": 70
     },
     {
       "id": "5",
@@ -150,7 +150,7 @@
         "pumkin2.jpg",
         "pumkin3.jpg"
       ],
-      "viewcount": 26
+      "viewcount": 28
     },
     {
       "id": "6",
@@ -191,7 +191,7 @@
       "price": 1000,
       "img": "s1.jpeg",
       "description": "먹태깡 청양마요 맛 느끼하지않아서 계속 먹을수있습니다.",
-      "viewcount": 96
+      "viewcount": 103
     },
     {
       "title": "초코송이",
@@ -199,7 +199,7 @@
       "img": "s2.jpg",
       "description": "초코송이 먹기 좋게 딱 나왔습니다.",
       "id": "3",
-      "viewcount": 14
+      "viewcount": 19
     },
     {
       "title": "홈런볼 초코맛",
@@ -215,7 +215,7 @@
       "price": 1000,
       "img": "s4.webp",
       "description": "자갈치 문어맛 문어 비싸서 못먹는데 과자로 대처가능",
-      "viewcount": 43
+      "viewcount": 47
     },
     {
       "id": "6",
@@ -223,7 +223,7 @@
       "price": 1000,
       "img": "s5.jpg",
       "description": "콘칩 보다 얇아서 좋아여",
-      "viewcount": 53
+      "viewcount": 55
     },
     {
       "id": "7",
@@ -241,7 +241,7 @@
       "img": "meat1.jpg",
       "description": "언제 먹어도 맛있는 육즙 가득 삼겹살",
       "id": "1",
-      "viewcount": 108
+      "viewcount": 110
     },
     {
       "title": "국내산 목살[냉장보관]",
@@ -249,7 +249,7 @@
       "img": "meat2.jpg",
       "description": "주물럭과 구이에는 역시 목살!",
       "id": "2",
-      "viewcount": 17
+      "viewcount": 20
     },
     {
       "id": "3",
@@ -265,7 +265,7 @@
       "price": 13080,
       "img": "meat4.jpg",
       "description": "고소한 풍미의 부드러운 한우 등심",
-      "viewcount": 11
+      "viewcount": 12
     },
     {
       "id": "5",
@@ -273,7 +273,7 @@
       "price": 19500,
       "img": "meat5.jpg",
       "description": "깊은 감칠맛의 엄선된 1++ 한우",
-      "viewcount": 14
+      "viewcount": 16
     },
     {
       "title": "국내산 삼겹살 수육용",
@@ -925,6 +925,50 @@
       ],
       "paymentAmount": 6000,
       "time": "2024/10/23 16:33:05"
+    },
+    {
+      "id": "b5d9",
+      "paymentMethod": "카카오페이",
+      "shopVal": "오아시스 마트 노원점",
+      "orderMethod": "직접방문",
+      "addressMessage": "그냥 문 앞에 놓아 주시면 돼요.",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "green",
+      "paymentResult": [
+        {
+          "id": "2",
+          "img": "/images/fruit/f1.jpg",
+          "title": "사과",
+          "price": 4900,
+          "count": 1,
+          "category": "fruit",
+          "userEmail": "admin1234@naver.com"
+        }
+      ],
+      "paymentAmount": 4900,
+      "time": "2024/10/28 11:58:01"
+    },
+    {
+      "id": "ed27",
+      "paymentMethod": "신용카드",
+      "shopVal": "세계로 마트 상계점",
+      "orderMethod": "직접방문",
+      "addressMessage": "직접 받을게요.부재시 문앞",
+      "memberEmail": "admin1234@naver.com",
+      "orderAddress": "green",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "먹태깡 청양마요맛",
+          "price": 1000,
+          "img": "/images/ordersnack/s1.jpeg",
+          "count": 1,
+          "category": "snack",
+          "userEmail": "admin1234@naver.com"
+        }
+      ],
+      "paymentAmount": 1000,
+      "time": "2024/10/28 11:58:22"
     }
   ],
   "api": [

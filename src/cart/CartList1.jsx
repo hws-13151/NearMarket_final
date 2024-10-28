@@ -94,9 +94,11 @@ const CartList1 = () => {
 
     const updatedFilteredCartItems = cartItems.filter(
       (item) =>
-        item.id !== modalItem.id ||
-        item.category !== modalItem.category ||
-        item.userEmail !== modalItem.userEmail
+        !(
+          item.id === modalItem.id &&
+          item.category === modalItem.category &&
+          item.userEmail === modalItem.userEmail
+        )
     );
 
     const newTotalPages = Math.ceil(
