@@ -1,16 +1,9 @@
 
-# 🛍프로젝트명🛍
+# 🛍NearMarket🛍
 
 <br>
 ~~ <span style="background-color: #F7BE81; color:black">~~~</span>입니다.
 
-
-~~ <br>
-~~<br>
-~~<br>
-
-~~ <br>
-~~
 <br>
 
 
