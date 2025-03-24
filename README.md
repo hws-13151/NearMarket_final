@@ -1,9 +1,9 @@
 
 # 🛍NearMarket🛍
 
-<span style="background-color: #F7BE81; color:black">
 ![image](https://github.com/user-attachments/assets/cf475d28-29b1-4c02-bdd9-3c5c34c03bcb)
- <br />
+<br />
+<span style="background-color: #F7BE81; color:black">
 처음 이 프로젝트를 만든 이유는 대형 마켓 장보기 어플들은 있어도 중소형 마켓 어플들은 없어서 기획하게 되었습니다. <br />
 다양한 식품을 판매하는 마트를 위한 스마트 오더 시스템입니다.<br />
 집 근처 작은 마트에서도 스마트 오더 시스템을 통해 집에서도
@@ -17,16 +17,14 @@
 ## 📌 목차
 
 * [🔎프로젝트 소개](#프로젝트-소개)
-  + [✔ 프로젝트 기본설정 ✔](#프로젝트-기본설정)
-  + [✔ 기술스택 ✔](#프로젝트-기본설정)
-  + [✔ 팀원소개 ✔](#Chatbot-구현)
-  + [✔ 팀원소개 ✔](#팀원소개)
-  + [✔ DB설계 ✔](#DB설계)
+  + [✔ 프로젝트 기본설정 ✔](#-프로젝트-기본설정-)
+  + [✔ 팀원소개 ✔](#-팀원소개-)
+  + [✔ 타임라인 ✔](#-타임라인-)
+  + [✔ 기술스택 ✔](#-기술스택-)
 * [⭐프로젝트 시안](#프로젝트-시안)
-    + [✔ 관리자 페이지 구현 ✔](#-관리자-페이지-구현-)
-    + [✔ Chatbot 구현 ✔](#-chatbot-구현-)
-    + [✔ 강사소개 구현 ✔](#-강사소개-구현-)
-    + [✔ INDEX 애니메이션 기능 구현 ✔](#-index-애니메이션-기능-구현-)
+    + [✔ 메인, 추천, 고기, 디테일 페이지 ✔](#-메인-추천-고기-디테일-페이지-)
+    + [✔ 관리자 페이지 ✔](#-관리자-페이지-)
+    + [✔ 반응형 ✔](#-반응형-)
 
 <br>
 
@@ -49,7 +47,7 @@
 </details>
 
 <details>
-<summary> 팀원소개</summary>
+<summary>팀원소개</summary>
 
 <table>
   <tbody>
@@ -86,15 +84,21 @@
 ![image](https://github.com/user-attachments/assets/5c965e74-1b6a-4685-acb4-5f87349334cd)
 
 </details>
+<details>
+<summary>기술스택</summary>
+ 
+![image](https://github.com/user-attachments/assets/1a0a4bdc-c59a-4739-81d7-97a15cee9d04)
+
+</details>
 <br>
 
 ## ⭐프로젝트 시안
 ![image](이미지주소)
 <br>
 
-### ✔ 관리자 페이지 구현 ✔
+### ✔ 메인 추천 고기 디테일 페이지 ✔
 <details>
-<summary>관리자 페이지 구현 시연 영상</summary>
+<summary>메인, 추천, 고기, 디테일 페이지 시연 영상</summary>
 
 
 ![관리자 페이지 시안영상](영상주소)
