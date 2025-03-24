@@ -1,8 +1,15 @@
 
 # 🛍NearMarket🛍
 
-<br>
-~~ <span style="background-color: #F7BE81; color:black">~~~</span>입니다.
+<span style="background-color: #F7BE81; color:black">
+![image](https://github.com/user-attachments/assets/cf475d28-29b1-4c02-bdd9-3c5c34c03bcb)
+ <br />
+처음 이 프로젝트를 만든 이유는 대형 마켓 장보기 어플들은 있어도 중소형 마켓 어플들은 없어서 기획하게 되었습니다. <br />
+다양한 식품을 판매하는 마트를 위한 스마트 오더 시스템입니다.<br />
+집 근처 작은 마트에서도 스마트 오더 시스템을 통해 집에서도
+스마트폰을 사용하는 전 연령대 를 타겟으로 잡았습니다.<br />
+간편하게 장을 볼 수 있게 하기 위해서 개발하게 되었습니다.
+</span>
 
 <br>
 
@@ -30,13 +37,13 @@
 
 |제목|내용|
 |------|---|
-|일정|2024/0/1~2025/0/1|
-|주제||
-|프로젝트명| |
-|프로그래밍 언어|JAVA|
-|프레임워크|Springboot|
-|데이터베이스|MySql8|
-|개발툴|
+|일정|2024/09/23~2024/10/25|
+|주제|스마트오더|
+|프로젝트명|NEARMARKET|
+|프로그래밍 언어|HTML,CSS,JAVASCRIPT|
+|프레임워크|REACT|
+|데이터베이스|JSONSERVER|
+|개발툴|VSCODE|
 
 
 </details>
@@ -46,17 +53,26 @@
 
 <table>
   <tbody>
-    <tr>
-      <th align="center"><a href=""><img src="이미지주소" width="100px;" alt=""/><br /><sub><b>FE 팀장 : 박**</b></sub></a><br /></th>
-</tr>
-<tr>
-
-<td>DB설계, 회원CRUD(개인정보), <br>OAuth2, Security </td>
-<td> 관리자페이지<br>, Chatbot, <br>강사소개 페이지, <br>INDEX 애니메이션 기능 </td>
-<td> 상품목록, 상품상세,<br> 장바구니(시간표), 구매, <br>구매리스트 </td>
-<td> 게시판 CRUD,<br> exception </td>
-<td> INDEX 페이지 CSS ,<br>1:1 문의내역, 덧글</td>
-</tr>
+  <tr>
+    <th align="center">팀장: 권**</th>
+    <th align="center">팀원: 강**</th>
+    <th align="center">팀원: 김**</th>
+    <th align="center">팀원: 한원세</th>
+  </tr>
+  <tr>
+    <td>과자페이지, 장바구니,Git 담당</td>
+    <td>과일페이지, API 담당,
+    Admin페이지 CRUD,
+    PPT 담당
+    </td>
+    <td>채소페이지, 결제,
+    로그인, 회원가입,
+    Start 페이지, Figma 담당 
+    </td>
+    <td>메인, 고기, 추천 페이지,
+    Admin페이지, CSS 반응형, PPT 담당
+    </td>
+  </tr>
   </tbody>
 </table>
 
@@ -67,14 +83,7 @@
 <details>
 <summary> 타임라인</summary>
 
-![image](이미지주소)
-
-</details>
-
-<details>
-<summary> DB설계 </summary>
-
-![image](이미지주소)
+![image](https://github.com/user-attachments/assets/5c965e74-1b6a-4685-acb4-5f87349334cd)
 
 </details>
 <br>
