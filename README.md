@@ -105,11 +105,9 @@
 - Section2는 useNavigate를 사용해 사이트 사용자가 원하는 코너로 빠르게 이동할 수 있도록 구현
 
 
-<div align="center>
 
 ![Image](https://github.com/user-attachments/assets/479973a0-630c-4744-8e29-c0041635022f)
 
-</div>
 
 
 </details>
