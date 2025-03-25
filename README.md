@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/3b2c0f34-6233-401d-9f2b-ca8c95c78783)
 # 🛍NearMarket🛍
 
 ![image](https://github.com/user-attachments/assets/cf475d28-29b1-4c02-bdd9-3c5c34c03bcb)
