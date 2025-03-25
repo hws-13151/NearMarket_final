@@ -98,7 +98,17 @@
 ### ✔ 메인 추천 고기 디테일 페이지 ✔
 <details>
 <summary>메인, 추천, 고기, 디테일 페이지 시연 영상</summary>
-![메인](https://github.com/user-attachments/assets/c6370268-b3d3-4d86-9325-892a8d52d172)
+
+
+- section을 두개로 나누어서 Section1부분은 setInterval을 이용하여 일정 시간마다 콜백 함수 setAutoImg를 호출해 현재 인덱스를 업데이트하여 이미지가 넘어가도록 구현
+  
+- Section2는 useNavigate를 사용해 사이트 사용자가 원하는 코너로 빠르게 이동할 수 있도록 구현
+
+<div align="center>
+  
+![메인](https://github.com/user-attachments/assets/12ae2e7e-1120-4e75-af08-031b54cf4959)
+  
+</div>
 
 
 </details>
