@@ -107,7 +107,7 @@
 
 <div align="center>
 
-![메인](https://github.com/user-attachments/assets/12ae2e7e-1120-4e75-af08-031b54cf4959)
+![Image](https://github.com/user-attachments/assets/479973a0-630c-4744-8e29-c0041635022f)
 
 </div>
 
