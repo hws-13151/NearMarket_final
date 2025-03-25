@@ -98,6 +98,7 @@
 ### ✔ 메인 추천 고기 디테일 페이지 ✔
 <details>
 <summary>메인, 추천, 고기, 디테일 페이지 시연 영상</summary>
+![메인](https://github.com/user-attachments/assets/c6370268-b3d3-4d86-9325-892a8d52d172)
 
 
 </details>
