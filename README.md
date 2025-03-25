@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/3b2c0f34-6233-401d-9f2b-ca8c95c78783)
 # 🛍NearMarket🛍
 
 ![image](https://github.com/user-attachments/assets/cf475d28-29b1-4c02-bdd9-3c5c34c03bcb)
@@ -99,19 +99,63 @@
 <details>
 <summary>메인, 추천, 고기, 디테일 페이지 시연 영상</summary>
 
+1. 메인페이지
 
-- section을 두개로 나누어서 Section1부분은 setInterval을 이용하여 일정 시간마다 콜백 함수 setAutoImg를 호출해 현재 인덱스를 업데이트하여 이미지가 넘어가도록 구현
-  
-- Section2는 useNavigate를 사용해 사이트 사용자가 원하는 코너로 빠르게 이동할 수 있도록 구현
+  - section을 두개로 나누어서 Section1부분은 setInterval을 이용하여 일정 시간마다 콜백 함수 setAutoImg를 호출해 현재 인덱스를 업데이트하여 이미지가 넘어가도록 구현
+  - Section2는 useNavigate를 사용해 사이트 사용자가 원하는 코너로 빠르게 이동할 수 있도록 구현
+
+![메인](https://github.com/user-attachments/assets/b932cb34-e9a5-4e51-9780-de2bfee0f171)
+
+<br />
+
+2. 추천페이지
+
+![추천](https://github.com/user-attachments/assets/5d4429e1-91b1-4963-87a7-c53986f0ba85)
+
+<br />
+3. 고기페이지
+
+- Axios get을 이용해서 서버에 있는 데이터들을 가져와 map으로 모든 고기 상품정보가 나타나도록 구현
+- 수량이 증가하거나 감소했을 때 총 가격이 계산되도록 구현
+- 장바구니를 눌렀을 때 모달창을 띄워 주문자가 결정할 수 있도록 구현
+- 계속 쇼핑하기와 장바구니로 이동하기를 눌렀을 때 장바구니에 데이터 저장
+- 결제 버튼을 눌렀을 때 결제 페이지로 데이터 전송 및 결제 페이지로 바로 이동하도록 구현
+
+![고기](https://github.com/user-attachments/assets/c2e5d3d0-7bd9-4128-859d-eccf01daf46c)
 
 
+<br />
+</details>
 
-![Image](https://github.com/user-attachments/assets/479973a0-630c-4744-8e29-c0041635022f)
+### ✔ 관리자 페이지 ✔
+<details>
+<summary>관리자 페이지 시연 영상</summary>
 
+- Google font에서 읽기 편한 font를 사용하여 가독성이 좋고 관리하기 편하도록 제작
+- 카테고리를 설정하여 해당 카테고리에 맞는 상품 코너에 Axios post로 input 데이터를 저장하도록 구현
+- 하나라도 입력이 안되었을 경우 모달창을 띄워 입력하도록 구현
+- 같은 카테고리에 동일한 상품명이 있을 경우 “이미 등록된 상품입니다.”라는 모달창을 띄워 관리자에게 알리도록 구현
+- fileReader를 이용하여 등록하려는 이미지를 미리 볼 수 있도록 구현
+
+![관리자](https://github.com/user-attachments/assets/6cf0398f-eadf-4de3-9695-003d9f808243)
+
+<br />
+</details>
+
+### ✔ 반응형 ✔
+<details>
+<summary>반응형 시연 영상</summary>
+
+- 어떤 디바이스로도 NearMarket을 사용할 수 있도록 미디어 쿼리를 이용하여 태블릿과 모바일 두 가지 버전을 제작했습니다.
+- 모바일과 태블릿 버전에서 css position과 Javascript 방식을 이용해 Header 부분을 숨겼다가 버튼을 눌렀을 때 나타나도록 구현
+
+1. 태블릿 버전 반응형
+
+![반응형](https://github.com/user-attachments/assets/cc7a37a0-d710-45f3-b78c-8fa4a5012954)
+
+2. 모바일 버전 반응형
+
+![반응형 모바일](https://github.com/user-attachments/assets/460fc378-43a5-478f-be72-b55a8cd247ce)
 
 
 </details>
-<br>
-
-</details>
-
