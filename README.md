@@ -103,6 +103,8 @@
 - section을 두개로 나누어서 Section1부분은 setInterval을 이용하여 일정 시간마다 콜백 함수 setAutoImg를 호출해 현재 인덱스를 업데이트하여 이미지가 넘어가도록 구현
   
 - Section2는 useNavigate를 사용해 사이트 사용자가 원하는 코너로 빠르게 이동할 수 있도록 구현
+  
+<br />
 
 <div align="center>
   
